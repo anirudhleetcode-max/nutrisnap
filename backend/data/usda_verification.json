@@ -1,0 +1,82 @@
+{
+ "verified": 95,
+ "total": 188,
+ "median_relative_kcal_error_of_old_estimates": 0.106,
+ "largest_differences": [
+  {
+   "food": "pakora",
+   "estimate_kcal": 320.0,
+   "usda_kcal": 125.0
+  },
+  {
+   "food": "falafel",
+   "estimate_kcal": 333.0,
+   "usda_kcal": 514.0
+  },
+  {
+   "food": "barfi",
+   "estimate_kcal": 400.0,
+   "usda_kcal": 284.0
+  },
+  {
+   "food": "sandwich",
+   "estimate_kcal": 230.0,
+   "usda_kcal": 120.0
+  },
+  {
+   "food": "popcorn",
+   "estimate_kcal": 430.0,
+   "usda_kcal": 518.0
+  },
+  {
+   "food": "french-fries",
+   "estimate_kcal": 312.0,
+   "usda_kcal": 225.0
+  },
+  {
+   "food": "waffles",
+   "estimate_kcal": 290.0,
+   "usda_kcal": 373.0
+  },
+  {
+   "food": "chicken-momos",
+   "estimate_kcal": 190.0,
+   "usda_kcal": 113.0
+  },
+  {
+   "food": "hummus",
+   "estimate_kcal": 166.0,
+   "usda_kcal": 243.0
+  },
+  {
+   "food": "chicken-biryani",
+   "estimate_kcal": 180.0,
+   "usda_kcal": 104.0
+  },
+  {
+   "food": "nachos",
+   "estimate_kcal": 340.0,
+   "usda_kcal": 266.0
+  },
+  {
+   "food": "brownie",
+   "estimate_kcal": 466.0,
+   "usda_kcal": 405.0
+  },
+  {
+   "food": "puri",
+   "estimate_kcal": 350.0,
+   "usda_kcal": 409.0
+  },
+  {
+   "food": "palak-paneer",
+   "estimate_kcal": 160.0,
+   "usda_kcal": 101.0
+  },
+  {
+   "food": "besan-ladoo",
+   "estimate_kcal": 470.0,
+   "usda_kcal": 411.0
+  }
+ ]
+}

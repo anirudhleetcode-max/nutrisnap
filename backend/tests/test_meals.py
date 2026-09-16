@@ -1,3 +1,10 @@
+from app.foods import by_id
+
+
+def kcal(food_id: str, grams: float) -> float:
+    return round(by_id()[food_id]["per100g"]["kcal"] * grams / 100, 1)
+
+
 def add(client, h, **kw):
     body = {"food_id": "roti", "date": "2026-03-10", "meal_type": "lunch", "serving_label": "1 roti", "quantity": 2, **kw}
     return client.post("/api/meals", json=body, headers=h)
@@ -8,7 +15,7 @@ def test_create_list_update_delete(client, new_user):
     r = add(client, h)
     assert r.status_code == 201, r.text
     roti = r.json()
-    assert roti["grams"] == 80 and roti["nutrients"]["kcal"] == 224
+    assert roti["grams"] == 80 and roti["nutrients"]["kcal"] == kcal("roti", 80)
     add(client, h, food_id="dal-tadka", serving_label="1 katori", quantity=1)
     add(client, h, food_id="poha", meal_type="breakfast", serving_label="1 plate", quantity=1)
     add(client, h, food_id="poha", date="2026-03-11", serving_label="1 plate", quantity=1)
@@ -16,12 +23,13 @@ def test_create_list_update_delete(client, new_user):
     day = client.get("/api/meals", params={"date": "2026-03-10"}, headers=h).json()
     assert [g["meal_type"] for g in day["groups"]] == ["breakfast", "lunch", "snacks", "dinner"]
     lunch = day["groups"][1]
-    assert len(lunch["items"]) == 2 and lunch["totals"]["kcal"] == 224 + 157.5
-    assert day["totals"]["kcal"] == 224 + 157.5 + 260
+    lunch_kcal = kcal("roti", 80) + kcal("dal-tadka", 150)
+    assert len(lunch["items"]) == 2 and abs(lunch["totals"]["kcal"] - lunch_kcal) < 0.2
+    assert abs(day["totals"]["kcal"] - (lunch_kcal + kcal("poha", 200))) < 0.2
 
     # edit portion
     r = client.patch(f"/api/meals/{roti['id']}", json={"quantity": 3}, headers=h)
-    assert r.json()["nutrients"]["kcal"] == 336
+    assert r.json()["nutrients"]["kcal"] == kcal("roti", 120)
     # switch food requires a valid serving for the new food
     assert client.patch(f"/api/meals/{roti['id']}", json={"food_id": "naan"}, headers=h).status_code == 422
     r = client.patch(f"/api/meals/{roti['id']}", json={"food_id": "naan", "serving_label": "1 naan", "quantity": 1}, headers=h)

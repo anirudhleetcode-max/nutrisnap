@@ -18,6 +18,19 @@ def test_catalogue_is_complete():
         assert abs(atwater - n["kcal"]) <= max(25, 0.15 * n["kcal"]), f["id"]
         assert any(s["label"] == "gram" for s in f["servings"])
         assert all(s["grams"] > 0 for s in f["servings"])
+        # provenance: verified values must point at a real USDA record, estimates must say so
+        if f["verified"]:
+            assert f["source_id"].startswith("fdc:") and f["source_url"].startswith("https://fdc.nal.usda.gov/")
+        else:
+            assert f["source_id"] is None and "Estimate" in f["source"]
+
+
+def test_mapping_matches_catalogue():
+    mapping = json.loads((get_settings().foods_file.parent / "usda_mapping.json").read_text(encoding="utf-8"))["foods"]
+    foods = {f["id"]: f for f in json.loads(get_settings().foods_file.read_text(encoding="utf-8"))["foods"]}
+    assert set(mapping) == {k for k, f in foods.items() if f["verified"]}
+    for k, m in mapping.items():
+        assert foods[k]["source_id"] == f"fdc:{m['fdc_id']}"
 
 
 def test_search_prefix_alias_and_text(client):
@@ -37,6 +50,8 @@ def test_list_pagination_and_detail(client):
     assert len(a["items"]) == 5 and a["total"] >= 120
     assert not {f["id"] for f in a["items"]} & {f["id"] for f in b["items"]}
     d = client.get("/api/foods/idli").json()
+    assert d["verified"] is True and d["source_id"] == "fdc:2708346"
+    assert client.get("/api/foods/poha").json()["verified"] is False
     assert d["servings"][0]["label"] == "1 idli"
     r = client.get("/api/foods/not-a-food")
     assert r.status_code == 404 and r.json()["code"] == "not_found"

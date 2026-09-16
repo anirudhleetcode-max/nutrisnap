@@ -32,8 +32,12 @@ def get_food(food_id: str) -> dict:
     return f
 
 
+PUBLIC_FIELDS = ("id", "name", "cuisine", "category", "per100g", "servings", "aliases", "source", "verified",
+                 "source_id", "source_url", "source_note", "servings_source")
+
+
 def public_food(f: dict) -> dict:
-    return {k: f[k] for k in ("id", "name", "cuisine", "category", "per100g", "servings", "aliases", "source")}
+    return {k: f[k] for k in PUBLIC_FIELDS if k in f}
 
 
 async def seed_foods() -> int:

@@ -1,0 +1,485 @@
+{
+ "about": "Hand-made mapping from NutriSnap food ids to USDA FoodData Central records. Only records that describe the same dish were mapped; everything else stays an unverified estimate. Checked by reading the USDA description, not by taste.",
+ "foods": {
+  "roti": {
+   "fdc_id": 2707713,
+   "usda_description": "Bread, chappatti or roti",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "paratha": {
+   "fdc_id": 2707715,
+   "usda_description": "Bread, paratha",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "naan": {
+   "fdc_id": 2707613,
+   "usda_description": "Bread, naan",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "puri": {
+   "fdc_id": 2707714,
+   "usda_description": "Bread, puri",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "plain-rice": {
+   "fdc_id": 2708408,
+   "usda_description": "Rice, white, cooked, no added fat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "chicken-biryani": {
+   "fdc_id": 2706538,
+   "usda_description": "Biryani with chicken",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "veg-biryani": {
+   "fdc_id": 2708985,
+   "usda_description": "Biryani with vegetables",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "mutton-biryani": {
+   "fdc_id": 2706490,
+   "usda_description": "Biryani with meat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)",
+   "note": "USDA record does not specify the meat"
+  },
+  "pulao": {
+   "fdc_id": 2709077,
+   "usda_description": "Rice pilaf",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)",
+   "note": "pilaf used as the closest equivalent of pulao"
+  },
+  "fried-rice": {
+   "fdc_id": 2708951,
+   "usda_description": "Rice, fried, meatless",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "dal-tadka": {
+   "fdc_id": 2707427,
+   "usda_description": "Dal",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "sambar": {
+   "fdc_id": 2707430,
+   "usda_description": "Sambar, vegetable stew",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "palak-paneer": {
+   "fdc_id": 2709631,
+   "usda_description": "Palak Paneer",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "paneer": {
+   "fdc_id": 2705740,
+   "usda_description": "Cheese, paneer",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "chicken-curry": {
+   "fdc_id": 2706437,
+   "usda_description": "Chicken curry",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "fish-curry": {
+   "fdc_id": 2706460,
+   "usda_description": "Fish curry",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "mixed-veg": {
+   "fdc_id": 2710067,
+   "usda_description": "Vegetable curry",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "curd": {
+   "fdc_id": 2705418,
+   "usda_description": "Yogurt, whole milk, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "masala-dosa": {
+   "fdc_id": 2709129,
+   "usda_description": "Dosa, with filling",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "plain-dosa": {
+   "fdc_id": 2708347,
+   "usda_description": "Dosa, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "idli": {
+   "fdc_id": 2708346,
+   "usda_description": "Idli",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "medu-vada": {
+   "fdc_id": 2709130,
+   "usda_description": "Vada",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "upma": {
+   "fdc_id": 2709128,
+   "usda_description": "Upma",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "samosa": {
+   "fdc_id": 2708730,
+   "usda_description": "Samosa",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pakora": {
+   "fdc_id": 2710066,
+   "usda_description": "Pakora",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "besan-ladoo": {
+   "fdc_id": 2710351,
+   "usda_description": "Ladoo, round ball",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)",
+   "note": "USDA record does not specify besan vs other ladoo"
+  },
+  "barfi": {
+   "fdc_id": 2705700,
+   "usda_description": "Barfi or Burfi, Indian dessert",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "kheer": {
+   "fdc_id": 2705685,
+   "usda_description": "Pudding, rice",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)",
+   "note": "generic rice pudding used for kheer"
+  },
+  "chicken-momos": {
+   "fdc_id": 2708708,
+   "usda_description": "Wonton, dumpling or pot sticker, steamed",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "coconut-water": {
+   "fdc_id": 2707572,
+   "usda_description": "Coconut water, unsweetened",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "cola": {
+   "fdc_id": 2710541,
+   "usda_description": "Soft drink, cola",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "orange-juice": {
+   "fdc_id": 2709186,
+   "usda_description": "Orange juice, 100%, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "smoothie": {
+   "fdc_id": 2705513,
+   "usda_description": "Fruit smoothie, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pizza": {
+   "fdc_id": 2708616,
+   "usda_description": "Pizza, cheese, from restaurant or fast food, medium crust",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)",
+   "note": "cheese pizza used for margherita"
+  },
+  "pepperoni-pizza": {
+   "fdc_id": 2708640,
+   "usda_description": "Pizza with pepperoni, from restaurant or fast food,  medium crust",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "burger": {
+   "fdc_id": 2706920,
+   "usda_description": "Hamburger, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "cheeseburger": {
+   "fdc_id": 2706888,
+   "usda_description": "Cheeseburger, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "veg-burger": {
+   "fdc_id": 2707481,
+   "usda_description": "Veggie burger, on bun",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "french-fries": {
+   "fdc_id": 2709456,
+   "usda_description": "Potato, french fries, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "hot-dog": {
+   "fdc_id": 2707056,
+   "usda_description": "Hot dog sandwich, NFS, on white bun",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "fried-chicken": {
+   "fdc_id": 2705949,
+   "usda_description": "Chicken, NS as to part, fried, coated, skin / coating eaten",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "tacos": {
+   "fdc_id": 2708514,
+   "usda_description": "Taco, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "burrito": {
+   "fdc_id": 2708534,
+   "usda_description": "Burrito, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "falafel": {
+   "fdc_id": 2707408,
+   "usda_description": "Falafel",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "hummus": {
+   "fdc_id": 2707402,
+   "usda_description": "Hummus, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "nachos": {
+   "fdc_id": 2708577,
+   "usda_description": "Nachos, cheese only",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "potato-chips": {
+   "fdc_id": 2709422,
+   "usda_description": "Potato chips, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "popcorn": {
+   "fdc_id": 2708216,
+   "usda_description": "Popcorn, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pasta-red": {
+   "fdc_id": 2708830,
+   "usda_description": "Pasta with tomato-based sauce, restaurant",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pasta-white": {
+   "fdc_id": 2708855,
+   "usda_description": "Pasta with cream sauce, restaurant",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "spaghetti": {
+   "fdc_id": 2708837,
+   "usda_description": "Pasta with tomato-based sauce and meat, restaurant",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "mac-cheese": {
+   "fdc_id": 2708811,
+   "usda_description": "Macaroni or noodles with cheese",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "lasagna": {
+   "fdc_id": 2708750,
+   "usda_description": "Lasagna with meat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "ramen": {
+   "fdc_id": 2709153,
+   "usda_description": "Ramen bowl, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "sushi": {
+   "fdc_id": 2708959,
+   "usda_description": "Sushi, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "green-salad": {
+   "fdc_id": 2709822,
+   "usda_description": "Lettuce, salad with assorted vegetables including tomatoes and/or carrots, no dressing",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "sandwich": {
+   "fdc_id": 2709132,
+   "usda_description": "Vegetable sandwich on white",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "club-sandwich": {
+   "fdc_id": 2706993,
+   "usda_description": "Club sandwich on white",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "omelette": {
+   "fdc_id": 2707200,
+   "usda_description": "Egg omelet or scrambled egg, made with oil",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "scrambled-eggs": {
+   "fdc_id": 2707198,
+   "usda_description": "Egg omelet or scrambled egg, NS as to fat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "boiled-egg": {
+   "fdc_id": 173424,
+   "usda_description": "Egg, whole, cooked, hard-boiled",
+   "dataset": "SR Legacy"
+  },
+  "fried-egg": {
+   "fdc_id": 2707158,
+   "usda_description": "Egg, whole, fried with oil",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pancakes": {
+   "fdc_id": 2708304,
+   "usda_description": "Pancakes, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "waffles": {
+   "fdc_id": 2708325,
+   "usda_description": "Waffle, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "oatmeal": {
+   "fdc_id": 2708383,
+   "usda_description": "Oatmeal, regular or quick, made with milk, no added fat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "white-bread": {
+   "fdc_id": 2707598,
+   "usda_description": "Bread, white",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "brown-bread": {
+   "fdc_id": 2707709,
+   "usda_description": "Bread, whole wheat",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "croissant": {
+   "fdc_id": 2707678,
+   "usda_description": "Croissant",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "bagel": {
+   "fdc_id": 2707684,
+   "usda_description": "Bagel",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "donut": {
+   "fdc_id": 2708062,
+   "usda_description": "Doughnut, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "cake": {
+   "fdc_id": 2707866,
+   "usda_description": "Cake or cupcake, chocolate with chocolate icing, bakery",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "brownie": {
+   "fdc_id": 2707903,
+   "usda_description": "Cookie, brownie, NS as to icing",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "cookies": {
+   "fdc_id": 2707909,
+   "usda_description": "Cookie, chocolate chip",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "ice-cream": {
+   "fdc_id": 2705630,
+   "usda_description": "Ice cream, vanilla",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "chocolate": {
+   "fdc_id": 167587,
+   "usda_description": "Candies, milk chocolate",
+   "dataset": "SR Legacy"
+  },
+  "tomato-soup": {
+   "fdc_id": 2709758,
+   "usda_description": "Soup, cream of tomato",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "chicken-soup": {
+   "fdc_id": 2707134,
+   "usda_description": "Soup, chicken",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "grilled-chicken": {
+   "fdc_id": 2705968,
+   "usda_description": "Chicken breast, grilled without sauce, skin not eaten",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "steak": {
+   "fdc_id": 2705824,
+   "usda_description": "Beef, steak, NFS",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "salmon": {
+   "fdc_id": 2706287,
+   "usda_description": "Fish, salmon, grilled",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "tofu": {
+   "fdc_id": 2707435,
+   "usda_description": "Soybean curd",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "greek-yogurt": {
+   "fdc_id": 2705422,
+   "usda_description": "Yogurt, Greek, whole milk, plain",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "peanut-butter": {
+   "fdc_id": 2707537,
+   "usda_description": "Peanut butter",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "almonds": {
+   "fdc_id": 170567,
+   "usda_description": "Nuts, almonds",
+   "dataset": "SR Legacy"
+  },
+  "banana": {
+   "fdc_id": 2709224,
+   "usda_description": "Banana, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "apple": {
+   "fdc_id": 2709215,
+   "usda_description": "Apple, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "mango": {
+   "fdc_id": 2709242,
+   "usda_description": "Mango, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "orange": {
+   "fdc_id": 2709171,
+   "usda_description": "Orange, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "grapes": {
+   "fdc_id": 2709237,
+   "usda_description": "Grapes, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "watermelon": {
+   "fdc_id": 2709270,
+   "usda_description": "Watermelon, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "papaya": {
+   "fdc_id": 2709246,
+   "usda_description": "Papaya, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pineapple": {
+   "fdc_id": 2709260,
+   "usda_description": "Pineapple, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "strawberries": {
+   "fdc_id": 2709283,
+   "usda_description": "Strawberries, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "guava": {
+   "fdc_id": 2709238,
+   "usda_description": "Guava, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  },
+  "pomegranate": {
+   "fdc_id": 2709267,
+   "usda_description": "Pomegranate, raw",
+   "dataset": "FNDDS 2021-2023 (Survey, release 2024-10-31)"
+  }
+ }
+}

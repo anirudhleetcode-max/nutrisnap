@@ -1,5 +1,6 @@
 from datetime import date, timedelta
 
+from app.foods import by_id
 from app.trends import streak_from
 
 
@@ -23,7 +24,8 @@ def test_trends_endpoint(client, new_user):
                                     "serving_label": "1 plate", "quantity": 1}, headers=h)
     t = client.get("/api/trends", params={"days": 7, "end": end.isoformat()}, headers=h).json()
     assert len(t["days"]) == 7 and t["days"][-1]["date"] == "2026-04-20"
-    assert t["days"][-1]["kcal"] == 224 + 630 and t["days"][0]["meals"] == 0
+    expected = by_id()["idli"]["per100g"]["kcal"] * 1.6 + by_id()["chicken-biryani"]["per100g"]["kcal"] * 3.5
+    assert abs(t["days"][-1]["kcal"] - expected) < 0.2 and t["days"][0]["meals"] == 0
     assert t["logged_days"] == 3 and t["streak"] == 3
     assert t["top_foods"][0]["food_id"] == "idli" and t["top_foods"][0]["count"] == 3
     assert t["targets"]["kcal"] == 2560  # 30 y male, 175 cm, 70 kg, moderate

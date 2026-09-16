@@ -1,6 +1,6 @@
 {
  "version": 1,
- "note": "Approximate per-100 g values compiled from IFCT 2017 and USDA FoodData Central for typical home/restaurant recipes. Not medical advice.",
+ "note": "95 of 188 foods have per-100 g values copied from USDA FoodData Central (verified: true, see source_id). The rest are unverified estimates. Serving gram weights are estimates for all foods.",
  "foods": [
   {
    "id": "roti",
@@ -8,11 +8,11 @@
    "cuisine": "indian",
    "category": "bread",
    "per100g": {
-    "kcal": 280.0,
-    "protein": 9.0,
-    "carbs": 50.0,
-    "fat": 4.5,
-    "fibre": 6.0
+    "kcal": 299.0,
+    "protein": 7.8,
+    "carbs": 46.1,
+    "fat": 9.2,
+    "fibre": 9.7
    },
    "servings": [
     {
@@ -34,7 +34,18 @@
     "phulka",
     "fulka"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, chappatti or roti\"",
+   "estimate_per100g": {
+    "kcal": 280.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 4.5,
+    "fibre": 6.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707713",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707713/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "paratha",
@@ -43,10 +54,10 @@
    "category": "bread",
    "per100g": {
     "kcal": 326.0,
-    "protein": 7.5,
-    "carbs": 45.0,
-    "fat": 13.0,
-    "fibre": 5.0
+    "protein": 6.4,
+    "carbs": 45.4,
+    "fat": 13.2,
+    "fibre": 9.6
    },
    "servings": [
     {
@@ -63,7 +74,18 @@
     "lachha paratha",
     "parantha"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, paratha\"",
+   "estimate_per100g": {
+    "kcal": 326.0,
+    "protein": 7.5,
+    "carbs": 45.0,
+    "fat": 13.0,
+    "fibre": 5.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707715",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707715/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "aloo-paratha",
@@ -92,7 +114,11 @@
     "stuffed paratha",
     "potato paratha"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "naan",
@@ -100,11 +126,11 @@
    "cuisine": "indian",
    "category": "bread",
    "per100g": {
-    "kcal": 290.0,
-    "protein": 9.0,
-    "carbs": 50.0,
-    "fat": 5.5,
-    "fibre": 2.2
+    "kcal": 311.0,
+    "protein": 11.1,
+    "carbs": 50.2,
+    "fat": 7.3,
+    "fibre": 5.2
    },
    "servings": [
     {
@@ -121,7 +147,18 @@
     "plain naan",
     "tandoori naan"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, naan\"",
+   "estimate_per100g": {
+    "kcal": 290.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 5.5,
+    "fibre": 2.2
+   },
+   "verified": true,
+   "source_id": "fdc:2707613",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707613/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "butter-naan",
@@ -149,7 +186,11 @@
    "aliases": [
     "garlic naan"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "puri",
@@ -157,10 +198,10 @@
    "cuisine": "indian",
    "category": "bread",
    "per100g": {
-    "kcal": 350.0,
-    "protein": 7.0,
-    "carbs": 42.0,
-    "fat": 17.0,
+    "kcal": 409.0,
+    "protein": 6.8,
+    "carbs": 39.2,
+    "fat": 24.9,
     "fibre": 3.5
    },
    "servings": [
@@ -181,7 +222,18 @@
    "aliases": [
     "poori"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, puri\"",
+   "estimate_per100g": {
+    "kcal": 350.0,
+    "protein": 7.0,
+    "carbs": 42.0,
+    "fat": 17.0,
+    "fibre": 3.5
+   },
+   "verified": true,
+   "source_id": "fdc:2707714",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707714/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "bhatura",
@@ -209,7 +261,11 @@
    "aliases": [
     "bhature"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "thepla",
@@ -237,7 +293,11 @@
    "aliases": [
     "thepla"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "kulcha",
@@ -265,7 +325,11 @@
    "aliases": [
     "amritsari kulcha"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "makki-roti",
@@ -293,7 +357,11 @@
    "aliases": [
     "corn roti"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pav",
@@ -326,7 +394,11 @@
     "ladi pav",
     "bun"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "plain-rice",
@@ -334,7 +406,7 @@
    "cuisine": "indian",
    "category": "rice",
    "per100g": {
-    "kcal": 130.0,
+    "kcal": 129.0,
     "protein": 2.7,
     "carbs": 28.0,
     "fat": 0.3,
@@ -360,7 +432,18 @@
     "white rice",
     "boiled rice"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Rice, white, cooked, no added fat\"",
+   "estimate_per100g": {
+    "kcal": 130.0,
+    "protein": 2.7,
+    "carbs": 28.0,
+    "fat": 0.3,
+    "fibre": 0.4
+   },
+   "verified": true,
+   "source_id": "fdc:2708408",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708408/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "jeera-rice",
@@ -392,7 +475,11 @@
    "aliases": [
     "cumin rice"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-biryani",
@@ -400,11 +487,11 @@
    "cuisine": "indian",
    "category": "rice",
    "per100g": {
-    "kcal": 180.0,
-    "protein": 9.0,
-    "carbs": 22.0,
-    "fat": 6.5,
-    "fibre": 1.0
+    "kcal": 104.0,
+    "protein": 7.2,
+    "carbs": 13.6,
+    "fat": 2.4,
+    "fibre": 1.1
    },
    "servings": [
     {
@@ -425,7 +512,18 @@
     "biryani",
     "hyderabadi biryani"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Biryani with chicken\"",
+   "estimate_per100g": {
+    "kcal": 180.0,
+    "protein": 9.0,
+    "carbs": 22.0,
+    "fat": 6.5,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2706538",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706538/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "veg-biryani",
@@ -433,11 +531,11 @@
    "cuisine": "indian",
    "category": "rice",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 3.5,
-    "carbs": 24.0,
-    "fat": 4.5,
-    "fibre": 1.8
+    "kcal": 109.0,
+    "protein": 1.9,
+    "carbs": 17.9,
+    "fat": 3.2,
+    "fibre": 1.2
    },
    "servings": [
     {
@@ -457,7 +555,18 @@
    "aliases": [
     "veg pulao biryani"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Biryani with vegetables\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 3.5,
+    "carbs": 24.0,
+    "fat": 4.5,
+    "fibre": 1.8
+   },
+   "verified": true,
+   "source_id": "fdc:2708985",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708985/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "mutton-biryani",
@@ -465,10 +574,10 @@
    "cuisine": "indian",
    "category": "rice",
    "per100g": {
-    "kcal": 200.0,
-    "protein": 10.0,
-    "carbs": 21.0,
-    "fat": 8.5,
+    "kcal": 145.0,
+    "protein": 8.5,
+    "carbs": 12.2,
+    "fat": 6.8,
     "fibre": 1.0
    },
    "servings": [
@@ -489,7 +598,19 @@
    "aliases": [
     "gosht biryani"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Biryani with meat\"",
+   "estimate_per100g": {
+    "kcal": 200.0,
+    "protein": 10.0,
+    "carbs": 21.0,
+    "fat": 8.5,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2706490",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706490/nutrients",
+   "source_note": "USDA record does not specify the meat",
+   "servings_source": "estimate"
   },
   {
    "id": "pulao",
@@ -497,11 +618,11 @@
    "cuisine": "indian",
    "category": "rice",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 3.0,
-    "carbs": 25.0,
-    "fat": 4.0,
-    "fibre": 1.5
+    "kcal": 137.0,
+    "protein": 3.3,
+    "carbs": 24.1,
+    "fat": 3.0,
+    "fibre": 0.4
    },
    "servings": [
     {
@@ -522,7 +643,19 @@
     "pilaf",
     "pulav"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Rice pilaf\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 3.0,
+    "carbs": 25.0,
+    "fat": 4.0,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2709077",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709077/nutrients",
+   "source_note": "pilaf used as the closest equivalent of pulao",
+   "servings_source": "estimate"
   },
   {
    "id": "khichdi",
@@ -554,7 +687,11 @@
    "aliases": [
     "khichri"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "curd-rice",
@@ -587,7 +724,11 @@
     "thayir sadam",
     "dahi chawal"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "lemon-rice",
@@ -619,7 +760,11 @@
    "aliases": [
     "chitranna"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "bisi-bele-bath",
@@ -647,7 +792,11 @@
    "aliases": [
     "sambar rice"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pongal",
@@ -675,7 +824,11 @@
    "aliases": [
     "khara pongal"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "fried-rice",
@@ -683,11 +836,11 @@
    "cuisine": "global",
    "category": "rice",
    "per100g": {
-    "kcal": 165.0,
-    "protein": 4.0,
-    "carbs": 27.0,
-    "fat": 4.5,
-    "fibre": 1.0
+    "kcal": 174.0,
+    "protein": 3.8,
+    "carbs": 32.5,
+    "fat": 3.2,
+    "fibre": 1.1
    },
    "servings": [
     {
@@ -708,7 +861,18 @@
     "veg fried rice",
     "egg fried rice"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Rice, fried, meatless\"",
+   "estimate_per100g": {
+    "kcal": 165.0,
+    "protein": 4.0,
+    "carbs": 27.0,
+    "fat": 4.5,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708951",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708951/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "dal-tadka",
@@ -716,11 +880,11 @@
    "cuisine": "indian",
    "category": "dal",
    "per100g": {
-    "kcal": 105.0,
-    "protein": 5.5,
-    "carbs": 14.0,
-    "fat": 3.5,
-    "fibre": 3.0
+    "kcal": 145.0,
+    "protein": 8.6,
+    "carbs": 19.2,
+    "fat": 4.3,
+    "fibre": 7.5
    },
    "servings": [
     {
@@ -744,7 +908,18 @@
     "dal fry",
     "yellow dal"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Dal\"",
+   "estimate_per100g": {
+    "kcal": 105.0,
+    "protein": 5.5,
+    "carbs": 14.0,
+    "fat": 3.5,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707427",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707427/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "dal-makhani",
@@ -777,7 +952,11 @@
     "kaali dal",
     "maa ki dal"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "rajma",
@@ -810,7 +989,11 @@
     "rajma masala",
     "kidney beans"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chole",
@@ -844,7 +1027,11 @@
     "chickpea curry",
     "chhole"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sambar",
@@ -852,11 +1039,11 @@
    "cuisine": "indian",
    "category": "dal",
    "per100g": {
-    "kcal": 65.0,
-    "protein": 3.0,
-    "carbs": 9.0,
-    "fat": 2.0,
-    "fibre": 2.5
+    "kcal": 86.0,
+    "protein": 4.3,
+    "carbs": 11.8,
+    "fat": 2.7,
+    "fibre": 4.0
    },
    "servings": [
     {
@@ -876,7 +1063,18 @@
    "aliases": [
     "sambhar"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Sambar, vegetable stew\"",
+   "estimate_per100g": {
+    "kcal": 65.0,
+    "protein": 3.0,
+    "carbs": 9.0,
+    "fat": 2.0,
+    "fibre": 2.5
+   },
+   "verified": true,
+   "source_id": "fdc:2707430",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707430/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "rasam",
@@ -904,7 +1102,11 @@
    "aliases": [
     "saaru"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "kadhi",
@@ -932,7 +1134,11 @@
    "aliases": [
     "kadhi pakora"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "paneer-butter-masala",
@@ -961,7 +1167,11 @@
     "paneer makhani",
     "butter paneer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "palak-paneer",
@@ -969,11 +1179,11 @@
    "cuisine": "indian",
    "category": "curry",
    "per100g": {
-    "kcal": 160.0,
-    "protein": 7.5,
-    "carbs": 6.0,
-    "fat": 12.0,
-    "fibre": 2.5
+    "kcal": 101.0,
+    "protein": 5.4,
+    "carbs": 4.3,
+    "fat": 7.0,
+    "fibre": 0.9
    },
    "servings": [
     {
@@ -989,7 +1199,18 @@
    "aliases": [
     "saag paneer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Palak Paneer\"",
+   "estimate_per100g": {
+    "kcal": 160.0,
+    "protein": 7.5,
+    "carbs": 6.0,
+    "fat": 12.0,
+    "fibre": 2.5
+   },
+   "verified": true,
+   "source_id": "fdc:2709631",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709631/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "shahi-paneer",
@@ -1017,7 +1238,11 @@
    "aliases": [
     "paneer korma"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "matar-paneer",
@@ -1045,7 +1270,11 @@
    "aliases": [
     "mutter paneer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "kadai-paneer",
@@ -1073,7 +1302,11 @@
    "aliases": [
     "karahi paneer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "paneer-tikka",
@@ -1105,7 +1338,11 @@
    "aliases": [
     "tandoori paneer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "butter-chicken",
@@ -1138,7 +1375,11 @@
     "murgh makhani",
     "chicken makhani"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-curry",
@@ -1146,11 +1387,11 @@
    "cuisine": "indian",
    "category": "curry",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 13.0,
-    "carbs": 5.0,
-    "fat": 9.0,
-    "fibre": 1.0
+    "kcal": 107.0,
+    "protein": 6.5,
+    "carbs": 6.5,
+    "fat": 6.5,
+    "fibre": 1.4
    },
    "servings": [
     {
@@ -1171,7 +1412,18 @@
     "murgh curry",
     "chicken masala"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Chicken curry\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 13.0,
+    "carbs": 5.0,
+    "fat": 9.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2706437",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706437/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-tikka",
@@ -1203,7 +1455,11 @@
    "aliases": [
     "chicken tikka kebab"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "tandoori-chicken",
@@ -1235,7 +1491,11 @@
    "aliases": [
     "tandoori murgh"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-65",
@@ -1263,7 +1523,11 @@
    "aliases": [
     "chilli fry chicken"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "mutton-curry",
@@ -1296,7 +1560,11 @@
     "rogan josh",
     "gosht curry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "keema",
@@ -1325,7 +1593,11 @@
     "kheema",
     "keema matar"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "fish-curry",
@@ -1333,11 +1605,11 @@
    "cuisine": "indian",
    "category": "curry",
    "per100g": {
-    "kcal": 130.0,
-    "protein": 13.0,
-    "carbs": 4.0,
-    "fat": 7.0,
-    "fibre": 0.8
+    "kcal": 93.0,
+    "protein": 4.9,
+    "carbs": 6.7,
+    "fat": 5.4,
+    "fibre": 1.4
    },
    "servings": [
     {
@@ -1358,7 +1630,18 @@
     "machli curry",
     "meen curry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Fish curry\"",
+   "estimate_per100g": {
+    "kcal": 130.0,
+    "protein": 13.0,
+    "carbs": 4.0,
+    "fat": 7.0,
+    "fibre": 0.8
+   },
+   "verified": true,
+   "source_id": "fdc:2706460",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706460/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "fish-fry",
@@ -1387,7 +1670,11 @@
     "tawa fish",
     "rava fish fry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "prawn-curry",
@@ -1416,7 +1703,11 @@
     "jhinga curry",
     "shrimp curry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "egg-curry",
@@ -1444,7 +1735,11 @@
    "aliases": [
     "anda curry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "egg-bhurji",
@@ -1472,7 +1767,11 @@
    "aliases": [
     "anda bhurji"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "aloo-gobi",
@@ -1500,7 +1799,11 @@
    "aliases": [
     "gobi aloo"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "bhindi-masala",
@@ -1529,7 +1832,11 @@
     "okra fry",
     "bhindi fry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "baingan-bharta",
@@ -1558,7 +1865,11 @@
     "baingan ka bharta",
     "brinjal bharta"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "jeera-aloo",
@@ -1587,7 +1898,11 @@
     "aloo sabzi",
     "potato sabzi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "mixed-veg",
@@ -1595,11 +1910,11 @@
    "cuisine": "indian",
    "category": "sabzi",
    "per100g": {
-    "kcal": 100.0,
-    "protein": 2.5,
-    "carbs": 10.0,
-    "fat": 6.0,
-    "fibre": 3.0
+    "kcal": 86.0,
+    "protein": 1.6,
+    "carbs": 8.8,
+    "fat": 5.3,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -1616,7 +1931,18 @@
     "mix veg",
     "sabzi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Vegetable curry\"",
+   "estimate_per100g": {
+    "kcal": 100.0,
+    "protein": 2.5,
+    "carbs": 10.0,
+    "fat": 6.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2710067",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2710067/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "malai-kofta",
@@ -1644,7 +1970,11 @@
    "aliases": [
     "kofta curry"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "dum-aloo",
@@ -1672,7 +2002,11 @@
    "aliases": [
     "kashmiri dum aloo"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sarson-saag",
@@ -1700,7 +2034,11 @@
    "aliases": [
     "saag"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "raita",
@@ -1729,7 +2067,11 @@
     "boondi raita",
     "cucumber raita"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "curd",
@@ -1737,10 +2079,10 @@
    "cuisine": "indian",
    "category": "dairy",
    "per100g": {
-    "kcal": 60.0,
-    "protein": 3.1,
-    "carbs": 4.5,
-    "fat": 3.5,
+    "kcal": 78.0,
+    "protein": 3.8,
+    "carbs": 5.6,
+    "fat": 4.5,
     "fibre": 0.0
    },
    "servings": [
@@ -1763,7 +2105,18 @@
     "yogurt",
     "yoghurt"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Yogurt, whole milk, plain\"",
+   "estimate_per100g": {
+    "kcal": 60.0,
+    "protein": 3.1,
+    "carbs": 4.5,
+    "fat": 3.5,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2705418",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705418/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "paneer",
@@ -1771,10 +2124,10 @@
    "cuisine": "indian",
    "category": "dairy",
    "per100g": {
-    "kcal": 265.0,
-    "protein": 18.0,
-    "carbs": 3.5,
-    "fat": 20.0,
+    "kcal": 299.0,
+    "protein": 15.9,
+    "carbs": 22.5,
+    "fat": 15.5,
     "fibre": 0.0
    },
    "servings": [
@@ -1795,7 +2148,18 @@
    "aliases": [
     "cottage cheese"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Cheese, paneer\"",
+   "estimate_per100g": {
+    "kcal": 265.0,
+    "protein": 18.0,
+    "carbs": 3.5,
+    "fat": 20.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2705740",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705740/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "masala-dosa",
@@ -1803,11 +2167,11 @@
    "cuisine": "indian",
    "category": "south-indian",
    "per100g": {
-    "kcal": 190.0,
-    "protein": 4.0,
-    "carbs": 27.0,
-    "fat": 7.5,
-    "fibre": 2.0
+    "kcal": 184.0,
+    "protein": 5.5,
+    "carbs": 30.8,
+    "fat": 4.3,
+    "fibre": 2.2
    },
    "servings": [
     {
@@ -1824,7 +2188,18 @@
     "dosa",
     "masala dosai"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Dosa, with filling\"",
+   "estimate_per100g": {
+    "kcal": 190.0,
+    "protein": 4.0,
+    "carbs": 27.0,
+    "fat": 7.5,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709129",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709129/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "plain-dosa",
@@ -1832,11 +2207,11 @@
    "cuisine": "indian",
    "category": "south-indian",
    "per100g": {
-    "kcal": 170.0,
-    "protein": 4.0,
-    "carbs": 28.0,
-    "fat": 4.5,
-    "fibre": 1.2
+    "kcal": 210.0,
+    "protein": 5.7,
+    "carbs": 37.0,
+    "fat": 4.0,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -1853,7 +2228,18 @@
     "sada dosa",
     "dosai"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Dosa, plain\"",
+   "estimate_per100g": {
+    "kcal": 170.0,
+    "protein": 4.0,
+    "carbs": 28.0,
+    "fat": 4.5,
+    "fibre": 1.2
+   },
+   "verified": true,
+   "source_id": "fdc:2708347",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708347/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "idli",
@@ -1861,11 +2247,11 @@
    "cuisine": "indian",
    "category": "south-indian",
    "per100g": {
-    "kcal": 140.0,
-    "protein": 4.5,
-    "carbs": 28.0,
-    "fat": 0.8,
-    "fibre": 1.5
+    "kcal": 128.0,
+    "protein": 6.4,
+    "carbs": 25.0,
+    "fat": 0.3,
+    "fibre": 5.8
    },
    "servings": [
     {
@@ -1889,7 +2275,18 @@
    "aliases": [
     "idly"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Idli\"",
+   "estimate_per100g": {
+    "kcal": 140.0,
+    "protein": 4.5,
+    "carbs": 28.0,
+    "fat": 0.8,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2708346",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708346/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "medu-vada",
@@ -1897,11 +2294,11 @@
    "cuisine": "indian",
    "category": "south-indian",
    "per100g": {
-    "kcal": 300.0,
-    "protein": 9.0,
-    "carbs": 30.0,
-    "fat": 16.0,
-    "fibre": 5.0
+    "kcal": 266.0,
+    "protein": 12.8,
+    "carbs": 33.2,
+    "fat": 9.7,
+    "fibre": 5.8
    },
    "servings": [
     {
@@ -1923,7 +2320,18 @@
     "uzhunnu vada",
     "vadai"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Vada\"",
+   "estimate_per100g": {
+    "kcal": 300.0,
+    "protein": 9.0,
+    "carbs": 30.0,
+    "fat": 16.0,
+    "fibre": 5.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709130",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709130/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "uttapam",
@@ -1951,7 +2359,11 @@
    "aliases": [
     "uthappam"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "upma",
@@ -1959,11 +2371,11 @@
    "cuisine": "indian",
    "category": "breakfast",
    "per100g": {
-    "kcal": 130.0,
-    "protein": 3.0,
-    "carbs": 19.0,
-    "fat": 5.0,
-    "fibre": 1.5
+    "kcal": 87.0,
+    "protein": 2.0,
+    "carbs": 13.8,
+    "fat": 2.6,
+    "fibre": 1.3
    },
    "servings": [
     {
@@ -1984,7 +2396,18 @@
     "rava upma",
     "uppittu"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Upma\"",
+   "estimate_per100g": {
+    "kcal": 130.0,
+    "protein": 3.0,
+    "carbs": 19.0,
+    "fat": 5.0,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2709128",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709128/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "appam",
@@ -2012,7 +2435,11 @@
    "aliases": [
     "palappam"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pesarattu",
@@ -2040,7 +2467,11 @@
    "aliases": [
     "moong dosa"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "idiyappam",
@@ -2072,7 +2503,11 @@
    "aliases": [
     "string hoppers"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "puttu",
@@ -2100,7 +2535,11 @@
    "aliases": [
     "puttu kadala"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "coconut-chutney",
@@ -2132,7 +2571,11 @@
    "aliases": [
     "chutney"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "poha",
@@ -2165,7 +2608,11 @@
     "kanda poha",
     "aval"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sabudana-khichdi",
@@ -2193,7 +2640,11 @@
    "aliases": [
     "sago khichdi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pav-bhaji",
@@ -2221,7 +2672,11 @@
    "aliases": [
     "bhaji pav"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "vada-pav",
@@ -2250,7 +2705,11 @@
     "wada pav",
     "bombay burger"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "samosa",
@@ -2259,10 +2718,10 @@
    "category": "street",
    "per100g": {
     "kcal": 310.0,
-    "protein": 5.0,
-    "carbs": 32.0,
-    "fat": 18.0,
-    "fibre": 3.0
+    "protein": 5.1,
+    "carbs": 33.2,
+    "fat": 17.5,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -2283,7 +2742,18 @@
     "samosa chaat",
     "aloo samosa"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Samosa\"",
+   "estimate_per100g": {
+    "kcal": 310.0,
+    "protein": 5.0,
+    "carbs": 32.0,
+    "fat": 18.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708730",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708730/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "dhokla",
@@ -2316,7 +2786,11 @@
     "khaman",
     "khaman dhokla"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "kachori",
@@ -2345,7 +2819,11 @@
     "khasta kachori",
     "dal kachori"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pani-puri",
@@ -2379,7 +2857,11 @@
     "puchka",
     "gol gappe"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "bhel-puri",
@@ -2407,7 +2889,11 @@
    "aliases": [
     "bhel"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sev-puri",
@@ -2435,7 +2921,11 @@
    "aliases": [
     "dahi puri"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "pakora",
@@ -2443,11 +2933,11 @@
    "cuisine": "indian",
    "category": "street",
    "per100g": {
-    "kcal": 320.0,
-    "protein": 7.0,
-    "carbs": 30.0,
-    "fat": 19.0,
-    "fibre": 4.0
+    "kcal": 125.0,
+    "protein": 4.9,
+    "carbs": 16.2,
+    "fat": 4.8,
+    "fibre": 3.2
    },
    "servings": [
     {
@@ -2469,7 +2959,18 @@
     "pakoda",
     "onion bhaji"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pakora\"",
+   "estimate_per100g": {
+    "kcal": 320.0,
+    "protein": 7.0,
+    "carbs": 30.0,
+    "fat": 19.0,
+    "fibre": 4.0
+   },
+   "verified": true,
+   "source_id": "fdc:2710066",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2710066/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "aloo-tikki",
@@ -2502,7 +3003,11 @@
     "tikki chaat",
     "potato patty"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "dabeli",
@@ -2530,7 +3035,11 @@
    "aliases": [
     "kutchi dabeli"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "misal-pav",
@@ -2558,7 +3067,11 @@
    "aliases": [
     "misal"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "momos",
@@ -2592,7 +3105,11 @@
     "dumplings",
     "veg dumplings"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-momos",
@@ -2600,11 +3117,11 @@
    "cuisine": "indian",
    "category": "street",
    "per100g": {
-    "kcal": 190.0,
-    "protein": 10.0,
-    "carbs": 22.0,
-    "fat": 7.0,
-    "fibre": 1.0
+    "kcal": 113.0,
+    "protein": 6.9,
+    "carbs": 11.1,
+    "fat": 4.6,
+    "fibre": 1.2
    },
    "servings": [
     {
@@ -2624,7 +3141,18 @@
    "aliases": [
     "chicken dumplings"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Wonton, dumpling or pot sticker, steamed\"",
+   "estimate_per100g": {
+    "kcal": 190.0,
+    "protein": 10.0,
+    "carbs": 22.0,
+    "fat": 7.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708708",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708708/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "kathi-roll",
@@ -2654,7 +3182,11 @@
     "egg roll",
     "chicken roll"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "litti-chokha",
@@ -2686,7 +3218,11 @@
    "aliases": [
     "litti"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "dal-baati",
@@ -2714,7 +3250,11 @@
    "aliases": [
     "baati"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "khakhra",
@@ -2742,7 +3282,11 @@
    "aliases": [
     "khakra"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "bhujia",
@@ -2777,7 +3321,11 @@
     "sev",
     "aloo bhujia"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chana-chaat",
@@ -2805,7 +3353,11 @@
    "aliases": [
     "chickpea salad"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sprouts-salad",
@@ -2833,7 +3385,11 @@
    "aliases": [
     "moong sprouts"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "maggi",
@@ -2862,7 +3418,11 @@
     "maggi",
     "ramen noodles instant"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "hakka-noodles",
@@ -2891,7 +3451,11 @@
     "chow mein",
     "veg noodles"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "manchurian",
@@ -2919,7 +3483,11 @@
    "aliases": [
     "gobi manchurian"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chilli-chicken",
@@ -2947,7 +3515,11 @@
    "aliases": [
     "dragon chicken"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "gulab-jamun",
@@ -2979,7 +3551,11 @@
    "aliases": [
     "gulabjamun"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "jalebi",
@@ -3012,7 +3588,11 @@
     "jilebi",
     "imarti"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "rasgulla",
@@ -3041,7 +3621,11 @@
     "rosogolla",
     "rasagola"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "rasmalai",
@@ -3069,7 +3653,11 @@
    "aliases": [
     "ras malai"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "kheer",
@@ -3077,10 +3665,10 @@
    "cuisine": "indian",
    "category": "sweet",
    "per100g": {
-    "kcal": 140.0,
-    "protein": 4.0,
-    "carbs": 20.0,
-    "fat": 5.0,
+    "kcal": 108.0,
+    "protein": 3.2,
+    "carbs": 18.4,
+    "fat": 2.1,
     "fibre": 0.3
    },
    "servings": [
@@ -3098,7 +3686,19 @@
     "payasam",
     "rice kheer"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pudding, rice\"",
+   "estimate_per100g": {
+    "kcal": 140.0,
+    "protein": 4.0,
+    "carbs": 20.0,
+    "fat": 5.0,
+    "fibre": 0.3
+   },
+   "verified": true,
+   "source_id": "fdc:2705685",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705685/nutrients",
+   "source_note": "generic rice pudding used for kheer",
+   "servings_source": "estimate"
   },
   {
    "id": "gajar-halwa",
@@ -3126,7 +3726,11 @@
    "aliases": [
     "carrot halwa"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sooji-halwa",
@@ -3155,7 +3759,11 @@
     "sheera",
     "rava kesari"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "besan-ladoo",
@@ -3163,11 +3771,11 @@
    "cuisine": "indian",
    "category": "sweet",
    "per100g": {
-    "kcal": 470.0,
-    "protein": 9.0,
-    "carbs": 55.0,
-    "fat": 24.0,
-    "fibre": 3.0
+    "kcal": 411.0,
+    "protein": 6.9,
+    "carbs": 46.7,
+    "fat": 22.2,
+    "fibre": 4.0
    },
    "servings": [
     {
@@ -3184,7 +3792,19 @@
     "laddu",
     "motichoor ladoo"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Ladoo, round ball\"",
+   "estimate_per100g": {
+    "kcal": 470.0,
+    "protein": 9.0,
+    "carbs": 55.0,
+    "fat": 24.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2710351",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2710351/nutrients",
+   "source_note": "USDA record does not specify besan vs other ladoo",
+   "servings_source": "estimate"
   },
   {
    "id": "kaju-katli",
@@ -3212,7 +3832,11 @@
    "aliases": [
     "kaju barfi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "barfi",
@@ -3220,11 +3844,11 @@
    "cuisine": "indian",
    "category": "sweet",
    "per100g": {
-    "kcal": 400.0,
-    "protein": 9.0,
-    "carbs": 50.0,
-    "fat": 18.0,
-    "fibre": 0.5
+    "kcal": 284.0,
+    "protein": 5.4,
+    "carbs": 40.4,
+    "fat": 11.4,
+    "fibre": 0.4
    },
    "servings": [
     {
@@ -3241,7 +3865,18 @@
     "burfi",
     "peda"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Barfi or Burfi, Indian dessert\"",
+   "estimate_per100g": {
+    "kcal": 400.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 18.0,
+    "fibre": 0.5
+   },
+   "verified": true,
+   "source_id": "fdc:2705700",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705700/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "kulfi",
@@ -3269,7 +3904,11 @@
    "aliases": [
     "matka kulfi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "masala-chai",
@@ -3302,7 +3941,11 @@
     "chai",
     "tea"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "filter-coffee",
@@ -3331,7 +3974,11 @@
     "kaapi",
     "coffee with milk"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "lassi",
@@ -3360,7 +4007,11 @@
     "mango lassi",
     "sweet lassi"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "chaas",
@@ -3390,7 +4041,11 @@
     "mattha",
     "majjige"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "coconut-water",
@@ -3398,11 +4053,11 @@
    "cuisine": "indian",
    "category": "drink",
    "per100g": {
-    "kcal": 19.0,
-    "protein": 0.7,
-    "carbs": 3.7,
-    "fat": 0.2,
-    "fibre": 1.1
+    "kcal": 18.0,
+    "protein": 0.2,
+    "carbs": 4.2,
+    "fat": 0.0,
+    "fibre": 0.0
    },
    "servings": [
     {
@@ -3423,7 +4078,18 @@
     "nariyal pani",
     "tender coconut"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Coconut water, unsweetened\"",
+   "estimate_per100g": {
+    "kcal": 19.0,
+    "protein": 0.7,
+    "carbs": 3.7,
+    "fat": 0.2,
+    "fibre": 1.1
+   },
+   "verified": true,
+   "source_id": "fdc:2707572",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707572/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "nimbu-pani",
@@ -3452,7 +4118,11 @@
     "lemonade",
     "shikanji"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "milk",
@@ -3485,7 +4155,11 @@
     "doodh",
     "toned milk"
    ],
-   "source": "IFCT 2017 (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "cold-coffee",
@@ -3514,7 +4188,11 @@
     "iced coffee",
     "frappe"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "cola",
@@ -3524,8 +4202,8 @@
    "per100g": {
     "kcal": 42.0,
     "protein": 0.0,
-    "carbs": 10.6,
-    "fat": 0.0,
+    "carbs": 10.4,
+    "fat": 0.2,
     "fibre": 0.0
    },
    "servings": [
@@ -3548,7 +4226,18 @@
     "soda",
     "pepsi"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Soft drink, cola\"",
+   "estimate_per100g": {
+    "kcal": 42.0,
+    "protein": 0.0,
+    "carbs": 10.6,
+    "fat": 0.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2710541",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2710541/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "orange-juice",
@@ -3556,11 +4245,11 @@
    "cuisine": "global",
    "category": "drink",
    "per100g": {
-    "kcal": 45.0,
-    "protein": 0.7,
-    "carbs": 10.4,
-    "fat": 0.2,
-    "fibre": 0.2
+    "kcal": 47.0,
+    "protein": 0.8,
+    "carbs": 10.2,
+    "fat": 0.3,
+    "fibre": 0.3
    },
    "servings": [
     {
@@ -3576,7 +4265,18 @@
    "aliases": [
     "juice"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Orange juice, 100%, NFS\"",
+   "estimate_per100g": {
+    "kcal": 45.0,
+    "protein": 0.7,
+    "carbs": 10.4,
+    "fat": 0.2,
+    "fibre": 0.2
+   },
+   "verified": true,
+   "source_id": "fdc:2709186",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709186/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "smoothie",
@@ -3584,11 +4284,11 @@
    "cuisine": "global",
    "category": "drink",
    "per100g": {
-    "kcal": 70.0,
-    "protein": 1.5,
-    "carbs": 15.0,
-    "fat": 0.7,
-    "fibre": 1.5
+    "kcal": 66.0,
+    "protein": 2.3,
+    "carbs": 12.0,
+    "fat": 1.1,
+    "fibre": 1.1
    },
    "servings": [
     {
@@ -3605,7 +4305,18 @@
     "shake",
     "milkshake"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Fruit smoothie, NFS\"",
+   "estimate_per100g": {
+    "kcal": 70.0,
+    "protein": 1.5,
+    "carbs": 15.0,
+    "fat": 0.7,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2705513",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705513/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pizza",
@@ -3613,11 +4324,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 250.0,
-    "protein": 11.0,
-    "carbs": 31.0,
-    "fat": 9.0,
-    "fibre": 2.0
+    "kcal": 266.0,
+    "protein": 11.4,
+    "carbs": 33.3,
+    "fat": 9.7,
+    "fibre": 2.3
    },
    "servings": [
     {
@@ -3638,7 +4349,19 @@
     "margherita",
     "cheese pizza"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pizza, cheese, from restaurant or fast food, medium crust\"",
+   "estimate_per100g": {
+    "kcal": 250.0,
+    "protein": 11.0,
+    "carbs": 31.0,
+    "fat": 9.0,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708616",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708616/nutrients",
+   "source_note": "cheese pizza used for margherita",
+   "servings_source": "estimate"
   },
   {
    "id": "pepperoni-pizza",
@@ -3646,11 +4369,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 290.0,
-    "protein": 12.0,
+    "kcal": 282.0,
+    "protein": 11.7,
     "carbs": 32.0,
-    "fat": 12.5,
-    "fibre": 2.0
+    "fat": 11.9,
+    "fibre": 2.3
    },
    "servings": [
     {
@@ -3670,7 +4393,18 @@
    "aliases": [
     "meat pizza"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pizza with pepperoni, from restaurant or fast food,  medium crust\"",
+   "estimate_per100g": {
+    "kcal": 290.0,
+    "protein": 12.0,
+    "carbs": 32.0,
+    "fat": 12.5,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708640",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708640/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "burger",
@@ -3678,11 +4412,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 250.0,
-    "protein": 13.0,
-    "carbs": 25.0,
-    "fat": 11.0,
-    "fibre": 1.5
+    "kcal": 288.0,
+    "protein": 17.5,
+    "carbs": 20.7,
+    "fat": 14.4,
+    "fibre": 0.7
    },
    "servings": [
     {
@@ -3698,7 +4432,18 @@
    "aliases": [
     "beef burger"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Hamburger, NFS\"",
+   "estimate_per100g": {
+    "kcal": 250.0,
+    "protein": 13.0,
+    "carbs": 25.0,
+    "fat": 11.0,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2706920",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706920/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "cheeseburger",
@@ -3706,11 +4451,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 270.0,
-    "protein": 14.0,
-    "carbs": 24.0,
-    "fat": 13.0,
-    "fibre": 1.3
+    "kcal": 296.0,
+    "protein": 17.9,
+    "carbs": 18.7,
+    "fat": 16.1,
+    "fibre": 0.6
    },
    "servings": [
     {
@@ -3726,7 +4471,18 @@
    "aliases": [
     "double burger"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Cheeseburger, NFS\"",
+   "estimate_per100g": {
+    "kcal": 270.0,
+    "protein": 14.0,
+    "carbs": 24.0,
+    "fat": 13.0,
+    "fibre": 1.3
+   },
+   "verified": true,
+   "source_id": "fdc:2706888",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706888/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "veg-burger",
@@ -3734,11 +4490,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 230.0,
-    "protein": 6.0,
-    "carbs": 32.0,
-    "fat": 9.0,
-    "fibre": 3.0
+    "kcal": 224.0,
+    "protein": 13.0,
+    "carbs": 30.8,
+    "fat": 5.2,
+    "fibre": 3.5
    },
    "servings": [
     {
@@ -3754,7 +4510,18 @@
    "aliases": [
     "aloo tikki burger"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Veggie burger, on bun\"",
+   "estimate_per100g": {
+    "kcal": 230.0,
+    "protein": 6.0,
+    "carbs": 32.0,
+    "fat": 9.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707481",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707481/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "french-fries",
@@ -3762,11 +4529,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 312.0,
-    "protein": 3.4,
-    "carbs": 41.0,
-    "fat": 15.0,
-    "fibre": 3.8
+    "kcal": 225.0,
+    "protein": 2.5,
+    "carbs": 23.2,
+    "fat": 14.1,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -3792,7 +4559,18 @@
     "chips",
     "finger chips"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Potato, french fries, NFS\"",
+   "estimate_per100g": {
+    "kcal": 312.0,
+    "protein": 3.4,
+    "carbs": 41.0,
+    "fat": 15.0,
+    "fibre": 3.8
+   },
+   "verified": true,
+   "source_id": "fdc:2709456",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709456/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "hot-dog",
@@ -3800,11 +4578,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 290.0,
-    "protein": 10.0,
-    "carbs": 24.0,
-    "fat": 17.0,
-    "fibre": 1.0
+    "kcal": 296.0,
+    "protein": 10.8,
+    "carbs": 23.7,
+    "fat": 17.4,
+    "fibre": 0.8
    },
    "servings": [
     {
@@ -3820,7 +4598,18 @@
    "aliases": [
     "hotdog"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Hot dog sandwich, NFS, on white bun\"",
+   "estimate_per100g": {
+    "kcal": 290.0,
+    "protein": 10.0,
+    "carbs": 24.0,
+    "fat": 17.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707056",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707056/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "fried-chicken",
@@ -3828,11 +4617,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 290.0,
-    "protein": 20.0,
-    "carbs": 10.0,
-    "fat": 18.0,
-    "fibre": 0.5
+    "kcal": 251.0,
+    "protein": 21.8,
+    "carbs": 7.1,
+    "fat": 15.0,
+    "fibre": 0.2
    },
    "servings": [
     {
@@ -3849,7 +4638,18 @@
     "kfc",
     "chicken wings"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Chicken, NS as to part, fried, coated, skin / coating eaten\"",
+   "estimate_per100g": {
+    "kcal": 290.0,
+    "protein": 20.0,
+    "carbs": 10.0,
+    "fat": 18.0,
+    "fibre": 0.5
+   },
+   "verified": true,
+   "source_id": "fdc:2705949",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705949/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "tacos",
@@ -3857,11 +4657,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 220.0,
-    "protein": 9.0,
-    "carbs": 20.0,
-    "fat": 12.0,
-    "fibre": 3.0
+    "kcal": 246.0,
+    "protein": 15.3,
+    "carbs": 15.6,
+    "fat": 13.6,
+    "fibre": 2.2
    },
    "servings": [
     {
@@ -3877,7 +4677,18 @@
    "aliases": [
     "taco"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Taco, NFS\"",
+   "estimate_per100g": {
+    "kcal": 220.0,
+    "protein": 9.0,
+    "carbs": 20.0,
+    "fat": 12.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708514",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708514/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "burrito",
@@ -3885,11 +4696,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 200.0,
-    "protein": 8.0,
-    "carbs": 26.0,
-    "fat": 7.0,
-    "fibre": 3.0
+    "kcal": 219.0,
+    "protein": 11.1,
+    "carbs": 23.9,
+    "fat": 8.5,
+    "fibre": 2.5
    },
    "servings": [
     {
@@ -3905,7 +4716,18 @@
    "aliases": [
     "burrito bowl"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Burrito, NFS\"",
+   "estimate_per100g": {
+    "kcal": 200.0,
+    "protein": 8.0,
+    "carbs": 26.0,
+    "fat": 7.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708534",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708534/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "shawarma",
@@ -3934,7 +4756,11 @@
     "wrap",
     "doner"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "falafel",
@@ -3942,11 +4768,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 333.0,
-    "protein": 13.0,
-    "carbs": 32.0,
-    "fat": 18.0,
-    "fibre": 5.0
+    "kcal": 514.0,
+    "protein": 8.3,
+    "carbs": 29.0,
+    "fat": 41.2,
+    "fibre": 4.8
    },
    "servings": [
     {
@@ -3966,7 +4792,18 @@
    "aliases": [
     "felafel"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Falafel\"",
+   "estimate_per100g": {
+    "kcal": 333.0,
+    "protein": 13.0,
+    "carbs": 32.0,
+    "fat": 18.0,
+    "fibre": 5.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707408",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707408/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "hummus",
@@ -3974,11 +4811,11 @@
    "cuisine": "global",
    "category": "condiment",
    "per100g": {
-    "kcal": 166.0,
-    "protein": 8.0,
-    "carbs": 14.0,
-    "fat": 9.6,
-    "fibre": 6.0
+    "kcal": 243.0,
+    "protein": 7.3,
+    "carbs": 14.9,
+    "fat": 17.1,
+    "fibre": 5.4
    },
    "servings": [
     {
@@ -3998,7 +4835,18 @@
    "aliases": [
     "houmous"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Hummus, plain\"",
+   "estimate_per100g": {
+    "kcal": 166.0,
+    "protein": 8.0,
+    "carbs": 14.0,
+    "fat": 9.6,
+    "fibre": 6.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707402",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707402/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "spring-rolls",
@@ -4026,7 +4874,11 @@
    "aliases": [
     "egg rolls"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "nachos",
@@ -4034,11 +4886,11 @@
    "cuisine": "global",
    "category": "fast-food",
    "per100g": {
-    "kcal": 340.0,
-    "protein": 9.0,
-    "carbs": 36.0,
-    "fat": 18.0,
-    "fibre": 3.0
+    "kcal": 266.0,
+    "protein": 4.5,
+    "carbs": 27.8,
+    "fat": 15.7,
+    "fibre": 2.0
    },
    "servings": [
     {
@@ -4054,7 +4906,18 @@
    "aliases": [
     "nachos"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Nachos, cheese only\"",
+   "estimate_per100g": {
+    "kcal": 340.0,
+    "protein": 9.0,
+    "carbs": 36.0,
+    "fat": 18.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708577",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708577/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "potato-chips",
@@ -4062,11 +4925,11 @@
    "cuisine": "global",
    "category": "snack",
    "per100g": {
-    "kcal": 536.0,
-    "protein": 7.0,
-    "carbs": 53.0,
-    "fat": 35.0,
-    "fibre": 4.8
+    "kcal": 532.0,
+    "protein": 6.4,
+    "carbs": 53.8,
+    "fat": 34.0,
+    "fibre": 3.1
    },
    "servings": [
     {
@@ -4088,7 +4951,18 @@
     "wafers",
     "lays"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Potato chips, plain\"",
+   "estimate_per100g": {
+    "kcal": 536.0,
+    "protein": 7.0,
+    "carbs": 53.0,
+    "fat": 35.0,
+    "fibre": 4.8
+   },
+   "verified": true,
+   "source_id": "fdc:2709422",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709422/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "popcorn",
@@ -4096,11 +4970,11 @@
    "cuisine": "global",
    "category": "snack",
    "per100g": {
-    "kcal": 430.0,
-    "protein": 9.0,
-    "carbs": 60.0,
-    "fat": 18.0,
-    "fibre": 10.0
+    "kcal": 518.0,
+    "protein": 9.1,
+    "carbs": 55.0,
+    "fat": 30.6,
+    "fibre": 10.2
    },
    "servings": [
     {
@@ -4120,7 +4994,18 @@
    "aliases": [
     "popcorn"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Popcorn, NFS\"",
+   "estimate_per100g": {
+    "kcal": 430.0,
+    "protein": 9.0,
+    "carbs": 60.0,
+    "fat": 18.0,
+    "fibre": 10.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708216",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708216/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pasta-red",
@@ -4128,11 +5013,11 @@
    "cuisine": "global",
    "category": "pasta",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 5.0,
-    "carbs": 25.0,
-    "fat": 3.5,
-    "fibre": 2.0
+    "kcal": 160.0,
+    "protein": 3.4,
+    "carbs": 18.4,
+    "fat": 8.0,
+    "fibre": 1.7
    },
    "servings": [
     {
@@ -4149,7 +5034,18 @@
     "red sauce pasta",
     "penne arrabbiata"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pasta with tomato-based sauce, restaurant\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 5.0,
+    "carbs": 25.0,
+    "fat": 3.5,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708830",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708830/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pasta-white",
@@ -4157,11 +5053,11 @@
    "cuisine": "global",
    "category": "pasta",
    "per100g": {
-    "kcal": 200.0,
-    "protein": 6.0,
-    "carbs": 22.0,
-    "fat": 10.0,
-    "fibre": 1.0
+    "kcal": 204.0,
+    "protein": 3.7,
+    "carbs": 15.6,
+    "fat": 13.9,
+    "fibre": 0.9
    },
    "servings": [
     {
@@ -4178,7 +5074,18 @@
     "white sauce pasta",
     "fettuccine alfredo"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pasta with cream sauce, restaurant\"",
+   "estimate_per100g": {
+    "kcal": 200.0,
+    "protein": 6.0,
+    "carbs": 22.0,
+    "fat": 10.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708855",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708855/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "spaghetti",
@@ -4186,10 +5093,10 @@
    "cuisine": "global",
    "category": "pasta",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 7.0,
-    "carbs": 17.0,
-    "fat": 5.5,
+    "kcal": 178.0,
+    "protein": 5.4,
+    "carbs": 17.7,
+    "fat": 9.2,
     "fibre": 1.5
    },
    "servings": [
@@ -4207,7 +5114,18 @@
     "spaghetti",
     "bolognese"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pasta with tomato-based sauce and meat, restaurant\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 7.0,
+    "carbs": 17.0,
+    "fat": 5.5,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2708837",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708837/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "mac-cheese",
@@ -4215,11 +5133,11 @@
    "cuisine": "global",
    "category": "pasta",
    "per100g": {
-    "kcal": 165.0,
-    "protein": 6.5,
-    "carbs": 18.0,
-    "fat": 7.5,
-    "fibre": 0.8
+    "kcal": 223.0,
+    "protein": 8.7,
+    "carbs": 23.1,
+    "fat": 10.5,
+    "fibre": 1.2
    },
    "servings": [
     {
@@ -4235,7 +5153,18 @@
    "aliases": [
     "macaroni"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Macaroni or noodles with cheese\"",
+   "estimate_per100g": {
+    "kcal": 165.0,
+    "protein": 6.5,
+    "carbs": 18.0,
+    "fat": 7.5,
+    "fibre": 0.8
+   },
+   "verified": true,
+   "source_id": "fdc:2708811",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708811/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "lasagna",
@@ -4243,11 +5172,11 @@
    "cuisine": "global",
    "category": "pasta",
    "per100g": {
-    "kcal": 165.0,
-    "protein": 9.0,
-    "carbs": 16.0,
-    "fat": 7.0,
-    "fibre": 1.3
+    "kcal": 139.0,
+    "protein": 7.5,
+    "carbs": 16.2,
+    "fat": 5.0,
+    "fibre": 1.6
    },
    "servings": [
     {
@@ -4263,7 +5192,18 @@
    "aliases": [
     "lasagne"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Lasagna with meat\"",
+   "estimate_per100g": {
+    "kcal": 165.0,
+    "protein": 9.0,
+    "carbs": 16.0,
+    "fat": 7.0,
+    "fibre": 1.3
+   },
+   "verified": true,
+   "source_id": "fdc:2708750",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708750/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "ramen",
@@ -4271,11 +5211,11 @@
    "cuisine": "global",
    "category": "noodles",
    "per100g": {
-    "kcal": 95.0,
-    "protein": 4.5,
-    "carbs": 12.0,
-    "fat": 3.2,
-    "fibre": 0.8
+    "kcal": 127.0,
+    "protein": 7.1,
+    "carbs": 13.9,
+    "fat": 4.6,
+    "fibre": 0.9
    },
    "servings": [
     {
@@ -4292,7 +5232,18 @@
     "noodle soup",
     "pho"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Ramen bowl, NFS\"",
+   "estimate_per100g": {
+    "kcal": 95.0,
+    "protein": 4.5,
+    "carbs": 12.0,
+    "fat": 3.2,
+    "fibre": 0.8
+   },
+   "verified": true,
+   "source_id": "fdc:2709153",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709153/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "sushi",
@@ -4300,11 +5251,11 @@
    "cuisine": "global",
    "category": "asian",
    "per100g": {
-    "kcal": 145.0,
-    "protein": 5.5,
-    "carbs": 28.0,
+    "kcal": 94.0,
+    "protein": 2.9,
+    "carbs": 18.4,
     "fat": 0.7,
-    "fibre": 0.5
+    "fibre": 1.0
    },
    "servings": [
     {
@@ -4325,7 +5276,18 @@
     "maki",
     "nigiri"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Sushi, NFS\"",
+   "estimate_per100g": {
+    "kcal": 145.0,
+    "protein": 5.5,
+    "carbs": 28.0,
+    "fat": 0.7,
+    "fibre": 0.5
+   },
+   "verified": true,
+   "source_id": "fdc:2708959",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708959/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "green-salad",
@@ -4333,11 +5295,11 @@
    "cuisine": "global",
    "category": "salad",
    "per100g": {
-    "kcal": 20.0,
-    "protein": 1.3,
-    "carbs": 3.5,
+    "kcal": 24.0,
+    "protein": 1.1,
+    "carbs": 4.6,
     "fat": 0.2,
-    "fibre": 1.8
+    "fibre": 1.5
    },
    "servings": [
     {
@@ -4354,7 +5316,18 @@
     "salad",
     "garden salad"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Lettuce, salad with assorted vegetables including tomatoes and/or carrots, no dressing\"",
+   "estimate_per100g": {
+    "kcal": 20.0,
+    "protein": 1.3,
+    "carbs": 3.5,
+    "fat": 0.2,
+    "fibre": 1.8
+   },
+   "verified": true,
+   "source_id": "fdc:2709822",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709822/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "caesar-salad",
@@ -4382,7 +5355,11 @@
    "aliases": [
     "chicken caesar"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "greek-salad",
@@ -4410,7 +5387,11 @@
    "aliases": [
     "feta salad"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "fruit-salad",
@@ -4439,7 +5420,11 @@
     "fruit chaat",
     "fruit bowl"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "sandwich",
@@ -4447,11 +5432,11 @@
    "cuisine": "global",
    "category": "breakfast",
    "per100g": {
-    "kcal": 230.0,
-    "protein": 7.0,
-    "carbs": 32.0,
-    "fat": 8.0,
-    "fibre": 3.0
+    "kcal": 120.0,
+    "protein": 3.9,
+    "carbs": 21.5,
+    "fat": 2.1,
+    "fibre": 1.6
    },
    "servings": [
     {
@@ -4469,7 +5454,18 @@
     "bombay sandwich",
     "toast sandwich"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Vegetable sandwich on white\"",
+   "estimate_per100g": {
+    "kcal": 230.0,
+    "protein": 7.0,
+    "carbs": 32.0,
+    "fat": 8.0,
+    "fibre": 3.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709132",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709132/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "club-sandwich",
@@ -4477,11 +5473,11 @@
    "cuisine": "global",
    "category": "breakfast",
    "per100g": {
-    "kcal": 240.0,
-    "protein": 13.0,
-    "carbs": 24.0,
-    "fat": 10.0,
-    "fibre": 2.0
+    "kcal": 222.0,
+    "protein": 15.1,
+    "carbs": 23.1,
+    "fat": 7.5,
+    "fibre": 1.0
    },
    "servings": [
     {
@@ -4498,7 +5494,18 @@
     "club sandwich",
     "chicken sandwich"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Club sandwich on white\"",
+   "estimate_per100g": {
+    "kcal": 240.0,
+    "protein": 13.0,
+    "carbs": 24.0,
+    "fat": 10.0,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2706993",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706993/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "omelette",
@@ -4506,11 +5513,11 @@
    "cuisine": "global",
    "category": "egg",
    "per100g": {
-    "kcal": 155.0,
-    "protein": 10.5,
-    "carbs": 2.0,
-    "fat": 11.5,
-    "fibre": 0.3
+    "kcal": 192.0,
+    "protein": 11.6,
+    "carbs": 0.9,
+    "fat": 15.8,
+    "fibre": 0.0
    },
    "servings": [
     {
@@ -4527,7 +5534,18 @@
     "masala omelette",
     "omelet"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Egg omelet or scrambled egg, made with oil\"",
+   "estimate_per100g": {
+    "kcal": 155.0,
+    "protein": 10.5,
+    "carbs": 2.0,
+    "fat": 11.5,
+    "fibre": 0.3
+   },
+   "verified": true,
+   "source_id": "fdc:2707200",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707200/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "boiled-egg",
@@ -4561,7 +5579,18 @@
     "hard boiled egg",
     "anda"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - SR Legacy: \"Egg, whole, cooked, hard-boiled\"",
+   "estimate_per100g": {
+    "kcal": 155.0,
+    "protein": 12.6,
+    "carbs": 1.1,
+    "fat": 10.6,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:173424",
+   "source_url": "https://fdc.nal.usda.gov/food-details/173424/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "fried-egg",
@@ -4569,10 +5598,10 @@
    "cuisine": "global",
    "category": "egg",
    "per100g": {
-    "kcal": 196.0,
-    "protein": 13.6,
+    "kcal": 192.0,
+    "protein": 11.6,
     "carbs": 0.9,
-    "fat": 15.0,
+    "fat": 15.8,
     "fibre": 0.0
    },
    "servings": [
@@ -4594,7 +5623,18 @@
     "sunny side up",
     "egg fry"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Egg, whole, fried with oil\"",
+   "estimate_per100g": {
+    "kcal": 196.0,
+    "protein": 13.6,
+    "carbs": 0.9,
+    "fat": 15.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707158",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707158/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "scrambled-eggs",
@@ -4602,10 +5642,10 @@
    "cuisine": "global",
    "category": "egg",
    "per100g": {
-    "kcal": 150.0,
-    "protein": 10.0,
-    "carbs": 1.6,
-    "fat": 11.0,
+    "kcal": 185.0,
+    "protein": 11.6,
+    "carbs": 0.9,
+    "fat": 15.0,
     "fibre": 0.0
    },
    "servings": [
@@ -4622,7 +5662,18 @@
    "aliases": [
     "scrambled egg"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Egg omelet or scrambled egg, NS as to fat\"",
+   "estimate_per100g": {
+    "kcal": 150.0,
+    "protein": 10.0,
+    "carbs": 1.6,
+    "fat": 11.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707198",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707198/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pancakes",
@@ -4630,11 +5681,11 @@
    "cuisine": "global",
    "category": "breakfast",
    "per100g": {
-    "kcal": 227.0,
-    "protein": 6.0,
-    "carbs": 28.0,
-    "fat": 10.0,
-    "fibre": 1.0
+    "kcal": 282.0,
+    "protein": 7.4,
+    "carbs": 35.3,
+    "fat": 12.1,
+    "fibre": 2.1
    },
    "servings": [
     {
@@ -4654,7 +5705,18 @@
    "aliases": [
     "hotcakes"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pancakes, plain\"",
+   "estimate_per100g": {
+    "kcal": 227.0,
+    "protein": 6.0,
+    "carbs": 28.0,
+    "fat": 10.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2708304",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708304/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "waffles",
@@ -4662,11 +5724,11 @@
    "cuisine": "global",
    "category": "breakfast",
    "per100g": {
-    "kcal": 290.0,
-    "protein": 8.0,
-    "carbs": 33.0,
-    "fat": 14.0,
-    "fibre": 1.5
+    "kcal": 373.0,
+    "protein": 8.7,
+    "carbs": 41.5,
+    "fat": 18.8,
+    "fibre": 2.5
    },
    "servings": [
     {
@@ -4682,7 +5744,18 @@
    "aliases": [
     "waffle"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Waffle, plain\"",
+   "estimate_per100g": {
+    "kcal": 290.0,
+    "protein": 8.0,
+    "carbs": 33.0,
+    "fat": 14.0,
+    "fibre": 1.5
+   },
+   "verified": true,
+   "source_id": "fdc:2708325",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708325/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "oatmeal",
@@ -4690,10 +5763,10 @@
    "cuisine": "global",
    "category": "breakfast",
    "per100g": {
-    "kcal": 105.0,
-    "protein": 4.0,
-    "carbs": 15.0,
-    "fat": 3.0,
+    "kcal": 116.0,
+    "protein": 5.6,
+    "carbs": 16.2,
+    "fat": 3.2,
     "fibre": 1.7
    },
    "servings": [
@@ -4712,7 +5785,18 @@
     "porridge",
     "dalia"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Oatmeal, regular or quick, made with milk, no added fat\"",
+   "estimate_per100g": {
+    "kcal": 105.0,
+    "protein": 4.0,
+    "carbs": 15.0,
+    "fat": 3.0,
+    "fibre": 1.7
+   },
+   "verified": true,
+   "source_id": "fdc:2708383",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708383/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "cornflakes",
@@ -4741,7 +5825,11 @@
     "cereal",
     "muesli"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "white-bread",
@@ -4749,11 +5837,11 @@
    "cuisine": "global",
    "category": "bread",
    "per100g": {
-    "kcal": 265.0,
-    "protein": 9.0,
-    "carbs": 49.0,
-    "fat": 3.2,
-    "fibre": 2.7
+    "kcal": 267.0,
+    "protein": 9.4,
+    "carbs": 49.2,
+    "fat": 3.6,
+    "fibre": 2.3
    },
    "servings": [
     {
@@ -4774,7 +5862,18 @@
     "bread",
     "toast"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, white\"",
+   "estimate_per100g": {
+    "kcal": 265.0,
+    "protein": 9.0,
+    "carbs": 49.0,
+    "fat": 3.2,
+    "fibre": 2.7
+   },
+   "verified": true,
+   "source_id": "fdc:2707598",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707598/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "brown-bread",
@@ -4782,9 +5881,9 @@
    "cuisine": "global",
    "category": "bread",
    "per100g": {
-    "kcal": 250.0,
-    "protein": 12.0,
-    "carbs": 43.0,
+    "kcal": 254.0,
+    "protein": 12.3,
+    "carbs": 43.1,
     "fat": 3.5,
     "fibre": 6.0
    },
@@ -4807,7 +5906,18 @@
     "whole wheat bread",
     "multigrain bread"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bread, whole wheat\"",
+   "estimate_per100g": {
+    "kcal": 250.0,
+    "protein": 12.0,
+    "carbs": 43.0,
+    "fat": 3.5,
+    "fibre": 6.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707709",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707709/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "bread-butter",
@@ -4840,7 +5950,11 @@
     "toast",
     "butter toast"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "Estimate - typical recipe, written by the project author; not checked against a food database",
+   "verified": false,
+   "source_id": null,
+   "source_url": null,
+   "servings_source": "estimate"
   },
   {
    "id": "croissant",
@@ -4849,8 +5963,8 @@
    "category": "bakery",
    "per100g": {
     "kcal": 406.0,
-    "protein": 8.0,
-    "carbs": 46.0,
+    "protein": 8.2,
+    "carbs": 45.8,
     "fat": 21.0,
     "fibre": 2.6
    },
@@ -4868,7 +5982,18 @@
    "aliases": [
     "croissant"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Croissant\"",
+   "estimate_per100g": {
+    "kcal": 406.0,
+    "protein": 8.0,
+    "carbs": 46.0,
+    "fat": 21.0,
+    "fibre": 2.6
+   },
+   "verified": true,
+   "source_id": "fdc:2707678",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707678/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "bagel",
@@ -4876,11 +6001,11 @@
    "cuisine": "global",
    "category": "bakery",
    "per100g": {
-    "kcal": 257.0,
-    "protein": 10.0,
-    "carbs": 50.0,
-    "fat": 1.6,
-    "fibre": 2.2
+    "kcal": 264.0,
+    "protein": 10.6,
+    "carbs": 52.4,
+    "fat": 1.3,
+    "fibre": 1.6
    },
    "servings": [
     {
@@ -4896,7 +6021,18 @@
    "aliases": [
     "bagel"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Bagel\"",
+   "estimate_per100g": {
+    "kcal": 257.0,
+    "protein": 10.0,
+    "carbs": 50.0,
+    "fat": 1.6,
+    "fibre": 2.2
+   },
+   "verified": true,
+   "source_id": "fdc:2707684",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707684/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "donut",
@@ -4904,11 +6040,11 @@
    "cuisine": "global",
    "category": "bakery",
    "per100g": {
-    "kcal": 452.0,
-    "protein": 5.0,
-    "carbs": 51.0,
-    "fat": 25.0,
-    "fibre": 1.7
+    "kcal": 426.0,
+    "protein": 5.5,
+    "carbs": 49.5,
+    "fat": 22.9,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -4924,7 +6060,18 @@
    "aliases": [
     "donut"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Doughnut, NFS\"",
+   "estimate_per100g": {
+    "kcal": 452.0,
+    "protein": 5.0,
+    "carbs": 51.0,
+    "fat": 25.0,
+    "fibre": 1.7
+   },
+   "verified": true,
+   "source_id": "fdc:2708062",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2708062/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "cake",
@@ -4932,11 +6079,11 @@
    "cuisine": "global",
    "category": "dessert",
    "per100g": {
-    "kcal": 370.0,
-    "protein": 5.0,
-    "carbs": 53.0,
-    "fat": 16.0,
-    "fibre": 2.0
+    "kcal": 345.0,
+    "protein": 3.3,
+    "carbs": 52.2,
+    "fat": 15.2,
+    "fibre": 1.6
    },
    "servings": [
     {
@@ -4953,7 +6100,18 @@
     "cake",
     "pastry"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Cake or cupcake, chocolate with chocolate icing, bakery\"",
+   "estimate_per100g": {
+    "kcal": 370.0,
+    "protein": 5.0,
+    "carbs": 53.0,
+    "fat": 16.0,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707866",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707866/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "brownie",
@@ -4961,11 +6119,11 @@
    "cuisine": "global",
    "category": "dessert",
    "per100g": {
-    "kcal": 466.0,
-    "protein": 6.0,
-    "carbs": 50.0,
-    "fat": 29.0,
-    "fibre": 2.4
+    "kcal": 405.0,
+    "protein": 4.8,
+    "carbs": 63.9,
+    "fat": 16.3,
+    "fibre": 2.1
    },
    "servings": [
     {
@@ -4981,7 +6139,18 @@
    "aliases": [
     "brownies"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Cookie, brownie, NS as to icing\"",
+   "estimate_per100g": {
+    "kcal": 466.0,
+    "protein": 6.0,
+    "carbs": 50.0,
+    "fat": 29.0,
+    "fibre": 2.4
+   },
+   "verified": true,
+   "source_id": "fdc:2707903",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707903/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "cookies",
@@ -4989,10 +6158,10 @@
    "cuisine": "global",
    "category": "dessert",
    "per100g": {
-    "kcal": 480.0,
-    "protein": 5.0,
-    "carbs": 65.0,
-    "fat": 23.0,
+    "kcal": 492.0,
+    "protein": 5.1,
+    "carbs": 65.4,
+    "fat": 24.7,
     "fibre": 2.0
    },
    "servings": [
@@ -5014,7 +6183,18 @@
     "biscuits",
     "biscuit"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Cookie, chocolate chip\"",
+   "estimate_per100g": {
+    "kcal": 480.0,
+    "protein": 5.0,
+    "carbs": 65.0,
+    "fat": 23.0,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707909",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707909/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "ice-cream",
@@ -5024,7 +6204,7 @@
    "per100g": {
     "kcal": 207.0,
     "protein": 3.5,
-    "carbs": 24.0,
+    "carbs": 23.6,
     "fat": 11.0,
     "fibre": 0.7
    },
@@ -5047,7 +6227,18 @@
     "gelato",
     "sundae"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Ice cream, vanilla\"",
+   "estimate_per100g": {
+    "kcal": 207.0,
+    "protein": 3.5,
+    "carbs": 24.0,
+    "fat": 11.0,
+    "fibre": 0.7
+   },
+   "verified": true,
+   "source_id": "fdc:2705630",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705630/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "chocolate",
@@ -5057,8 +6248,8 @@
    "per100g": {
     "kcal": 535.0,
     "protein": 7.7,
-    "carbs": 59.0,
-    "fat": 30.0,
+    "carbs": 59.4,
+    "fat": 29.7,
     "fibre": 3.4
    },
    "servings": [
@@ -5080,7 +6271,18 @@
     "dairy milk",
     "dark chocolate"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - SR Legacy: \"Candies, milk chocolate\"",
+   "estimate_per100g": {
+    "kcal": 535.0,
+    "protein": 7.7,
+    "carbs": 59.0,
+    "fat": 30.0,
+    "fibre": 3.4
+   },
+   "verified": true,
+   "source_id": "fdc:167587",
+   "source_url": "https://fdc.nal.usda.gov/food-details/167587/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "tomato-soup",
@@ -5088,10 +6290,10 @@
    "cuisine": "global",
    "category": "soup",
    "per100g": {
-    "kcal": 60.0,
-    "protein": 1.5,
-    "carbs": 9.0,
-    "fat": 2.0,
+    "kcal": 70.0,
+    "protein": 1.2,
+    "carbs": 6.4,
+    "fat": 4.7,
     "fibre": 1.0
    },
    "servings": [
@@ -5109,7 +6311,18 @@
     "soup",
     "cream of tomato"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Soup, cream of tomato\"",
+   "estimate_per100g": {
+    "kcal": 60.0,
+    "protein": 1.5,
+    "carbs": 9.0,
+    "fat": 2.0,
+    "fibre": 1.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709758",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709758/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "chicken-soup",
@@ -5117,11 +6330,11 @@
    "cuisine": "global",
    "category": "soup",
    "per100g": {
-    "kcal": 45.0,
-    "protein": 3.5,
+    "kcal": 40.0,
+    "protein": 3.4,
     "carbs": 4.0,
-    "fat": 1.5,
-    "fibre": 0.5
+    "fat": 1.1,
+    "fibre": 0.8
    },
    "servings": [
     {
@@ -5138,7 +6351,18 @@
     "manchow soup",
     "clear soup"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Soup, chicken\"",
+   "estimate_per100g": {
+    "kcal": 45.0,
+    "protein": 3.5,
+    "carbs": 4.0,
+    "fat": 1.5,
+    "fibre": 0.5
+   },
+   "verified": true,
+   "source_id": "fdc:2707134",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707134/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "grilled-chicken",
@@ -5146,10 +6370,10 @@
    "cuisine": "global",
    "category": "protein",
    "per100g": {
-    "kcal": 165.0,
-    "protein": 31.0,
+    "kcal": 176.0,
+    "protein": 29.6,
     "carbs": 0.0,
-    "fat": 3.6,
+    "fat": 5.5,
     "fibre": 0.0
    },
    "servings": [
@@ -5166,7 +6390,18 @@
    "aliases": [
     "chicken breast"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Chicken breast, grilled without sauce, skin not eaten\"",
+   "estimate_per100g": {
+    "kcal": 165.0,
+    "protein": 31.0,
+    "carbs": 0.0,
+    "fat": 3.6,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2705968",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705968/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "steak",
@@ -5174,10 +6409,10 @@
    "cuisine": "global",
    "category": "protein",
    "per100g": {
-    "kcal": 250.0,
-    "protein": 26.0,
+    "kcal": 229.0,
+    "protein": 27.0,
     "carbs": 0.0,
-    "fat": 16.0,
+    "fat": 12.9,
     "fibre": 0.0
    },
    "servings": [
@@ -5194,7 +6429,18 @@
    "aliases": [
     "beef steak"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Beef, steak, NFS\"",
+   "estimate_per100g": {
+    "kcal": 250.0,
+    "protein": 26.0,
+    "carbs": 0.0,
+    "fat": 16.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2705824",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705824/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "salmon",
@@ -5202,10 +6448,10 @@
    "cuisine": "global",
    "category": "protein",
    "per100g": {
-    "kcal": 206.0,
-    "protein": 22.0,
+    "kcal": 259.0,
+    "protein": 25.9,
     "carbs": 0.0,
-    "fat": 12.0,
+    "fat": 16.5,
     "fibre": 0.0
    },
    "servings": [
@@ -5223,7 +6469,18 @@
     "fish fillet",
     "salmon"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Fish, salmon, grilled\"",
+   "estimate_per100g": {
+    "kcal": 206.0,
+    "protein": 22.0,
+    "carbs": 0.0,
+    "fat": 12.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2706287",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2706287/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "tofu",
@@ -5231,11 +6488,11 @@
    "cuisine": "global",
    "category": "protein",
    "per100g": {
-    "kcal": 76.0,
-    "protein": 8.0,
-    "carbs": 1.9,
-    "fat": 4.8,
-    "fibre": 0.3
+    "kcal": 61.0,
+    "protein": 7.2,
+    "carbs": 1.2,
+    "fat": 3.7,
+    "fibre": 0.2
    },
    "servings": [
     {
@@ -5251,7 +6508,18 @@
    "aliases": [
     "bean curd"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Soybean curd\"",
+   "estimate_per100g": {
+    "kcal": 76.0,
+    "protein": 8.0,
+    "carbs": 1.9,
+    "fat": 4.8,
+    "fibre": 0.3
+   },
+   "verified": true,
+   "source_id": "fdc:2707435",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707435/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "greek-yogurt",
@@ -5259,10 +6527,10 @@
    "cuisine": "global",
    "category": "dairy",
    "per100g": {
-    "kcal": 97.0,
-    "protein": 9.0,
-    "carbs": 4.0,
-    "fat": 5.0,
+    "kcal": 94.0,
+    "protein": 8.8,
+    "carbs": 4.8,
+    "fat": 4.4,
     "fibre": 0.0
    },
    "servings": [
@@ -5279,7 +6547,18 @@
    "aliases": [
     "hung curd"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Yogurt, Greek, whole milk, plain\"",
+   "estimate_per100g": {
+    "kcal": 97.0,
+    "protein": 9.0,
+    "carbs": 4.0,
+    "fat": 5.0,
+    "fibre": 0.0
+   },
+   "verified": true,
+   "source_id": "fdc:2705422",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2705422/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "peanut-butter",
@@ -5287,11 +6566,11 @@
    "cuisine": "global",
    "category": "condiment",
    "per100g": {
-    "kcal": 588.0,
-    "protein": 25.0,
-    "carbs": 20.0,
-    "fat": 50.0,
-    "fibre": 6.0
+    "kcal": 598.0,
+    "protein": 22.2,
+    "carbs": 22.3,
+    "fat": 51.4,
+    "fibre": 5.0
    },
    "servings": [
     {
@@ -5307,7 +6586,18 @@
    "aliases": [
     "pb"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Peanut butter\"",
+   "estimate_per100g": {
+    "kcal": 588.0,
+    "protein": 25.0,
+    "carbs": 20.0,
+    "fat": 50.0,
+    "fibre": 6.0
+   },
+   "verified": true,
+   "source_id": "fdc:2707537",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2707537/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "almonds",
@@ -5316,9 +6606,9 @@
    "category": "nuts",
    "per100g": {
     "kcal": 579.0,
-    "protein": 21.0,
-    "carbs": 22.0,
-    "fat": 50.0,
+    "protein": 21.1,
+    "carbs": 21.6,
+    "fat": 49.9,
     "fibre": 12.5
    },
    "servings": [
@@ -5340,7 +6630,18 @@
     "badam",
     "nuts"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - SR Legacy: \"Nuts, almonds\"",
+   "estimate_per100g": {
+    "kcal": 579.0,
+    "protein": 21.0,
+    "carbs": 22.0,
+    "fat": 50.0,
+    "fibre": 12.5
+   },
+   "verified": true,
+   "source_id": "fdc:170567",
+   "source_url": "https://fdc.nal.usda.gov/food-details/170567/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "banana",
@@ -5348,11 +6649,11 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 89.0,
-    "protein": 1.1,
-    "carbs": 23.0,
+    "kcal": 97.0,
+    "protein": 0.7,
+    "carbs": 22.7,
     "fat": 0.3,
-    "fibre": 2.6
+    "fibre": 1.7
    },
    "servings": [
     {
@@ -5372,7 +6673,18 @@
    "aliases": [
     "kela"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Banana, raw\"",
+   "estimate_per100g": {
+    "kcal": 89.0,
+    "protein": 1.1,
+    "carbs": 23.0,
+    "fat": 0.3,
+    "fibre": 2.6
+   },
+   "verified": true,
+   "source_id": "fdc:2709224",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709224/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "apple",
@@ -5380,11 +6692,11 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 52.0,
-    "protein": 0.3,
-    "carbs": 14.0,
-    "fat": 0.2,
-    "fibre": 2.4
+    "kcal": 61.0,
+    "protein": 0.2,
+    "carbs": 14.8,
+    "fat": 0.1,
+    "fibre": 2.1
    },
    "servings": [
     {
@@ -5400,7 +6712,18 @@
    "aliases": [
     "seb"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Apple, raw\"",
+   "estimate_per100g": {
+    "kcal": 52.0,
+    "protein": 0.3,
+    "carbs": 14.0,
+    "fat": 0.2,
+    "fibre": 2.4
+   },
+   "verified": true,
+   "source_id": "fdc:2709215",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709215/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "mango",
@@ -5432,7 +6755,18 @@
    "aliases": [
     "aam"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Mango, raw\"",
+   "estimate_per100g": {
+    "kcal": 60.0,
+    "protein": 0.8,
+    "carbs": 15.0,
+    "fat": 0.4,
+    "fibre": 1.6
+   },
+   "verified": true,
+   "source_id": "fdc:2709242",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709242/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "orange",
@@ -5440,11 +6774,11 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 47.0,
+    "kcal": 50.0,
     "protein": 0.9,
-    "carbs": 12.0,
+    "carbs": 11.8,
     "fat": 0.1,
-    "fibre": 2.4
+    "fibre": 2.2
    },
    "servings": [
     {
@@ -5461,7 +6795,18 @@
     "santra",
     "mosambi"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Orange, raw\"",
+   "estimate_per100g": {
+    "kcal": 47.0,
+    "protein": 0.9,
+    "carbs": 12.0,
+    "fat": 0.1,
+    "fibre": 2.4
+   },
+   "verified": true,
+   "source_id": "fdc:2709171",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709171/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "grapes",
@@ -5469,9 +6814,9 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 69.0,
-    "protein": 0.7,
-    "carbs": 18.0,
+    "kcal": 83.0,
+    "protein": 0.9,
+    "carbs": 19.4,
     "fat": 0.2,
     "fibre": 0.9
    },
@@ -5489,7 +6834,18 @@
    "aliases": [
     "angoor"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Grapes, raw\"",
+   "estimate_per100g": {
+    "kcal": 69.0,
+    "protein": 0.7,
+    "carbs": 18.0,
+    "fat": 0.2,
+    "fibre": 0.9
+   },
+   "verified": true,
+   "source_id": "fdc:2709237",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709237/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "watermelon",
@@ -5499,8 +6855,8 @@
    "per100g": {
     "kcal": 30.0,
     "protein": 0.6,
-    "carbs": 7.6,
-    "fat": 0.2,
+    "carbs": 7.5,
+    "fat": 0.1,
     "fibre": 0.4
    },
    "servings": [
@@ -5521,7 +6877,18 @@
    "aliases": [
     "tarbooz"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Watermelon, raw\"",
+   "estimate_per100g": {
+    "kcal": 30.0,
+    "protein": 0.6,
+    "carbs": 7.6,
+    "fat": 0.2,
+    "fibre": 0.4
+   },
+   "verified": true,
+   "source_id": "fdc:2709270",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709270/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "papaya",
@@ -5531,7 +6898,7 @@
    "per100g": {
     "kcal": 43.0,
     "protein": 0.5,
-    "carbs": 11.0,
+    "carbs": 10.8,
     "fat": 0.3,
     "fibre": 1.7
    },
@@ -5549,7 +6916,18 @@
    "aliases": [
     "papita"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Papaya, raw\"",
+   "estimate_per100g": {
+    "kcal": 43.0,
+    "protein": 0.5,
+    "carbs": 11.0,
+    "fat": 0.3,
+    "fibre": 1.7
+   },
+   "verified": true,
+   "source_id": "fdc:2709246",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709246/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pineapple",
@@ -5557,11 +6935,11 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 50.0,
+    "kcal": 60.0,
     "protein": 0.5,
-    "carbs": 13.0,
-    "fat": 0.1,
-    "fibre": 1.4
+    "carbs": 14.1,
+    "fat": 0.2,
+    "fibre": 0.9
    },
    "servings": [
     {
@@ -5577,7 +6955,18 @@
    "aliases": [
     "ananas"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pineapple, raw\"",
+   "estimate_per100g": {
+    "kcal": 50.0,
+    "protein": 0.5,
+    "carbs": 13.0,
+    "fat": 0.1,
+    "fibre": 1.4
+   },
+   "verified": true,
+   "source_id": "fdc:2709260",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709260/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "strawberries",
@@ -5585,11 +6974,11 @@
    "cuisine": "global",
    "category": "fruit",
    "per100g": {
-    "kcal": 32.0,
-    "protein": 0.7,
-    "carbs": 7.7,
-    "fat": 0.3,
-    "fibre": 2.0
+    "kcal": 36.0,
+    "protein": 0.6,
+    "carbs": 8.0,
+    "fat": 0.2,
+    "fibre": 1.8
    },
    "servings": [
     {
@@ -5605,7 +6994,18 @@
    "aliases": [
     "strawberry"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Strawberries, raw\"",
+   "estimate_per100g": {
+    "kcal": 32.0,
+    "protein": 0.7,
+    "carbs": 7.7,
+    "fat": 0.3,
+    "fibre": 2.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709283",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709283/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "guava",
@@ -5614,9 +7014,9 @@
    "category": "fruit",
    "per100g": {
     "kcal": 68.0,
-    "protein": 2.6,
-    "carbs": 14.0,
-    "fat": 1.0,
+    "protein": 2.5,
+    "carbs": 14.3,
+    "fat": 0.9,
     "fibre": 5.4
    },
    "servings": [
@@ -5634,7 +7034,18 @@
     "amrood",
     "peru"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Guava, raw\"",
+   "estimate_per100g": {
+    "kcal": 68.0,
+    "protein": 2.6,
+    "carbs": 14.0,
+    "fat": 1.0,
+    "fibre": 5.4
+   },
+   "verified": true,
+   "source_id": "fdc:2709238",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709238/nutrients",
+   "servings_source": "estimate"
   },
   {
    "id": "pomegranate",
@@ -5644,7 +7055,7 @@
    "per100g": {
     "kcal": 83.0,
     "protein": 1.7,
-    "carbs": 19.0,
+    "carbs": 18.7,
     "fat": 1.2,
     "fibre": 4.0
    },
@@ -5662,7 +7073,18 @@
    "aliases": [
     "anar"
    ],
-   "source": "USDA FoodData Central (approx.)"
+   "source": "USDA FoodData Central - FNDDS 2021-2023 (Survey, release 2024-10-31): \"Pomegranate, raw\"",
+   "estimate_per100g": {
+    "kcal": 83.0,
+    "protein": 1.7,
+    "carbs": 19.0,
+    "fat": 1.2,
+    "fibre": 4.0
+   },
+   "verified": true,
+   "source_id": "fdc:2709267",
+   "source_url": "https://fdc.nal.usda.gov/food-details/2709267/nutrients",
+   "servings_source": "estimate"
   }
  ]
 }

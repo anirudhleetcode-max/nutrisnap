@@ -19,3 +19,6 @@ dist/
 .DS_Store
 .vscode/
 .idea/
+
+# USDA bulk downloads (re-fetched by `python -m scripts.usda_verify`)
+backend/data/usda_cache/
