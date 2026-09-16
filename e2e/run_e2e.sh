@@ -32,7 +32,8 @@ PIDS+=($!)
 
 cd "$ROOT/frontend"
 npm run build --silent >/dev/null
-npx vite preview --host 127.0.0.1 --port 5176 --strictPort >/dev/null 2>&1 &
+# run the vite binary directly (not via npx) so $! is the server process itself
+./node_modules/.bin/vite preview --host 127.0.0.1 --port 5176 --strictPort >/dev/null 2>&1 &
 PIDS+=($!)
 
 wait_for http://127.0.0.1:8004/api/health
