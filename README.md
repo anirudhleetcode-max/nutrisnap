@@ -342,6 +342,16 @@ Captured by the e2e run from the running app (`docs/screenshots/`):
 - *Why are only half the foods verified?* Only foods with a same-dish USDA record were mapped. Many Indian dishes (poha, rajma curry, dhokla…) have no queryable authoritative record, so they stay labelled as estimates.
 - *What is stored about my photos?* A 480 px thumbnail without EXIF (deleted after 24 h unless logged) and a 512-number embedding. Embeddings of corrected photos are kept for personalisation until you delete them.
 
+## Deployment
+
+Live demo: not deployed yet.
+Repository: not published yet.
+
+Production setup: React build on **Vercel** (`frontend/vercel.json` rewrites `/api/*` to the API),
+FastAPI in **Docker on Render** (`render.yaml`, `backend/Dockerfile`), data in **MongoDB Atlas**.
+Step-by-step instructions, environment variables and measured memory use are in
+[docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
 ## Limitations
 
 - **Closed food list** (188 foods). The probe covers only 45 of them.
@@ -374,6 +384,8 @@ Results from the final run on 2026-09-16:
 - **pytest** covers auth, rate limiting, JWT guard, CORS, food search and provenance, meals CRUD and user isolation, trends, nutrition maths, ML units (preprocessing, hybrid, temperature fitting, threshold picking, probe round-trip, kNN), and recognition robustness: empty, non-image, truncated, tiny, 81 MP pixel bomb, dark photo, low-confidence path, missing model files, corrupt model files, and the model card.
 - **The e2e test** registers a user, sets a profile (checks 2,090 kcal), uploads a real pizza photo (checks the USDA badge), logs 2 slices (532 kcal), edits to 2.5 slices (665), checks trends, cancels a delete dialog, opens the model page, uses the demo account (checks the demo banner and the "not sure" state), and takes desktop and 375 px screenshots.
 - **CI:** `.github/workflows/ci.yml` runs pytest (with a MongoDB service container and cached model download) plus the frontend build and vitest. It has not been run on GitHub yet.
+
+On Windows, run the e2e script from **Git Bash** with the backend virtual environment active, and point it at that interpreter: `PYTHON=python bash e2e/run_e2e.sh`. Install the browser once with `python -m playwright install chromium`.
 
 ## License
 
