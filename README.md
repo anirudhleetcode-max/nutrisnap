@@ -344,13 +344,26 @@ Captured by the e2e run from the running app (`docs/screenshots/`):
 
 ## Deployment
 
-Live demo: not deployed yet.
-Repository: not published yet.
+- **Live demo:** https://nutrisnap-anirudh-ed2c.vercel.app
+- **API:** https://nutrisnap-api-o5pk.onrender.com/api/health
+- **Repository:** https://github.com/anirudhleetcode-max/nutrisnap
 
 Production setup: React build on **Vercel** (`frontend/vercel.json` rewrites `/api/*` to the API),
 FastAPI in **Docker on Render** (`render.yaml`, `backend/Dockerfile`), data in **MongoDB Atlas**.
 Step-by-step instructions, environment variables and measured memory use are in
 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
+The API runs on Render's **free** instance, which sleeps after ~15 minutes idle: the first request
+after that takes roughly a minute while the container starts. Verified in production on
+2026-09-17: health `ok`, database connected, model loaded, and CORS restricted to the Vercel
+origin above (other origins get no `Access-Control-Allow-Origin` header).
+
+Checked live: the CLIP ONNX model loads in the container (188 classes) and real inference runs on
+CPU in **≈4.5 s** per image. `tests/fixtures/pizza.jpg` returned **Margherita Pizza at 0.992**, with
+nutrition attributed to *USDA FoodData Central — FNDDS 2021-2023*. `tests/fixtures/dosa.jpg` was a
+**top-1 miss**: *Aloo Paratha* (0.315) ranked above the correct *Masala Dosa* (0.251), which is the
+kind of confusion the zero-shot model is expected to make between similar Indian dishes. A
+non-image upload was rejected with **415**.
 
 ## Limitations
 
@@ -383,7 +396,7 @@ Results from the final run on 2026-09-16:
 
 - **pytest** covers auth, rate limiting, JWT guard, CORS, food search and provenance, meals CRUD and user isolation, trends, nutrition maths, ML units (preprocessing, hybrid, temperature fitting, threshold picking, probe round-trip, kNN), and recognition robustness: empty, non-image, truncated, tiny, 81 MP pixel bomb, dark photo, low-confidence path, missing model files, corrupt model files, and the model card.
 - **The e2e test** registers a user, sets a profile (checks 2,090 kcal), uploads a real pizza photo (checks the USDA badge), logs 2 slices (532 kcal), edits to 2.5 slices (665), checks trends, cancels a delete dialog, opens the model page, uses the demo account (checks the demo banner and the "not sure" state), and takes desktop and 375 px screenshots.
-- **CI:** `.github/workflows/ci.yml` runs pytest (with a MongoDB service container and cached model download) plus the frontend build and vitest. It has not been run on GitHub yet.
+- **CI:** `.github/workflows/ci.yml` runs pytest (with a MongoDB service container and cached model download) plus the frontend build and vitest. It runs green on GitHub Actions (50 backend, 21 frontend, build).
 
 On Windows, run the e2e script from **Git Bash** with the backend virtual environment active, and point it at that interpreter: `PYTHON=python bash e2e/run_e2e.sh`. Install the browser once with `python -m playwright install chromium`.
 
