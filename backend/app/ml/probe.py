@@ -45,4 +45,8 @@ def train_probe(X: np.ndarray, y: list[str], C: float, seed: int) -> LinearProbe
 
     clf = LogisticRegression(C=C, max_iter=3000, random_state=seed)
     clf.fit(X, y)
-    return LinearProbe(clf.coef_, clf.intercept_, [str(c) for c in clf.classes_])
+    W, b = clf.coef_, clf.intercept_
+    if W.shape[0] == 1:  # binary case: sigmoid(z) == softmax([0, z])
+        W = np.vstack([np.zeros_like(W), W])
+        b = np.concatenate([[0.0], b])
+    return LinearProbe(W, b, [str(c) for c in clf.classes_])
