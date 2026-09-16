@@ -12,6 +12,11 @@ export type Food = {
   servings: Serving[];
   aliases: string[];
   source: string;
+  verified?: boolean;
+  source_id?: string | null;
+  source_url?: string | null;
+  source_note?: string;
+  servings_source?: string;
 };
 
 export type Candidate = { food: Food; confidence: number; zero_shot: number };
@@ -26,6 +31,37 @@ export type Recognition = {
   personal_weight: number;
   suggested_meal_type: MealType;
   timing_ms: number;
+  decision?: "confident" | "uncertain" | "not_food";
+  confidence?: number;
+  abstain_below?: number;
+  calibrated?: boolean;
+  model_version?: string;
+  probe_used?: boolean;
+  quality_warnings?: string[];
+};
+
+export type ModelCard = {
+  loaded: boolean;
+  error?: string | null;
+  name?: string;
+  version?: string;
+  mode?: string;
+  backbone?: { model: string; weights: string; source: string; license: string; runtime: string; embedding_dim: number };
+  preprocessing?: string;
+  classes?: number;
+  zero_shot?: { templates_per_class: number; logit_scale: number };
+  probe?: { model: string; trained_at: string; train_size: number; C: number; classes: string[]; synthetic: boolean } | null;
+  settings?: { temperature: number; abstain_below: number; not_food_below: number; hybrid_weight: number; calibrated: boolean };
+  metrics?: Record<string, unknown> | null;
+  evaluated_on?: { "train/val/test": string; sizes: Record<string, number>; ood: string } | null;
+  trained_at?: string | null;
+  experiment?: string | null;
+  limitations?: string[];
+};
+
+export type FoodsMeta = {
+  total: number; verified: number; indian_total: number; indian_verified: number;
+  verified_source: string; servings_verified: boolean;
 };
 
 export type Meal = {
@@ -40,6 +76,7 @@ export type Meal = {
   nutrients: Nutrients;
   photo_id: string | null;
   servings: Serving[];
+  nutrition_verified?: boolean;
   created_at: string;
 };
 

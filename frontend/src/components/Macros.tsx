@@ -2,11 +2,11 @@ import { MACROS, fmt, kcal } from "../lib/nutrition";
 import type { Nutrients } from "../lib/types";
 
 /** Compact readout for a single food/portion. */
-export function NutrientReadout({ n }: { n: Nutrients }) {
+export function NutrientReadout({ n, estimated }: { n: Nutrients; estimated?: boolean }) {
   return (
-    <div className="readout" aria-live="polite">
+    <div className={`readout ${estimated ? "estimated" : ""}`} aria-live="polite">
       <div className="readout-kcal">
-        <span className="num big" data-testid="portion-kcal">{kcal(n.kcal)}</span>
+        <span className="num big">{estimated && <span className="approx" aria-label="approximately">≈</span>}<span data-testid="portion-kcal">{kcal(n.kcal)}</span></span>
         <span className="muted">kcal</span>
       </div>
       <dl className="readout-macros">

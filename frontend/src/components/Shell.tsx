@@ -1,4 +1,4 @@
-import { BarChart3, BookOpen, Camera, LogOut, UserRound } from "lucide-react";
+import { BarChart3, BookOpen, Camera, Cpu, LogOut, UserRound } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "../lib/auth";
 import { Wordmark } from "./Logo";
@@ -8,7 +8,10 @@ const NAV = [
   { to: "/diary", label: "Diary", icon: BookOpen },
   { to: "/trends", label: "Trends", icon: BarChart3 },
   { to: "/profile", label: "Profile", icon: UserRound },
+  { to: "/model", label: "Model", icon: Cpu },
 ];
+
+export const DEMO_EMAIL = "demo@nutrisnap.app";
 
 export default function Shell() {
   const { user, logout } = useAuth();
@@ -39,6 +42,11 @@ export default function Shell() {
         <Wordmark />
       </header>
       <main className="main" id="main">
+        {user?.email === DEMO_EMAIL && (
+          <p className="demo-banner" role="note">
+            Demo account — the meals and trends here are generated sample data, not a real person’s log.
+          </p>
+        )}
         <Outlet />
       </main>
       <nav className="tabbar" aria-label="Main">

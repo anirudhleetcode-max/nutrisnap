@@ -103,7 +103,7 @@ export default function Trends() {
         </div>
       </div>
 
-      {error && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+      {error && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
       {!data && !error && <div className="skeleton" style={{ height: 320 }} />}
 
       {data && data.logged_days === 0 && (

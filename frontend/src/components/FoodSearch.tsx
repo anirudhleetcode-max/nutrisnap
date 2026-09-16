@@ -60,7 +60,7 @@ export default function FoodSearch({ onPick, placeholder = "Search 180+ foods �
               className={i === active ? "active" : ""} onMouseEnter={() => setActive(i)}
               onMouseDown={(e) => { e.preventDefault(); pick(f); }}>
               <span>{f.name}</span>
-              <span className="faint xs num">{kcal(f.per100g.kcal)} kcal / 100 g</span>
+              <span className="faint xs num">{f.verified ? "" : "≈ "}{kcal(f.per100g.kcal)} kcal / 100 g{f.verified ? " · USDA" : " · estimate"}</span>
             </li>
           ))}
           {!loading && items.length === 0 && <li className="search-empty">No match for “{q}”. Try a simpler name.</li>}

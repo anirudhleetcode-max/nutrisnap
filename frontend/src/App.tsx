@@ -4,6 +4,7 @@ import Shell from "./components/Shell";
 import { useAuth } from "./lib/auth";
 import Auth from "./pages/Auth";
 import Diary from "./pages/Diary";
+import ModelInfo from "./pages/ModelInfo";
 import Profile from "./pages/Profile";
 import Snap from "./pages/Snap";
 import Trends from "./pages/Trends";
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="diary" element={<Diary />} />
         <Route path="trends" element={<Trends />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="model" element={<ModelInfo />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

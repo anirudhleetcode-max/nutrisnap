@@ -73,6 +73,18 @@ async def search_foods(q: str = Query("", max_length=60), limit: int = Query(20,
     return {"items": items, "total": total, "skip": skip, "limit": limit}
 
 
+@router.get("/meta")
+async def foods_meta():
+    """How much of the nutrition data is verified against a database."""
+    foods = catalogue()
+    ver = [f for f in foods if f.get("verified")]
+    return {"total": len(foods), "verified": len(ver),
+            "indian_total": sum(f["cuisine"] == "indian" for f in foods),
+            "indian_verified": sum(f["cuisine"] == "indian" for f in ver),
+            "verified_source": "USDA FoodData Central (FNDDS 2021-2023, SR Legacy)",
+            "servings_verified": False}
+
+
 @router.get("/{food_id}")
 async def food_detail(food_id: str):
     return public_food(get_food(food_id))

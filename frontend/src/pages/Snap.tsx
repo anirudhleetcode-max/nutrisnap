@@ -1,7 +1,9 @@
-import { AlertTriangle, Camera, Check, ImageUp, Info, RotateCcw, Sparkles, Video } from "lucide-react";
+import { AlertTriangle, Camera, Check, HelpCircle, ImageUp, Info, RotateCcw, Sparkles, Video } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import FoodSearch from "../components/FoodSearch";
+import NutritionSource from "../components/NutritionSource";
+import { useToast } from "../components/Toast";
 import { KcalRing, NutrientReadout } from "../components/Macros";
 import PortionControl, { defaultQty } from "../components/PortionControl";
 import Webcam from "../components/Webcam";
@@ -9,21 +11,16 @@ import { api, ApiError } from "../lib/api";
 import { useAuth } from "../lib/auth";
 import { dayLabel, today } from "../lib/dates";
 import { MEAL_TYPES, gramsFor, kcal, mealTypeForHour, nutrientsFor } from "../lib/nutrition";
+import { QUALITY_TEXT, describeResult, pct } from "../lib/recognition";
 import type { DayLog, Food, Meal, MealType, ProfileResp, Recognition } from "../lib/types";
 
 type Phase = "idle" | "analysing" | "ready" | "error";
 const MAX_MB = 8;
 
-const pct = (p: number) => (p >= 0.995 ? "99%" : p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
-
-function confidenceWord(p: number) {
-  if (p >= 0.6) return "Confident";
-  if (p >= 0.3) return "Likely";
-  return "Unsure";
-}
 
 export default function Snap() {
   const { user } = useAuth();
+  const toast = useToast();
   const [params, setParams] = useSearchParams();
   const date = params.get("date") ?? today();
   const presetMeal = params.get("meal") as MealType | null;
@@ -81,7 +78,7 @@ export default function Snap() {
     try {
       const r = await api<Recognition>(`/api/recognize?hour=${new Date().getHours()}`, { method: "POST", body: fd });
       setRec(r);
-      chooseFood(r.candidates[0].food);
+      if (describeResult(r).preselect) chooseFood(r.candidates[0].food);
       if (!presetMeal) setMealType(r.suggested_meal_type);
       setPhase("ready");
     } catch (e) {
@@ -99,6 +96,7 @@ export default function Snap() {
         json: { food_id: food.id, date, meal_type: mealType, serving_label: serving, quantity: qty, photo_id: rec?.photo_id ?? null },
       });
       setSaved(m);
+      toast(`Logged ${m.food_name} · ${kcal(m.nutrients.kcal)} kcal`);
       loadDay();
     } catch (e) {
       setError(e instanceof ApiError ? e.message : "Saving failed. Try again.");
@@ -111,6 +109,7 @@ export default function Snap() {
   const n = food ? nutrientsFor(food, grams) : null;
   const top = rec?.candidates[0];
   const pickedIsTop = food && top && food.id === top.food.id;
+  const state = rec ? describeResult(rec) : null;
   const inCandidates = food && rec?.candidates.some((c) => c.food.id === food.id);
   const showWorkbench = phase === "analysing" || phase === "ready" || manual || (phase === "error" && !!preview);
 
@@ -177,7 +176,7 @@ export default function Snap() {
           <p className="small faint dz-foot">
             or drop an image here · no photo? <button className="linklike" onClick={() => setManual(true)}>search and log by name</button>
           </p>
-          {phase === "error" && error && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+          {phase === "error" && error && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
         </div>
       )}
 
@@ -193,7 +192,7 @@ export default function Snap() {
               </div>
               <div className="photo-actions">
                 <button className="btn btn-sm" onClick={reset}><RotateCcw aria-hidden="true" /> New photo</button>
-                {rec && <span className="xs faint num">Analysed in {rec.timing_ms} ms · CLIP ViT-B/32</span>}
+                {rec && <span className="xs faint num">Analysed in {rec.timing_ms} ms · <Link to="/model">CLIP ViT-B/32{rec.probe_used ? " + probe" : ""}</Link></span>}
               </div>
             </section>
           )}
@@ -209,14 +208,19 @@ export default function Snap() {
             )}
 
             {phase === "error" && error && (
-              <div className="alert alert-error"><AlertTriangle aria-hidden="true" /><span>{error}</span></div>
+              <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" /><span>{error}</span></div>
             )}
 
-            {rec?.not_food && phase === "ready" && (
-              <div className="alert alert-warn">
-                <AlertTriangle aria-hidden="true" />
-                <span>This doesn’t look like food to us. If it is, pick the dish below or search for it.</span>
+            {state && state.kind !== "confident" && phase === "ready" && (
+              <div className={`alert ${state.kind === "not_food" ? "alert-warn" : "alert-unsure"}`} data-testid="result-state">
+                {state.kind === "not_food" ? <AlertTriangle aria-hidden="true" /> : <HelpCircle aria-hidden="true" />}
+                <span><strong>{state.title}.</strong> {state.detail}</span>
               </div>
+            )}
+            {rec && (rec.quality_warnings?.length ?? 0) > 0 && phase === "ready" && (
+              <p className="xs muted quality">
+                {rec.quality_warnings!.map((w) => QUALITY_TEXT[w] ?? w).join(" ")} Results may be less reliable — a brighter, sharper photo helps.
+              </p>
             )}
 
             {(phase === "ready" || manual) && (
@@ -224,19 +228,24 @@ export default function Snap() {
                 {food ? (
                   <div className="guess">
                     <p className="eyebrow">
-                      {rec && pickedIsTop ? `${confidenceWord(top!.confidence)} · ${pct(top!.confidence)}` : rec ? "Your pick" : "Logging by name"}
+                      {rec && pickedIsTop && state?.kind === "confident" ? state.detail : rec ? "Your pick" : "Logging by name"}
                       {rec?.personalized && pickedIsTop && <span className="tag"><Sparkles aria-hidden="true" /> learned from your fixes</span>}
                     </p>
                     <h2 className="guess-name" data-testid="picked-food">{food.name}</h2>
                     <p className="small muted">{food.cuisine === "indian" ? "Indian" : "International"} · {food.category.replace("-", " ")} · {kcal(food.per100g.kcal)} kcal per 100 g</p>
                   </div>
+                ) : rec ? (
+                  <div className="guess"><h2 data-testid="picked-food">Pick the dish</h2><p className="small muted">Tap one of the matches or search below. Nothing is logged until you choose.</p></div>
                 ) : (
                   <div className="guess"><h2>Find your food</h2><p className="small muted">Search by any name — “golgappa”, “chapati”, “dal fry”.</p></div>
                 )}
 
                 {rec && (
                   <div className="alts">
-                    <p className="label-row"><span className="small strong">Top matches</span></p>
+                    <p className="label-row">
+                      <span className="small strong">Top matches</span>
+                      <Link className="xs" to="/model">How recognition works</Link>
+                    </p>
                     <div className="chips" role="group" aria-label="Top matches">
                       {rec.candidates.map((c) => (
                         <button key={c.food.id} className="chip" aria-pressed={food?.id === c.food.id} onClick={() => chooseFood(c.food)}>
@@ -264,8 +273,11 @@ export default function Snap() {
                   <>
                     <PortionControl food={food} servingLabel={serving} quantity={qty}
                       onChange={(s, q) => { setServing(s); setQty(q); }} />
-                    <NutrientReadout n={n} />
-                    <p className="xs faint">{grams} g · approximate values ({food.source})</p>
+                    <NutrientReadout n={n} estimated={!food.verified} />
+                    <div className="source-row">
+                      <NutritionSource food={food} />
+                      <span className="xs faint">{grams} g · serving weights are estimates</span>
+                    </div>
 
                     <div className="field">
                       <span>Meal</span>
@@ -294,7 +306,7 @@ export default function Snap() {
                         Log {kcal(n.kcal)} kcal to {MEAL_TYPES.find((m) => m.key === mealType)?.label.toLowerCase()}
                       </button>
                     )}
-                    {error && phase !== "error" && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+                    {error && phase !== "error" && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
                   </>
                 )}
                 {manual && !preview && (

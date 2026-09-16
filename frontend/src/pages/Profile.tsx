@@ -1,4 +1,7 @@
 import { AlertTriangle, Check, LogOut } from "lucide-react";
+import { Link } from "react-router-dom";
+import ConfirmDialog from "../components/ConfirmDialog";
+import { useToast } from "../components/Toast";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api, ApiError } from "../lib/api";
@@ -22,6 +25,9 @@ export default function Profile() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [learned, setLearned] = useState<{ food: string; was_predicted_as: string | null; count: number }[]>([]);
+  const [learnedTotal, setLearnedTotal] = useState(0);
+  const [forgetting, setForgetting] = useState(false);
+  const toast = useToast();
 
   useEffect(() => {
     api<ProfileResp>("/api/profile").then((r) => {
@@ -29,7 +35,7 @@ export default function Profile() {
       if (r.profile) { setForm(r.profile); setHasSaved(true); }
       setTargets(r.targets);
     }).catch(() => setError("Couldn't load your profile."));
-    api<{ items: typeof learned }>("/api/corrections").then((r) => setLearned(r.items)).catch(() => undefined);
+    api<{ items: typeof learned; total: number }>("/api/corrections").then((r) => { setLearned(r.items); setLearnedTotal(r.total ?? 0); }).catch(() => undefined);
   }, []);
 
   // live preview
@@ -58,6 +64,15 @@ export default function Profile() {
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Couldn't save.");
     } finally { setBusy(false); }
+  };
+
+  const forget = async () => {
+    try {
+      await api("/api/corrections", { method: "DELETE" });
+      setLearned([]); setLearnedTotal(0);
+      toast("Deleted what the app learned from your corrections");
+    } catch { toast("Couldn't delete — try again", "error"); }
+    setForgetting(false);
   };
 
   const b = targets?.breakdown;
@@ -106,7 +121,7 @@ export default function Profile() {
               ))}
             </div>
           </div>
-          {error && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+          {error && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
           <button className="btn btn-primary btn-lg" type="submit" disabled={busy || !valid} data-testid="save-profile">
             {saved ? <><Check aria-hidden="true" /> Saved</> : hasSaved ? "Update targets" : "Save and start logging"}
           </button>
@@ -140,17 +155,26 @@ export default function Profile() {
         </section>
       </div>
 
-      {learned.length > 0 && (
-        <section className="panel learned">
-          <div className="panel-head"><h2>Learned from your corrections</h2></div>
-          <p className="small muted">When you pick a different dish than our first guess, we remember what that photo looked like. Similar photos later lean towards your answer. Only your account uses this.</p>
-          <ul>
-            {learned.map((l, i) => (
-              <li key={i} className="small"><strong>{l.food}</strong>{l.was_predicted_as && <span className="muted"> (we had guessed {l.was_predicted_as})</span>} <span className="faint num">× {l.count}</span></li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <section className="panel learned">
+        <div className="panel-head"><h2>Personalisation and privacy</h2></div>
+        <p className="small muted">
+          When you pick a different dish than our first guess, we keep that photo’s CLIP embedding (512 numbers, not the photo) with the dish you chose.
+          Similar photos later lean towards your answer. Only your account uses it. <Link to="/model">More about the model</Link>
+        </p>
+        {learned.length > 0 ? (
+          <>
+            <ul>
+              {learned.map((l, i) => (
+                <li key={i} className="small"><strong>{l.food}</strong>{l.was_predicted_as && <span className="muted"> (we had guessed {l.was_predicted_as})</span>} <span className="faint num">× {l.count}</span></li>
+              ))}
+            </ul>
+            <button className="btn btn-sm btn-danger" onClick={() => setForgetting(true)}>Delete {learnedTotal} stored corrections</button>
+          </>
+        ) : <p className="small faint">Nothing stored yet.</p>}
+      </section>
+      <ConfirmDialog open={forgetting} title="Delete learned corrections?"
+        body="Your future photos will be scored by the base model only. Your diary is not affected."
+        confirmLabel="Delete" onConfirm={forget} onCancel={() => setForgetting(false)} />
     </div>
   );
 }

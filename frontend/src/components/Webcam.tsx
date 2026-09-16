@@ -35,7 +35,7 @@ export default function Webcam({ onCapture, onClose }: { onCapture: (f: File) =>
           <h2>Point at your plate</h2>
           <button className="btn btn-ghost icon-btn" onClick={onClose} aria-label="Close"><X aria-hidden="true" /></button>
         </div>
-        {error ? <div className="alert alert-error">{error}</div> : <video ref={video} playsInline muted />}
+        {error ? <div className="alert alert-error" role="alert">{error}</div> : <video ref={video} playsInline muted />}
         <button className="btn btn-primary btn-lg btn-block" onClick={capture} disabled={!ready}>
           <Camera aria-hidden="true" /> Capture
         </button>

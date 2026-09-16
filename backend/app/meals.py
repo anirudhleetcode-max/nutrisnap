@@ -28,6 +28,7 @@ def meal_out(m: dict) -> dict:
         "serving_label": m["serving_label"], "quantity": m["quantity"], "grams": m["grams"],
         "nutrients": m["nutrients"], "photo_id": str(m["photo_id"]) if m.get("photo_id") else None,
         "servings": get_food(m["food_id"])["servings"],
+        "nutrition_verified": bool(get_food(m["food_id"]).get("verified")),
         "created_at": m["created_at"].isoformat(),
     }
 

@@ -1,7 +1,10 @@
 import { AlertTriangle, ChevronLeft, ChevronRight, Plus, Trash2 } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import ConfirmDialog from "../components/ConfirmDialog";
 import FoodThumb from "../components/FoodThumb";
+import NutritionSource from "../components/NutritionSource";
+import { useToast } from "../components/Toast";
 import { KcalRing, MacroBars } from "../components/Macros";
 import PortionControl from "../components/PortionControl";
 import { api, ApiError } from "../lib/api";
@@ -17,6 +20,8 @@ function MealRow({ meal, onChanged }: { meal: Meal; onChanged: () => void }) {
   const [type, setType] = useState<MealType>(meal.meal_type);
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [confirming, setConfirming] = useState(false);
+  const toast = useToast();
 
   useEffect(() => {
     if (open && !food) api<Food>(`/api/foods/${meal.food_id}`).then(setFood).catch(() => setErr("Couldn't load this food."));
@@ -29,14 +34,18 @@ function MealRow({ meal, onChanged }: { meal: Meal; onChanged: () => void }) {
     try {
       await api(`/api/meals/${meal.id}`, { method: "PATCH", json: { serving_label: serving, quantity: qty, meal_type: type } });
       setOpen(false); onChanged();
+      toast(`Updated ${meal.food_name}`);
     } catch (e) { setErr(e instanceof ApiError ? e.message : "Couldn't save."); }
     finally { setBusy(false); }
   };
   const remove = async () => {
-    if (!window.confirm(`Remove ${meal.food_name} from your diary?`)) return;
     setBusy(true);
-    try { await api(`/api/meals/${meal.id}`, { method: "DELETE" }); onChanged(); }
-    catch (e) { setErr(e instanceof ApiError ? e.message : "Couldn't delete."); setBusy(false); }
+    try {
+      await api(`/api/meals/${meal.id}`, { method: "DELETE" });
+      setConfirming(false);
+      toast(`Removed ${meal.food_name}`);
+      onChanged();
+    } catch (e) { setErr(e instanceof ApiError ? e.message : "Couldn't delete."); setBusy(false); setConfirming(false); }
   };
 
   const preview = food ? nutrientsFor(food, gramsFor(food, serving, qty)).kcal : meal.nutrients.kcal;
@@ -52,13 +61,18 @@ function MealRow({ meal, onChanged }: { meal: Meal; onChanged: () => void }) {
         <span className="entry-macros xs faint num">
           P {Math.round(meal.nutrients.protein)} · C {Math.round(meal.nutrients.carbs)} · F {Math.round(meal.nutrients.fat)}
         </span>
-        <span className="entry-kcal num" data-testid="meal-kcal">{kcal(meal.nutrients.kcal)}</span>
+        <span className={`entry-kcal num ${meal.nutrition_verified === false ? "is-estimate" : ""}`}
+          title={meal.nutrition_verified === false ? "Estimate — unverified nutrition values" : "USDA-verified nutrition values"}>
+          {meal.nutrition_verified === false && <span className="approx" aria-label="estimated">≈</span>}
+          <span data-testid="meal-kcal">{kcal(meal.nutrients.kcal)}</span>
+        </span>
       </button>
       {open && (
         <div className="entry-edit">
           {!food && !err && <span className="spinner" />}
           {food && (
             <>
+              <NutritionSource food={food} compact />
               <PortionControl food={food} servingLabel={serving} quantity={qty} idPrefix={`e-${meal.id}`}
                 onChange={(s, q) => { setServing(s); setQty(q); }} />
               <div className="seg" role="group" aria-label="Move to meal">
@@ -67,7 +81,7 @@ function MealRow({ meal, onChanged }: { meal: Meal; onChanged: () => void }) {
                 ))}
               </div>
               <div className="entry-edit-actions">
-                <button className="btn btn-ghost btn-sm btn-danger" onClick={remove} disabled={busy}><Trash2 aria-hidden="true" /> Remove</button>
+                <button className="btn btn-ghost btn-sm btn-danger" onClick={() => setConfirming(true)} disabled={busy}><Trash2 aria-hidden="true" /> Remove</button>
                 <span className="grow" />
                 <button className="btn btn-sm" onClick={() => setOpen(false)}>Cancel</button>
                 <button className="btn btn-sm btn-primary" onClick={save} disabled={busy} data-testid="update-meal">
@@ -76,9 +90,12 @@ function MealRow({ meal, onChanged }: { meal: Meal; onChanged: () => void }) {
               </div>
             </>
           )}
-          {err && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{err}</div>}
+          {err && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{err}</div>}
         </div>
       )}
+      <ConfirmDialog open={confirming} busy={busy} title={`Remove ${meal.food_name}?`}
+        body={`This deletes the entry (${kcal(meal.nutrients.kcal)} kcal) and its photo. Anything the app learned from a correction on this photo is kept; you can clear that in Profile.`}
+        confirmLabel="Remove" onConfirm={remove} onCancel={() => setConfirming(false)} />
     </li>
   );
 }
@@ -117,7 +134,7 @@ export default function Diary() {
         </div>
       </div>
 
-      {error && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+      {error && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
 
       <div className="diary-grid">
         <section className="day-summary" aria-label="Day summary">
@@ -152,6 +169,9 @@ export default function Diary() {
               )}
             </div>
           ))}
+          {day && !empty && (
+            <p className="xs faint legend"><span className="approx">≈</span> estimate — nutrition values not verified against a database</p>
+          )}
           {day && !empty && (
             <div className="day-total num">
               <span>Day total</span>

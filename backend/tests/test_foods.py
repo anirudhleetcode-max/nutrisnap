@@ -55,3 +55,9 @@ def test_list_pagination_and_detail(client):
     assert d["servings"][0]["label"] == "1 idli"
     r = client.get("/api/foods/not-a-food")
     assert r.status_code == 404 and r.json()["code"] == "not_found"
+
+
+def test_foods_meta(client):
+    m = client.get("/api/foods/meta").json()
+    assert m["total"] >= 120 and 0 < m["verified"] < m["total"]
+    assert m["indian_verified"] <= m["indian_total"] and m["servings_verified"] is False

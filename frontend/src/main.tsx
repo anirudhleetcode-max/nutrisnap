@@ -9,13 +9,16 @@ import "@fontsource/dm-sans/700.css";
 import "./index.css";
 import "./app.css";
 import App from "./App.tsx";
+import { ToastProvider } from "./components/Toast";
 import { AuthProvider } from "./lib/auth";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <ToastProvider>
+          <App />
+        </ToastProvider>
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,

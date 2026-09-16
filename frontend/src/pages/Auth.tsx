@@ -56,7 +56,7 @@ export default function Auth({ mode }: { mode: "login" | "register" }) {
             <input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6}
               autoComplete={mode === "login" ? "current-password" : "new-password"} name="password" />
           </label>
-          {error && <div className="alert alert-error"><AlertTriangle aria-hidden="true" />{error}</div>}
+          {error && <div className="alert alert-error" role="alert"><AlertTriangle aria-hidden="true" />{error}</div>}
           <button className="btn btn-primary btn-lg btn-block" disabled={busy} type="submit">
             {busy ? <span className="spinner" /> : mode === "login" ? "Sign in" : "Create account"}
           </button>
