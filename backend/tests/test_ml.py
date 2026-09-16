@@ -1,8 +1,9 @@
 import numpy as np
 from PIL import Image
 
-from app.services.clip import MEAN, STD, crops, preprocess, softmax
-from app.services.personalize import MAX_ALPHA, blend, knn_probs
+from app.ml.calibration import softmax
+from app.ml.personalize import MAX_ALPHA, blend, knn_probs
+from app.ml.preprocess import MEAN, STD, clip_tensor as preprocess, crops
 
 
 def test_preprocess_shape_and_normalisation():

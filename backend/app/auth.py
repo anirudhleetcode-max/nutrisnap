@@ -1,9 +1,12 @@
+import time
+from collections import defaultdict, deque
 from datetime import datetime, timezone
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from pydantic import BaseModel, EmailStr, Field
 from pymongo.errors import DuplicateKeyError
 
+from .config import get_settings
 from .db import get_db
 from .security import create_token, current_user, hash_password, verify_password
 
@@ -41,11 +44,32 @@ async def register(body: RegisterIn):
     return {"token": create_token(str(res.inserted_id)), "user": public_user(doc)}
 
 
+# In-memory failed-login limiter: per (client IP, email), sliding window. Good enough for a single
+# process; a multi-worker deployment would need a shared store (e.g. Redis).
+_failures: dict[tuple[str, str], deque] = defaultdict(deque)
+
+
+def _recent_failures(key: tuple[str, str]) -> deque:
+    s = get_settings()
+    q = _failures[key]
+    while q and q[0] < time.monotonic() - s.login_window_seconds:
+        q.popleft()
+    return q
+
+
 @router.post("/login")
-async def login(body: LoginIn):
+async def login(body: LoginIn, request: Request):
+    s = get_settings()
+    key = (request.client.host if request.client else "?", body.email.lower())
+    q = _recent_failures(key)
+    if len(q) >= s.login_max_failures:
+        retry = int(q[0] + s.login_window_seconds - time.monotonic()) + 1
+        raise HTTPException(429, f"Too many failed attempts. Try again in {retry} s.", headers={"Retry-After": str(retry)})
     u = await get_db().users.find_one({"email": body.email.lower()})
     if not u or not verify_password(body.password, u["password_hash"]):
+        q.append(time.monotonic())
         raise HTTPException(401, "Incorrect email or password")
+    _failures.pop(key, None)
     return {"token": create_token(str(u["_id"])), "user": public_user(u)}
 
 

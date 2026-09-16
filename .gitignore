@@ -22,3 +22,7 @@ dist/
 
 # USDA bulk downloads (re-fetched by `python -m scripts.usda_verify`)
 backend/data/usda_cache/
+
+# downloaded / derived datasets (re-created by `python -m ml.datasets`)
+data/raw/
+data/processed/

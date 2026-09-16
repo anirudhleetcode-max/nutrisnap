@@ -9,7 +9,8 @@ from . import auth, errors, foods, meals, profile, recognize, trends
 from .config import get_settings
 from .db import close_client, ensure_indexes, get_db
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+# Logs carry event names and ids only - no request bodies, passwords, tokens or image data.
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
 
 
 @asynccontextmanager
@@ -37,5 +38,13 @@ for r in (auth.router, foods.router, recognize.router, meals.router, profile.rou
 
 @app.get("/api/health")
 async def health():
-    await get_db().command("ping")
-    return {"status": "ok", "db": "connected", "model_loaded": recognize._recognizer is not None}
+    """`status` is "degraded" when the app runs without the recognition model."""
+    try:
+        await get_db().command("ping")
+        db = "connected"
+    except Exception:
+        db = "unreachable"
+    m = recognize.model_state()
+    status = "ok" if db == "connected" and m["loaded"] else "degraded"
+    return {"status": status, "db": db, "model_loaded": m["loaded"], "model_error": m["error"],
+            "jwt_secret_ephemeral": settings.jwt_secret_ephemeral}
