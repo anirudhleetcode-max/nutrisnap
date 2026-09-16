@@ -159,7 +159,7 @@ def test_full_journey():
         mp = m.new_page()
         login(mp, "demo@nutrisnap.app", "demo1234")
         assert mp.evaluate("document.documentElement.scrollWidth") <= 375
-        mp.get_by_test_id("file-input").set_input_files(str(photo("pani-puri/pani-puri_6.jpg", "dosa.jpg")))
+        mp.get_by_test_id("file-input").set_input_files(str(photo("pani-puri/pani-puri_6.jpg", "pizza.jpg")))
         expect(mp.get_by_role("group", name="Top matches")).to_be_visible(timeout=30000)
         expect(mp.get_by_test_id("portion-kcal")).to_be_visible()
         mp.evaluate("window.scrollTo(0, 170)")
