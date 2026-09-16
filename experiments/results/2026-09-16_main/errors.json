@@ -1,0 +1,717 @@
+{
+  "model": "hybrid_ensemble_plus_probe",
+  "split": "test",
+  "top_confusions_chosen": [
+    {
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "count": 30,
+      "share_of_class": 0.441
+    },
+    {
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "count": 22,
+      "share_of_class": 0.44
+    },
+    {
+      "true_class": "indianfoods/naan",
+      "predicted": "aloo-paratha",
+      "count": 20,
+      "share_of_class": 0.282
+    },
+    {
+      "true_class": "food101/caesar_salad",
+      "predicted": "green-salad",
+      "count": 14,
+      "share_of_class": 0.28
+    },
+    {
+      "true_class": "indianfoods/jalebi",
+      "predicted": "orange",
+      "count": 12,
+      "share_of_class": 0.194
+    },
+    {
+      "true_class": "food101/greek_salad",
+      "predicted": "green-salad",
+      "count": 9,
+      "share_of_class": 0.18
+    },
+    {
+      "true_class": "food101/hamburger",
+      "predicted": "veg-burger",
+      "count": 8,
+      "share_of_class": 0.16
+    },
+    {
+      "true_class": "food101/chocolate_cake",
+      "predicted": "brownie",
+      "count": 7,
+      "share_of_class": 0.14
+    },
+    {
+      "true_class": "food101/tacos",
+      "predicted": "shawarma",
+      "count": 7,
+      "share_of_class": 0.14
+    },
+    {
+      "true_class": "indianfoods/pavbhaji",
+      "predicted": "dal-makhani",
+      "count": 7,
+      "share_of_class": 0.115
+    },
+    {
+      "true_class": "food101/omelette",
+      "predicted": "scrambled-eggs",
+      "count": 6,
+      "share_of_class": 0.12
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "aloo-paratha",
+      "count": 6,
+      "share_of_class": 0.091
+    },
+    {
+      "true_class": "indianfoods/kofta",
+      "predicted": "egg-curry",
+      "count": 6,
+      "share_of_class": 0.045
+    },
+    {
+      "true_class": "food101/chicken_curry",
+      "predicted": "tomato-soup",
+      "count": 5,
+      "share_of_class": 0.1
+    },
+    {
+      "true_class": "food101/club_sandwich",
+      "predicted": "sandwich",
+      "count": 5,
+      "share_of_class": 0.1
+    },
+    {
+      "true_class": "food101/falafel",
+      "predicted": "shawarma",
+      "count": 5,
+      "share_of_class": 0.1
+    },
+    {
+      "true_class": "indianfoods/dal",
+      "predicted": "tomato-soup",
+      "count": 5,
+      "share_of_class": 0.094
+    },
+    {
+      "true_class": "indianfoods/jalebi",
+      "predicted": "maggi",
+      "count": 5,
+      "share_of_class": 0.081
+    },
+    {
+      "true_class": "indianfoods/paneer",
+      "predicted": "dal-makhani",
+      "count": 5,
+      "share_of_class": 0.096
+    },
+    {
+      "true_class": "food101/chicken_curry",
+      "predicted": "fish-curry",
+      "count": 4,
+      "share_of_class": 0.08
+    },
+    {
+      "true_class": "food101/chicken_curry",
+      "predicted": "mutton-curry",
+      "count": 4,
+      "share_of_class": 0.08
+    },
+    {
+      "true_class": "food101/chocolate_cake",
+      "predicted": "chocolate",
+      "count": 4,
+      "share_of_class": 0.08
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "aloo-tikki",
+      "count": 4,
+      "share_of_class": 0.061
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "dal-makhani",
+      "count": 4,
+      "share_of_class": 0.061
+    },
+    {
+      "true_class": "indianfoods/dabeli",
+      "predicted": "vada-pav",
+      "count": 4,
+      "share_of_class": 0.091
+    }
+  ],
+  "top_confusions_zero_shot_ensemble": [
+    {
+      "true_class": "indianfoods/kofta",
+      "predicted": "paneer-butter-masala",
+      "count": 42,
+      "share_of_class": 0.313
+    },
+    {
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "count": 39,
+      "share_of_class": 0.574
+    },
+    {
+      "true_class": "indianfoods/naan",
+      "predicted": "aloo-paratha",
+      "count": 30,
+      "share_of_class": 0.423
+    },
+    {
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "count": 27,
+      "share_of_class": 0.54
+    },
+    {
+      "true_class": "indianfoods/jalebi",
+      "predicted": "orange",
+      "count": 22,
+      "share_of_class": 0.355
+    },
+    {
+      "true_class": "indianfoods/vadapav",
+      "predicted": "club-sandwich",
+      "count": 21,
+      "share_of_class": 0.194
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "aloo-tikki",
+      "count": 17,
+      "share_of_class": 0.258
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "aloo-paratha",
+      "count": 17,
+      "share_of_class": 0.258
+    },
+    {
+      "true_class": "indianfoods/pavbhaji",
+      "predicted": "dal-makhani",
+      "count": 17,
+      "share_of_class": 0.279
+    },
+    {
+      "true_class": "indianfoods/kofta",
+      "predicted": "egg-curry",
+      "count": 15,
+      "share_of_class": 0.112
+    },
+    {
+      "true_class": "indianfoods/pakora",
+      "predicted": "aloo-paratha",
+      "count": 15,
+      "share_of_class": 0.197
+    },
+    {
+      "true_class": "food101/caesar_salad",
+      "predicted": "green-salad",
+      "count": 14,
+      "share_of_class": 0.28
+    },
+    {
+      "true_class": "indianfoods/vadapav",
+      "predicted": "pani-puri",
+      "count": 14,
+      "share_of_class": 0.13
+    },
+    {
+      "true_class": "food101/club_sandwich",
+      "predicted": "sandwich",
+      "count": 13,
+      "share_of_class": 0.26
+    },
+    {
+      "true_class": "indianfoods/cholebhature",
+      "predicted": "pani-puri",
+      "count": 13,
+      "share_of_class": 0.197
+    },
+    {
+      "true_class": "indianfoods/kofta",
+      "predicted": "chicken-curry",
+      "count": 13,
+      "share_of_class": 0.097
+    },
+    {
+      "true_class": "indianfoods/pakora",
+      "predicted": "aloo-tikki",
+      "count": 13,
+      "share_of_class": 0.171
+    },
+    {
+      "true_class": "food101/chicken_curry",
+      "predicted": "paneer-butter-masala",
+      "count": 12,
+      "share_of_class": 0.24
+    },
+    {
+      "true_class": "food101/hamburger",
+      "predicted": "veg-burger",
+      "count": 12,
+      "share_of_class": 0.24
+    },
+    {
+      "true_class": "indianfoods/jalebi",
+      "predicted": "maggi",
+      "count": 12,
+      "share_of_class": 0.194
+    },
+    {
+      "true_class": "indianfoods/vadapav",
+      "predicted": "veg-burger",
+      "count": 12,
+      "share_of_class": 0.111
+    },
+    {
+      "true_class": "indianfoods/dabeli",
+      "predicted": "pani-puri",
+      "count": 11,
+      "share_of_class": 0.25
+    },
+    {
+      "true_class": "indianfoods/kofta",
+      "predicted": "dal-makhani",
+      "count": 11,
+      "share_of_class": 0.082
+    },
+    {
+      "true_class": "food101/greek_salad",
+      "predicted": "green-salad",
+      "count": 9,
+      "share_of_class": 0.18
+    },
+    {
+      "true_class": "indianfoods/dal",
+      "predicted": "paneer-butter-masala",
+      "count": 9,
+      "share_of_class": 0.17
+    }
+  ],
+  "most_confident_mistakes": [
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#408",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 1.0
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#3936",
+      "true_class": "food101/falafel",
+      "predicted": "shawarma",
+      "confidence": 0.998
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#1022",
+      "true_class": "food101/tacos",
+      "predicted": "shawarma",
+      "confidence": 0.988
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2112",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "confidence": 0.988
+    },
+    {
+      "row_id": "validation-00000-of-00003.parquet#6010",
+      "true_class": "food101/steak",
+      "predicted": "salmon",
+      "confidence": 0.987
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#4815",
+      "true_class": "food101/samosa",
+      "predicted": "shawarma",
+      "confidence": 0.984
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#364",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.982
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#406",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.98
+    },
+    {
+      "row_id": "validation-00002-of-00003.parquet#2242",
+      "true_class": "food101/nachos",
+      "predicted": "potato-chips",
+      "confidence": 0.976
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2107",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "confidence": 0.974
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#1046",
+      "true_class": "food101/tacos",
+      "predicted": "shawarma",
+      "confidence": 0.969
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2308",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "confidence": 0.969
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#3905",
+      "true_class": "food101/falafel",
+      "predicted": "shawarma",
+      "confidence": 0.966
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#412",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.961
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#498",
+      "true_class": "indianfoods/kofta",
+      "predicted": "egg-curry",
+      "confidence": 0.961
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#459",
+      "true_class": "indianfoods/kofta",
+      "predicted": "egg-curry",
+      "confidence": 0.961
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#502",
+      "true_class": "indianfoods/kofta",
+      "predicted": "tomato-soup",
+      "confidence": 0.955
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#535",
+      "true_class": "indianfoods/kofta",
+      "predicted": "tomato-soup",
+      "confidence": 0.953
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#3924",
+      "true_class": "food101/falafel",
+      "predicted": "shawarma",
+      "confidence": 0.947
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#389",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.941
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2320",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "tacos",
+      "confidence": 0.941
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#353",
+      "true_class": "indianfoods/jalebi",
+      "predicted": "orange",
+      "confidence": 0.939
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#6941",
+      "true_class": "food101/waffles",
+      "predicted": "strawberries",
+      "confidence": 0.935
+    },
+    {
+      "row_id": "validation-00002-of-00003.parquet#2622",
+      "true_class": "food101/donuts",
+      "predicted": "cookies",
+      "confidence": 0.929
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#377",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.925
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2111",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "shawarma",
+      "confidence": 0.923
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#390",
+      "true_class": "indianfoods/kathiroll",
+      "predicted": "shawarma",
+      "confidence": 0.922
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#3932",
+      "true_class": "food101/falafel",
+      "predicted": "shawarma",
+      "confidence": 0.922
+    },
+    {
+      "row_id": "test-00000-of-00001-75236f054535aed8.parquet#814",
+      "true_class": "indianfoods/pavbhaji",
+      "predicted": "dal-makhani",
+      "confidence": 0.92
+    },
+    {
+      "row_id": "validation-00001-of-00003.parquet#2319",
+      "true_class": "food101/breakfast_burrito",
+      "predicted": "nachos",
+      "confidence": 0.919
+    }
+  ],
+  "per_class_top1": {
+    "food101/breakfast_burrito": {
+      "n": 50,
+      "zero_shot_top1": 0.08,
+      "chosen_top1": 0.38
+    },
+    "food101/caesar_salad": {
+      "n": 50,
+      "zero_shot_top1": 0.66,
+      "chosen_top1": 0.68
+    },
+    "food101/chicken_curry": {
+      "n": 50,
+      "zero_shot_top1": 0.16,
+      "chosen_top1": 0.52
+    },
+    "food101/chocolate_cake": {
+      "n": 50,
+      "zero_shot_top1": 0.7,
+      "chosen_top1": 0.74
+    },
+    "food101/club_sandwich": {
+      "n": 50,
+      "zero_shot_top1": 0.62,
+      "chosen_top1": 0.88
+    },
+    "food101/donuts": {
+      "n": 50,
+      "zero_shot_top1": 0.86,
+      "chosen_top1": 0.82
+    },
+    "food101/dumplings": {
+      "n": 50,
+      "zero_shot_top1": 0.68,
+      "chosen_top1": 0.92
+    },
+    "food101/falafel": {
+      "n": 50,
+      "zero_shot_top1": 0.78,
+      "chosen_top1": 0.78
+    },
+    "food101/french_fries": {
+      "n": 50,
+      "zero_shot_top1": 0.88,
+      "chosen_top1": 0.92
+    },
+    "food101/fried_rice": {
+      "n": 50,
+      "zero_shot_top1": 0.82,
+      "chosen_top1": 0.9
+    },
+    "food101/greek_salad": {
+      "n": 50,
+      "zero_shot_top1": 0.72,
+      "chosen_top1": 0.74
+    },
+    "food101/grilled_salmon": {
+      "n": 50,
+      "zero_shot_top1": 0.86,
+      "chosen_top1": 0.84
+    },
+    "food101/hamburger": {
+      "n": 50,
+      "zero_shot_top1": 0.68,
+      "chosen_top1": 0.78
+    },
+    "food101/hot_dog": {
+      "n": 50,
+      "zero_shot_top1": 0.94,
+      "chosen_top1": 0.94
+    },
+    "food101/hummus": {
+      "n": 50,
+      "zero_shot_top1": 0.82,
+      "chosen_top1": 0.78
+    },
+    "food101/ice_cream": {
+      "n": 50,
+      "zero_shot_top1": 0.94,
+      "chosen_top1": 0.92
+    },
+    "food101/lasagna": {
+      "n": 50,
+      "zero_shot_top1": 0.5,
+      "chosen_top1": 0.82
+    },
+    "food101/macaroni_and_cheese": {
+      "n": 50,
+      "zero_shot_top1": 0.8,
+      "chosen_top1": 0.7
+    },
+    "food101/nachos": {
+      "n": 50,
+      "zero_shot_top1": 0.88,
+      "chosen_top1": 0.88
+    },
+    "food101/omelette": {
+      "n": 50,
+      "zero_shot_top1": 0.36,
+      "chosen_top1": 0.7
+    },
+    "food101/pancakes": {
+      "n": 50,
+      "zero_shot_top1": 0.94,
+      "chosen_top1": 0.94
+    },
+    "food101/pizza": {
+      "n": 50,
+      "zero_shot_top1": 0.98,
+      "chosen_top1": 0.98
+    },
+    "food101/ramen": {
+      "n": 50,
+      "zero_shot_top1": 0.96,
+      "chosen_top1": 0.92
+    },
+    "food101/samosa": {
+      "n": 50,
+      "zero_shot_top1": 0.24,
+      "chosen_top1": 0.64
+    },
+    "food101/spaghetti_bolognese": {
+      "n": 50,
+      "zero_shot_top1": 1.0,
+      "chosen_top1": 0.98
+    },
+    "food101/spring_rolls": {
+      "n": 50,
+      "zero_shot_top1": 0.76,
+      "chosen_top1": 0.84
+    },
+    "food101/steak": {
+      "n": 50,
+      "zero_shot_top1": 0.88,
+      "chosen_top1": 0.88
+    },
+    "food101/sushi": {
+      "n": 50,
+      "zero_shot_top1": 0.98,
+      "chosen_top1": 1.0
+    },
+    "food101/tacos": {
+      "n": 50,
+      "zero_shot_top1": 0.84,
+      "chosen_top1": 0.76
+    },
+    "food101/waffles": {
+      "n": 50,
+      "zero_shot_top1": 0.86,
+      "chosen_top1": 0.86
+    },
+    "indianfoods/biryani": {
+      "n": 46,
+      "zero_shot_top1": 0.913,
+      "chosen_top1": 0.957
+    },
+    "indianfoods/cholebhature": {
+      "n": 66,
+      "zero_shot_top1": 0.0,
+      "chosen_top1": 0.727
+    },
+    "indianfoods/dabeli": {
+      "n": 44,
+      "zero_shot_top1": 0.182,
+      "chosen_top1": 0.864
+    },
+    "indianfoods/dal": {
+      "n": 53,
+      "zero_shot_top1": 0.377,
+      "chosen_top1": 0.774
+    },
+    "indianfoods/dhokla": {
+      "n": 50,
+      "zero_shot_top1": 0.82,
+      "chosen_top1": 0.88
+    },
+    "indianfoods/dosa": {
+      "n": 34,
+      "zero_shot_top1": 0.206,
+      "chosen_top1": 0.824
+    },
+    "indianfoods/jalebi": {
+      "n": 62,
+      "zero_shot_top1": 0.048,
+      "chosen_top1": 0.613
+    },
+    "indianfoods/kathiroll": {
+      "n": 68,
+      "zero_shot_top1": 0.029,
+      "chosen_top1": 0.471
+    },
+    "indianfoods/kofta": {
+      "n": 134,
+      "zero_shot_top1": 0.015,
+      "chosen_top1": 0.694
+    },
+    "indianfoods/naan": {
+      "n": 71,
+      "zero_shot_top1": 0.338,
+      "chosen_top1": 0.648
+    },
+    "indianfoods/pakora": {
+      "n": 76,
+      "zero_shot_top1": 0.013,
+      "chosen_top1": 0.803
+    },
+    "indianfoods/paneer": {
+      "n": 52,
+      "zero_shot_top1": 0.75,
+      "chosen_top1": 0.75
+    },
+    "indianfoods/panipuri": {
+      "n": 36,
+      "zero_shot_top1": 0.833,
+      "chosen_top1": 1.0
+    },
+    "indianfoods/pavbhaji": {
+      "n": 61,
+      "zero_shot_top1": 0.197,
+      "chosen_top1": 0.721
+    },
+    "indianfoods/vadapav": {
+      "n": 108,
+      "zero_shot_top1": 0.167,
+      "chosen_top1": 0.917
+    }
+  }
+}
