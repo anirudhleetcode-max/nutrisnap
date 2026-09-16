@@ -1,0 +1,5668 @@
+{
+ "version": 1,
+ "note": "Approximate per-100 g values compiled from IFCT 2017 and USDA FoodData Central for typical home/restaurant recipes. Not medical advice.",
+ "foods": [
+  {
+   "id": "roti",
+   "name": "Roti / Chapati",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 280.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 4.5,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 roti",
+     "grams": 40.0
+    },
+    {
+     "label": "2 rotis",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chapati, a round Indian whole wheat flatbread",
+   "aliases": [
+    "chapati",
+    "phulka",
+    "fulka"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "paratha",
+   "name": "Plain Paratha",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 326.0,
+    "protein": 7.5,
+    "carbs": 45.0,
+    "fat": 13.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 paratha",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "plain paratha, a layered pan-fried Indian flatbread",
+   "aliases": [
+    "lachha paratha",
+    "parantha"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "aloo-paratha",
+   "name": "Aloo Paratha",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 5.5,
+    "carbs": 35.0,
+    "fat": 10.0,
+    "fibre": 3.5
+   },
+   "servings": [
+    {
+     "label": "1 paratha",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "aloo paratha, a potato-stuffed Indian flatbread",
+   "aliases": [
+    "stuffed paratha",
+    "potato paratha"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "naan",
+   "name": "Naan",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 5.5,
+    "fibre": 2.2
+   },
+   "servings": [
+    {
+     "label": "1 naan",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "naan, a tandoor-baked Indian flatbread",
+   "aliases": [
+    "plain naan",
+    "tandoori naan"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "butter-naan",
+   "name": "Butter Naan",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 320.0,
+    "protein": 8.5,
+    "carbs": 48.0,
+    "fat": 10.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 naan",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "butter naan brushed with butter",
+   "aliases": [
+    "garlic naan"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "puri",
+   "name": "Puri",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 350.0,
+    "protein": 7.0,
+    "carbs": 42.0,
+    "fat": 17.0,
+    "fibre": 3.5
+   },
+   "servings": [
+    {
+     "label": "1 puri",
+     "grams": 25.0
+    },
+    {
+     "label": "4 puris",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "puri, small puffed deep-fried Indian bread",
+   "aliases": [
+    "poori"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "bhatura",
+   "name": "Bhatura",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 330.0,
+    "protein": 7.0,
+    "carbs": 45.0,
+    "fat": 14.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 bhatura",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "bhatura, a large puffed deep-fried bread",
+   "aliases": [
+    "bhature"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "thepla",
+   "name": "Methi Thepla",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 300.0,
+    "protein": 8.0,
+    "carbs": 42.0,
+    "fat": 11.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 thepla",
+     "grams": 40.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "methi thepla, a thin Gujarati flatbread",
+   "aliases": [
+    "thepla"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kulcha",
+   "name": "Kulcha",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 280.0,
+    "protein": 8.0,
+    "carbs": 48.0,
+    "fat": 6.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 kulcha",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kulcha, a leavened Punjabi flatbread",
+   "aliases": [
+    "amritsari kulcha"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "makki-roti",
+   "name": "Makki di Roti",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 280.0,
+    "protein": 6.0,
+    "carbs": 45.0,
+    "fat": 9.0,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 roti",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "makki di roti, a yellow cornmeal flatbread",
+   "aliases": [
+    "corn roti"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pav",
+   "name": "Pav (bread roll)",
+   "cuisine": "indian",
+   "category": "bread",
+   "per100g": {
+    "kcal": 280.0,
+    "protein": 8.5,
+    "carbs": 52.0,
+    "fat": 4.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 pav",
+     "grams": 40.0
+    },
+    {
+     "label": "2 pav",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pav, soft Indian bread rolls",
+   "aliases": [
+    "ladi pav",
+    "bun"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "plain-rice",
+   "name": "Steamed Rice",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 2.7,
+    "carbs": 28.0,
+    "fat": 0.3,
+    "fibre": 0.4
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of plain steamed white rice",
+   "aliases": [
+    "chawal",
+    "white rice",
+    "boiled rice"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "jeera-rice",
+   "name": "Jeera Rice",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 160.0,
+    "protein": 3.0,
+    "carbs": 29.0,
+    "fat": 3.5,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "jeera rice, rice tempered with cumin seeds",
+   "aliases": [
+    "cumin rice"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chicken-biryani",
+   "name": "Chicken Biryani",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 180.0,
+    "protein": 9.0,
+    "carbs": 22.0,
+    "fat": 6.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 350.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chicken biryani, spiced rice with chicken pieces",
+   "aliases": [
+    "biryani",
+    "hyderabadi biryani"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "veg-biryani",
+   "name": "Veg Biryani",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 3.5,
+    "carbs": 24.0,
+    "fat": 4.5,
+    "fibre": 1.8
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 300.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "vegetable biryani, spiced rice with vegetables",
+   "aliases": [
+    "veg pulao biryani"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "mutton-biryani",
+   "name": "Mutton Biryani",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 10.0,
+    "carbs": 21.0,
+    "fat": 8.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 350.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "mutton biryani, spiced rice with goat meat",
+   "aliases": [
+    "gosht biryani"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pulao",
+   "name": "Veg Pulao",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 3.0,
+    "carbs": 25.0,
+    "fat": 4.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 250.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "vegetable pulao, mildly spiced rice with peas",
+   "aliases": [
+    "pilaf",
+    "pulav"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "khichdi",
+   "name": "Dal Khichdi",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 120.0,
+    "protein": 4.5,
+    "carbs": 20.0,
+    "fat": 2.5,
+    "fibre": 2.2
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "khichdi, a mushy porridge of rice and lentils",
+   "aliases": [
+    "khichri"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "curd-rice",
+   "name": "Curd Rice",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 125.0,
+    "protein": 3.5,
+    "carbs": 20.0,
+    "fat": 3.5,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "curd rice, white rice mixed with yogurt",
+   "aliases": [
+    "thayir sadam",
+    "dahi chawal"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "lemon-rice",
+   "name": "Lemon Rice",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 3.0,
+    "carbs": 28.0,
+    "fat": 5.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "lemon rice, yellow turmeric rice with peanuts",
+   "aliases": [
+    "chitranna"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "bisi-bele-bath",
+   "name": "Bisi Bele Bath",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 4.0,
+    "carbs": 22.0,
+    "fat": 4.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "bisi bele bath, spicy Karnataka rice and lentil dish",
+   "aliases": [
+    "sambar rice"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pongal",
+   "name": "Ven Pongal",
+   "cuisine": "indian",
+   "category": "rice",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 4.5,
+    "carbs": 22.0,
+    "fat": 5.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "ven pongal, savoury rice and moong dal with pepper",
+   "aliases": [
+    "khara pongal"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "fried-rice",
+   "name": "Fried Rice",
+   "cuisine": "global",
+   "category": "rice",
+   "per100g": {
+    "kcal": 165.0,
+    "protein": 4.0,
+    "carbs": 27.0,
+    "fat": 4.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 250.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "fried rice with vegetables",
+   "aliases": [
+    "veg fried rice",
+    "egg fried rice"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "dal-tadka",
+   "name": "Dal Tadka",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 105.0,
+    "protein": 5.5,
+    "carbs": 14.0,
+    "fat": 3.5,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dal tadka, yellow lentil curry in a bowl",
+   "aliases": [
+    "dal",
+    "toor dal",
+    "arhar dal",
+    "dal fry",
+    "yellow dal"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "dal-makhani",
+   "name": "Dal Makhani",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 5.5,
+    "carbs": 14.0,
+    "fat": 7.0,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dal makhani, creamy black lentil curry",
+   "aliases": [
+    "kaali dal",
+    "maa ki dal"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "rajma",
+   "name": "Rajma",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 125.0,
+    "protein": 5.5,
+    "carbs": 17.0,
+    "fat": 4.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "rajma, red kidney bean curry",
+   "aliases": [
+    "rajma masala",
+    "kidney beans"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chole",
+   "name": "Chole",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 6.5,
+    "carbs": 20.0,
+    "fat": 5.5,
+    "fibre": 5.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chole, spicy chickpea curry",
+   "aliases": [
+    "chana masala",
+    "chickpea curry",
+    "chhole"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sambar",
+   "name": "Sambar",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 65.0,
+    "protein": 3.0,
+    "carbs": 9.0,
+    "fat": 2.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sambar, a South Indian lentil and vegetable stew",
+   "aliases": [
+    "sambhar"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "rasam",
+   "name": "Rasam",
+   "cuisine": "indian",
+   "category": "dal",
+   "per100g": {
+    "kcal": 30.0,
+    "protein": 1.0,
+    "carbs": 5.0,
+    "fat": 0.8,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "rasam, a thin tangy South Indian tomato soup",
+   "aliases": [
+    "saaru"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kadhi",
+   "name": "Kadhi",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 90.0,
+    "protein": 3.0,
+    "carbs": 8.0,
+    "fat": 5.0,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kadhi, a yellow yogurt and gram flour curry with pakoras",
+   "aliases": [
+    "kadhi pakora"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "paneer-butter-masala",
+   "name": "Paneer Butter Masala",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 8.0,
+    "carbs": 9.0,
+    "fat": 18.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "paneer butter masala, paneer cubes in orange creamy tomato gravy",
+   "aliases": [
+    "paneer makhani",
+    "butter paneer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "palak-paneer",
+   "name": "Palak Paneer",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 160.0,
+    "protein": 7.5,
+    "carbs": 6.0,
+    "fat": 12.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "palak paneer, paneer cubes in green spinach gravy",
+   "aliases": [
+    "saag paneer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "shahi-paneer",
+   "name": "Shahi Paneer",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 240.0,
+    "protein": 8.0,
+    "carbs": 9.0,
+    "fat": 19.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "shahi paneer in a rich creamy gravy",
+   "aliases": [
+    "paneer korma"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "matar-paneer",
+   "name": "Matar Paneer",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 7.0,
+    "carbs": 10.0,
+    "fat": 11.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "matar paneer, peas and paneer curry",
+   "aliases": [
+    "mutter paneer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kadai-paneer",
+   "name": "Kadai Paneer",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 190.0,
+    "protein": 8.0,
+    "carbs": 8.0,
+    "fat": 14.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kadai paneer with bell peppers",
+   "aliases": [
+    "karahi paneer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "paneer-tikka",
+   "name": "Paneer Tikka",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 260.0,
+    "protein": 16.0,
+    "carbs": 6.0,
+    "fat": 19.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "paneer tikka, grilled marinated paneer cubes",
+   "aliases": [
+    "tandoori paneer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "butter-chicken",
+   "name": "Butter Chicken",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 14.0,
+    "carbs": 6.0,
+    "fat": 13.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "butter chicken, chicken in creamy orange tomato gravy",
+   "aliases": [
+    "murgh makhani",
+    "chicken makhani"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chicken-curry",
+   "name": "Chicken Curry",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 13.0,
+    "carbs": 5.0,
+    "fat": 9.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chicken curry, chicken pieces in brown spicy gravy",
+   "aliases": [
+    "murgh curry",
+    "chicken masala"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chicken-tikka",
+   "name": "Chicken Tikka",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 25.0,
+    "carbs": 4.0,
+    "fat": 6.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chicken tikka, charred boneless chicken skewers",
+   "aliases": [
+    "chicken tikka kebab"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "tandoori-chicken",
+   "name": "Tandoori Chicken",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 165.0,
+    "protein": 24.0,
+    "carbs": 3.0,
+    "fat": 6.5,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 120.0
+    },
+    {
+     "label": "half chicken",
+     "grams": 350.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "tandoori chicken, red roasted chicken legs",
+   "aliases": [
+    "tandoori murgh"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "chicken-65",
+   "name": "Chicken 65",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 18.0,
+    "carbs": 9.0,
+    "fat": 16.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chicken 65, spicy deep-fried red chicken bites",
+   "aliases": [
+    "chilli fry chicken"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "mutton-curry",
+   "name": "Mutton Curry",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 190.0,
+    "protein": 14.0,
+    "carbs": 5.0,
+    "fat": 13.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "mutton curry, goat meat in dark red gravy",
+   "aliases": [
+    "rogan josh",
+    "gosht curry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "keema",
+   "name": "Keema",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 15.0,
+    "carbs": 5.0,
+    "fat": 13.5,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "keema, spiced minced meat curry",
+   "aliases": [
+    "kheema",
+    "keema matar"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "fish-curry",
+   "name": "Fish Curry",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 13.0,
+    "carbs": 4.0,
+    "fat": 7.0,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "fish curry, fish pieces in red gravy",
+   "aliases": [
+    "machli curry",
+    "meen curry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "fish-fry",
+   "name": "Fish Fry",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 20.0,
+    "carbs": 8.0,
+    "fat": 13.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "fish fry, spice-crusted fried fish",
+   "aliases": [
+    "tawa fish",
+    "rava fish fry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "prawn-curry",
+   "name": "Prawn Curry",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 13.0,
+    "carbs": 5.0,
+    "fat": 6.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "prawn curry, shrimp in coconut gravy",
+   "aliases": [
+    "jhinga curry",
+    "shrimp curry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "egg-curry",
+   "name": "Egg Curry",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 8.5,
+    "carbs": 5.0,
+    "fat": 10.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "egg curry, boiled eggs in spicy gravy",
+   "aliases": [
+    "anda curry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "egg-bhurji",
+   "name": "Egg Bhurji",
+   "cuisine": "indian",
+   "category": "egg",
+   "per100g": {
+    "kcal": 180.0,
+    "protein": 11.0,
+    "carbs": 3.0,
+    "fat": 14.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "egg bhurji, Indian spiced scrambled eggs",
+   "aliases": [
+    "anda bhurji"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "aloo-gobi",
+   "name": "Aloo Gobi",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 100.0,
+    "protein": 2.5,
+    "carbs": 11.0,
+    "fat": 5.5,
+    "fibre": 2.8
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "aloo gobi, dry potato and cauliflower curry",
+   "aliases": [
+    "gobi aloo"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "bhindi-masala",
+   "name": "Bhindi Masala",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 110.0,
+    "protein": 2.5,
+    "carbs": 9.0,
+    "fat": 7.5,
+    "fibre": 3.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "bhindi masala, stir-fried okra",
+   "aliases": [
+    "okra fry",
+    "bhindi fry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "baingan-bharta",
+   "name": "Baingan Bharta",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 90.0,
+    "protein": 2.0,
+    "carbs": 8.0,
+    "fat": 6.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "baingan bharta, mashed smoky roasted eggplant",
+   "aliases": [
+    "baingan ka bharta",
+    "brinjal bharta"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "jeera-aloo",
+   "name": "Jeera Aloo",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 2.0,
+    "carbs": 17.0,
+    "fat": 6.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "jeera aloo, cumin potatoes",
+   "aliases": [
+    "aloo sabzi",
+    "potato sabzi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "mixed-veg",
+   "name": "Mixed Veg Curry",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 100.0,
+    "protein": 2.5,
+    "carbs": 10.0,
+    "fat": 6.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "mixed vegetable curry",
+   "aliases": [
+    "mix veg",
+    "sabzi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "malai-kofta",
+   "name": "Malai Kofta",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 220.0,
+    "protein": 5.0,
+    "carbs": 14.0,
+    "fat": 16.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "malai kofta, fried dumplings in creamy gravy",
+   "aliases": [
+    "kofta curry"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "dum-aloo",
+   "name": "Dum Aloo",
+   "cuisine": "indian",
+   "category": "curry",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 2.5,
+    "carbs": 15.0,
+    "fat": 9.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dum aloo, baby potatoes in red gravy",
+   "aliases": [
+    "kashmiri dum aloo"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sarson-saag",
+   "name": "Sarson ka Saag",
+   "cuisine": "indian",
+   "category": "sabzi",
+   "per100g": {
+    "kcal": 100.0,
+    "protein": 3.5,
+    "carbs": 7.0,
+    "fat": 7.0,
+    "fibre": 3.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sarson ka saag, dark green mustard greens puree",
+   "aliases": [
+    "saag"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "raita",
+   "name": "Raita",
+   "cuisine": "indian",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 3.0,
+    "carbs": 5.0,
+    "fat": 3.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "raita, yogurt with cucumber and spices",
+   "aliases": [
+    "boondi raita",
+    "cucumber raita"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "curd",
+   "name": "Curd (Dahi)",
+   "cuisine": "indian",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 3.1,
+    "carbs": 4.5,
+    "fat": 3.5,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "1 cup",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of plain white yogurt",
+   "aliases": [
+    "dahi",
+    "yogurt",
+    "yoghurt"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "paneer",
+   "name": "Paneer (plain)",
+   "cuisine": "indian",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 265.0,
+    "protein": 18.0,
+    "carbs": 3.5,
+    "fat": 20.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 cube",
+     "grams": 15.0
+    },
+    {
+     "label": "100 g block",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "raw paneer cheese cubes",
+   "aliases": [
+    "cottage cheese"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "masala-dosa",
+   "name": "Masala Dosa",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 190.0,
+    "protein": 4.0,
+    "carbs": 27.0,
+    "fat": 7.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 dosa",
+     "grams": 180.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "masala dosa, a crispy rice crepe folded over potato filling",
+   "aliases": [
+    "dosa",
+    "masala dosai"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "plain-dosa",
+   "name": "Plain Dosa",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 4.0,
+    "carbs": 28.0,
+    "fat": 4.5,
+    "fibre": 1.2
+   },
+   "servings": [
+    {
+     "label": "1 dosa",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "plain dosa, a thin crispy rice and lentil crepe",
+   "aliases": [
+    "sada dosa",
+    "dosai"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "idli",
+   "name": "Idli",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 4.5,
+    "carbs": 28.0,
+    "fat": 0.8,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 idli",
+     "grams": 40.0
+    },
+    {
+     "label": "2 idli",
+     "grams": 80.0
+    },
+    {
+     "label": "4 idli",
+     "grams": 160.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "idli, soft white steamed rice cakes",
+   "aliases": [
+    "idly"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "medu-vada",
+   "name": "Medu Vada",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 300.0,
+    "protein": 9.0,
+    "carbs": 30.0,
+    "fat": 16.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 vada",
+     "grams": 50.0
+    },
+    {
+     "label": "2 vada",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "medu vada, doughnut-shaped fried lentil fritters",
+   "aliases": [
+    "vada",
+    "uzhunnu vada",
+    "vadai"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "uttapam",
+   "name": "Uttapam",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 160.0,
+    "protein": 4.5,
+    "carbs": 26.0,
+    "fat": 4.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 uttapam",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "uttapam, a thick rice pancake with onion and tomato toppings",
+   "aliases": [
+    "uthappam"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "upma",
+   "name": "Upma",
+   "cuisine": "indian",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 3.0,
+    "carbs": 19.0,
+    "fat": 5.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 200.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "upma, savoury semolina porridge",
+   "aliases": [
+    "rava upma",
+    "uppittu"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "appam",
+   "name": "Appam",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 2.5,
+    "carbs": 28.0,
+    "fat": 3.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 appam",
+     "grams": 60.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "appam, a bowl-shaped lacy rice pancake",
+   "aliases": [
+    "palappam"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pesarattu",
+   "name": "Pesarattu",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 160.0,
+    "protein": 7.0,
+    "carbs": 22.0,
+    "fat": 5.0,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 pesarattu",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pesarattu, a green moong dal crepe",
+   "aliases": [
+    "moong dosa"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "idiyappam",
+   "name": "Idiyappam",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 2.5,
+    "carbs": 33.0,
+    "fat": 0.5,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 50.0
+    },
+    {
+     "label": "3 pieces",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "idiyappam, string hoppers made of rice noodles",
+   "aliases": [
+    "string hoppers"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "puttu",
+   "name": "Puttu",
+   "cuisine": "indian",
+   "category": "south-indian",
+   "per100g": {
+    "kcal": 180.0,
+    "protein": 3.5,
+    "carbs": 36.0,
+    "fat": 2.5,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "puttu, steamed cylinders of ground rice and coconut",
+   "aliases": [
+    "puttu kadala"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "coconut-chutney",
+   "name": "Coconut Chutney",
+   "cuisine": "indian",
+   "category": "condiment",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 3.0,
+    "carbs": 8.0,
+    "fat": 18.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 tbsp",
+     "grams": 20.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "coconut chutney, a white coconut dip",
+   "aliases": [
+    "chutney"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "poha",
+   "name": "Poha",
+   "cuisine": "indian",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 130.0,
+    "protein": 2.8,
+    "carbs": 23.0,
+    "fat": 3.5,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "poha, yellow flattened rice with peanuts and curry leaves",
+   "aliases": [
+    "kanda poha",
+    "aval"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sabudana-khichdi",
+   "name": "Sabudana Khichdi",
+   "cuisine": "indian",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 3.0,
+    "carbs": 38.0,
+    "fat": 8.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sabudana khichdi, tapioca pearls with peanuts",
+   "aliases": [
+    "sago khichdi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pav-bhaji",
+   "name": "Pav Bhaji",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 4.5,
+    "carbs": 24.0,
+    "fat": 6.5,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 280.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pav bhaji, a red mashed vegetable curry with buttered bread rolls",
+   "aliases": [
+    "bhaji pav"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "vada-pav",
+   "name": "Vada Pav",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 6.5,
+    "carbs": 40.0,
+    "fat": 12.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 vada pav",
+     "grams": 130.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "vada pav, a fried potato fritter in a bread bun",
+   "aliases": [
+    "wada pav",
+    "bombay burger"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "samosa",
+   "name": "Samosa",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 310.0,
+    "protein": 5.0,
+    "carbs": 32.0,
+    "fat": 18.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 samosa",
+     "grams": 70.0
+    },
+    {
+     "label": "2 samosas",
+     "grams": 140.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "samosa, a triangular fried pastry with potato filling",
+   "aliases": [
+    "samosa chaat",
+    "aloo samosa"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "dhokla",
+   "name": "Dhokla",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 160.0,
+    "protein": 6.0,
+    "carbs": 25.0,
+    "fat": 4.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "4 pieces",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dhokla, yellow spongy steamed gram flour squares",
+   "aliases": [
+    "khaman",
+    "khaman dhokla"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kachori",
+   "name": "Kachori",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 400.0,
+    "protein": 8.0,
+    "carbs": 42.0,
+    "fat": 23.0,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 kachori",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kachori, a round fried stuffed pastry",
+   "aliases": [
+    "khasta kachori",
+    "dal kachori"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pani-puri",
+   "name": "Pani Puri",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 180.0,
+    "protein": 3.5,
+    "carbs": 28.0,
+    "fat": 6.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 plate (6)",
+     "grams": 120.0
+    },
+    {
+     "label": "1 puri",
+     "grams": 20.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pani puri, hollow crispy puris filled with spiced water",
+   "aliases": [
+    "golgappa",
+    "puchka",
+    "gol gappe"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "bhel-puri",
+   "name": "Bhel Puri",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 4.5,
+    "carbs": 28.0,
+    "fat": 5.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "bhel puri, puffed rice chaat with sev and chutney",
+   "aliases": [
+    "bhel"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sev-puri",
+   "name": "Sev Puri",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 5.0,
+    "carbs": 30.0,
+    "fat": 10.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 plate (6)",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sev puri, flat puris topped with potato, chutney and sev",
+   "aliases": [
+    "dahi puri"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "pakora",
+   "name": "Pakora",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 320.0,
+    "protein": 7.0,
+    "carbs": 30.0,
+    "fat": 19.0,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 20.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pakora, golden deep-fried gram flour fritters",
+   "aliases": [
+    "bhajia",
+    "pakoda",
+    "onion bhaji"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "aloo-tikki",
+   "name": "Aloo Tikki",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 190.0,
+    "protein": 3.0,
+    "carbs": 25.0,
+    "fat": 9.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 tikki",
+     "grams": 60.0
+    },
+    {
+     "label": "2 tikki",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "aloo tikki, pan-fried potato patties",
+   "aliases": [
+    "tikki chaat",
+    "potato patty"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "dabeli",
+   "name": "Dabeli",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 240.0,
+    "protein": 5.0,
+    "carbs": 36.0,
+    "fat": 8.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 dabeli",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dabeli, a bun stuffed with spiced potato and pomegranate",
+   "aliases": [
+    "kutchi dabeli"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "misal-pav",
+   "name": "Misal Pav",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 6.0,
+    "carbs": 18.0,
+    "fat": 6.5,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "misal pav, spicy sprouted bean curry topped with farsan",
+   "aliases": [
+    "misal"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "momos",
+   "name": "Veg Momos",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 5.5,
+    "carbs": 27.0,
+    "fat": 4.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 25.0
+    },
+    {
+     "label": "1 plate (6)",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "steamed momos, white dumplings",
+   "aliases": [
+    "momo",
+    "dumplings",
+    "veg dumplings"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chicken-momos",
+   "name": "Chicken Momos",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 190.0,
+    "protein": 10.0,
+    "carbs": 22.0,
+    "fat": 7.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "1 plate (6)",
+     "grams": 180.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "steamed chicken momos dumplings",
+   "aliases": [
+    "chicken dumplings"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kathi-roll",
+   "name": "Kathi Roll",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 10.0,
+    "carbs": 26.0,
+    "fat": 9.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 roll",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kathi roll, a paratha wrap rolled around kebab filling",
+   "aliases": [
+    "frankie",
+    "egg roll",
+    "chicken roll"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "litti-chokha",
+   "name": "Litti Chokha",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 7.0,
+    "carbs": 38.0,
+    "fat": 8.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 litti",
+     "grams": 80.0
+    },
+    {
+     "label": "2 litti with chokha",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "litti chokha, baked wheat balls with mashed eggplant",
+   "aliases": [
+    "litti"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "dal-baati",
+   "name": "Dal Baati",
+   "cuisine": "indian",
+   "category": "street",
+   "per100g": {
+    "kcal": 380.0,
+    "protein": 8.0,
+    "carbs": 50.0,
+    "fat": 17.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 baati",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "dal baati, round baked wheat dumplings with ghee",
+   "aliases": [
+    "baati"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "khakhra",
+   "name": "Khakhra",
+   "cuisine": "indian",
+   "category": "snack",
+   "per100g": {
+    "kcal": 400.0,
+    "protein": 11.0,
+    "carbs": 60.0,
+    "fat": 12.0,
+    "fibre": 8.0
+   },
+   "servings": [
+    {
+     "label": "1 khakhra",
+     "grams": 15.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "khakhra, thin crisp wheat crackers",
+   "aliases": [
+    "khakra"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "bhujia",
+   "name": "Namkeen / Bhujia",
+   "cuisine": "indian",
+   "category": "snack",
+   "per100g": {
+    "kcal": 540.0,
+    "protein": 14.0,
+    "carbs": 40.0,
+    "fat": 36.0,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 handful",
+     "grams": 30.0
+    },
+    {
+     "label": "1 small pack",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "namkeen, a pile of crunchy fried gram flour noodles and mixture",
+   "aliases": [
+    "namkeen",
+    "mixture",
+    "sev",
+    "aloo bhujia"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chana-chaat",
+   "name": "Chana Chaat",
+   "cuisine": "indian",
+   "category": "snack",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 7.0,
+    "carbs": 20.0,
+    "fat": 3.5,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chana chaat, boiled chickpeas with onion and tomato",
+   "aliases": [
+    "chickpea salad"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sprouts-salad",
+   "name": "Sprouts Salad",
+   "cuisine": "indian",
+   "category": "snack",
+   "per100g": {
+    "kcal": 70.0,
+    "protein": 5.0,
+    "carbs": 11.0,
+    "fat": 1.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sprouts salad, sprouted moong beans with chopped vegetables",
+   "aliases": [
+    "moong sprouts"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "maggi",
+   "name": "Instant Noodles",
+   "cuisine": "indian",
+   "category": "noodles",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 3.0,
+    "carbs": 20.0,
+    "fat": 5.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 pack cooked",
+     "grams": 280.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "instant noodles, curly yellow noodles in a bowl",
+   "aliases": [
+    "maggi",
+    "ramen noodles instant"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "hakka-noodles",
+   "name": "Hakka Noodles",
+   "cuisine": "indian",
+   "category": "noodles",
+   "per100g": {
+    "kcal": 170.0,
+    "protein": 4.0,
+    "carbs": 25.0,
+    "fat": 6.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "hakka noodles, stir-fried noodles with vegetables",
+   "aliases": [
+    "chow mein",
+    "veg noodles"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "manchurian",
+   "name": "Veg Manchurian",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 180.0,
+    "protein": 3.5,
+    "carbs": 18.0,
+    "fat": 10.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "manchurian, fried vegetable balls in dark soy sauce",
+   "aliases": [
+    "gobi manchurian"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chilli-chicken",
+   "name": "Chilli Chicken",
+   "cuisine": "indian",
+   "category": "starter",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 16.0,
+    "carbs": 10.0,
+    "fat": 14.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chilli chicken with green peppers in soy sauce",
+   "aliases": [
+    "dragon chicken"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "gulab-jamun",
+   "name": "Gulab Jamun",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 320.0,
+    "protein": 5.0,
+    "carbs": 50.0,
+    "fat": 12.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 40.0
+    },
+    {
+     "label": "2 pieces",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "gulab jamun, dark brown fried milk balls in sugar syrup",
+   "aliases": [
+    "gulabjamun"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "jalebi",
+   "name": "Jalebi",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 380.0,
+    "protein": 3.0,
+    "carbs": 60.0,
+    "fat": 14.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 25.0
+    },
+    {
+     "label": "1 plate",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "jalebi, bright orange spiral-shaped syrupy sweets",
+   "aliases": [
+    "jilebi",
+    "imarti"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "rasgulla",
+   "name": "Rasgulla",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 185.0,
+    "protein": 4.0,
+    "carbs": 38.0,
+    "fat": 2.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "rasgulla, white spongy cheese balls in syrup",
+   "aliases": [
+    "rosogolla",
+    "rasagola"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "rasmalai",
+   "name": "Rasmalai",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 220.0,
+    "protein": 7.0,
+    "carbs": 25.0,
+    "fat": 10.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "rasmalai, flattened cheese dumplings in saffron milk",
+   "aliases": [
+    "ras malai"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kheer",
+   "name": "Kheer",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 140.0,
+    "protein": 4.0,
+    "carbs": 20.0,
+    "fat": 5.0,
+    "fibre": 0.3
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kheer, creamy rice pudding with nuts",
+   "aliases": [
+    "payasam",
+    "rice kheer"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "gajar-halwa",
+   "name": "Gajar Halwa",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 4.5,
+    "carbs": 30.0,
+    "fat": 13.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "gajar ka halwa, orange grated carrot pudding",
+   "aliases": [
+    "carrot halwa"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "sooji-halwa",
+   "name": "Sooji Halwa",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 330.0,
+    "protein": 4.0,
+    "carbs": 45.0,
+    "fat": 15.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 katori",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sooji halwa, sweet semolina pudding",
+   "aliases": [
+    "sheera",
+    "rava kesari"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "besan-ladoo",
+   "name": "Besan Ladoo",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 470.0,
+    "protein": 9.0,
+    "carbs": 55.0,
+    "fat": 24.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 ladoo",
+     "grams": 40.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "ladoo, round yellow Indian sweet balls",
+   "aliases": [
+    "laddu",
+    "motichoor ladoo"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kaju-katli",
+   "name": "Kaju Katli",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 440.0,
+    "protein": 9.0,
+    "carbs": 55.0,
+    "fat": 21.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 15.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kaju katli, diamond-shaped cashew fudge with silver foil",
+   "aliases": [
+    "kaju barfi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "barfi",
+   "name": "Milk Barfi",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 400.0,
+    "protein": 9.0,
+    "carbs": 50.0,
+    "fat": 18.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "barfi, square milk fudge pieces",
+   "aliases": [
+    "burfi",
+    "peda"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "kulfi",
+   "name": "Kulfi",
+   "cuisine": "indian",
+   "category": "sweet",
+   "per100g": {
+    "kcal": 220.0,
+    "protein": 5.0,
+    "carbs": 25.0,
+    "fat": 11.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 stick",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "kulfi, Indian ice cream on a stick",
+   "aliases": [
+    "matka kulfi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "masala-chai",
+   "name": "Masala Chai",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 2.0,
+    "carbs": 8.0,
+    "fat": 2.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 150.0
+    },
+    {
+     "label": "1 cutting",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a cup of milky Indian masala chai tea",
+   "aliases": [
+    "chai",
+    "tea"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "filter-coffee",
+   "name": "Filter Coffee",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 2.0,
+    "carbs": 8.0,
+    "fat": 2.2,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 tumbler",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "South Indian filter coffee in a steel tumbler and davara",
+   "aliases": [
+    "kaapi",
+    "coffee with milk"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "lassi",
+   "name": "Sweet Lassi",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 90.0,
+    "protein": 3.0,
+    "carbs": 14.0,
+    "fat": 2.5,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "lassi, a thick sweet yogurt drink in a glass",
+   "aliases": [
+    "mango lassi",
+    "sweet lassi"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "chaas",
+   "name": "Buttermilk (Chaas)",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 20.0,
+    "protein": 1.2,
+    "carbs": 2.0,
+    "fat": 0.8,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chaas, a glass of spiced buttermilk",
+   "aliases": [
+    "buttermilk",
+    "mattha",
+    "majjige"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "coconut-water",
+   "name": "Coconut Water",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 19.0,
+    "protein": 0.7,
+    "carbs": 3.7,
+    "fat": 0.2,
+    "fibre": 1.1
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "1 coconut",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a green tender coconut with a straw",
+   "aliases": [
+    "nariyal pani",
+    "tender coconut"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "nimbu-pani",
+   "name": "Nimbu Pani",
+   "cuisine": "indian",
+   "category": "drink",
+   "per100g": {
+    "kcal": 25.0,
+    "protein": 0.1,
+    "carbs": 6.5,
+    "fat": 0.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "nimbu pani, a glass of lemonade",
+   "aliases": [
+    "lemonade",
+    "shikanji"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "milk",
+   "name": "Milk (toned)",
+   "cuisine": "global",
+   "category": "drink",
+   "per100g": {
+    "kcal": 62.0,
+    "protein": 3.2,
+    "carbs": 4.8,
+    "fat": 3.2,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "1 cup",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a glass of milk",
+   "aliases": [
+    "doodh",
+    "toned milk"
+   ],
+   "source": "IFCT 2017 (approx.)"
+  },
+  {
+   "id": "cold-coffee",
+   "name": "Cold Coffee",
+   "cuisine": "global",
+   "category": "drink",
+   "per100g": {
+    "kcal": 85.0,
+    "protein": 3.0,
+    "carbs": 12.0,
+    "fat": 3.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a tall glass of iced cold coffee",
+   "aliases": [
+    "iced coffee",
+    "frappe"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "cola",
+   "name": "Cola / Soft Drink",
+   "cuisine": "global",
+   "category": "drink",
+   "per100g": {
+    "kcal": 42.0,
+    "protein": 0.0,
+    "carbs": 10.6,
+    "fat": 0.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 can",
+     "grams": 330.0
+    },
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a glass of cola soft drink",
+   "aliases": [
+    "coke",
+    "soda",
+    "pepsi"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "orange-juice",
+   "name": "Orange Juice",
+   "cuisine": "global",
+   "category": "drink",
+   "per100g": {
+    "kcal": 45.0,
+    "protein": 0.7,
+    "carbs": 10.4,
+    "fat": 0.2,
+    "fibre": 0.2
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a glass of orange juice",
+   "aliases": [
+    "juice"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "smoothie",
+   "name": "Fruit Smoothie",
+   "cuisine": "global",
+   "category": "drink",
+   "per100g": {
+    "kcal": 70.0,
+    "protein": 1.5,
+    "carbs": 15.0,
+    "fat": 0.7,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 glass",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a fruit smoothie in a glass",
+   "aliases": [
+    "shake",
+    "milkshake"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pizza",
+   "name": "Margherita Pizza",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 11.0,
+    "carbs": 31.0,
+    "fat": 9.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 100.0
+    },
+    {
+     "label": "1 medium pizza",
+     "grams": 500.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pizza with tomato sauce and cheese",
+   "aliases": [
+    "margherita",
+    "cheese pizza"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pepperoni-pizza",
+   "name": "Pepperoni Pizza",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 12.0,
+    "carbs": 32.0,
+    "fat": 12.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 110.0
+    },
+    {
+     "label": "1 medium pizza",
+     "grams": 550.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pepperoni pizza",
+   "aliases": [
+    "meat pizza"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "burger",
+   "name": "Hamburger",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 13.0,
+    "carbs": 25.0,
+    "fat": 11.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 burger",
+     "grams": 180.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a hamburger with a beef patty in a bun",
+   "aliases": [
+    "beef burger"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "cheeseburger",
+   "name": "Cheeseburger",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 270.0,
+    "protein": 14.0,
+    "carbs": 24.0,
+    "fat": 13.0,
+    "fibre": 1.3
+   },
+   "servings": [
+    {
+     "label": "1 burger",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a cheeseburger with melted cheese",
+   "aliases": [
+    "double burger"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "veg-burger",
+   "name": "Veg Burger",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 6.0,
+    "carbs": 32.0,
+    "fat": 9.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 burger",
+     "grams": 180.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a veggie burger with a vegetable patty",
+   "aliases": [
+    "aloo tikki burger"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "french-fries",
+   "name": "French Fries",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 312.0,
+    "protein": 3.4,
+    "carbs": 41.0,
+    "fat": 15.0,
+    "fibre": 3.8
+   },
+   "servings": [
+    {
+     "label": "small",
+     "grams": 80.0
+    },
+    {
+     "label": "medium",
+     "grams": 115.0
+    },
+    {
+     "label": "large",
+     "grams": 155.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "french fries",
+   "aliases": [
+    "fries",
+    "chips",
+    "finger chips"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "hot-dog",
+   "name": "Hot Dog",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 10.0,
+    "carbs": 24.0,
+    "fat": 17.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 hot dog",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a hot dog sausage in a bun",
+   "aliases": [
+    "hotdog"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "fried-chicken",
+   "name": "Fried Chicken",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 20.0,
+    "carbs": 10.0,
+    "fat": 18.0,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "crispy fried chicken pieces",
+   "aliases": [
+    "kfc",
+    "chicken wings"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "tacos",
+   "name": "Tacos",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 220.0,
+    "protein": 9.0,
+    "carbs": 20.0,
+    "fat": 12.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 taco",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "tacos in folded tortillas",
+   "aliases": [
+    "taco"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "burrito",
+   "name": "Burrito",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 8.0,
+    "carbs": 26.0,
+    "fat": 7.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 burrito",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a burrito, a large wrapped tortilla",
+   "aliases": [
+    "burrito bowl"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "shawarma",
+   "name": "Shawarma Wrap",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 220.0,
+    "protein": 12.0,
+    "carbs": 20.0,
+    "fat": 10.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 roll",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "shawarma, a meat wrap in pita bread",
+   "aliases": [
+    "wrap",
+    "doner"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "falafel",
+   "name": "Falafel",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 333.0,
+    "protein": 13.0,
+    "carbs": 32.0,
+    "fat": 18.0,
+    "fibre": 5.0
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 17.0
+    },
+    {
+     "label": "5 pieces",
+     "grams": 85.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "falafel, fried chickpea balls",
+   "aliases": [
+    "felafel"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "hummus",
+   "name": "Hummus",
+   "cuisine": "global",
+   "category": "condiment",
+   "per100g": {
+    "kcal": 166.0,
+    "protein": 8.0,
+    "carbs": 14.0,
+    "fat": 9.6,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 tbsp",
+     "grams": 15.0
+    },
+    {
+     "label": "1 bowl",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of hummus dip",
+   "aliases": [
+    "houmous"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "spring-rolls",
+   "name": "Spring Rolls",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 5.0,
+    "carbs": 28.0,
+    "fat": 13.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 roll",
+     "grams": 60.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "crispy fried spring rolls",
+   "aliases": [
+    "egg rolls"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "nachos",
+   "name": "Nachos with Cheese",
+   "cuisine": "global",
+   "category": "fast-food",
+   "per100g": {
+    "kcal": 340.0,
+    "protein": 9.0,
+    "carbs": 36.0,
+    "fat": 18.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "nachos, tortilla chips with melted cheese",
+   "aliases": [
+    "nachos"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "potato-chips",
+   "name": "Potato Chips",
+   "cuisine": "global",
+   "category": "snack",
+   "per100g": {
+    "kcal": 536.0,
+    "protein": 7.0,
+    "carbs": 53.0,
+    "fat": 35.0,
+    "fibre": 4.8
+   },
+   "servings": [
+    {
+     "label": "1 small pack",
+     "grams": 30.0
+    },
+    {
+     "label": "1 large pack",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of potato chips crisps",
+   "aliases": [
+    "chips",
+    "wafers",
+    "lays"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "popcorn",
+   "name": "Popcorn",
+   "cuisine": "global",
+   "category": "snack",
+   "per100g": {
+    "kcal": 430.0,
+    "protein": 9.0,
+    "carbs": 60.0,
+    "fat": 18.0,
+    "fibre": 10.0
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 10.0
+    },
+    {
+     "label": "1 small tub",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of popcorn",
+   "aliases": [
+    "popcorn"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pasta-red",
+   "name": "Pasta in Tomato Sauce",
+   "cuisine": "global",
+   "category": "pasta",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 5.0,
+    "carbs": 25.0,
+    "fat": 3.5,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "penne pasta in red tomato sauce",
+   "aliases": [
+    "red sauce pasta",
+    "penne arrabbiata"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pasta-white",
+   "name": "Pasta Alfredo",
+   "cuisine": "global",
+   "category": "pasta",
+   "per100g": {
+    "kcal": 200.0,
+    "protein": 6.0,
+    "carbs": 22.0,
+    "fat": 10.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pasta in white creamy alfredo sauce",
+   "aliases": [
+    "white sauce pasta",
+    "fettuccine alfredo"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "spaghetti",
+   "name": "Spaghetti Bolognese",
+   "cuisine": "global",
+   "category": "pasta",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 7.0,
+    "carbs": 17.0,
+    "fat": 5.5,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 300.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "spaghetti bolognese with meat sauce",
+   "aliases": [
+    "spaghetti",
+    "bolognese"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "mac-cheese",
+   "name": "Mac and Cheese",
+   "cuisine": "global",
+   "category": "pasta",
+   "per100g": {
+    "kcal": 165.0,
+    "protein": 6.5,
+    "carbs": 18.0,
+    "fat": 7.5,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "macaroni and cheese",
+   "aliases": [
+    "macaroni"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "lasagna",
+   "name": "Lasagna",
+   "cuisine": "global",
+   "category": "pasta",
+   "per100g": {
+    "kcal": 165.0,
+    "protein": 9.0,
+    "carbs": 16.0,
+    "fat": 7.0,
+    "fibre": 1.3
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a slice of lasagna",
+   "aliases": [
+    "lasagne"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "ramen",
+   "name": "Ramen",
+   "cuisine": "global",
+   "category": "noodles",
+   "per100g": {
+    "kcal": 95.0,
+    "protein": 4.5,
+    "carbs": 12.0,
+    "fat": 3.2,
+    "fibre": 0.8
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 500.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "ramen, a bowl of Japanese noodle soup with egg",
+   "aliases": [
+    "noodle soup",
+    "pho"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "sushi",
+   "name": "Sushi",
+   "cuisine": "global",
+   "category": "asian",
+   "per100g": {
+    "kcal": 145.0,
+    "protein": 5.5,
+    "carbs": 28.0,
+    "fat": 0.7,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 30.0
+    },
+    {
+     "label": "1 roll (8 pcs)",
+     "grams": 240.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "sushi rolls and nigiri",
+   "aliases": [
+    "maki",
+    "nigiri"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "green-salad",
+   "name": "Green Salad",
+   "cuisine": "global",
+   "category": "salad",
+   "per100g": {
+    "kcal": 20.0,
+    "protein": 1.3,
+    "carbs": 3.5,
+    "fat": 0.2,
+    "fibre": 1.8
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a green salad with lettuce, cucumber and tomato",
+   "aliases": [
+    "salad",
+    "garden salad"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "caesar-salad",
+   "name": "Caesar Salad",
+   "cuisine": "global",
+   "category": "salad",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 5.0,
+    "carbs": 7.0,
+    "fat": 12.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "caesar salad with croutons and parmesan",
+   "aliases": [
+    "chicken caesar"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "greek-salad",
+   "name": "Greek Salad",
+   "cuisine": "global",
+   "category": "salad",
+   "per100g": {
+    "kcal": 110.0,
+    "protein": 3.0,
+    "carbs": 5.0,
+    "fat": 9.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "greek salad with feta cheese and olives",
+   "aliases": [
+    "feta salad"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "fruit-salad",
+   "name": "Fruit Salad",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 55.0,
+    "protein": 0.7,
+    "carbs": 14.0,
+    "fat": 0.2,
+    "fibre": 1.8
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of mixed fruit salad",
+   "aliases": [
+    "fruit chaat",
+    "fruit bowl"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "sandwich",
+   "name": "Veg Sandwich",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 230.0,
+    "protein": 7.0,
+    "carbs": 32.0,
+    "fat": 8.0,
+    "fibre": 3.0
+   },
+   "servings": [
+    {
+     "label": "1 sandwich",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a vegetable sandwich",
+   "aliases": [
+    "grilled sandwich",
+    "bombay sandwich",
+    "toast sandwich"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "club-sandwich",
+   "name": "Chicken Sandwich",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 240.0,
+    "protein": 13.0,
+    "carbs": 24.0,
+    "fat": 10.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 sandwich",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a club sandwich with chicken",
+   "aliases": [
+    "club sandwich",
+    "chicken sandwich"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "omelette",
+   "name": "Omelette",
+   "cuisine": "global",
+   "category": "egg",
+   "per100g": {
+    "kcal": 155.0,
+    "protein": 10.5,
+    "carbs": 2.0,
+    "fat": 11.5,
+    "fibre": 0.3
+   },
+   "servings": [
+    {
+     "label": "1 omelette (2 eggs)",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "an omelette",
+   "aliases": [
+    "masala omelette",
+    "omelet"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "boiled-egg",
+   "name": "Boiled Egg",
+   "cuisine": "global",
+   "category": "egg",
+   "per100g": {
+    "kcal": 155.0,
+    "protein": 12.6,
+    "carbs": 1.1,
+    "fat": 10.6,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 egg",
+     "grams": 50.0
+    },
+    {
+     "label": "2 eggs",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "boiled eggs cut in half",
+   "aliases": [
+    "egg",
+    "hard boiled egg",
+    "anda"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "fried-egg",
+   "name": "Fried Egg",
+   "cuisine": "global",
+   "category": "egg",
+   "per100g": {
+    "kcal": 196.0,
+    "protein": 13.6,
+    "carbs": 0.9,
+    "fat": 15.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 egg",
+     "grams": 46.0
+    },
+    {
+     "label": "2 eggs",
+     "grams": 92.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a fried egg sunny side up",
+   "aliases": [
+    "sunny side up",
+    "egg fry"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "scrambled-eggs",
+   "name": "Scrambled Eggs",
+   "cuisine": "global",
+   "category": "egg",
+   "per100g": {
+    "kcal": 150.0,
+    "protein": 10.0,
+    "carbs": 1.6,
+    "fat": 11.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 plate",
+     "grams": 120.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "scrambled eggs",
+   "aliases": [
+    "scrambled egg"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pancakes",
+   "name": "Pancakes",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 227.0,
+    "protein": 6.0,
+    "carbs": 28.0,
+    "fat": 10.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 pancake",
+     "grams": 75.0
+    },
+    {
+     "label": "stack of 3",
+     "grams": 225.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a stack of pancakes with syrup",
+   "aliases": [
+    "hotcakes"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "waffles",
+   "name": "Waffles",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 290.0,
+    "protein": 8.0,
+    "carbs": 33.0,
+    "fat": 14.0,
+    "fibre": 1.5
+   },
+   "servings": [
+    {
+     "label": "1 waffle",
+     "grams": 75.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "waffles",
+   "aliases": [
+    "waffle"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "oatmeal",
+   "name": "Oats Porridge",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 105.0,
+    "protein": 4.0,
+    "carbs": 15.0,
+    "fat": 3.0,
+    "fibre": 1.7
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of oatmeal porridge",
+   "aliases": [
+    "oats",
+    "porridge",
+    "dalia"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "cornflakes",
+   "name": "Cornflakes with Milk",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 95.0,
+    "protein": 3.0,
+    "carbs": 16.0,
+    "fat": 2.2,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of cornflakes cereal with milk",
+   "aliases": [
+    "cereal",
+    "muesli"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "white-bread",
+   "name": "White Bread",
+   "cuisine": "global",
+   "category": "bread",
+   "per100g": {
+    "kcal": 265.0,
+    "protein": 9.0,
+    "carbs": 49.0,
+    "fat": 3.2,
+    "fibre": 2.7
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 25.0
+    },
+    {
+     "label": "2 slices",
+     "grams": 50.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "slices of white bread",
+   "aliases": [
+    "bread",
+    "toast"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "brown-bread",
+   "name": "Brown Bread",
+   "cuisine": "global",
+   "category": "bread",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 12.0,
+    "carbs": 43.0,
+    "fat": 3.5,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 28.0
+    },
+    {
+     "label": "2 slices",
+     "grams": 56.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "slices of whole wheat brown bread",
+   "aliases": [
+    "whole wheat bread",
+    "multigrain bread"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "bread-butter",
+   "name": "Bread Butter Toast",
+   "cuisine": "global",
+   "category": "breakfast",
+   "per100g": {
+    "kcal": 330.0,
+    "protein": 8.0,
+    "carbs": 43.0,
+    "fat": 14.0,
+    "fibre": 2.5
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 35.0
+    },
+    {
+     "label": "2 slices",
+     "grams": 70.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "buttered toast",
+   "aliases": [
+    "toast",
+    "butter toast"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "croissant",
+   "name": "Croissant",
+   "cuisine": "global",
+   "category": "bakery",
+   "per100g": {
+    "kcal": 406.0,
+    "protein": 8.0,
+    "carbs": 46.0,
+    "fat": 21.0,
+    "fibre": 2.6
+   },
+   "servings": [
+    {
+     "label": "1 croissant",
+     "grams": 60.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a croissant",
+   "aliases": [
+    "croissant"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "bagel",
+   "name": "Bagel",
+   "cuisine": "global",
+   "category": "bakery",
+   "per100g": {
+    "kcal": 257.0,
+    "protein": 10.0,
+    "carbs": 50.0,
+    "fat": 1.6,
+    "fibre": 2.2
+   },
+   "servings": [
+    {
+     "label": "1 bagel",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bagel",
+   "aliases": [
+    "bagel"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "donut",
+   "name": "Doughnut",
+   "cuisine": "global",
+   "category": "bakery",
+   "per100g": {
+    "kcal": 452.0,
+    "protein": 5.0,
+    "carbs": 51.0,
+    "fat": 25.0,
+    "fibre": 1.7
+   },
+   "servings": [
+    {
+     "label": "1 donut",
+     "grams": 60.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a glazed doughnut",
+   "aliases": [
+    "donut"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "cake",
+   "name": "Chocolate Cake",
+   "cuisine": "global",
+   "category": "dessert",
+   "per100g": {
+    "kcal": 370.0,
+    "protein": 5.0,
+    "carbs": 53.0,
+    "fat": 16.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 80.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a slice of chocolate cake",
+   "aliases": [
+    "cake",
+    "pastry"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "brownie",
+   "name": "Brownie",
+   "cuisine": "global",
+   "category": "dessert",
+   "per100g": {
+    "kcal": 466.0,
+    "protein": 6.0,
+    "carbs": 50.0,
+    "fat": 29.0,
+    "fibre": 2.4
+   },
+   "servings": [
+    {
+     "label": "1 piece",
+     "grams": 55.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a chocolate brownie",
+   "aliases": [
+    "brownies"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "cookies",
+   "name": "Cookies",
+   "cuisine": "global",
+   "category": "dessert",
+   "per100g": {
+    "kcal": 480.0,
+    "protein": 5.0,
+    "carbs": 65.0,
+    "fat": 23.0,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 cookie",
+     "grams": 15.0
+    },
+    {
+     "label": "3 cookies",
+     "grams": 45.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "chocolate chip cookies",
+   "aliases": [
+    "biscuits",
+    "biscuit"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "ice-cream",
+   "name": "Ice Cream",
+   "cuisine": "global",
+   "category": "dessert",
+   "per100g": {
+    "kcal": 207.0,
+    "protein": 3.5,
+    "carbs": 24.0,
+    "fat": 11.0,
+    "fibre": 0.7
+   },
+   "servings": [
+    {
+     "label": "1 scoop",
+     "grams": 65.0
+    },
+    {
+     "label": "1 cup",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "ice cream scoops in a bowl",
+   "aliases": [
+    "gelato",
+    "sundae"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "chocolate",
+   "name": "Chocolate Bar",
+   "cuisine": "global",
+   "category": "dessert",
+   "per100g": {
+    "kcal": 535.0,
+    "protein": 7.7,
+    "carbs": 59.0,
+    "fat": 30.0,
+    "fibre": 3.4
+   },
+   "servings": [
+    {
+     "label": "1 bar",
+     "grams": 40.0
+    },
+    {
+     "label": "2 squares",
+     "grams": 10.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bar of chocolate",
+   "aliases": [
+    "dairy milk",
+    "dark chocolate"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "tomato-soup",
+   "name": "Tomato Soup",
+   "cuisine": "global",
+   "category": "soup",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 1.5,
+    "carbs": 9.0,
+    "fat": 2.0,
+    "fibre": 1.0
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of red tomato soup",
+   "aliases": [
+    "soup",
+    "cream of tomato"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "chicken-soup",
+   "name": "Chicken Soup",
+   "cuisine": "global",
+   "category": "soup",
+   "per100g": {
+    "kcal": 45.0,
+    "protein": 3.5,
+    "carbs": 4.0,
+    "fat": 1.5,
+    "fibre": 0.5
+   },
+   "servings": [
+    {
+     "label": "1 bowl",
+     "grams": 250.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of chicken soup",
+   "aliases": [
+    "manchow soup",
+    "clear soup"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "grilled-chicken",
+   "name": "Grilled Chicken Breast",
+   "cuisine": "global",
+   "category": "protein",
+   "per100g": {
+    "kcal": 165.0,
+    "protein": 31.0,
+    "carbs": 0.0,
+    "fat": 3.6,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 breast",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "grilled chicken breast",
+   "aliases": [
+    "chicken breast"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "steak",
+   "name": "Steak",
+   "cuisine": "global",
+   "category": "protein",
+   "per100g": {
+    "kcal": 250.0,
+    "protein": 26.0,
+    "carbs": 0.0,
+    "fat": 16.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 steak",
+     "grams": 200.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a grilled beef steak",
+   "aliases": [
+    "beef steak"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "salmon",
+   "name": "Grilled Salmon",
+   "cuisine": "global",
+   "category": "protein",
+   "per100g": {
+    "kcal": 206.0,
+    "protein": 22.0,
+    "carbs": 0.0,
+    "fat": 12.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 fillet",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a grilled salmon fillet",
+   "aliases": [
+    "fish fillet",
+    "salmon"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "tofu",
+   "name": "Tofu",
+   "cuisine": "global",
+   "category": "protein",
+   "per100g": {
+    "kcal": 76.0,
+    "protein": 8.0,
+    "carbs": 1.9,
+    "fat": 4.8,
+    "fibre": 0.3
+   },
+   "servings": [
+    {
+     "label": "1 block",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "cubes of tofu",
+   "aliases": [
+    "bean curd"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "greek-yogurt",
+   "name": "Greek Yogurt",
+   "cuisine": "global",
+   "category": "dairy",
+   "per100g": {
+    "kcal": 97.0,
+    "protein": 9.0,
+    "carbs": 4.0,
+    "fat": 5.0,
+    "fibre": 0.0
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 170.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of thick greek yogurt with berries",
+   "aliases": [
+    "hung curd"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "peanut-butter",
+   "name": "Peanut Butter",
+   "cuisine": "global",
+   "category": "condiment",
+   "per100g": {
+    "kcal": 588.0,
+    "protein": 25.0,
+    "carbs": 20.0,
+    "fat": 50.0,
+    "fibre": 6.0
+   },
+   "servings": [
+    {
+     "label": "1 tbsp",
+     "grams": 16.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a jar of peanut butter",
+   "aliases": [
+    "pb"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "almonds",
+   "name": "Almonds",
+   "cuisine": "global",
+   "category": "nuts",
+   "per100g": {
+    "kcal": 579.0,
+    "protein": 21.0,
+    "carbs": 22.0,
+    "fat": 50.0,
+    "fibre": 12.5
+   },
+   "servings": [
+    {
+     "label": "10 almonds",
+     "grams": 12.0
+    },
+    {
+     "label": "1 handful",
+     "grams": 28.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a handful of almonds",
+   "aliases": [
+    "badam",
+    "nuts"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "banana",
+   "name": "Banana",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 89.0,
+    "protein": 1.1,
+    "carbs": 23.0,
+    "fat": 0.3,
+    "fibre": 2.6
+   },
+   "servings": [
+    {
+     "label": "1 medium",
+     "grams": 118.0
+    },
+    {
+     "label": "1 small",
+     "grams": 90.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a banana",
+   "aliases": [
+    "kela"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "apple",
+   "name": "Apple",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 52.0,
+    "protein": 0.3,
+    "carbs": 14.0,
+    "fat": 0.2,
+    "fibre": 2.4
+   },
+   "servings": [
+    {
+     "label": "1 medium",
+     "grams": 180.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a red apple",
+   "aliases": [
+    "seb"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "mango",
+   "name": "Mango",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 60.0,
+    "protein": 0.8,
+    "carbs": 15.0,
+    "fat": 0.4,
+    "fibre": 1.6
+   },
+   "servings": [
+    {
+     "label": "1 mango",
+     "grams": 200.0
+    },
+    {
+     "label": "1 cup sliced",
+     "grams": 165.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a ripe mango",
+   "aliases": [
+    "aam"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "orange",
+   "name": "Orange",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 47.0,
+    "protein": 0.9,
+    "carbs": 12.0,
+    "fat": 0.1,
+    "fibre": 2.4
+   },
+   "servings": [
+    {
+     "label": "1 orange",
+     "grams": 130.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "an orange citrus fruit",
+   "aliases": [
+    "santra",
+    "mosambi"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "grapes",
+   "name": "Grapes",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 69.0,
+    "protein": 0.7,
+    "carbs": 18.0,
+    "fat": 0.2,
+    "fibre": 0.9
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bunch of grapes",
+   "aliases": [
+    "angoor"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "watermelon",
+   "name": "Watermelon",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 30.0,
+    "protein": 0.6,
+    "carbs": 7.6,
+    "fat": 0.2,
+    "fibre": 0.4
+   },
+   "servings": [
+    {
+     "label": "1 slice",
+     "grams": 280.0
+    },
+    {
+     "label": "1 cup",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a slice of watermelon",
+   "aliases": [
+    "tarbooz"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "papaya",
+   "name": "Papaya",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 43.0,
+    "protein": 0.5,
+    "carbs": 11.0,
+    "fat": 0.3,
+    "fibre": 1.7
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 145.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "cut papaya pieces",
+   "aliases": [
+    "papita"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pineapple",
+   "name": "Pineapple",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 50.0,
+    "protein": 0.5,
+    "carbs": 13.0,
+    "fat": 0.1,
+    "fibre": 1.4
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 165.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pineapple slices",
+   "aliases": [
+    "ananas"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "strawberries",
+   "name": "Strawberries",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 32.0,
+    "protein": 0.7,
+    "carbs": 7.7,
+    "fat": 0.3,
+    "fibre": 2.0
+   },
+   "servings": [
+    {
+     "label": "1 cup",
+     "grams": 150.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a bowl of strawberries",
+   "aliases": [
+    "strawberry"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "guava",
+   "name": "Guava",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 68.0,
+    "protein": 2.6,
+    "carbs": 14.0,
+    "fat": 1.0,
+    "fibre": 5.4
+   },
+   "servings": [
+    {
+     "label": "1 guava",
+     "grams": 100.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "a green guava fruit",
+   "aliases": [
+    "amrood",
+    "peru"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  },
+  {
+   "id": "pomegranate",
+   "name": "Pomegranate",
+   "cuisine": "global",
+   "category": "fruit",
+   "per100g": {
+    "kcal": 83.0,
+    "protein": 1.7,
+    "carbs": 19.0,
+    "fat": 1.2,
+    "fibre": 4.0
+   },
+   "servings": [
+    {
+     "label": "1 cup arils",
+     "grams": 175.0
+    },
+    {
+     "label": "gram",
+     "grams": 1.0
+    }
+   ],
+   "clip_name": "pomegranate seeds",
+   "aliases": [
+    "anar"
+   ],
+   "source": "USDA FoodData Central (approx.)"
+  }
+ ]
+}

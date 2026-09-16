@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.env
+
+# ML: large models are fetched by `python -m scripts.download_models`
+backend/models/
+# evaluation images are re-downloaded by `python -m ml.fetch_testset`
+backend/ml/testset/images/
+
+# Node
+node_modules/
+dist/
+*.local
+*.log
+.DS_Store
+.vscode/
+.idea/

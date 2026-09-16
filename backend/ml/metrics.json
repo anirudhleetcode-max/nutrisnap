@@ -1,0 +1,211 @@
+{
+  "generated_at": "2026-09-16T12:02:46+00:00",
+  "model": "CLIP ViT-B/32, quantized ONNX (Xenova/clip-vit-base-patch32), CPU",
+  "n_classes": 188,
+  "n_test_images": 79,
+  "n_test_classes": 20,
+  "zero_shot": {
+    "single_template": {
+      "top1": 0.367,
+      "top5": 0.519
+    },
+    "ensemble": {
+      "top1": 0.506,
+      "top5": 0.759
+    }
+  },
+  "per_class_top1_ensemble": {
+    "biryani": "3/4",
+    "burger": "4/4",
+    "butter-chicken": "0/4",
+    "dhokla": "4/4",
+    "dosa": "0/4",
+    "french-fries": "4/4",
+    "gulab-jamun": "1/4",
+    "idli": "0/4",
+    "jalebi": "1/4",
+    "momos": "3/4",
+    "palak-paneer": "2/3",
+    "paneer-tikka": "2/4",
+    "pani-puri": "4/4",
+    "pav-bhaji": "1/4",
+    "pizza": "4/4",
+    "poha": "0/4",
+    "ramen": "2/4",
+    "samosa": "2/4",
+    "sushi": "3/4",
+    "vada-pav": "0/4"
+  },
+  "ensemble_confusions": [
+    {
+      "file": "dosa/masala-dosa_0.jpg",
+      "predicted": "kathi-roll"
+    },
+    {
+      "file": "dosa/masala-dosa_1.jpg",
+      "predicted": "aloo-paratha"
+    },
+    {
+      "file": "dosa/masala-dosa_4.jpg",
+      "predicted": "aloo-paratha"
+    },
+    {
+      "file": "dosa/masala-dosa_7.jpg",
+      "predicted": "aloo-paratha"
+    },
+    {
+      "file": "idli/idli_0.jpg",
+      "predicted": "bhel-puri"
+    },
+    {
+      "file": "idli/idli_2.jpg",
+      "predicted": "aloo-tikki"
+    },
+    {
+      "file": "idli/idli_5.jpg",
+      "predicted": "white-bread"
+    },
+    {
+      "file": "idli/idli_6.jpg",
+      "predicted": "coconut-chutney"
+    },
+    {
+      "file": "samosa/samosa_0.jpg",
+      "predicted": "potato-chips"
+    },
+    {
+      "file": "samosa/samosa_7.jpg",
+      "predicted": "aloo-tikki"
+    },
+    {
+      "file": "biryani/biryani_2.jpg",
+      "predicted": "fried-rice"
+    },
+    {
+      "file": "jalebi/jalebi_1.jpg",
+      "predicted": "orange"
+    },
+    {
+      "file": "jalebi/jalebi_3.jpg",
+      "predicted": "maggi"
+    },
+    {
+      "file": "jalebi/jalebi_8.jpg",
+      "predicted": "maggi"
+    },
+    {
+      "file": "gulab-jamun/gulab-jamun_1.jpg",
+      "predicted": "orange-juice"
+    },
+    {
+      "file": "gulab-jamun/gulab-jamun_5.jpg",
+      "predicted": "rasgulla"
+    },
+    {
+      "file": "gulab-jamun/gulab-jamun_6.jpg",
+      "predicted": "rasgulla"
+    },
+    {
+      "file": "pav-bhaji/pav-bhaji_2.jpg",
+      "predicted": "egg-curry"
+    },
+    {
+      "file": "pav-bhaji/pav-bhaji_3.jpg",
+      "predicted": "maggi"
+    },
+    {
+      "file": "pav-bhaji/pav-bhaji_6.jpg",
+      "predicted": "naan"
+    },
+    {
+      "file": "vada-pav/vada-pav_0.jpg",
+      "predicted": "club-sandwich"
+    },
+    {
+      "file": "vada-pav/vada-pav_2.jpg",
+      "predicted": "club-sandwich"
+    },
+    {
+      "file": "vada-pav/vada-pav_3.jpg",
+      "predicted": "pani-puri"
+    },
+    {
+      "file": "vada-pav/vada-pav_7.jpg",
+      "predicted": "club-sandwich"
+    },
+    {
+      "file": "palak-paneer/palak-paneer_2.jpg",
+      "predicted": "matar-paneer"
+    },
+    {
+      "file": "butter-chicken/butter-chicken_1.jpg",
+      "predicted": "paneer-butter-masala"
+    },
+    {
+      "file": "butter-chicken/butter-chicken_2.jpg",
+      "predicted": "nachos"
+    },
+    {
+      "file": "butter-chicken/butter-chicken_7.jpg",
+      "predicted": "paneer-butter-masala"
+    },
+    {
+      "file": "butter-chicken/butter-chicken_8.jpg",
+      "predicted": "paneer-butter-masala"
+    },
+    {
+      "file": "poha/poha_0.jpg",
+      "predicted": "veg-biryani"
+    },
+    {
+      "file": "poha/poha_4.jpg",
+      "predicted": "veg-biryani"
+    },
+    {
+      "file": "poha/poha_5.jpg",
+      "predicted": "veg-biryani"
+    },
+    {
+      "file": "poha/poha_6.jpg",
+      "predicted": "veg-biryani"
+    },
+    {
+      "file": "sushi/sushi_1.jpg",
+      "predicted": "strawberries"
+    },
+    {
+      "file": "ramen/ramen_0.jpg",
+      "predicted": "fish-curry"
+    },
+    {
+      "file": "ramen/ramen_3.jpg",
+      "predicted": "maggi"
+    },
+    {
+      "file": "momos/momos_1.jpg",
+      "predicted": "pani-puri"
+    },
+    {
+      "file": "paneer-tikka/paneer-tikka_0.jpg",
+      "predicted": "paneer-butter-masala"
+    },
+    {
+      "file": "paneer-tikka/paneer-tikka_6.jpg",
+      "predicted": "tandoori-chicken"
+    }
+  ],
+  "not_food_guard": {
+    "threshold": 0.5,
+    "non_food_images": 9,
+    "non_food_flagged": 0.778,
+    "food_images_wrongly_flagged": 0.0
+  },
+  "personalisation_simulated": {
+    "description": "leave-one-out; memory = other test photos the zero-shot model got wrong, with their true labels",
+    "memory_size": 39,
+    "images_where_knn_fired": 64,
+    "top1": 0.684,
+    "top5": 0.937
+  },
+  "latency_ms_vision_per_image": 63.6
+}

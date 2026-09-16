@@ -1,0 +1,13 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+motor>=3.5
+pymongo>=4.8
+pydantic[email]>=2.7
+pydantic-settings>=2.3
+pyjwt>=2.8
+bcrypt>=4.1
+python-multipart>=0.0.9
+numpy>=1.26
+onnxruntime>=1.17
+tokenizers>=0.15
+pillow>=10.0
