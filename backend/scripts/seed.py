@@ -1,4 +1,7 @@
-"""Seed the food catalogue and a demo account with ~30 days of realistic Indian meals.
+"""Seed the food catalogue and a demo account with ~30 days of GENERATED sample meals.
+
+The meals are randomly drawn from fixed menus below (seeded); they are demo data, not a real
+person's log, and the UI shows a "demo account" banner for this user.
 
     python -m scripts.seed
 

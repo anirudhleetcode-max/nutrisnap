@@ -31,10 +31,11 @@ export default function Auth({ mode }: { mode: "login" | "register" }) {
         <div className="auth-side-inner">
           <Wordmark />
           <div className="plate-note">
-            <p className="note-line"><span>2 × roti</span><span className="num">224</span></p>
-            <p className="note-line"><span>1 katori dal tadka</span><span className="num">158</span></p>
-            <p className="note-line"><span>1 katori bhindi masala</span><span className="num">165</span></p>
-            <p className="note-line total"><span>Lunch</span><span className="num">547 kcal</span></p>
+            <p className="note-line note-head"><span>Example lunch</span></p>
+            <p className="note-line"><span>2 × roti</span><span className="num">239</span></p>
+            <p className="note-line"><span>1 katori dal tadka</span><span className="num">218</span></p>
+            <p className="note-line"><span>1 katori bhindi masala</span><span className="num">≈165</span></p>
+            <p className="note-line total"><span>Lunch</span><span className="num">622 kcal</span></p>
           </div>
           <p className="auth-quote">Roti, dal, dosa or pizza — photograph it, confirm it, done.</p>
         </div>

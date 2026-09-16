@@ -1,0 +1,18 @@
+{
+  "measured_at": "2026-09-16T15:29:20+00:00",
+  "requests_per_setting": 20,
+  "cpu_threads": 2,
+  "note": "wall-clock per request incl. upload parsing, decode, inference, Mongo writes; shared 2-CPU build machine",
+  "results": {
+    "whole_image_only": {
+      "median_ms": 70.6,
+      "p90_ms": 78.5,
+      "server_inference_median_ms": 65.0
+    },
+    "with_multi_item_crops": {
+      "median_ms": 352.0,
+      "p90_ms": 364.6,
+      "server_inference_median_ms": 347.0
+    }
+  }
+}

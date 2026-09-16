@@ -336,3 +336,4 @@
   .kv dd { margin-bottom: 8px; }
   .toasts { bottom: calc(76px + env(safe-area-inset-bottom)); width: calc(100% - 32px); }
 }
+.note-line.note-head { font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }

@@ -69,4 +69,34 @@ The Resolution section at the end records what was done.
 
 ## Resolution
 
-_Filled in at the end of phase 2._
+| # | Status | What was done |
+|---|---|---|
+| D1 | Done | `scripts/usda_verify.py` downloads the USDA FDC bulk CSVs (FNDDS 2024-10-31, SR Legacy 2018-04). 95/188 foods (29/113 Indian) are mapped by hand to same-dish records (`data/usda_mapping.json`); their values were replaced and `verified`, `source_id` (`fdc:<id>`) and `source_url` added. The other 93 are `verified: false` with an honest source string. The old estimates had an 11% median kcal error on the verified items. The DEMO_KEY REST API was rate-limited (10 requests), so the bulk files were used. |
+| D2 | Done | Tests check provenance fields, the mapping ↔ catalogue consistency, and `/api/foods/meta`. |
+| D3 | Done | Demo banner on every page for the demo account; README calls the data generated. |
+| D4 | Done | Card labelled "Example lunch" and its numbers recomputed from the current catalogue (roti and dal are USDA-verified; bhindi masala shows ≈ as an estimate). |
+| M1 | Done | Food-101 (30 classes) + Indian Food Images (15 classes): train 1800 / val 900 / test 2461 real photos; Commons set kept as an OOD check (79 food + 36 non-food). |
+| M2 | Done | Temperature scaling fitted on val (T = 0.446); test ECE 0.443 → 0.062; reliability tables and plot committed. |
+| M3 | Done | Threshold 0.48 chosen on val (85% target); API returns `decision`/`abstain_below`; UI shows "Not sure — pick from the list" without preselecting. |
+| M4 | Done | Majority, single prompt, ensemble, closed-set ensemble, logistic-regression probe and hybrid, all on the same splits. |
+| M5 | Done | Guard threshold chosen on val (0.95) and evaluated on test (88.9% non-food caught, 0.73% food wrongly flagged). The non-food sample is still small (36). |
+| M6 | Partly | Personalisation evaluated on held-out test photos with train-split corrections (79.4 → 83.9%). The constants are still hand-set; the gate fires on 95% of photos (documented). |
+| M7 | Done | `errors.json` / `confusions.csv` with confusion pairs, confident mistakes and per-class accuracy; README analysis. |
+| M8 | Done | Batch = 1 everywhere (crops too), documented in code and model card. |
+| M9 | Done | `docs/MODEL_CARD.md`, `/api/model`, Model page. |
+| M10 | Done | `experiments/` with configs, results (git commit, versions, data hashes) and reports. |
+| S1 | Done | Placeholder or short secret: refuses to start in production, uses a random per-process secret with a warning in development; `.env.example` explains generation. |
+| S2 | Done | Magic-byte sniffing (JPEG/PNG/WebP), 40 MP limit checked before decoding, decompression-bomb warnings treated as errors, 20 s inference timeout; thumbnails re-encoded (EXIF dropped). HEIC removed. |
+| S3 | Done | Failed-login limit per IP + email (5 per 5 min → 429 with Retry-After). In-memory, single process (documented). |
+| S4 | Done | Privacy text in the UI and model card; `DELETE /api/corrections` + Profile button. |
+| S5 | Done | `/api/health` returns `degraded` with the model error. |
+| S6 | Done | Model logic moved to `app/ml/pipeline.py`; the router only handles HTTP and storage. |
+| S7 | Done | `asyncio.wait_for` timeout around inference. |
+| U1 | Done | Verified vs estimate badge (dashed border, ≈ marker) on Snap, Diary and search. |
+| U2 | Done | Decision banner explaining the threshold; "calibrated confidence" wording; quality warnings. |
+| U3 | Done | Model page. |
+| U4 | Done | Confirm dialog component and toasts. |
+| U5 | Done | See D3. |
+| T1 | Done | vitest + Testing Library: 21 tests (decision logic, provenance badge, portion control, confirm dialog, sign-in errors incl. rate limit, ring/readout). It found a missing `role="alert"` on error messages, now fixed. |
+| T2 | Done | Robustness tests for empty, non-image, truncated, tiny, pixel-bomb, dark, low-confidence, missing and corrupt model; a binary-class bug in the probe export was found and fixed. |
+| T3 | Done (not run) | `.github/workflows/ci.yml`: pytest with a Mongo service, frontend build + vitest. Not executed on GitHub from here. |
