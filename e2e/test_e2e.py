@@ -26,6 +26,7 @@ def photo(name: str, fixture: str) -> Path:
 
 def shot(page: Page, name: str) -> None:
     SHOTS.mkdir(parents=True, exist_ok=True)
+    expect(page.locator(".toast")).to_have_count(0, timeout=8000)  # no stale toasts in screenshots
     page.wait_for_timeout(350)  # let bar transitions finish
     page.screenshot(path=str(SHOTS / f"{name}.png"), full_page=False)
 
@@ -80,35 +81,56 @@ def test_full_journey():
         pizza_chip.click()
         expect(page.get_by_test_id("picked-food")).to_have_text("Margherita Pizza")
 
-        # 4. choose portion: 2 slices (100 g each, 250 kcal/100 g)
+        # the result explains itself: provenance + a decision/confidence line
+        expect(page.get_by_test_id("nutrition-source")).to_contain_text("USDA verified")
+
+        # 4. choose portion: 2 slices (100 g each, 266 kcal/100 g from USDA FDC 2708616)
         page.get_by_label("Serving").select_option("1 slice")
         page.get_by_role("button", name="More").click()  # steps are half servings
         page.get_by_role("button", name="More").click()
         expect(page.get_by_test_id("qty")).to_have_value("2")
-        expect(page.get_by_test_id("portion-kcal")).to_have_text("500")
+        expect(page.get_by_test_id("portion-kcal")).to_have_text("532")
         page.get_by_role("group", name="Meal").get_by_role("button", name="Dinner").click()
         shot(page, "snap-desktop")
         page.get_by_test_id("save-meal").click()
-        expect(page.get_by_role("status")).to_contain_text("Logged Margherita Pizza")
+        expect(page.get_by_test_id("saved")).to_contain_text("Logged Margherita Pizza")
 
         # 5. diary shows the meal; edit the portion
         page.get_by_role("link", name="View diary").click()
         row = page.get_by_test_id("meal-row").filter(has_text="Margherita Pizza")
         expect(row).to_be_visible()
-        expect(row.get_by_test_id("meal-kcal")).to_have_text("500")
-        expect(page.get_by_test_id("day-kcal")).to_have_text("500")
+        expect(row.get_by_test_id("meal-kcal")).to_have_text("532")
+        expect(page.get_by_test_id("day-kcal")).to_have_text("532")
         row.click()
         page.get_by_role("button", name="More").click()
-        expect(page.get_by_test_id("update-meal")).to_contain_text("625")
+        expect(page.get_by_test_id("update-meal")).to_contain_text("665")
         page.get_by_test_id("update-meal").click()
-        expect(row.get_by_test_id("meal-kcal")).to_have_text("625")
+        expect(row.get_by_test_id("meal-kcal")).to_have_text("665")
         expect(row).to_contain_text("2.5 × 1 slice · 250 g")
 
         # 6. trends renders with that day
         page.get_by_role("link", name="Trends").first.click()
-        expect(page.get_by_test_id("avg-kcal")).to_contain_text("625")
+        expect(page.get_by_test_id("avg-kcal")).to_contain_text("665")
         expect(page.get_by_role("img", name=re.compile("Calories per day"))).to_be_visible()
-        expect(page.get_by_text("Margherita Pizza")).to_be_visible()
+        expect(page.get_by_text("Margherita Pizza", exact=True)).to_be_visible()
+
+        # 6b. delete goes through a confirm dialog
+        page.get_by_role("link", name="Diary").first.click()
+        row = page.get_by_test_id("meal-row").filter(has_text="Margherita Pizza")
+        row.click()
+        page.get_by_role("button", name="Remove").click()
+        dialog = page.get_by_role("alertdialog")
+        expect(dialog).to_be_visible()
+        dialog.get_by_role("button", name="Cancel").click()
+        expect(dialog).to_have_count(0)
+        expect(row).to_be_visible()
+
+        # 6c. model card page
+        page.get_by_role("link", name="Model", exact=True).first.click()
+        expect(page.get_by_role("heading", name="How recognition works")).to_be_visible()
+        expect(page.get_by_text("not trained by this project")).to_be_visible()
+        expect(page.get_by_text("Measured quality")).to_be_visible()
+        shot(page, "model-desktop")
 
         # 7. screenshots with the seeded demo account (a month of data)
         page.get_by_role("button", name="Sign out").click()
@@ -116,6 +138,11 @@ def test_full_journey():
         expect(page.get_by_label("Email")).to_have_value("demo@nutrisnap.app")
         page.get_by_role("button", name="Sign in").click()
         expect(page.get_by_role("heading", name="What’s on your plate?")).to_be_visible()
+        expect(page.get_by_role("note")).to_contain_text("generated sample data")
+        page.get_by_test_id("file-input").set_input_files(str(photo("dosa/masala-dosa_1.jpg", "dosa.jpg")))
+        expect(page.get_by_role("group", name="Top matches")).to_be_visible(timeout=30000)
+        expect(page.get_by_test_id("result-state")).to_be_visible()
+        shot(page, "snap-uncertain-desktop")
         page.get_by_role("link", name="Diary").first.click()
         page.get_by_role("button", name="Previous day").click()
         expect(page.get_by_test_id("meal-row").first).to_be_visible()

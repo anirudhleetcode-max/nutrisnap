@@ -289,7 +289,7 @@ export default function Snap() {
                     </div>
 
                     {saved ? (
-                      <div className="saved" role="status">
+                      <div className="saved" role="status" data-testid="saved">
                         <Check aria-hidden="true" />
                         <div>
                           <strong>Logged {saved.food_name}</strong>
