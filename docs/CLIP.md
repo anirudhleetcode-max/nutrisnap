@@ -151,7 +151,7 @@ supervised probe on image embeddings separates them; prompts alone can't.
 
 ## 5. Where zero-shot falls short, and how the app adapts CLIP
 
-- **A degraded text tower.** The app's INT8 text tower gives embeddings with only 0.74 cosine to fp32.
+- **A degraded text tower.** The 8-bit text tower the app used until 2026-11-26 gives embeddings with only 0.74 cosine to fp32.
   With it, zero-shot top-1 on Indian dishes is 42%. With the fp32 text tower it is 86%. The main run
   blamed rare dish names (kofta 1.5%, pakora 1.3%), but most of the gap was quantisation. See
   [COMPARISON.md](COMPARISON.md).

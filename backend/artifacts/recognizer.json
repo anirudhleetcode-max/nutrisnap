@@ -1,29 +1,30 @@
 {
-  "run_id": "2026-09-16_main",
-  "created_at": "2026-09-16T15:16:27+00:00",
+  "run_id": "2026-11-26_main",
+  "created_at": "2026-11-26T19:46:30+00:00",
   "settings": {
-    "version": "2026-09-16_main",
+    "version": "2026-11-26_main",
     "mode": "hybrid",
-    "temperature": 0.4462,
-    "abstain_below": 0.48,
+    "temperature": 0.8206,
+    "abstain_below": 0.52,
     "not_food_below": 0.95,
-    "hybrid_weight": 1.0,
+    "hybrid_weight": 0.25,
     "probe_file": "probe_v1.npz",
-    "calibrated": true
+    "calibrated": true,
+    "text_tower": "fp32"
   },
   "metrics": {
-    "test_top1": 0.7936,
-    "test_top5": 0.9728,
-    "test_top1_zero_shot_single_prompt": 0.5234,
-    "test_ece_before": 0.4431,
-    "test_ece_after": 0.0619,
-    "abstain_threshold": 0.48,
-    "test_coverage": 0.8399,
-    "test_accuracy_when_answering": 0.8505,
-    "ood_commons_top1": 0.6329,
+    "test_top1": 0.7729,
+    "test_top5": 0.9521,
+    "test_top1_zero_shot_single_prompt": 0.7477,
+    "test_ece_before": 0.1177,
+    "test_ece_after": 0.0459,
+    "abstain_threshold": 0.52,
+    "test_coverage": 0.7582,
+    "test_accuracy_when_answering": 0.8746,
+    "ood_commons_top1": 0.8608,
     "not_food_test": {
-      "non_food_flagged": 0.8889,
-      "food_wrongly_flagged": 0.0073
+      "non_food_flagged": 0.9444,
+      "food_wrongly_flagged": 0.0024
     }
   },
   "datasets": {
@@ -44,7 +45,7 @@
         },
         "classes": 30,
         "row_ids_sha256": "7d1fdca089516c59",
-        "file_sha256": "f91745cfbf0c3e66"
+        "file_sha256": "f48f9298b76583a1"
       },
       "indianfoods": {
         "rows": 1861,
@@ -55,17 +56,17 @@
         },
         "classes": 15,
         "row_ids_sha256": "56d709d246578e58",
-        "file_sha256": "890a750d5fbd24e1"
+        "file_sha256": "694c283288f322d1"
       }
     }
   },
   "env": {
-    "python": "3.11.15",
-    "platform": "Linux-6.18.44-fc-v33-x86_64-with-glibc2.39",
-    "numpy": "2.4.4",
-    "onnxruntime": "1.25.0",
-    "scikit_learn": "1.8.0",
-    "commit": "2d9d82e",
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v880-x86_64-with-glibc2.39",
+    "numpy": "2.5.5",
+    "onnxruntime": "1.32.0",
+    "scikit_learn": "1.9.1",
+    "commit": "676eccd",
     "dirty": true
   }
 }

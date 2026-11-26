@@ -1,9 +1,12 @@
-"""Fetch the CLIP ViT-B/32 ONNX files (about 155 MB) into backend/models/.
+"""Fetch the CLIP ViT-B/32 ONNX files (about 345 MB) into backend/models/.
 
     python -m scripts.download_models
 
 Source: https://huggingface.co/Xenova/clip-vit-base-patch32 (MIT-licensed OpenAI CLIP weights,
-exported to ONNX with 8-bit dynamic quantisation). Safe to re-run; finished files are skipped.
+exported to ONNX). The vision tower is the 8-bit dynamically quantised export (runs per request);
+the text tower is the full-precision export, because the 8-bit one loses ~22 points of zero-shot
+accuracy and it only runs once to build the cached label embeddings. Safe to re-run; finished files
+are skipped.
 """
 from __future__ import annotations
 
@@ -17,7 +20,7 @@ from app.config import get_settings
 BASE = "https://huggingface.co/Xenova/clip-vit-base-patch32/resolve/main/"
 FILES = {
     "vision_model_quantized.onnx": "onnx/vision_model_quantized.onnx",
-    "text_model_quantized.onnx": "onnx/text_model_quantized.onnx",
+    "text_model.onnx": "onnx/text_model.onnx",
     "tokenizer.json": "tokenizer.json",
 }
 

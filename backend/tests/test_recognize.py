@@ -80,7 +80,7 @@ def test_correction_personalises_next_prediction(client, new_user, auth_headers)
     first = upload(client, h, FIXTURES / "dosa.jpg", multi=False).json()
     assert first["personalized"] is False
     guess = first["candidates"][0]["food"]["id"]
-    # the user says it's masala dosa (the zero-shot model tends to call this photo a paratha)
+    # the user corrects the guess (plain dosa with the current model; a paratha with the old int8 text tower)
     label = "masala-dosa" if guess != "masala-dosa" else "plain-dosa"
     serving = client.get(f"/api/foods/{label}").json()["servings"][0]["label"]
     r = client.post("/api/meals", json={"food_id": label, "date": "2026-02-01", "meal_type": "breakfast",

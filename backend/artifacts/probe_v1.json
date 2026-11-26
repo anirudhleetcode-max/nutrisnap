@@ -1,7 +1,7 @@
 {
   "model": "multinomial logistic regression on frozen CLIP ViT-B/32 image embeddings",
-  "trained_at": "2026-09-16T15:16:27+00:00",
-  "run_id": "2026-09-16_main",
+  "trained_at": "2026-11-26T19:46:30+00:00",
+  "run_id": "2026-11-26_main",
   "classes": [
     "burger",
     "burrito",
@@ -70,7 +70,7 @@
         },
         "classes": 30,
         "row_ids_sha256": "7d1fdca089516c59",
-        "file_sha256": "f91745cfbf0c3e66"
+        "file_sha256": "f48f9298b76583a1"
       },
       "indianfoods": {
         "rows": 1861,
@@ -81,20 +81,20 @@
         },
         "classes": 15,
         "row_ids_sha256": "56d709d246578e58",
-        "file_sha256": "890a750d5fbd24e1"
+        "file_sha256": "694c283288f322d1"
       }
     }
   },
   "synthetic": false,
   "env": {
-    "python": "3.11.15",
-    "platform": "Linux-6.18.44-fc-v33-x86_64-with-glibc2.39",
-    "numpy": "2.4.4",
-    "onnxruntime": "1.25.0",
-    "scikit_learn": "1.8.0",
-    "commit": "2d9d82e",
+    "python": "3.13.18",
+    "platform": "Linux-6.18.44-fc-v880-x86_64-with-glibc2.39",
+    "numpy": "2.5.5",
+    "onnxruntime": "1.32.0",
+    "scikit_learn": "1.9.1",
+    "commit": "676eccd",
     "dirty": true
   },
-  "val_top1_closed_set": 0.8989,
-  "test_top1_closed_set": 0.9248
+  "val_top1_closed_set": 0.8956,
+  "test_top1_closed_set": 0.9228
 }

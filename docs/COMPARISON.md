@@ -13,7 +13,7 @@ photo's accept set ([DATASET.md](DATASET.md)). Everything chosen (epoch, C, α/�
 is chosen on val. The **unseen photos** are 79 hand-picked Wikimedia Commons photos from other
 photographers: 56 belong to the 45 classes, and 23 are dishes no model was trained on.
 
-## The headline finding: the app's INT8 text tower was costing ~19 points
+## The headline finding: the app's INT8 text tower was costing ~19 points (now fixed)
 
 The app runs CLIP's text tower as an 8-bit quantised ONNX file to build its cached label embeddings.
 Those embeddings have only **0.74 cosine similarity** to the full-precision (fp32) ones. Rebuilding the
@@ -21,11 +21,11 @@ same 7-prompt label matrix with the fp32 text tower, with nothing else changed:
 
 | Zero-shot CLIP, 7 prompts | Test top-1 (45) | Indian top-1 | Test top-1 (all 188 foods) | New-dish photos top-1 / top-5 (188) |
 |---|---|---|---|---|
-| INT8 text tower (as shipped) | 67.9% | 42.0% | 55.1% | 21.7% / 47.8% |
+| INT8 text tower (app until 2026-11-26) | 67.9% | 42.0% | 55.1% | 21.7% / 47.8% |
 | **fp32 text tower** | **86.4%** | **85.7%** | **77.2%** | **82.6% / 100%** |
 
 The text tower runs once per food-list change, and its output is cached, so this gain costs nothing
-per request. It also corrects an earlier conclusion. The main run (`2026-09-16_main`) attributed weak
+per request. **Applied to the app on 2026-11-26** (run `2026-11-26_main`). It also corrects an earlier conclusion. The main run (`2026-09-16_main`) attributed weak
 zero-shot results on Indian dishes (kofta 1.5%, pakora 1.3%) to those names being rare in CLIP's
 training captions. With an accurate text tower, zero-shot Indian top-1 is 85.7%, so most of that
 weakness came from quantisation. Both variants appear in every table below.
@@ -84,7 +84,7 @@ each class is just a text embedding:
 |---|---|---|
 | CNN / ResNet / probe (fixed 45 outputs) | 0% | 0% |
 | CLIP zero-shot, 1 prompt (INT8 text) | 0.0% | 17.4% |
-| CLIP zero-shot, 7 prompts (INT8 text, as shipped) | 21.7% | 47.8% |
+| CLIP zero-shot, 7 prompts (INT8 text, the app's until 2026-11-26) | 21.7% | 47.8% |
 | **CLIP zero-shot, 7 prompts, fp32 text** | **82.6%** | **100%** |
 
 Adding a dish to a conventional classifier means collecting labelled photos and retraining. For CLIP
@@ -163,7 +163,7 @@ AURC at that accuracy.
 | ResNet-50 → **ONNX INT8 static** (QDQ, 128 calibration photos) | 23.6 M | 224 px | **10.9 ms** | **24 MB** |
 | CLIP ViT-B/32 vision, fp32 | 87.8 M | 224 px | 56.2 ms (2 threads) | 352 MB |
 | CLIP vision, fp16 | 87.8 M | 224 px | 56.2 ms | 176 MB |
-| CLIP vision, INT8 (Xenova download, **as shipped**) | 87.8 M | 224 px | 43.8 ms | 89 MB |
+| CLIP vision, INT8 (Xenova download, **what the app uses**) | 87.8 M | 224 px | 43.8 ms | 89 MB |
 | CLIP vision, **INT8 quantised here** (`quantize_dynamic`, QInt8 per-channel, 7 s) | 87.8 M | 224 px | **19.9 ms** | 89 MB |
 
 **Accuracy cost of each precision** (val, 900 photos; INT8 text label matrix for all rows):
@@ -172,13 +172,13 @@ AURC at that accuracy.
 |---|---|---|---|---|
 | fp32 | 1 / 1 | 71.2% | 100% | 92.1% |
 | fp16 | 1.000 / 1.000 | 71.2% | 100% | 92.1% |
-| INT8 Xenova (as shipped) | 0.932 / 0.787 | 70.1% | 79.0% | 89.6% |
+| INT8 Xenova (app) | 0.932 / 0.787 | 70.1% | 79.0% | 89.6% |
 | INT8 here | **0.973 / 0.849** | 69.4% | **88.1%** | **91.2%** |
 
 | CLIP text tower | File | Per prompt | Cosine to fp32 | 188-way zero-shot test top-1 |
 |---|---|---|---|---|
 | fp32 | 254 MB | 9.0 ms | 1 | **77.2%** |
-| INT8 (as shipped) | 65 MB | 4.8 ms | **0.744** | 55.1% |
+| INT8 (app until 2026-11-26) | 65 MB | 4.8 ms | **0.744** | 55.1% |
 
 | ResNet-50 fine-tuned | Val top-1 | Agrees with PyTorch |
 |---|---|---|
@@ -200,7 +200,7 @@ AURC at that accuracy.
   probe + hybrid 0.13 ms, temperature + decision 0.03 ms, not-food guard 0.07 ms, quality checks
   1.4 ms. Total 50.5 ms. Only the encoder is worth optimising.
 
-**Recommendations (not yet applied to the app):**
+**Recommendations:**
 
 1. **Build the label matrix with the fp32 text tower,** or ship the precomputed 188×512 matrix (385 KB) so
    the server needs no text tower at all. This is the largest accuracy gain found, and it is free at
@@ -208,7 +208,11 @@ AURC at that accuracy.
 2. **Swap the vision model for the per-channel INT8 quantised here:** 2.2× faster and closer to fp32.
 
 Both change the embeddings that the probe, hybrid weight, temperature and thresholds were fitted on,
-so `experiments/run.py` must be re-run (re-fitting on val) before deploying either.
+so `experiments/run.py` must be re-run (re-fitting on val) before deploying either. **Recommendation 1 is
+applied** in run `2026-11-26_main` ([report](../experiments/reports/2026-11-26_main.md)): the app's
+zero-shot test top-1 rose from 55.2% to 77.2%, and Commons top-1 from 63.3% to 86.1%. The hybrid's
+top-1 on the in-class test split fell 2.1 points (79.4% → 77.3%), for reasons explained in the report.
+Recommendation 2 is not applied yet.
 
 ## 7. Verdict
 
@@ -236,5 +240,5 @@ fixes in §6 would make it substantially better.
 - Latency is from a shared cloud VM. Re-run `onnx_bench.py` on the deployment machine.
 - The few-shot curve picks hyper-parameters on the full val split (20 photos per class), which a real
   1-shot user would not have.
-- `clip_explain.py`'s similarity statistics use the app's INT8 text embeddings, so they describe the
-  shipped model.
+- `clip_explain.py`'s similarity statistics use the INT8 text embeddings (it ran before the fix), so they
+  describe the model as it was shipped until 2026-11-26.
