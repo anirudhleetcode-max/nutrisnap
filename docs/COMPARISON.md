@@ -212,9 +212,12 @@ so `experiments/run.py` must be re-run (re-fitting on val) before deploying eith
 applied** in run `2026-11-26_main` ([report](../experiments/reports/2026-11-26_main.md)): the app's
 zero-shot test top-1 rose from 55.2% to 77.2%, and Commons top-1 from 63.3% to 86.1%. The hybrid's
 top-1 on the in-class test split fell 2.1 points (79.4% → 77.3%), for reasons explained in the report.
-**Recommendation 2 is applied** in run `2026-11-26_main-int8vision`
-([report](../experiments/reports/2026-11-26_main-int8vision.md)): recognition takes 22 ms instead of 47 ms,
-and the hybrid's test top-1 is 79.1%.
+**Recommendation 2 is applied**, with one correction found in production: the per-channel int8
+model measured here saturates on CPUs without AVX-512 VNNI (the Render servers) and gives wrong answers.
+The app now uses the same quantisation with `reduce_range`. It is just as fast and safe on all x86
+CPUs, and its accuracy (zero-shot test top-1 77.4%) matches Xenova's export rather than exceeding it.
+The numbers in the tables above were measured on a VNNI CPU
+([hotfix report](../experiments/reports/2026-11-26_vision-hotfix.md)).
 
 ## 7. Verdict
 

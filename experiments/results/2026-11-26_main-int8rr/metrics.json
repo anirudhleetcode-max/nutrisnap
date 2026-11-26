@@ -1,0 +1,885 @@
+{
+  "run_id": "2026-11-26_main-int8rr",
+  "started_at": "2026-11-26T20:26:40+00:00",
+  "finished_at": "2026-11-26T20:29:06+00:00",
+  "seed": 42,
+  "data": {
+    "splits": {
+      "train": 1800,
+      "val": 900,
+      "test": 2461
+    },
+    "classes": 45,
+    "probe_classes": 45,
+    "food_list_size": 188,
+    "ood_commons": {
+      "food": 79,
+      "non_food": 36
+    },
+    "manifest": {
+      "food101": {
+        "rows": 3300,
+        "splits": {
+          "train": 1200,
+          "val": 600,
+          "test": 1500
+        },
+        "classes": 30,
+        "row_ids_sha256": "7d1fdca089516c59",
+        "file_sha256": "f48f9298b76583a1"
+      },
+      "indianfoods": {
+        "rows": 1861,
+        "splits": {
+          "train": 600,
+          "val": 300,
+          "test": 961
+        },
+        "classes": 15,
+        "row_ids_sha256": "56d709d246578e58",
+        "file_sha256": "694c283288f322d1"
+      }
+    },
+    "synthetic": false
+  },
+  "clip_text_tower": "fp32",
+  "models": {
+    "majority_class": {
+      "val": {
+        "top1": 0.0222,
+        "top5": 0.1111,
+        "macro_top1": 0.0222,
+        "n": 900,
+        "food101": {
+          "top1": 0.0333,
+          "top5": 0.1333,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.0,
+          "top5": 0.0667,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.0203,
+        "top5": 0.1,
+        "macro_top1": 0.0222,
+        "n": 2461,
+        "food101": {
+          "top1": 0.0333,
+          "top5": 0.1333,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.0,
+          "top5": 0.0479,
+          "n": 961
+        }
+      }
+    },
+    "zero_shot_single_prompt": {
+      "val": {
+        "top1": 0.72,
+        "top5": 0.9189,
+        "macro_top1": 0.72,
+        "n": 900,
+        "food101": {
+          "top1": 0.7283,
+          "top5": 0.91,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.7033,
+          "top5": 0.9367,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.757,
+        "top5": 0.9366,
+        "macro_top1": 0.7603,
+        "n": 2461,
+        "food101": {
+          "top1": 0.7727,
+          "top5": 0.936,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.7326,
+          "top5": 0.9376,
+          "n": 961
+        }
+      }
+    },
+    "zero_shot_ensemble": {
+      "val": {
+        "top1": 0.7356,
+        "top5": 0.9189,
+        "macro_top1": 0.7356,
+        "n": 900,
+        "food101": {
+          "top1": 0.735,
+          "top5": 0.905,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.7367,
+          "top5": 0.9467,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.7737,
+        "top5": 0.9334,
+        "macro_top1": 0.776,
+        "n": 2461,
+        "food101": {
+          "top1": 0.7847,
+          "top5": 0.9287,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.7565,
+          "top5": 0.9407,
+          "n": 961
+        }
+      }
+    },
+    "zero_shot_ensemble_closed_set": {
+      "val": {
+        "top1": 0.84,
+        "top5": 0.9678,
+        "macro_top1": 0.84,
+        "n": 900,
+        "food101": {
+          "top1": 0.835,
+          "top5": 0.9633,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.85,
+          "top5": 0.9767,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.8627,
+        "top5": 0.9777,
+        "macro_top1": 0.8655,
+        "n": 2461,
+        "food101": {
+          "top1": 0.8687,
+          "top5": 0.976,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.8533,
+          "top5": 0.9802,
+          "n": 961
+        }
+      }
+    },
+    "linear_probe_closed_set": {
+      "val": {
+        "top1": 0.8911,
+        "top5": 0.9722,
+        "macro_top1": 0.8911,
+        "n": 900,
+        "food101": {
+          "top1": 0.8783,
+          "top5": 0.9617,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.9167,
+          "top5": 0.9933,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.9208,
+        "top5": 0.9919,
+        "macro_top1": 0.9212,
+        "n": 2461,
+        "food101": {
+          "top1": 0.912,
+          "top5": 0.992,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.9344,
+          "top5": 0.9917,
+          "n": 961
+        }
+      }
+    },
+    "hybrid_ensemble_plus_probe": {
+      "val": {
+        "top1": 0.7389,
+        "top5": 0.9333,
+        "macro_top1": 0.7389,
+        "n": 900,
+        "food101": {
+          "top1": 0.74,
+          "top5": 0.9183,
+          "n": 600
+        },
+        "indianfoods": {
+          "top1": 0.7367,
+          "top5": 0.9633,
+          "n": 300
+        }
+      },
+      "test": {
+        "top1": 0.7802,
+        "top5": 0.9573,
+        "macro_top1": 0.7824,
+        "n": 2461,
+        "food101": {
+          "top1": 0.7907,
+          "top5": 0.9567,
+          "n": 1500
+        },
+        "indianfoods": {
+          "top1": 0.7638,
+          "top5": 0.9584,
+          "n": 961
+        }
+      }
+    }
+  },
+  "ood_commons": {
+    "zero_shot_single_prompt": {
+      "top1": 0.7848,
+      "top5": 0.9873,
+      "n": 79,
+      "top1_classes_seen_by_probe": 0.7679,
+      "top1_classes_unseen_by_probe": 0.8261
+    },
+    "zero_shot_ensemble": {
+      "top1": 0.8481,
+      "top5": 0.9873,
+      "n": 79,
+      "top1_classes_seen_by_probe": 0.8571,
+      "top1_classes_unseen_by_probe": 0.8261
+    },
+    "hybrid_ensemble_plus_probe": {
+      "top1": 0.8608,
+      "top5": 0.9873,
+      "n": 79,
+      "top1_classes_seen_by_probe": 0.875,
+      "top1_classes_unseen_by_probe": 0.8261
+    },
+    "n_seen": 56,
+    "n_unseen": 23
+  },
+  "probe": {
+    "C_search": [
+      {
+        "C": 0.1,
+        "val_top1": 0.8189,
+        "val_top5": 0.9633
+      },
+      {
+        "C": 0.3,
+        "val_top1": 0.8411,
+        "val_top5": 0.9678
+      },
+      {
+        "C": 1,
+        "val_top1": 0.8767,
+        "val_top5": 0.9733
+      },
+      {
+        "C": 3,
+        "val_top1": 0.8822,
+        "val_top5": 0.9756
+      },
+      {
+        "C": 10,
+        "val_top1": 0.8911,
+        "val_top5": 0.9722
+      },
+      {
+        "C": 30,
+        "val_top1": 0.89,
+        "val_top5": 0.9733
+      }
+    ],
+    "C": 10,
+    "hybrid_search": [
+      {
+        "weight": 0.0,
+        "val_top1": 0.7356,
+        "val_top5": 0.9189
+      },
+      {
+        "weight": 0.25,
+        "val_top1": 0.7356,
+        "val_top5": 0.9311
+      },
+      {
+        "weight": 0.5,
+        "val_top1": 0.7389,
+        "val_top5": 0.9333
+      },
+      {
+        "weight": 0.75,
+        "val_top1": 0.7378,
+        "val_top5": 0.9356
+      },
+      {
+        "weight": 0.9,
+        "val_top1": 0.7311,
+        "val_top5": 0.9344
+      },
+      {
+        "weight": 1.0,
+        "val_top1": 0.7256,
+        "val_top5": 0.9378
+      }
+    ],
+    "hybrid_weight": 0.5
+  },
+  "chosen_model": "hybrid_ensemble_plus_probe",
+  "calibration": {
+    "temperature": 0.7737,
+    "val_before": {
+      "ece": 0.1353,
+      "brier_top1": 0.1679,
+      "nll": 0.9848,
+      "mean_confidence": 0.6036,
+      "accuracy": 0.7389
+    },
+    "val_after": {
+      "ece": 0.0363,
+      "brier_top1": 0.1488,
+      "nll": 0.925,
+      "mean_confidence": 0.7105,
+      "accuracy": 0.7389
+    },
+    "test_before": {
+      "ece": 0.1581,
+      "brier_top1": 0.1573,
+      "nll": 0.8329,
+      "mean_confidence": 0.6225,
+      "accuracy": 0.7802
+    },
+    "test_after": {
+      "ece": 0.0515,
+      "brier_top1": 0.1334,
+      "nll": 0.7476,
+      "mean_confidence": 0.7287,
+      "accuracy": 0.7802
+    }
+  },
+  "reliability": {
+    "val_before": [
+      {
+        "bin": "0.0-0.1",
+        "n": 4,
+        "confidence": 0.083,
+        "accuracy": 0.25
+      },
+      {
+        "bin": "0.1-0.2",
+        "n": 56,
+        "confidence": 0.157,
+        "accuracy": 0.286
+      },
+      {
+        "bin": "0.2-0.3",
+        "n": 67,
+        "confidence": 0.256,
+        "accuracy": 0.463
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 100,
+        "confidence": 0.345,
+        "accuracy": 0.53
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 104,
+        "confidence": 0.447,
+        "accuracy": 0.548
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 116,
+        "confidence": 0.546,
+        "accuracy": 0.784
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 77,
+        "confidence": 0.657,
+        "accuracy": 0.844
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 113,
+        "confidence": 0.749,
+        "accuracy": 0.858
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 117,
+        "confidence": 0.851,
+        "accuracy": 0.94
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 146,
+        "confidence": 0.945,
+        "accuracy": 0.986
+      }
+    ],
+    "val_after": [
+      {
+        "bin": "0.0-0.1",
+        "n": 1,
+        "confidence": 0.097,
+        "accuracy": 1.0
+      },
+      {
+        "bin": "0.1-0.2",
+        "n": 21,
+        "confidence": 0.17,
+        "accuracy": 0.238
+      },
+      {
+        "bin": "0.2-0.3",
+        "n": 47,
+        "confidence": 0.249,
+        "accuracy": 0.277
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 56,
+        "confidence": 0.36,
+        "accuracy": 0.518
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 91,
+        "confidence": 0.452,
+        "accuracy": 0.484
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 86,
+        "confidence": 0.549,
+        "accuracy": 0.616
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 95,
+        "confidence": 0.649,
+        "accuracy": 0.642
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 84,
+        "confidence": 0.75,
+        "accuracy": 0.845
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 119,
+        "confidence": 0.857,
+        "accuracy": 0.849
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 300,
+        "confidence": 0.963,
+        "accuracy": 0.957
+      }
+    ],
+    "test_before": [
+      {
+        "bin": "0.0-0.1",
+        "n": 6,
+        "confidence": 0.088,
+        "accuracy": 0.0
+      },
+      {
+        "bin": "0.1-0.2",
+        "n": 111,
+        "confidence": 0.164,
+        "accuracy": 0.279
+      },
+      {
+        "bin": "0.2-0.3",
+        "n": 201,
+        "confidence": 0.253,
+        "accuracy": 0.428
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 257,
+        "confidence": 0.35,
+        "accuracy": 0.541
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 280,
+        "confidence": 0.45,
+        "accuracy": 0.707
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 248,
+        "confidence": 0.549,
+        "accuracy": 0.806
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 258,
+        "confidence": 0.646,
+        "accuracy": 0.849
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 309,
+        "confidence": 0.752,
+        "accuracy": 0.896
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 368,
+        "confidence": 0.852,
+        "accuracy": 0.957
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 423,
+        "confidence": 0.94,
+        "accuracy": 0.988
+      }
+    ],
+    "test_after": [
+      {
+        "bin": "0.0-0.1",
+        "n": 1,
+        "confidence": 0.086,
+        "accuracy": 0.0
+      },
+      {
+        "bin": "0.1-0.2",
+        "n": 29,
+        "confidence": 0.166,
+        "accuracy": 0.172
+      },
+      {
+        "bin": "0.2-0.3",
+        "n": 118,
+        "confidence": 0.252,
+        "accuracy": 0.322
+      },
+      {
+        "bin": "0.3-0.4",
+        "n": 173,
+        "confidence": 0.353,
+        "accuracy": 0.486
+      },
+      {
+        "bin": "0.4-0.5",
+        "n": 210,
+        "confidence": 0.45,
+        "accuracy": 0.524
+      },
+      {
+        "bin": "0.5-0.6",
+        "n": 238,
+        "confidence": 0.551,
+        "accuracy": 0.66
+      },
+      {
+        "bin": "0.6-0.7",
+        "n": 217,
+        "confidence": 0.648,
+        "accuracy": 0.774
+      },
+      {
+        "bin": "0.7-0.8",
+        "n": 250,
+        "confidence": 0.751,
+        "accuracy": 0.808
+      },
+      {
+        "bin": "0.8-0.9",
+        "n": 323,
+        "confidence": 0.855,
+        "accuracy": 0.858
+      },
+      {
+        "bin": "0.9-1.0",
+        "n": 902,
+        "confidence": 0.962,
+        "accuracy": 0.975
+      }
+    ]
+  },
+  "abstention": {
+    "target_accuracy_on_val": 0.85,
+    "threshold": 0.52,
+    "val": {
+      "coverage": 0.7322,
+      "accuracy_when_answering": 0.8528
+    },
+    "test": {
+      "coverage": 0.7668,
+      "accuracy_when_answering": 0.8733,
+      "accuracy_when_abstaining": 0.4739,
+      "top5_when_abstaining": 0.8641
+    },
+    "ood_commons": {
+      "coverage": 0.7722,
+      "accuracy_when_answering": 0.918
+    },
+    "curve_val": [
+      {
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.739
+      },
+      {
+        "threshold": 0.05,
+        "coverage": 1.0,
+        "accuracy": 0.739
+      },
+      {
+        "threshold": 0.1,
+        "coverage": 0.999,
+        "accuracy": 0.739
+      },
+      {
+        "threshold": 0.15,
+        "coverage": 0.996,
+        "accuracy": 0.741
+      },
+      {
+        "threshold": 0.2,
+        "coverage": 0.976,
+        "accuracy": 0.751
+      },
+      {
+        "threshold": 0.25,
+        "coverage": 0.949,
+        "accuracy": 0.762
+      },
+      {
+        "threshold": 0.3,
+        "coverage": 0.923,
+        "accuracy": 0.777
+      },
+      {
+        "threshold": 0.35,
+        "coverage": 0.899,
+        "accuracy": 0.782
+      },
+      {
+        "threshold": 0.4,
+        "coverage": 0.861,
+        "accuracy": 0.796
+      },
+      {
+        "threshold": 0.45,
+        "coverage": 0.816,
+        "accuracy": 0.811
+      },
+      {
+        "threshold": 0.5,
+        "coverage": 0.76,
+        "accuracy": 0.838
+      },
+      {
+        "threshold": 0.55,
+        "coverage": 0.718,
+        "accuracy": 0.859
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 0.664,
+        "accuracy": 0.87
+      },
+      {
+        "threshold": 0.65,
+        "coverage": 0.61,
+        "accuracy": 0.891
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 0.559,
+        "accuracy": 0.913
+      },
+      {
+        "threshold": 0.75,
+        "coverage": 0.51,
+        "accuracy": 0.917
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 0.466,
+        "accuracy": 0.926
+      },
+      {
+        "threshold": 0.85,
+        "coverage": 0.421,
+        "accuracy": 0.942
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 0.333,
+        "accuracy": 0.957
+      },
+      {
+        "threshold": 0.95,
+        "coverage": 0.229,
+        "accuracy": 0.985
+      }
+    ],
+    "curve_test": [
+      {
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.78
+      },
+      {
+        "threshold": 0.05,
+        "coverage": 1.0,
+        "accuracy": 0.78
+      },
+      {
+        "threshold": 0.1,
+        "coverage": 1.0,
+        "accuracy": 0.78
+      },
+      {
+        "threshold": 0.15,
+        "coverage": 0.996,
+        "accuracy": 0.782
+      },
+      {
+        "threshold": 0.2,
+        "coverage": 0.988,
+        "accuracy": 0.788
+      },
+      {
+        "threshold": 0.25,
+        "coverage": 0.965,
+        "accuracy": 0.8
+      },
+      {
+        "threshold": 0.3,
+        "coverage": 0.94,
+        "accuracy": 0.812
+      },
+      {
+        "threshold": 0.35,
+        "coverage": 0.909,
+        "accuracy": 0.825
+      },
+      {
+        "threshold": 0.4,
+        "coverage": 0.87,
+        "accuracy": 0.838
+      },
+      {
+        "threshold": 0.45,
+        "coverage": 0.824,
+        "accuracy": 0.859
+      },
+      {
+        "threshold": 0.5,
+        "coverage": 0.784,
+        "accuracy": 0.872
+      },
+      {
+        "threshold": 0.55,
+        "coverage": 0.737,
+        "accuracy": 0.884
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 0.688,
+        "accuracy": 0.902
+      },
+      {
+        "threshold": 0.65,
+        "coverage": 0.64,
+        "accuracy": 0.91
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 0.599,
+        "accuracy": 0.921
+      },
+      {
+        "threshold": 0.75,
+        "coverage": 0.551,
+        "accuracy": 0.932
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 0.498,
+        "accuracy": 0.944
+      },
+      {
+        "threshold": 0.85,
+        "coverage": 0.443,
+        "accuracy": 0.959
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 0.367,
+        "accuracy": 0.975
+      },
+      {
+        "threshold": 0.95,
+        "coverage": 0.248,
+        "accuracy": 0.987
+      }
+    ]
+  },
+  "not_food_guard": {
+    "n_non_food_val": 18,
+    "n_non_food_test": 18,
+    "n_food_test": 2461,
+    "threshold_chosen_on_val": 0.55,
+    "test_at_chosen": {
+      "non_food_flagged": 0.8889,
+      "food_wrongly_flagged": 0.0
+    },
+    "test_at_0.5_old_default": {
+      "non_food_flagged": 0.8889,
+      "food_wrongly_flagged": 0.0
+    },
+    "test_roc_auc": 0.9928
+  },
+  "personalisation_simulated": {
+    "description": "memory = train-split photos the chosen model got wrong, labelled with their true class; scored on the test split (different photos). Simulates a user who corrected those photos.",
+    "up_to_3_corrections_per_class": {
+      "memory_size": 127,
+      "fired_on": 2309,
+      "test_top1": 0.8171,
+      "test_top5": 0.959
+    },
+    "all_corrections": {
+      "memory_size": 439,
+      "fired_on": 2391,
+      "test_top1": 0.848,
+      "test_top5": 0.9671
+    },
+    "test_top1_without": 0.7802
+  },
+  "latency_ms_vision_median": {
+    "food101": 22.270130499919105,
+    "indianfoods": 21.859268999833148,
+    "commons": 23.50407299991275
+  }
+}

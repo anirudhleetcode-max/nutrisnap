@@ -8,10 +8,13 @@ exported to ONNX).
 - Text tower: the full-precision export. It only runs once, to build the cached label embeddings,
   and the 8-bit export loses ~22 points of zero-shot accuracy.
 - Vision tower (runs per request): the full-precision export (352 MB) is downloaded, quantised here
-  with onnxruntime's dynamic quantisation (int8 weights, per-channel; ~15 s), and then deleted.
-  The result is 2.2x faster on CPU than the 8-bit export Xenova publishes, and closer to fp32
-  (experiments/results/2026-11-26_onnx). Quantisation is deterministic for a given onnx/onnxruntime
-  version; the printed SHA-256 can be compared with `vision_sha256` in artifacts/recognizer.json.
+  with onnxruntime's dynamic quantisation (signed int8 weights, per-channel, **reduce_range**; ~15 s),
+  and then deleted. About 2.3x faster on a VNNI CPU than the 8-bit export Xenova publishes, with the
+  same accuracy. reduce_range (7-bit weights) is required: without it, uint8 x int8 products saturate
+  on x86 CPUs without VNNI (e.g. AVX2-only servers) and the model outputs garbage. That happened on
+  Render on 2026-11-26 (see experiments/reports/2026-11-26_vision-hotfix.md). Quantisation is
+  deterministic for a given onnx/onnxruntime version; the printed SHA-256 can be compared with
+  `vision_sha256` in artifacts/recognizer.json.
 
 Safe to re-run; finished files are skipped.
 """
@@ -58,15 +61,21 @@ def sha16(path: Path) -> str:
     return h.hexdigest()[:16]
 
 
-def quantise_vision(out: Path) -> None:
+def quantize(src: Path, dest: Path) -> None:
+    """The one place the vision model's quantisation settings live (experiments reuse it)."""
     from onnxruntime.quantization import QuantType, quantize_dynamic
+    # reduce_range: 7-bit weights, so uint8 x int8 multiply-adds cannot saturate on CPUs without VNNI.
+    quantize_dynamic(str(src), str(dest), weight_type=QuantType.QInt8, per_channel=True, reduce_range=True)
+
+
+def quantise_vision(out: Path) -> None:
     fp32 = out / "vision_model_fp32.onnx"
     if not fp32.exists():
         print("downloading the fp32 vision model (deleted after quantisation)")
         download(BASE + VISION_FP32, fp32)
-    print("quantising the vision model (int8, per-channel)")
+    print("quantising the vision model (int8, per-channel, reduce_range)")
     tmp = out / (VISION + ".part")
-    quantize_dynamic(str(fp32), str(tmp), weight_type=QuantType.QInt8, per_channel=True)
+    quantize(fp32, tmp)
     shutil.move(tmp, out / VISION)
     fp32.unlink()
 
