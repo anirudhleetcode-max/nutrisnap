@@ -1,7 +1,7 @@
 {
   "model": "multinomial logistic regression on frozen CLIP ViT-B/32 image embeddings",
-  "trained_at": "2026-11-26T19:46:30+00:00",
-  "run_id": "2026-11-26_main",
+  "trained_at": "2026-11-26T19:57:45+00:00",
+  "run_id": "2026-11-26_main-int8vision",
   "classes": [
     "burger",
     "burrito",
@@ -92,9 +92,9 @@
     "numpy": "2.5.5",
     "onnxruntime": "1.32.0",
     "scikit_learn": "1.9.1",
-    "commit": "676eccd",
+    "commit": "ce5ab48",
     "dirty": true
   },
-  "val_top1_closed_set": 0.8956,
-  "test_top1_closed_set": 0.9228
+  "val_top1_closed_set": 0.9122,
+  "test_top1_closed_set": 0.9317
 }

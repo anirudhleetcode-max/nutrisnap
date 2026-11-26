@@ -103,7 +103,7 @@ def main() -> None:
 
     # ---------------------------------------------------------------- CLIP vision variants
     variants = {"fp32": fetch("vision_model.onnx"), "fp16": fetch("vision_model_fp16.onnx"),
-                "int8_xenova": MD / "vision_model_quantized.onnx"}
+                "int8_xenova": fetch("vision_model_quantized.onnx")}
     mine = OPT / "vision_model_int8_here.onnx"
     if not mine.exists():
         t = time.time()
@@ -159,7 +159,7 @@ def main() -> None:
     res["clip_vision_accuracy_val"] = acc
 
     # ---------------------------------------------------------------- CLIP text tower
-    text = {"fp32": fetch("text_model.onnx"), "int8_xenova": MD / "text_model_quantized.onnx"}
+    text = {"fp32": fetch("text_model.onnx"), "int8_xenova": fetch("text_model_quantized.onnx")}
     prompts = [p for lab in enc.labels[:40] for p in enc.prompts_for(lab, True)][:120]
 
     def tok(p):

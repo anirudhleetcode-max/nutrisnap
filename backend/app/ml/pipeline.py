@@ -77,6 +77,12 @@ class FoodRecognizer:
             log.warning("recognizer.json was fitted with the %s text tower but %s is loaded: temperature and "
                         "thresholds will be off. Run `python -m scripts.download_models`.",
                         fitted, self.encoder.text_precision)
+        fitted_vision = self.cfg.get("vision_sha256")
+        if fitted_vision and fitted_vision != self.encoder.vision_sha256:
+            log.warning("recognizer.json was fitted with vision model %s but %s (%s) is loaded: temperature and "
+                        "thresholds may be off. Re-run `python -m scripts.download_models` (same onnxruntime "
+                        "version) or re-fit with experiments/run.py.", fitted_vision, self.encoder.vision_file,
+                        self.encoder.vision_sha256)
         self.probe: LinearProbe | None = None
         if self.cfg["mode"] == "hybrid" and self.cfg["probe_file"]:
             p = self.artifacts_dir / self.cfg["probe_file"]
@@ -142,8 +148,8 @@ class FoodRecognizer:
             "mode": "zero_shot + linear probe (hybrid)" if self.probe else "zero_shot",
             "backbone": {
                 "model": "CLIP ViT-B/32 (OpenAI, 2021), pretrained - not trained by this project",
-                "weights": f"Xenova/clip-vit-base-patch32 ONNX export; vision 8-bit dynamic quantisation, "
-                           f"text {self.encoder.text_precision}",
+                "weights": f"Xenova/clip-vit-base-patch32 ONNX export; vision {self.encoder.vision_file} "
+                           f"(int8 dynamic quantisation), text {self.encoder.text_precision}",
                 "source": "https://huggingface.co/Xenova/clip-vit-base-patch32",
                 "license": "MIT (OpenAI CLIP)",
                 "runtime": f"onnxruntime {ort.__version__} (CPU), python {platform.python_version()}",

@@ -396,7 +396,8 @@ def main() -> None:
                "settings": {"version": f"{run_id}", "mode": "hybrid" if probe_file else "zero_shot",
                             "temperature": round(T, 4), "abstain_below": thr, "not_food_below": t_nf,
                             "hybrid_weight": w_best if probe_file else 0.0, "probe_file": probe_file,
-                            "calibrated": True, "text_tower": enc.text_precision},
+                            "calibrated": True, "text_tower": enc.text_precision,
+                            "vision_model": enc.vision_file, "vision_sha256": enc.vision_sha256},
                "metrics": summary, "datasets": datasets, "env": env_info()}
         (art / "recognizer.json").write_text(json.dumps(rec, indent=2))
 

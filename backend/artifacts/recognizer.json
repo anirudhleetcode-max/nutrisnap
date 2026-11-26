@@ -1,30 +1,32 @@
 {
-  "run_id": "2026-11-26_main",
-  "created_at": "2026-11-26T19:46:30+00:00",
+  "run_id": "2026-11-26_main-int8vision",
+  "created_at": "2026-11-26T19:57:45+00:00",
   "settings": {
-    "version": "2026-11-26_main",
+    "version": "2026-11-26_main-int8vision",
     "mode": "hybrid",
-    "temperature": 0.8206,
-    "abstain_below": 0.52,
-    "not_food_below": 0.95,
-    "hybrid_weight": 0.25,
+    "temperature": 0.7575,
+    "abstain_below": 0.48,
+    "not_food_below": 0.7,
+    "hybrid_weight": 0.5,
     "probe_file": "probe_v1.npz",
     "calibrated": true,
-    "text_tower": "fp32"
+    "text_tower": "fp32",
+    "vision_model": "vision_model_int8.onnx",
+    "vision_sha256": "c7ab00a1e7235ca6"
   },
   "metrics": {
-    "test_top1": 0.7729,
-    "test_top5": 0.9521,
-    "test_top1_zero_shot_single_prompt": 0.7477,
-    "test_ece_before": 0.1177,
-    "test_ece_after": 0.0459,
-    "abstain_threshold": 0.52,
-    "test_coverage": 0.7582,
-    "test_accuracy_when_answering": 0.8746,
-    "ood_commons_top1": 0.8608,
+    "test_top1": 0.7907,
+    "test_top5": 0.963,
+    "test_top1_zero_shot_single_prompt": 0.7631,
+    "test_ece_before": 0.1549,
+    "test_ece_after": 0.0437,
+    "abstain_threshold": 0.48,
+    "test_coverage": 0.822,
+    "test_accuracy_when_answering": 0.8636,
+    "ood_commons_top1": 0.7975,
     "not_food_test": {
-      "non_food_flagged": 0.9444,
-      "food_wrongly_flagged": 0.0024
+      "non_food_flagged": 0.8889,
+      "food_wrongly_flagged": 0.0
     }
   },
   "datasets": {
@@ -66,7 +68,7 @@
     "numpy": "2.5.5",
     "onnxruntime": "1.32.0",
     "scikit_learn": "1.9.1",
-    "commit": "676eccd",
+    "commit": "ce5ab48",
     "dirty": true
   }
 }

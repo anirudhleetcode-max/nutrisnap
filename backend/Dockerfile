@@ -12,7 +12,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
-# CLIP ONNX weights (~345 MB: int8 vision + fp32 text tower) are fetched at build time, not committed.
+# CLIP ONNX weights are fetched at build time, not committed: the fp32 text tower, and the fp32 vision
+# tower quantised here to int8 (per-channel) and then deleted (~345 MB kept).
 # The fp32 text tower only runs here, to pre-build the cached label embeddings; it is not loaded per request.
 RUN python -m scripts.download_models \
  && python -c "from app import recognize; recognize.load_model()"

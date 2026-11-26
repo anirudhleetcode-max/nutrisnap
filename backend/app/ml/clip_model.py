@@ -1,7 +1,10 @@
 """Pretrained CLIP ViT-B/32 (OpenAI, 2021) as ONNX (Xenova/clip-vit-base-patch32 export). Nothing here
 is trained by this project.
 
-Only the vision tower runs per request (8-bit dynamic quantisation). The text tower runs once per
+Only the vision tower runs per request. It is the fp32 export quantised by scripts.download_models with
+onnxruntime's dynamic quantisation (int8 weights, per-channel): 2.2x faster on CPU than the 8-bit
+export Xenova publishes, and closer to fp32 (embedding cosine 0.973 vs 0.932;
+experiments/results/2026-11-26_onnx). The Xenova file is kept as a fallback. The text tower runs once per
 (food list, templates, model file) to build the zero-shot label matrix, which is cached as .npy.
 
 The text tower is the full-precision (fp32) export when `text_model.onnx` is present. The 8-bit text
@@ -30,9 +33,9 @@ log = logging.getLogger(__name__)
 LOGIT_SCALE = 100.0  # CLIP's learned logit scale (exp(4.6052))
 MAX_TOKENS = 77
 EOS = 49407
-VISION_FILE = "vision_model_quantized.onnx"
-TEXT_FILES = ("text_model.onnx", "text_model_quantized.onnx")   # preference order: fp32, then int8
-MODEL_FILES = (VISION_FILE, TEXT_FILES[0], "tokenizer.json")    # what scripts.download_models fetches
+VISION_FILES = ("vision_model_int8.onnx", "vision_model_quantized.onnx")  # preference: quantised here, then Xenova's
+TEXT_FILES = ("text_model.onnx", "text_model_quantized.onnx")             # preference: fp32, then int8
+MODEL_FILES = (VISION_FILES[0], TEXT_FILES[0], "tokenizer.json")          # what scripts.download_models provides
 
 # Baseline: the single prompt from the CLIP paper, with the plain food name.
 BASELINE_TEMPLATE = "a photo of {name}, a type of food."
@@ -84,11 +87,17 @@ class ClipEncoder:
     def __init__(self, model_dir: Path, labels: list[Label], cache_dir: Path, threads: int = 2):
         self.model_dir = Path(model_dir)
         text_file = next((f for f in TEXT_FILES if (self.model_dir / f).exists()), None)
-        missing = [f for f in (VISION_FILE, "tokenizer.json") if not (self.model_dir / f).exists()]
+        vision_file = next((f for f in VISION_FILES if (self.model_dir / f).exists()), None)
+        missing = [] if vision_file else [" or ".join(VISION_FILES)]
+        missing += [] if (self.model_dir / "tokenizer.json").exists() else ["tokenizer.json"]
         if text_file is None:
             missing.append(" or ".join(TEXT_FILES))
         if missing:
             raise FileNotFoundError(f"missing model files in {self.model_dir}: {', '.join(missing)}")
+        self.vision_file = vision_file
+        if vision_file != VISION_FILES[0]:
+            log.warning("using %s (%s not found); recognition is ~2x slower. Run `python -m scripts.download_models`.",
+                        vision_file, VISION_FILES[0])
         self.text_file = text_file
         self.text_precision = "fp32" if text_file == TEXT_FILES[0] else "int8"
         if self.text_precision == "int8":
@@ -101,13 +110,24 @@ class ClipEncoder:
         opts.intra_op_num_threads = threads
         opts.inter_op_num_threads = 1
         self._opts = opts
-        self.vision = ort.InferenceSession(str(self.model_dir / VISION_FILE), opts,
+        self.vision = ort.InferenceSession(str(self.model_dir / vision_file), opts,
                                            providers=["CPUExecutionProvider"])
         self._text: ort.InferenceSession | None = None
         self.tokenizer = Tokenizer.from_file(str(self.model_dir / "tokenizer.json"))
         self.label_matrix = self.build_label_matrix(ensemble=True)
         self.nonfood_matrix = self._cached("nonfood", NON_FOOD_PROMPTS, lambda: l2n(np.stack(
             [self.encode_text(p) for p in NON_FOOD_PROMPTS])))
+
+    @property
+    def vision_sha256(self) -> str:
+        """First 16 hex digits of the vision model file's SHA-256 (recorded with the fitted settings)."""
+        if not hasattr(self, "_vision_sha"):
+            h = hashlib.sha256()
+            with open(self.model_dir / self.vision_file, "rb") as f:
+                while chunk := f.read(1 << 20):
+                    h.update(chunk)
+            self._vision_sha = h.hexdigest()[:16]
+        return self._vision_sha
 
     # ---------- text side (runs once, cached) ----------
     @property

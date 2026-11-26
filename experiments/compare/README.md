@@ -29,3 +29,7 @@ python ../experiments/compare/clip_explain.py                       # ~1 min
 
 Rule kept everywhere: anything chosen (C, epoch, α/β, temperature, threshold) is chosen on **val**.
 **Test** and the **unseen** Commons photos are only scored.
+
+Note: the committed `2026-11-26_compare` and `2026-11-26_clip_explain` results were measured with Xenova's 8-bit vision
+model (the app's at the time). Re-running them now uses the per-channel int8 model that `download_models`
+builds, so CLIP numbers will shift by about a point (see `experiments/reports/2026-11-26_main-int8vision.md`).
