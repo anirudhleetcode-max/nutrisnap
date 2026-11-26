@@ -1,0 +1,386 @@
+{
+  "architecture": {
+    "vision": {
+      "parameters": 87849266,
+      "transformer_layers": 12,
+      "key_tensors": {
+        "vision_model.embeddings.class_embedding": [
+          768
+        ],
+        "vision_model.embeddings.patch_embedding.weight": [
+          768,
+          3,
+          32,
+          32
+        ],
+        "vision_model.embeddings.position_embedding.weight": [
+          50,
+          768
+        ]
+      },
+      "inputs": [
+        [
+          "pixel_values",
+          [
+            "batch_size",
+            "num_channels",
+            "height",
+            "width"
+          ]
+        ]
+      ],
+      "outputs": [
+        [
+          "image_embeds",
+          [
+            "batch_size",
+            512
+          ]
+        ]
+      ],
+      "most_common_ops": {
+        "Constant": 326,
+        "Add": 149,
+        "Unsqueeze": 145,
+        "Concat": 99,
+        "Reshape": 98,
+        "MatMul": 97,
+        "Mul": 75,
+        "Transpose": 61
+      }
+    },
+    "text": {
+      "parameters": 63428173,
+      "transformer_layers": 12,
+      "key_tensors": {
+        "text_model.embeddings.token_embedding.weight": [
+          49408,
+          512
+        ],
+        "text_model.embeddings.position_embedding.weight": [
+          77,
+          512
+        ]
+      },
+      "inputs": [
+        [
+          "input_ids",
+          [
+            "batch_size",
+            "sequence_length"
+          ]
+        ]
+      ],
+      "outputs": [
+        [
+          "text_embeds",
+          [
+            "batch_size",
+            512
+          ]
+        ]
+      ],
+      "most_common_ops": {
+        "Constant": 593,
+        "Unsqueeze": 226,
+        "Add": 161,
+        "Concat": 126,
+        "Reshape": 125,
+        "MatMul": 97,
+        "Mul": 75,
+        "Transpose": 60
+      }
+    }
+  },
+  "similarity": {
+    "image_text_matched_mean": 0.2938,
+    "image_text_unmatched_mean": 0.2411,
+    "image_text_matched_minus_best_wrong_mean": 0.0132,
+    "image_image_same_class_mean": 0.7503,
+    "image_image_different_class_mean": 0.6166,
+    "text_text_between_classes_mean": 0.9071,
+    "mean_image_vs_mean_text_cosine": 0.3227,
+    "note": "cosines of ~0.3 for the right label vs ~0.2 for wrong ones look small, but multiplied by the logit scale (100) a gap of 0.05 becomes 5 logits, i.e. e^5 = ~150x more probability"
+  },
+  "logit_scale_sweep_val_45": {
+    "rows": [
+      {
+        "logit_scale": 10,
+        "val_top1": 0.7011,
+        "mean_confidence": 0.0385,
+        "ece": 0.6626
+      },
+      {
+        "logit_scale": 25,
+        "val_top1": 0.7011,
+        "mean_confidence": 0.0838,
+        "ece": 0.6173
+      },
+      {
+        "logit_scale": 50,
+        "val_top1": 0.7011,
+        "mean_confidence": 0.2357,
+        "ece": 0.4654
+      },
+      {
+        "logit_scale": 100,
+        "val_top1": 0.7011,
+        "mean_confidence": 0.5579,
+        "ece": 0.144
+      },
+      {
+        "logit_scale": 200,
+        "val_top1": 0.7011,
+        "mean_confidence": 0.7894,
+        "ece": 0.0887
+      }
+    ],
+    "best_temperature_at_scale_100": 0.6954,
+    "effective_scale": 143.8
+  },
+  "prompt_sensitivity_val": {
+    "a photo of {name}, a type of food.": {
+      "val_top1_45": 0.6278,
+      "val_top1_188": 0.5444
+    },
+    "a photo of {desc}.": {
+      "val_top1_45": 0.6911,
+      "val_top1_188": 0.55
+    },
+    "a close-up photo of {desc}.": {
+      "val_top1_45": 0.6844,
+      "val_top1_188": 0.5444
+    },
+    "a top-down photo of a plate of {name}.": {
+      "val_top1_45": 0.6011,
+      "val_top1_188": 0.5056
+    },
+    "a photo of {name} served in a restaurant.": {
+      "val_top1_45": 0.6256,
+      "val_top1_188": 0.5144
+    },
+    "a homemade {name} on a table.": {
+      "val_top1_45": 0.6478,
+      "val_top1_188": 0.5444
+    },
+    "a photo of {name}, a popular {cuisine} dish.": {
+      "val_top1_45": 0.6267,
+      "val_top1_188": 0.5311
+    },
+    "ENSEMBLE (mean of the 7 normalised text embeddings)": {
+      "val_top1_45": 0.7011,
+      "val_top1_188": 0.59
+    }
+  },
+  "closest_label_pairs_text_space": [
+    {
+      "a": "Paneer Tikka",
+      "b": "Paneer (plain)",
+      "cosine": 0.9901
+    },
+    {
+      "a": "Chicken Tikka",
+      "b": "Chicken 65",
+      "cosine": 0.9879
+    },
+    {
+      "a": "Pav (bread roll)",
+      "b": "Pav Bhaji",
+      "cosine": 0.9867
+    },
+    {
+      "a": "Puttu",
+      "b": "Kheer",
+      "cosine": 0.9866
+    },
+    {
+      "a": "Pav (bread roll)",
+      "b": "Misal Pav",
+      "cosine": 0.9866
+    },
+    {
+      "a": "Puttu",
+      "b": "Namkeen / Bhujia",
+      "cosine": 0.9864
+    },
+    {
+      "a": "Medu Vada",
+      "b": "Kachori",
+      "cosine": 0.9855
+    },
+    {
+      "a": "Idli",
+      "b": "Puttu",
+      "cosine": 0.9849
+    },
+    {
+      "a": "Rajma",
+      "b": "Chana Chaat",
+      "cosine": 0.9849
+    },
+    {
+      "a": "Dal Tadka",
+      "b": "Dal Baati",
+      "cosine": 0.9849
+    },
+    {
+      "a": "Bhatura",
+      "b": "Pakora",
+      "cosine": 0.9848
+    },
+    {
+      "a": "Puri",
+      "b": "Pakora",
+      "cosine": 0.9847
+    },
+    {
+      "a": "Uttapam",
+      "b": "Puttu",
+      "cosine": 0.9847
+    },
+    {
+      "a": "Milk Barfi",
+      "b": "Milk (toned)",
+      "cosine": 0.9846
+    },
+    {
+      "a": "Kadai Paneer",
+      "b": "Paneer Tikka",
+      "cosine": 0.9846
+    }
+  ],
+  "figure_classes": [
+    "Hamburger",
+    "Chicken Biryani",
+    "Dabeli",
+    "Falafel",
+    "Hot Dog",
+    "Kathi Roll",
+    "Masala Dosa",
+    "Omelette",
+    "Pani Puri",
+    "Grilled Salmon"
+  ],
+  "figure_cosine": [
+    [
+      0.3066999912261963,
+      0.21289999783039093,
+      0.2671000063419342,
+      0.25119999051094055,
+      0.2612999975681305,
+      0.25529998540878296,
+      0.24539999663829803,
+      0.24140000343322754,
+      0.18700000643730164,
+      0.22349999845027924
+    ],
+    [
+      0.21719999611377716,
+      0.30880001187324524,
+      0.2842999994754791,
+      0.2574999928474426,
+      0.2290000021457672,
+      0.2538999915122986,
+      0.2985999882221222,
+      0.2549000084400177,
+      0.24320000410079956,
+      0.20170000195503235
+    ],
+    [
+      0.25600001215934753,
+      0.2872999906539917,
+      0.2992999851703644,
+      0.27959999442100525,
+      0.26190000772476196,
+      0.28349998593330383,
+      0.28619998693466187,
+      0.25369998812675476,
+      0.29089999198913574,
+      0.25220000743865967
+    ],
+    [
+      0.2696000039577484,
+      0.24809999763965607,
+      0.2637999951839447,
+      0.319599986076355,
+      0.23759999871253967,
+      0.243599995970726,
+      0.26330000162124634,
+      0.23440000414848328,
+      0.23680000007152557,
+      0.20980000495910645
+    ],
+    [
+      0.25220000743865967,
+      0.2102999985218048,
+      0.24379999935626984,
+      0.25189998745918274,
+      0.303600013256073,
+      0.24169999361038208,
+      0.24169999361038208,
+      0.2345000058412552,
+      0.19009999930858612,
+      0.21729999780654907
+    ],
+    [
+      0.23849999904632568,
+      0.23070000112056732,
+      0.25999999046325684,
+      0.2542000114917755,
+      0.2524000108242035,
+      0.2867000102996826,
+      0.25450000166893005,
+      0.2587999999523163,
+      0.21400000154972076,
+      0.2418999969959259
+    ],
+    [
+      0.23399999737739563,
+      0.2483000010251999,
+      0.2727999985218048,
+      0.24699999392032623,
+      0.2460000067949295,
+      0.2565999925136566,
+      0.28209999203681946,
+      0.26010000705718994,
+      0.23759999871253967,
+      0.2888999879360199
+    ],
+    [
+      0.23970000445842743,
+      0.24269999563694,
+      0.26260000467300415,
+      0.2298000007867813,
+      0.24889999628067017,
+      0.24310000240802765,
+      0.25540000200271606,
+      0.28110000491142273,
+      0.2061000019311905,
+      0.24899999797344208
+    ],
+    [
+      0.23759999871253967,
+      0.26089999079704285,
+      0.288100004196167,
+      0.2630999982357025,
+      0.24799999594688416,
+      0.28349998593330383,
+      0.2939000129699707,
+      0.25839999318122864,
+      0.3467000126838684,
+      0.21379999816417694
+    ],
+    [
+      0.24250000715255737,
+      0.24250000715255737,
+      0.2467000037431717,
+      0.21940000355243683,
+      0.2337999939918518,
+      0.23899999260902405,
+      0.24799999594688416,
+      0.2529999911785126,
+      0.18330000340938568,
+      0.3073999881744385
+    ]
+  ]
+}

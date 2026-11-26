@@ -28,7 +28,6 @@ MD = BACKEND / "models"
 def architecture() -> dict:
     """Read shapes from the fp32 ONNX initialisers, so the numbers come from the weights, not memory."""
     import onnx
-    from onnx import numpy_helper  # noqa: F401
     info = {}
     for tower, f in (("vision", "vision_model.onnx"), ("text", "text_model.onnx")):
         p = MD / "optim" / f

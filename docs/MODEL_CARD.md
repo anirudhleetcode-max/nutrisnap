@@ -46,3 +46,13 @@ The same information is served at `GET /api/model` and shown on the app's **Mode
 - It was trained and evaluated on web and restaurant photos. It has not been evaluated on real users' phone photos (**Dataset required before evaluation**).
 - Known confusions: wraps → shawarma, naan ↔ aloo paratha, jalebi → orange, and red/brown gravies with each other.
 - Privacy: stored per user are a 480 px thumbnail (EXIF dropped; deleted after 24 h if not logged) and the 512-d embedding. Embeddings of corrected photos are kept for personalisation until the user deletes them (`DELETE /api/corrections`).
+
+## Known issue found later (2026-11-26)
+
+The label embeddings are built with the **INT8 text tower**, whose embeddings have only 0.74 cosine
+similarity to fp32. With fp32 text embeddings, zero-shot top-1 on the test split would be 77.2%
+instead of 55.1% (188-way), and the raw probabilities would already be calibrated. This model card
+describes the shipped model; the fix needs a re-fit with `experiments/run.py`. Details:
+[COMPARISON.md](COMPARISON.md). The same work found 49 test photos that duplicate train/val photos
+in the Indian source data; removing them changes accuracy by under 0.5 points
+([DATASET.md](DATASET.md)).

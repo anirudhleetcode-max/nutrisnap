@@ -1,0 +1,293 @@
+{
+  "measured_at": "2026-11-26T17:48:30+00:00",
+  "machine": {
+    "cpu_count": 4,
+    "platform": "Linux-6.18.44-fc-v880-x86_64-with-glibc2.39",
+    "onnxruntime": "1.32.0",
+    "note": "shared cloud VM; absolute numbers vary between runs, ratios are the point"
+  },
+  "int8_here_quantize_seconds": 7.4,
+  "clip_vision": {
+    "fp32": {
+      "file_mb": 351.7,
+      "load_seconds": 0.71,
+      "nodes": 1314,
+      "top_ops": {
+        "Constant": 326,
+        "Add": 149,
+        "Unsqueeze": 145,
+        "Concat": 99,
+        "Reshape": 98,
+        "MatMul": 97
+      },
+      "latency_batch1": {
+        "threads_1": {
+          "median_ms": 99.12,
+          "p90_ms": 118.15
+        },
+        "threads_2": {
+          "median_ms": 56.22,
+          "p90_ms": 63.63
+        },
+        "threads_4": {
+          "median_ms": 33.42,
+          "p90_ms": 45.84
+        }
+      },
+      "graph_optimisation_threads_2": {
+        "disabled": {
+          "median_ms": 55.41,
+          "p90_ms": 63.27
+        },
+        "basic": {
+          "median_ms": 54.98,
+          "p90_ms": 59.05
+        },
+        "extended": {
+          "median_ms": 55.02,
+          "p90_ms": 56.86
+        },
+        "all": {
+          "median_ms": 59.15,
+          "p90_ms": 81.22
+        }
+      },
+      "batch8_threads_4": {
+        "median_ms": 196.29,
+        "p90_ms": 211.7,
+        "ms_per_image": 24.54
+      }
+    },
+    "fp16": {
+      "file_mb": 176.1,
+      "load_seconds": 0.62,
+      "nodes": 1316,
+      "top_ops": {
+        "Constant": 326,
+        "Add": 149,
+        "Unsqueeze": 145,
+        "Concat": 99,
+        "Reshape": 98,
+        "MatMul": 97
+      },
+      "latency_batch1": {
+        "threads_1": {
+          "median_ms": 98.05,
+          "p90_ms": 100.46
+        },
+        "threads_2": {
+          "median_ms": 56.15,
+          "p90_ms": 61.58
+        },
+        "threads_4": {
+          "median_ms": 40.33,
+          "p90_ms": 48.52
+        }
+      },
+      "graph_optimisation_threads_2": {
+        "disabled": {
+          "median_ms": 106.05,
+          "p90_ms": 111.11
+        },
+        "basic": {
+          "median_ms": 112.23,
+          "p90_ms": 132.22
+        },
+        "extended": {
+          "median_ms": 112.31,
+          "p90_ms": 121.44
+        },
+        "all": {
+          "median_ms": 55.95,
+          "p90_ms": 61.76
+        }
+      },
+      "batch8_threads_4": {
+        "median_ms": 186.38,
+        "p90_ms": 212.76,
+        "ms_per_image": 23.3
+      }
+    },
+    "int8_xenova": {
+      "file_mb": 89.1,
+      "load_seconds": 0.24,
+      "nodes": 1587,
+      "top_ops": {
+        "Constant": 326,
+        "Mul": 223,
+        "Add": 149,
+        "Unsqueeze": 145,
+        "Concat": 99,
+        "Reshape": 98
+      },
+      "latency_batch1": {
+        "threads_1": {
+          "median_ms": 82.85,
+          "p90_ms": 90.11
+        },
+        "threads_2": {
+          "median_ms": 43.82,
+          "p90_ms": 46.02
+        },
+        "threads_4": {
+          "median_ms": 26.68,
+          "p90_ms": 34.02
+        }
+      },
+      "graph_optimisation_threads_2": {
+        "disabled": {
+          "median_ms": 45.41,
+          "p90_ms": 50.08
+        },
+        "basic": {
+          "median_ms": 52.91,
+          "p90_ms": 65.08
+        },
+        "extended": {
+          "median_ms": 43.36,
+          "p90_ms": 48.65
+        },
+        "all": {
+          "median_ms": 44.98,
+          "p90_ms": 63.7
+        }
+      }
+    },
+    "int8_here": {
+      "file_mb": 89.1,
+      "load_seconds": 0.21,
+      "nodes": 1587,
+      "top_ops": {
+        "Constant": 326,
+        "Mul": 223,
+        "Add": 149,
+        "Unsqueeze": 145,
+        "Concat": 99,
+        "Reshape": 98
+      },
+      "latency_batch1": {
+        "threads_1": {
+          "median_ms": 31.49,
+          "p90_ms": 33.11
+        },
+        "threads_2": {
+          "median_ms": 19.92,
+          "p90_ms": 21.01
+        },
+        "threads_4": {
+          "median_ms": 14.08,
+          "p90_ms": 15.87
+        }
+      },
+      "graph_optimisation_threads_2": {
+        "disabled": {
+          "median_ms": 22.05,
+          "p90_ms": 22.38
+        },
+        "basic": {
+          "median_ms": 22.38,
+          "p90_ms": 26.93
+        },
+        "extended": {
+          "median_ms": 20.1,
+          "p90_ms": 20.9
+        },
+        "all": {
+          "median_ms": 20.57,
+          "p90_ms": 23.15
+        }
+      }
+    }
+  },
+  "clip_vision_accuracy_val": {
+    "fp32": {
+      "cosine_to_fp32_mean": 1.0,
+      "cosine_to_fp32_min": 1.0,
+      "zero_shot_45_val_top1": 0.7122,
+      "zero_shot_188_val_top1": 0.5967,
+      "zero_shot_top1_agrees_with_fp32": 1.0,
+      "linear_probe_val_top1": 0.9211
+    },
+    "fp16": {
+      "cosine_to_fp32_mean": 1.0,
+      "cosine_to_fp32_min": 1.0,
+      "zero_shot_45_val_top1": 0.7122,
+      "zero_shot_188_val_top1": 0.5967,
+      "zero_shot_top1_agrees_with_fp32": 1.0,
+      "linear_probe_val_top1": 0.9211
+    },
+    "int8_xenova": {
+      "cosine_to_fp32_mean": 0.93236,
+      "cosine_to_fp32_min": 0.7868,
+      "zero_shot_45_val_top1": 0.7011,
+      "zero_shot_188_val_top1": 0.59,
+      "zero_shot_top1_agrees_with_fp32": 0.79,
+      "linear_probe_val_top1": 0.8956
+    },
+    "int8_here": {
+      "cosine_to_fp32_mean": 0.97256,
+      "cosine_to_fp32_min": 0.84862,
+      "zero_shot_45_val_top1": 0.6944,
+      "zero_shot_188_val_top1": 0.5811,
+      "zero_shot_top1_agrees_with_fp32": 0.8811,
+      "linear_probe_val_top1": 0.9122
+    }
+  },
+  "clip_text": {
+    "fp32": {
+      "file_mb": 254.1,
+      "latency_per_prompt_threads_2": {
+        "median_ms": 9.0,
+        "p90_ms": 9.25
+      }
+    },
+    "int8_xenova": {
+      "file_mb": 64.5,
+      "latency_per_prompt_threads_2": {
+        "median_ms": 4.83,
+        "p90_ms": 6.95
+      },
+      "cosine_to_fp32_mean": 0.74376
+    },
+    "note": "the text tower runs once per food-list change (188 foods x 7 prompts) and is cached, so its speed does not affect request latency"
+  },
+  "resnet50_finetuned_export": {
+    "pytorch_eager": {
+      "latency_batch1_threads_2_ms": 70.68,
+      "val_top1": 0.8122
+    },
+    "onnx_fp32": {
+      "file_mb": 94.3,
+      "latency_batch1_threads_2": {
+        "median_ms": 35.43,
+        "p90_ms": 50.35
+      },
+      "val_top1": 0.8122,
+      "top1_agrees_with_pytorch": 1.0,
+      "max_abs_logit_diff": 0.0
+    },
+    "onnx_int8_static": {
+      "file_mb": 24.1,
+      "latency_batch1_threads_2": {
+        "median_ms": 10.87,
+        "p90_ms": 12.1
+      },
+      "val_top1": 0.7956,
+      "top1_agrees_with_pytorch": 0.9333,
+      "max_abs_logit_diff": 2.1462
+    },
+    "calibration_photos": 128
+  },
+  "request_stages_ms": {
+    "decode_validate": 1.184,
+    "preprocess": 2.377,
+    "vision_encoder_int8": 45.236,
+    "zero_shot_188": 0.084,
+    "probe_and_hybrid": 0.127,
+    "temperature_decision": 0.027,
+    "not_food_guard": 0.071,
+    "quality_checks": 1.351,
+    "total": 50.46,
+    "image": "tests/fixtures/pizza.jpg (decoded size as stored)"
+  }
+}

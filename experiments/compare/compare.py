@@ -45,14 +45,44 @@ NAMES = {
     "resnet50_frozen": "ResNet-50 ImageNet, frozen + logistic regression",
     "resnet50_finetune": "ResNet-50 ImageNet, fine-tuned (layer4 + head)",
     "clip_zero_shot_single": "CLIP zero-shot, single prompt",
-    "clip_zero_shot_ensemble": "CLIP zero-shot, 7-prompt ensemble",
+    "clip_zero_shot_ensemble": "CLIP zero-shot, 7-prompt ensemble (int8 text tower, as shipped)",
+    "clip_zero_shot_fp32_text": "CLIP zero-shot, 7-prompt ensemble, fp32 text tower",
     "clip_linear_probe": "CLIP + linear probe",
     "clip_tip_adapter": "CLIP + Tip-Adapter (training-free cache)",
+    "clip_tip_adapter_fp32_text": "CLIP + Tip-Adapter, fp32 text tower",
 }
 FAMILY = {"cnn_scratch": "1 traditional CNN", "resnet50_frozen": "2 transfer learning",
           "resnet50_finetune": "2 transfer learning", "clip_zero_shot_single": "3 CLIP zero-shot",
-          "clip_zero_shot_ensemble": "3 CLIP zero-shot", "clip_linear_probe": "4 CLIP adapted",
+          "clip_zero_shot_ensemble": "3 CLIP zero-shot", "clip_zero_shot_fp32_text": "3 CLIP zero-shot",
+          "clip_linear_probe": "4 CLIP adapted", "clip_tip_adapter_fp32_text": "4 CLIP adapted",
           "clip_tip_adapter": "4 CLIP adapted"}
+
+
+def fp32_label_matrix(enc: ClipEncoder) -> np.ndarray | None:
+    """Same 7-prompt ensemble, embedded with the fp32 text tower (models/optim/text_model.onnx,
+    downloaded by onnx_bench.py). The app's label matrix uses the int8 text tower."""
+    import hashlib
+    import onnxruntime as ort
+    from app.ml.clip_model import EOS, MAX_TOKENS, l2n
+    path = BACKEND / "models" / "optim" / "text_model.onnx"
+    if not path.exists():
+        print("no fp32 text tower (run onnx_bench.py first); skipping fp32-text variants")
+        return None
+    prompts = [enc.prompts_for(lab, True) for lab in enc.labels]
+    key = hashlib.sha256(json.dumps([prompts, path.stat().st_size]).encode()).hexdigest()[:16]
+    cache = BACKEND / "models" / "cache" / f"labels_ens_fp32text_{key}.npy"
+    if cache.exists():
+        return np.load(cache)
+    s = ort.InferenceSession(str(path), providers=["CPUExecutionProvider"])
+
+    def emb(p):
+        ids = enc.tokenizer.encode(p).ids[:MAX_TOKENS]
+        if ids[-1] != EOS:
+            ids[-1] = EOS
+        return l2n(s.run(["text_embeds"], {"input_ids": np.array([ids], dtype=np.int64)})[0][0].astype(np.float32))
+    W = np.stack([l2n(np.stack([emb(p) for p in ps]).mean(0)) for ps in prompts]).astype(np.float32)
+    np.save(cache, W)
+    return W
 
 
 def topk(P: np.ndarray, accept: list[set[int]], k: int) -> np.ndarray:
@@ -77,7 +107,6 @@ def main() -> None:
     run = args.run or f"{datetime.now(timezone.utc):%Y-%m-%d}_compare"
     out = ROOT / "experiments" / "results" / run
     cnn_dir = out / "cnn"
-    rng = np.random.default_rng(args.seed)
 
     d = load()
     classes = d.classes
@@ -87,6 +116,7 @@ def main() -> None:
     cols = [enc.ids.index(c) for c in classes]
     W_single = enc.build_label_matrix(ensemble=False)
     W_ens = enc.label_matrix
+    W_ens32 = fp32_label_matrix(enc)
 
     # CLIP image embeddings (cached by ml.embeddings; the same cache run.py uses)
     emb, ms = {}, {}
@@ -110,7 +140,10 @@ def main() -> None:
 
     def zs(W, E):
         return softmax(LOGIT_SCALE * E @ W[cols].T)
-    for key, W in (("clip_zero_shot_single", W_single), ("clip_zero_shot_ensemble", W_ens)):
+    zs_models = [("clip_zero_shot_single", W_single), ("clip_zero_shot_ensemble", W_ens)]
+    if W_ens32 is not None:
+        zs_models.append(("clip_zero_shot_fp32_text", W_ens32))
+    for key, W in zs_models:
         P[key] = {s: zs(W, emb[s]) for s in ("val", "test", "unseen")}
         cost[key] = {"labelled_photos": 0, "trainable_params": 0, "train_seconds": 0.0}
 
@@ -135,6 +168,12 @@ def main() -> None:
     cost["clip_tip_adapter"] = {"labelled_photos": len(d.train.y), "trainable_params": 0,
                                 "train_seconds": round(time.time() - t, 1), "alpha": a, "beta": b,
                                 "cache_entries": len(d.train.y), "grid": tip_grid}
+    if W_ens32 is not None:
+        tip32 = TipAdapter.build(W_ens32[cols], emb["train"], d.train.y)
+        tip32.alpha, tip32.beta, grid32 = search_alpha_beta(tip32, emb["val"], d.val.y)
+        P["clip_tip_adapter_fp32_text"] = {s: tip32.predict_proba(emb[s]) for s in ("val", "test", "unseen")}
+        cost["clip_tip_adapter_fp32_text"] = {"labelled_photos": len(d.train.y), "trainable_params": 0, "train_seconds": 0.0,
+                                              "alpha": tip32.alpha, "beta": tip32.beta, "cache_entries": len(d.train.y)}
 
     # ------------------------------------------------ CNN models (from train_cnn.py)
     cnn_meta = {}
@@ -222,7 +261,7 @@ def main() -> None:
     if unseen_cls.any():
         full = [{enc.ids.index(a) for a in r["accept"]} for r, s in zip(d.unseen.rows, seen) if not s]
         E_u = emb["unseen"][unseen_cls]
-        for key, W in (("clip_zero_shot_single", W_single), ("clip_zero_shot_ensemble", W_ens)):
+        for key, W in zs_models:
             Pu = softmax(LOGIT_SCALE * E_u @ W.T)
             open_vocab[key] = {"top1": r4(topk(Pu, full, 1).mean()), "top5": r4(topk(Pu, full, 5).mean())}
         open_vocab.update({"n": int(unseen_cls.sum()), "label_space": len(enc.ids),
@@ -237,18 +276,22 @@ def main() -> None:
     by_class = {c: np.where(d.train.y == c)[0] for c in range(C)}
     zs_test = float(topk(P["clip_zero_shot_ensemble"]["test"], d.test.accept, 1).mean())
     curve["clip_zero_shot_ensemble"] = [zs_test] * 7
-    for name in ("clip_linear_probe", "clip_tip_adapter", "resnet50_frozen"):
-        if name == "resnet50_frozen" and rn is None:
+    zs32_test = None
+    if W_ens32 is not None:
+        zs32_test = float(topk(P["clip_zero_shot_fp32_text"]["test"], d.test.accept, 1).mean())
+        curve["clip_zero_shot_fp32_text"] = [zs32_test] * 7
+    for name in ("clip_linear_probe", "clip_tip_adapter", "clip_tip_adapter_fp32_text", "resnet50_frozen"):
+        if (name == "resnet50_frozen" and rn is None) or (name.endswith("fp32_text") and W_ens32 is None):
             continue
-        vals = [None if name != "clip_tip_adapter" else zs_test]
+        vals = [{"clip_tip_adapter": zs_test, "clip_tip_adapter_fp32_text": zs32_test}.get(name)]
         for k in shots:
             accs = []
             for rep in range(3 if k < 16 else 1):
                 r_ = np.random.default_rng(args.seed + 1000 * rep + k)
                 ix = np.concatenate([r_.choice(v, min(k, len(v)), replace=False) for v in by_class.values()])
                 y = d.train.y[ix]
-                if name == "clip_tip_adapter":
-                    ad = TipAdapter.build(W_ens[cols], emb["train"][ix], y)
+                if name.startswith("clip_tip_adapter"):
+                    ad = TipAdapter.build((W_ens32 if name.endswith("fp32_text") else W_ens)[cols], emb["train"][ix], y)
                     ad.alpha, ad.beta, _ = search_alpha_beta(ad, emb["val"], d.val.y)
                     Pt = ad.predict_proba(emb["test"])
                 else:
@@ -296,10 +339,11 @@ def plots(out, results, curve) -> None:
     keys = list(results)
     short = {"cnn_scratch": "CNN\nscratch", "resnet50_frozen": "ResNet-50\nfrozen+LR", "resnet50_finetune": "ResNet-50\nfine-tuned",
              "clip_zero_shot_single": "CLIP ZS\n1 prompt", "clip_zero_shot_ensemble": "CLIP ZS\n7 prompts",
+             "clip_zero_shot_fp32_text": "CLIP ZS\nfp32 text", "clip_tip_adapter_fp32_text": "CLIP+Tip\nfp32 text",
              "clip_linear_probe": "CLIP\n+probe", "clip_tip_adapter": "CLIP\n+Tip-Adapter"}
     colors = {"1": "#8a8a8a", "2": "#4c78a8", "3": "#e45756", "4": "#c8442b"}
 
-    fig, ax = plt.subplots(figsize=(10, 4.2))
+    fig, ax = plt.subplots(figsize=(12, 4.2))
     x = np.arange(len(keys))
     for i, k in enumerate(keys):
         r = results[k]
@@ -317,7 +361,9 @@ def plots(out, results, curve) -> None:
 
     fig, ax = plt.subplots(figsize=(6.5, 4.2))
     xs = curve["shots"]
-    style = {"clip_zero_shot_ensemble": ("CLIP zero-shot (0 photos)", "--", "#e45756"),
+    style = {"clip_zero_shot_ensemble": ("CLIP zero-shot, int8 text (0 photos)", "--", "#e45756"),
+             "clip_zero_shot_fp32_text": ("CLIP zero-shot, fp32 text (0 photos)", ":", "#8c2d04"),
+             "clip_tip_adapter_fp32_text": ("CLIP + Tip-Adapter, fp32 text", "D-", "#8c2d04"),
              "clip_linear_probe": ("CLIP + linear probe", "o-", "#c8442b"),
              "clip_tip_adapter": ("CLIP + Tip-Adapter", "s-", "#f58518"),
              "resnet50_frozen": ("ResNet-50 ImageNet + LR", "^-", "#4c78a8")}
