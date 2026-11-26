@@ -400,6 +400,12 @@ def main() -> None:
                             "vision_model": enc.vision_file, "vision_sha256": enc.vision_sha256},
                "metrics": summary, "datasets": datasets, "env": env_info()}
         (art / "recognizer.json").write_text(json.dumps(rec, indent=2))
+        # reference embedding for the startup self-check (app/ml/pipeline.FoodRecognizer._selfcheck)
+        from app.ml.preprocess import decode_image
+        ref = enc.embed_images([decode_image((art / "selfcheck.jpg").read_bytes())])[0]
+        (art / "selfcheck.json").write_text(json.dumps({
+            "image": "selfcheck.jpg", "vision_model": enc.vision_file, "vision_sha256": enc.vision_sha256,
+            "min_cosine": 0.95, "embedding": [round(float(v), 6) for v in ref]}, indent=1))
 
     brief = {k: v["test"] for k, v in table.items()}
     print(json.dumps({"test": {k: {"top1": v["top1"], "top5": v["top5"]} for k, v in brief.items()},

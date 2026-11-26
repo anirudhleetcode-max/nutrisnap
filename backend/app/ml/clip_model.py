@@ -2,9 +2,9 @@
 is trained by this project.
 
 Only the vision tower runs per request. It is the fp32 export quantised by scripts.download_models with
-onnxruntime's dynamic quantisation (int8 weights, per-channel): 2.2x faster on CPU than the 8-bit
-export Xenova publishes, and closer to fp32 (embedding cosine 0.973 vs 0.932;
-experiments/results/2026-11-26_onnx). The Xenova file is kept as a fallback. The text tower runs once per
+onnxruntime's dynamic quantisation (int8 weights, per-channel, reduce_range): ~2.3x faster on a VNNI
+CPU than the 8-bit export Xenova publishes, with the same accuracy, and safe on CPUs without VNNI
+(experiments/reports/2026-11-26_vision-hotfix.md). The Xenova file is kept as a fallback. The text tower runs once per
 (food list, templates, model file) to build the zero-shot label matrix, which is cached as .npy.
 
 The text tower is the full-precision (fp32) export when `text_model.onnx` is present. The 8-bit text

@@ -1,5 +1,6 @@
 import io
 
+import pytest
 from PIL import Image, ImageDraw
 
 from .conftest import FIXTURES, needs_model
@@ -175,3 +176,26 @@ def test_forget_corrections(client, new_user):
     assert client.get("/api/corrections", headers=new_user).json()["total"] == 1
     assert client.delete("/api/corrections", headers=new_user).status_code == 204
     assert client.get("/api/corrections", headers=new_user).json()["total"] == 0
+
+
+@needs_model
+def test_selfcheck_refuses_a_model_that_computes_different_embeddings(tmp_path):
+    """If the vision model's output on the reference photo doesn't match what it was fitted with
+    (e.g. int8 saturation on a CPU without VNNI), recognition must not load."""
+    import json
+    import shutil
+
+    from app.config import get_settings
+    from app.foods import catalogue
+    from app.ml.pipeline import FoodRecognizer
+
+    s = get_settings()
+    for f in s.artifacts_dir.iterdir():
+        shutil.copy(f, tmp_path / f.name)
+    ok = FoodRecognizer(s.model_dir, catalogue(), tmp_path)
+    assert ok.selfcheck["cosine"] > 0.99
+    ref = json.loads((tmp_path / "selfcheck.json").read_text())
+    ref["embedding"] = [-v for v in ref["embedding"]]  # what a broken model would look like
+    (tmp_path / "selfcheck.json").write_text(json.dumps(ref))
+    with pytest.raises(RuntimeError, match="self-check failed"):
+        FoodRecognizer(s.model_dir, catalogue(), tmp_path)

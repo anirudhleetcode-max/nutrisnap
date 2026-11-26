@@ -1,4 +1,4 @@
-# Model card: NutriSnap food recognizer (`2026-11-26_main-int8vision`)
+# Model card: NutriSnap food recognizer (`2026-11-26_main-int8rr`)
 
 The same information is served at `GET /api/model` and shown on the app's **Model** page.
 
@@ -8,10 +8,10 @@ The same information is served at `GET /api/model` and shown on the app's **Mode
 |---|---|
 | Task | Name the dish in a photo, from a fixed list of 188 foods (113 Indian) |
 | Backbone | **CLIP ViT-B/32** (Radford et al., OpenAI, 2021). Pretrained and **not trained by this project** |
-| Weights | [Xenova/clip-vit-base-patch32](https://huggingface.co/Xenova/clip-vit-base-patch32) ONNX export: `vision_model_int8.onnx` (89 MB, runs per request: the fp32 export quantised by `scripts.download_models` with onnxruntime dynamic quantisation, **int8 weights, per-channel**, SHA-256 prefix `c7ab00a1e7235ca6`) and `text_model.onnx` (254 MB, **full precision**, runs only to build the cached label embeddings); MIT licence |
+| Weights | [Xenova/clip-vit-base-patch32](https://huggingface.co/Xenova/clip-vit-base-patch32) ONNX export: `vision_model_int8.onnx` (89 MB, runs per request: the fp32 export quantised by `scripts.download_models` with onnxruntime dynamic quantisation, **int8 weights, per-channel, reduce_range**, SHA-256 prefix `167c5642b6126bb8`; checked at startup against a reference embedding) and `text_model.onnx` (254 MB, **full precision**, runs only to build the cached label embeddings); MIT licence |
 | Runtime | onnxruntime (CPU); no PyTorch |
 | Trained by this project | A **multinomial logistic regression** (linear probe) on frozen 512-d image embeddings. 45 classes, 1,800 real photos (Food-101 + Indian Food Images), C = 10 chosen on val, seed 42. Artifact: `backend/artifacts/probe_v1.npz` (87 KB) + `probe_v1.json` |
-| Fitted on validation data | Temperature T = 0.758, abstention threshold 0.48, not-food threshold 0.70, hybrid weight 0.5 (`backend/artifacts/recognizer.json`, which also records the text tower and the vision model's hash; the app logs a warning if different files are loaded) |
+| Fitted on validation data | Temperature T = 0.774, abstention threshold 0.52, not-food threshold 0.55, hybrid weight 0.5 (`backend/artifacts/recognizer.json`, which also records the text tower and the vision model's hash; the app logs a warning if different files are loaded) |
 
 ## Inference
 
@@ -20,22 +20,22 @@ The same information is served at `GET /api/model` and shown on the app's **Mode
 3. **Embed:** the vision model outputs `image_embeds` (512), which is L2-normalised.
 4. **Zero-shot:** each food has 7 prompt templates (plain and descriptive names). Each prompt goes through the text model separately, with no padding, because this export pools at EOS and takes no attention mask. The prompt embeddings are averaged and re-normalised, giving a 188×512 label matrix that is cached as `.npy`. Scores are `softmax(100 · cos)`.
 5. **Probe (hybrid):** zero-shot decides the total probability M of the 45 probe classes. Inside that group, the probe's softmax is mixed with zero-shot's (probe weight 0.5). The other 143 classes keep their zero-shot probability.
-6. **Calibrate:** `softmax(log p / T)` with T = 0.758.
+6. **Calibrate:** `softmax(log p / T)` with T = 0.774.
 7. **Personalise (optional, per user):** a kNN over the user's corrected photos (cosine ≥ 0.72, k = 5) is blended in with weight α ≤ 0.7. Probabilities after this step are **not** calibrated, and the API reports `calibrated: false`.
-8. **Decide:** food score < 0.70 → `not_food`; top-1 < 0.48 → `uncertain` (no preselection in the UI); otherwise `confident`.
+8. **Decide:** food score < 0.55 → `not_food`; top-1 < 0.52 → `uncertain` (no preselection in the UI); otherwise `confident`.
 9. **Extras:** a multi-item hint from 5 crops (2×2 grid + centre), and rule-based quality warnings (dark, overexposed, blurry).
 
-## Evaluation (test split, 2,461 real photos; see `experiments/reports/2026-11-26_main-int8vision.md`)
+## Evaluation (test split, 2,461 real photos; see `experiments/reports/2026-11-26_vision-hotfix.md`)
 
 | | Value |
 |---|---|
-| Top-1 / top-5 (188-way) | 79.1% / 96.3% (single-prompt zero-shot: 76.3% / 94.2%) |
-| Indian subset top-1 | 77.0% (zero-shot ensemble: 76.6%) |
-| ECE before → after temperature | 0.155 → 0.044 |
-| Coverage / accuracy at threshold 0.48 | 82.2% / 86.4% |
-| Commons OOD photos (79) top-1 / top-5 | 79.7% / 98.7% (69.6% on the 23 photos of dishes the probe never saw; ±4 points is noise at n = 79) |
+| Top-1 / top-5 (188-way) | 78.0% / 95.7% (single-prompt zero-shot: 75.7% / 93.7%) |
+| Indian subset top-1 | 76.4% (zero-shot ensemble: 75.7%) |
+| ECE before → after temperature | 0.158 → 0.052 |
+| Coverage / accuracy at threshold 0.52 | 76.7% / 87.3% |
+| Commons OOD photos (79) top-1 / top-5 | 86.1% / 98.7% (82.6% on the 23 photos of dishes the probe never saw; ±4 points is noise at n = 79) |
 | Not-food: non-food caught / food wrongly flagged | 88.9% (n = 18) / 0% (n = 2461) |
-| Latency, recognition in-process (2 CPU threads) | 22 ms whole image; 118 ms with multi-item crops (47 / 277 ms with the previous vision model). Peak RSS 243 MB |
+| Latency, vision model (2 CPU threads, AVX-512 VNNI machine) | 22 ms per image (47 ms with Xenova's export). Not measured on Render's CPUs. Peak RSS 243 MB |
 
 ## Intended use and limits
 
@@ -49,6 +49,11 @@ The same information is served at `GET /api/model` and shown on the app's **Mode
 
 ## Change log
 
+- **2026-11-26 (`2026-11-26_main-int8rr`, hotfix):** the `main-int8vision` model gave wrong answers on
+  Render (int8 saturation on CPUs without VNNI). It was re-quantised with `reduce_range` (same speed, safe on
+  all x86 CPUs, verified under an emulated Haswell CPU), and a startup self-check was added that refuses to
+  load a vision model whose output on a reference photo differs from the fitted one
+  ([report](../experiments/reports/2026-11-26_vision-hotfix.md)).
 - **2026-11-26 (`2026-11-26_main-int8vision`):** the vision model is now quantised locally (per-channel int8)
   instead of Xenova's 8-bit export: 2.1× faster, and closer to fp32 (test zero-shot loss to quantisation
   0.8 vs 2.2 points). Re-fitted on val. Test top-1 changed from 77.3% to 79.1%, and Commons from 86.1% to 79.7%

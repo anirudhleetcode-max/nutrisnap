@@ -83,6 +83,7 @@ class FoodRecognizer:
                         "thresholds may be off. Re-run `python -m scripts.download_models` (same onnxruntime "
                         "version) or re-fit with experiments/run.py.", fitted_vision, self.encoder.vision_file,
                         self.encoder.vision_sha256)
+        self.selfcheck = self._selfcheck()
         self.probe: LinearProbe | None = None
         if self.cfg["mode"] == "hybrid" and self.cfg["probe_file"]:
             p = self.artifacts_dir / self.cfg["probe_file"]
@@ -91,6 +92,29 @@ class FoodRecognizer:
                 self.probe_mask = np.isin(self.ids, self.probe.classes)
             else:
                 log.warning("probe file %s missing; falling back to zero-shot", p.name)
+
+    def _selfcheck(self) -> dict | None:
+        """Embed a reference photo and compare with the embedding recorded when the settings were fitted.
+
+        Quantised models can compute different numbers on different CPUs (on 2026-11-26 an int8 model
+        that was right on the build machine said "almonds" for a pizza on Render's CPUs). A cosine
+        below the threshold means the outputs can't be trusted, so loading fails: the API reports
+        "degraded" and returns 503 for recognition instead of confident wrong answers.
+        """
+        ref_path = self.artifacts_dir / "selfcheck.json"
+        if not ref_path.exists():
+            return None
+        ref = json.loads(ref_path.read_text(encoding="utf-8"))
+        from .preprocess import decode_image
+        img = decode_image((self.artifacts_dir / ref["image"]).read_bytes())
+        cos = float(self.encoder.embed_images([img])[0] @ np.asarray(ref["embedding"], dtype=np.float32))
+        result = {"cosine": round(cos, 4), "min_cosine": ref["min_cosine"], "image": ref["image"]}
+        if cos < ref["min_cosine"]:
+            raise RuntimeError(f"vision model self-check failed: cosine {cos:.3f} to the reference embedding "
+                               f"(minimum {ref['min_cosine']}); this CPU computes different results from the one "
+                               f"the model was fitted on")
+        log.info("vision model self-check passed (cosine %.4f)", cos)
+        return result
 
     @property
     def labels(self):
@@ -156,6 +180,7 @@ class FoodRecognizer:
                 "embedding_dim": 512,
             },
             "preprocessing": PREPROCESS_VERSION,
+            "selfcheck": self.selfcheck,
             "classes": len(self.ids),
             "zero_shot": {"templates_per_class": 7, "logit_scale": 100},
             "probe": self.probe.card if self.probe else None,
