@@ -35,7 +35,7 @@ to one origin and no CORS preflight is needed. No `localhost` URL is used in pro
 | `ENV` | yes | `production` (set in `render.yaml`) |
 | `MONGO_DB` | yes | `nutrisnap` (set in `render.yaml`) |
 
-The Docker build runs `python -m scripts.download_models` (≈155 MB of CLIP ONNX weights from Hugging Face) and pre-builds the label-embedding cache, so a cold start does not download or re-embed anything. `ONNX_THREADS=1` keeps CPU use predictable on the free instance.
+The Docker build runs `python -m scripts.download_models`. It downloads the full-precision CLIP text tower (254 MB) and vision tower (352 MB) from Hugging Face, quantises the vision tower to int8 (~15 s, needs the `onnx` package from `requirements.txt`) and deletes the fp32 vision file, leaving ≈345 MB and pre-builds the label-embedding cache, so a cold start does not download or re-embed anything. The text tower only runs during that build step; at runtime it is never loaded (checked on 2026-11-26: peak RSS 240 MB for model load plus a request, unchanged). `ONNX_THREADS=1` keeps CPU use predictable on the free instance.
 
 3. Deploy, then open `https://<service>.onrender.com/api/health`. It must report the database
    as connected and the model as loaded.
@@ -44,7 +44,8 @@ The Docker build runs `python -m scripts.download_models` (≈155 MB of CLIP ONN
 
 Free Render instances sleep after ~15 minutes idle; the first request after that takes roughly a
 minute while the container starts. Memory measured locally with `docker run --memory 512m`
-(the free-tier limit) on 2026-09-16: ~240 MB after startup and a real request.
+(the free-tier limit) on 2026-09-16: ~240 MB after startup and a real request. Re-measured in-process on
+2026-11-26 after the switch to the fp32 text tower: 240 MB peak.
 
 Seeding demo data is optional: from a machine that can reach Atlas, run
 `MONGO_URI=... MONGO_DB=nutrisnap python -m scripts.seed` in `backend/` (PowerShell:

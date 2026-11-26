@@ -356,6 +356,7 @@ def main() -> None:
                  "classes": len(set(cls)), "probe_classes": len(probe_classes), "food_list_size": len(ids),
                  "ood_commons": {"food": int(ood_food.sum()), "non_food": int((~ood_food).sum())},
                  "manifest": manifest, "synthetic": False},
+        "clip_text_tower": enc.text_precision,
         "models": table, "ood_commons": ood,
         "probe": {"C_search": probe_search, "C": C_best, "hybrid_search": hybrid_search, "hybrid_weight": w_best},
         "chosen_model": chosen, "calibration": cal, "reliability": rel_tables, "abstention": abst,
@@ -395,7 +396,8 @@ def main() -> None:
                "settings": {"version": f"{run_id}", "mode": "hybrid" if probe_file else "zero_shot",
                             "temperature": round(T, 4), "abstain_below": thr, "not_food_below": t_nf,
                             "hybrid_weight": w_best if probe_file else 0.0, "probe_file": probe_file,
-                            "calibrated": True},
+                            "calibrated": True, "text_tower": enc.text_precision,
+                            "vision_model": enc.vision_file, "vision_sha256": enc.vision_sha256},
                "metrics": summary, "datasets": datasets, "env": env_info()}
         (art / "recognizer.json").write_text(json.dumps(rec, indent=2))
 

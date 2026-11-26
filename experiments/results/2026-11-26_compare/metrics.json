@@ -1,0 +1,1344 @@
+{
+  "run_id": "2026-11-26_compare",
+  "created_at": "2026-11-26T19:19:54+00:00",
+  "seed": 42,
+  "data": {
+    "classes": 45,
+    "train": 1800,
+    "val": 900,
+    "test": 2461,
+    "unseen_photos_seen_classes": 56,
+    "test_photos_duplicating_train_or_val": 49,
+    "unseen_photos_new_classes": 23,
+    "synthetic": false
+  },
+  "models": {
+    "clip_zero_shot_single": {
+      "name": "CLIP zero-shot, single prompt",
+      "family": "3 CLIP zero-shot",
+      "val": {
+        "top1": 0.6278,
+        "top5": 0.82,
+        "macro_top1": 0.6278,
+        "food101_top1": 0.77,
+        "indian_top1": 0.3433,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.5949,
+        "top5": 0.7867,
+        "macro_top1": 0.6452,
+        "food101_top1": 0.7987,
+        "indian_top1": 0.2768,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.6045,
+        "top5": 0.7939,
+        "indian_top1": 0.2851,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.8021,
+        "ece_before": 0.0853,
+        "ece_after": 0.0481,
+        "nll_before": 1.5589,
+        "nll_after": 1.5367,
+        "mean_confidence_after": 0.6217
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.1412,
+        "aurc_neg_entropy": 0.1443,
+        "aurc_margin": 0.1439,
+        "aurc_oracle": 0.0962,
+        "threshold_for_85pct_on_val": 0.56,
+        "test_coverage": 0.5591,
+        "test_accuracy_when_answering": 0.8692,
+        "mean_entropy_correct": 0.9061,
+        "mean_entropy_wrong": 2.1968
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.6071,
+        "top5": 0.8393,
+        "coverage_at_threshold": 0.5714,
+        "accuracy_when_answering": 0.8438,
+        "mean_confidence": 0.6201
+      },
+      "cost": {
+        "labelled_photos": 0,
+        "trainable_params": 0,
+        "train_seconds": 0.0,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "clip_zero_shot_ensemble": {
+      "name": "CLIP zero-shot, 7-prompt ensemble (int8 text tower, as shipped)",
+      "family": "3 CLIP zero-shot",
+      "val": {
+        "top1": 0.7011,
+        "top5": 0.9156,
+        "macro_top1": 0.7011,
+        "food101_top1": 0.8117,
+        "indian_top1": 0.48,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.6786,
+        "top5": 0.8883,
+        "macro_top1": 0.7268,
+        "food101_top1": 0.844,
+        "indian_top1": 0.4204,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.6899,
+        "top5": 0.8959,
+        "indian_top1": 0.4364,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.6954,
+        "ece_before": 0.1254,
+        "ece_after": 0.0221,
+        "nll_before": 1.2547,
+        "nll_after": 1.1899,
+        "mean_confidence_after": 0.6914
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.1054,
+        "aurc_neg_entropy": 0.1087,
+        "aurc_margin": 0.1064,
+        "aurc_oracle": 0.0584,
+        "threshold_for_85pct_on_val": 0.54,
+        "test_coverage": 0.6603,
+        "test_accuracy_when_answering": 0.8486,
+        "mean_entropy_correct": 0.7392,
+        "mean_entropy_wrong": 1.8325
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.8036,
+        "top5": 0.9821,
+        "coverage_at_threshold": 0.6607,
+        "accuracy_when_answering": 0.8378,
+        "mean_confidence": 0.6932
+      },
+      "cost": {
+        "labelled_photos": 0,
+        "trainable_params": 0,
+        "train_seconds": 0.0,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "clip_zero_shot_fp32_text": {
+      "name": "CLIP zero-shot, 7-prompt ensemble, fp32 text tower",
+      "family": "3 CLIP zero-shot",
+      "val": {
+        "top1": 0.8489,
+        "top5": 0.9656,
+        "macro_top1": 0.8489,
+        "food101_top1": 0.84,
+        "indian_top1": 0.8667,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.8639,
+        "top5": 0.9797,
+        "macro_top1": 0.8661,
+        "food101_top1": 0.868,
+        "indian_top1": 0.8574,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.8628,
+        "top5": 0.9793,
+        "indian_top1": 0.8542,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 1.0603,
+        "ece_before": 0.0153,
+        "ece_after": 0.0224,
+        "nll_before": 0.436,
+        "nll_after": 0.439,
+        "mean_confidence_after": 0.8466
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.0217,
+        "aurc_neg_entropy": 0.0225,
+        "aurc_margin": 0.0221,
+        "aurc_oracle": 0.0097,
+        "threshold_for_85pct_on_val": 0.2,
+        "test_coverage": 0.9972,
+        "test_accuracy_when_answering": 0.8659,
+        "mean_entropy_correct": 0.3766,
+        "mean_entropy_wrong": 1.3686
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.9286,
+        "top5": 1.0,
+        "coverage_at_threshold": 1.0,
+        "accuracy_when_answering": 0.9286,
+        "mean_confidence": 0.9054
+      },
+      "cost": {
+        "labelled_photos": 0,
+        "trainable_params": 0,
+        "train_seconds": 0.0,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "clip_linear_probe": {
+      "name": "CLIP + linear probe",
+      "family": "4 CLIP adapted",
+      "val": {
+        "top1": 0.8956,
+        "top5": 0.9744,
+        "macro_top1": 0.8956,
+        "food101_top1": 0.8783,
+        "indian_top1": 0.93,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.9228,
+        "top5": 0.9923,
+        "macro_top1": 0.9235,
+        "food101_top1": 0.914,
+        "indian_top1": 0.9365,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.9212,
+        "top5": 0.9921,
+        "indian_top1": 0.9331,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.5154,
+        "ece_before": 0.2327,
+        "ece_after": 0.0229,
+        "nll_before": 0.5141,
+        "nll_after": 0.2598,
+        "mean_confidence_after": 0.9024
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.009,
+        "aurc_neg_entropy": 0.01,
+        "aurc_margin": 0.0087,
+        "aurc_oracle": 0.0031,
+        "threshold_for_85pct_on_val": 0.0,
+        "test_coverage": 1.0,
+        "test_accuracy_when_answering": 0.9228,
+        "mean_entropy_correct": 0.2668,
+        "mean_entropy_wrong": 1.2019
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.8929,
+        "top5": 1.0,
+        "coverage_at_threshold": 1.0,
+        "accuracy_when_answering": 0.8929,
+        "mean_confidence": 0.8772
+      },
+      "cost": {
+        "labelled_photos": 1800,
+        "trainable_params": 23085,
+        "train_seconds": 12.0,
+        "C": 10,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "clip_tip_adapter": {
+      "name": "CLIP + Tip-Adapter (training-free cache)",
+      "family": "4 CLIP adapted",
+      "val": {
+        "top1": 0.8644,
+        "top5": 0.9733,
+        "macro_top1": 0.8644,
+        "food101_top1": 0.8583,
+        "indian_top1": 0.8767,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.8826,
+        "top5": 0.9882,
+        "macro_top1": 0.8818,
+        "food101_top1": 0.8807,
+        "indian_top1": 0.8855,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.8802,
+        "top5": 0.988,
+        "indian_top1": 0.8794,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 1.7252,
+        "ece_before": 0.0575,
+        "ece_after": 0.0203,
+        "nll_before": 0.4568,
+        "nll_after": 0.3931,
+        "mean_confidence_after": 0.8763
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.0207,
+        "aurc_neg_entropy": 0.0226,
+        "aurc_margin": 0.0202,
+        "aurc_oracle": 0.0072,
+        "threshold_for_85pct_on_val": 0.0,
+        "test_coverage": 1.0,
+        "test_accuracy_when_answering": 0.8826,
+        "mean_entropy_correct": 0.3231,
+        "mean_entropy_wrong": 1.3271
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.9464,
+        "top5": 1.0,
+        "coverage_at_threshold": 1.0,
+        "accuracy_when_answering": 0.9464,
+        "mean_confidence": 0.8599
+      },
+      "cost": {
+        "labelled_photos": 1800,
+        "trainable_params": 0,
+        "train_seconds": 0.2,
+        "alpha": 5,
+        "beta": 10,
+        "cache_entries": 1800,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "clip_tip_adapter_fp32_text": {
+      "name": "CLIP + Tip-Adapter, fp32 text tower",
+      "family": "4 CLIP adapted",
+      "val": {
+        "top1": 0.8878,
+        "top5": 0.9767,
+        "macro_top1": 0.8878,
+        "food101_top1": 0.8733,
+        "indian_top1": 0.9167,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.9037,
+        "top5": 0.9898,
+        "macro_top1": 0.901,
+        "food101_top1": 0.8947,
+        "indian_top1": 0.9178,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.9017,
+        "top5": 0.9896,
+        "indian_top1": 0.9134,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 1.7434,
+        "ece_before": 0.0395,
+        "ece_after": 0.0149,
+        "nll_before": 0.3432,
+        "nll_after": 0.3075,
+        "mean_confidence_after": 0.8889
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.0125,
+        "aurc_neg_entropy": 0.0135,
+        "aurc_margin": 0.0123,
+        "aurc_oracle": 0.0048,
+        "threshold_for_85pct_on_val": 0.0,
+        "test_coverage": 1.0,
+        "test_accuracy_when_answering": 0.9037,
+        "mean_entropy_correct": 0.274,
+        "mean_entropy_wrong": 1.3352
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.9464,
+        "top5": 1.0,
+        "coverage_at_threshold": 1.0,
+        "accuracy_when_answering": 0.9464,
+        "mean_confidence": 0.9054
+      },
+      "cost": {
+        "labelled_photos": 1800,
+        "trainable_params": 0,
+        "train_seconds": 0.0,
+        "alpha": 3,
+        "beta": 10,
+        "cache_entries": 1800,
+        "latency_ms_batch1": 46.7,
+        "input_size": 224,
+        "total_params": 87849216,
+        "labelled_photos_note": "+ 400M web image-text pairs (CLIP pretraining)"
+      }
+    },
+    "cnn_scratch": {
+      "name": "CNN from scratch",
+      "family": "1 traditional CNN",
+      "val": {
+        "top1": 0.3322,
+        "top5": 0.6544,
+        "macro_top1": 0.3322,
+        "food101_top1": 0.22,
+        "indian_top1": 0.5567,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.3495,
+        "top5": 0.6753,
+        "macro_top1": 0.3352,
+        "food101_top1": 0.2213,
+        "indian_top1": 0.5494,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.3449,
+        "top5": 0.6704,
+        "indian_top1": 0.5482,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.9232,
+        "ece_before": 0.0461,
+        "ece_after": 0.0231,
+        "nll_before": 2.3731,
+        "nll_after": 2.3632,
+        "mean_confidence_after": 0.33
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.4266,
+        "aurc_neg_entropy": 0.4342,
+        "aurc_margin": 0.4356,
+        "aurc_oracle": 0.2833,
+        "threshold_for_85pct_on_val": 0.71,
+        "test_coverage": 0.0902,
+        "test_accuracy_when_answering": 0.8919,
+        "mean_entropy_correct": 1.9374,
+        "mean_entropy_wrong": 2.6923
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.25,
+        "top5": 0.4464,
+        "coverage_at_threshold": 0.0179,
+        "accuracy_when_answering": 1.0,
+        "mean_confidence": 0.2427
+      },
+      "cost": {
+        "labelled_photos": 1800,
+        "labelled_photos_note": "",
+        "trainable_params": 2356173,
+        "total_params": 2356173,
+        "train_seconds": 1670.3,
+        "latency_ms_batch1": 6.39,
+        "input_size": 128
+      }
+    },
+    "resnet50_frozen": {
+      "name": "ResNet-50 ImageNet, frozen + logistic regression",
+      "family": "2 transfer learning",
+      "val": {
+        "top1": 0.7122,
+        "top5": 0.9089,
+        "macro_top1": 0.7122,
+        "food101_top1": 0.665,
+        "indian_top1": 0.8067,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.7152,
+        "top5": 0.9297,
+        "macro_top1": 0.7112,
+        "food101_top1": 0.666,
+        "indian_top1": 0.7919,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.711,
+        "top5": 0.9283,
+        "indian_top1": 0.7851,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.8061,
+        "ece_before": 0.098,
+        "ece_after": 0.0306,
+        "nll_before": 1.0856,
+        "nll_after": 1.0399,
+        "mean_confidence_after": 0.6985
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.1067,
+        "aurc_neg_entropy": 0.1152,
+        "aurc_margin": 0.1045,
+        "aurc_oracle": 0.0451,
+        "threshold_for_85pct_on_val": 0.55,
+        "test_coverage": 0.6701,
+        "test_accuracy_when_answering": 0.8587,
+        "mean_entropy_correct": 0.8334,
+        "mean_entropy_wrong": 1.7278
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.7143,
+        "top5": 0.8929,
+        "coverage_at_threshold": 0.625,
+        "accuracy_when_answering": 0.8286,
+        "mean_confidence": 0.6778
+      },
+      "cost": {
+        "labelled_photos": 1282967,
+        "labelled_photos_note": "+ ImageNet-1k pretraining",
+        "trainable_params": 92205,
+        "total_params": 23600237,
+        "train_seconds": 237.0,
+        "latency_ms_batch1": 42.22,
+        "input_size": 224
+      }
+    },
+    "resnet50_finetune": {
+      "name": "ResNet-50 ImageNet, fine-tuned (layer4 + head)",
+      "family": "2 transfer learning",
+      "val": {
+        "top1": 0.8122,
+        "top5": 0.9333,
+        "macro_top1": 0.8122,
+        "food101_top1": 0.745,
+        "indian_top1": 0.9467,
+        "n": 900
+      },
+      "test": {
+        "top1": 0.8241,
+        "top5": 0.9561,
+        "macro_top1": 0.8152,
+        "food101_top1": 0.762,
+        "indian_top1": 0.9209,
+        "n": 2461
+      },
+      "test_dedup": {
+        "top1": 0.8205,
+        "top5": 0.9552,
+        "indian_top1": 0.9167,
+        "n": 2412
+      },
+      "calibration": {
+        "temperature": 0.6612,
+        "ece_before": 0.1798,
+        "ece_after": 0.0138,
+        "nll_before": 0.825,
+        "nll_after": 0.6695,
+        "mean_confidence_after": 0.8196
+      },
+      "uncertainty": {
+        "aurc_max_prob": 0.0391,
+        "aurc_neg_entropy": 0.0406,
+        "aurc_margin": 0.0392,
+        "aurc_oracle": 0.0165,
+        "threshold_for_85pct_on_val": 0.31,
+        "test_coverage": 0.9561,
+        "test_accuracy_when_answering": 0.8525,
+        "mean_entropy_correct": 0.5075,
+        "mean_entropy_wrong": 1.6249
+      },
+      "unseen_photos": {
+        "n": 56,
+        "top1": 0.8036,
+        "top5": 1.0,
+        "coverage_at_threshold": 0.9107,
+        "accuracy_when_answering": 0.8627,
+        "mean_confidence": 0.7324
+      },
+      "cost": {
+        "labelled_photos": 1282967,
+        "labelled_photos_note": "+ ImageNet-1k pretraining",
+        "trainable_params": 15056941,
+        "total_params": 23600237,
+        "train_seconds": 1424.6,
+        "latency_ms_batch1": 44.78,
+        "input_size": 224
+      }
+    }
+  },
+  "open_vocabulary_new_classes": {
+    "clip_zero_shot_single": {
+      "top1": 0.0,
+      "top5": 0.1739
+    },
+    "clip_zero_shot_ensemble": {
+      "top1": 0.2174,
+      "top5": 0.4783
+    },
+    "clip_zero_shot_fp32_text": {
+      "top1": 0.8261,
+      "top5": 1.0
+    },
+    "n": 23,
+    "label_space": 188,
+    "classes": [
+      "butter-chicken",
+      "gulab-jamun",
+      "idli",
+      "palak-paneer",
+      "paneer-tikka",
+      "poha"
+    ],
+    "note": "CNN / transfer / probe models have a fixed 45-class output layer, so their accuracy on these photos is 0 by construction. CLIP zero-shot ranks all 188 foods."
+  },
+  "few_shot_curve": {
+    "shots": [
+      0,
+      1,
+      2,
+      4,
+      8,
+      16,
+      40
+    ],
+    "clip_zero_shot_ensemble": [
+      0.6785859406745226,
+      0.6785859406745226,
+      0.6785859406745226,
+      0.6785859406745226,
+      0.6785859406745226,
+      0.6785859406745226,
+      0.6785859406745226
+    ],
+    "clip_zero_shot_fp32_text": [
+      0.863876472978464,
+      0.863876472978464,
+      0.863876472978464,
+      0.863876472978464,
+      0.863876472978464,
+      0.863876472978464,
+      0.863876472978464
+    ],
+    "clip_linear_probe": [
+      null,
+      0.5499,
+      0.694,
+      0.8155,
+      0.8678,
+      0.8948,
+      0.9228
+    ],
+    "clip_tip_adapter": [
+      0.6785859406745226,
+      0.7402,
+      0.7497,
+      0.7785,
+      0.8444,
+      0.8688,
+      0.8826
+    ],
+    "clip_tip_adapter_fp32_text": [
+      0.863876472978464,
+      0.8696,
+      0.8734,
+      0.8805,
+      0.8896,
+      0.8931,
+      0.9037
+    ],
+    "resnet50_frozen": [
+      null,
+      0.1578,
+      0.2668,
+      0.391,
+      0.52,
+      0.6038,
+      0.7152
+    ],
+    "note": "k labelled training photos per class (3 random draws averaged for k<16); hyper-parameters picked on the full val split; test top-1 over 45 classes. k=0 is zero-shot."
+  },
+  "search": {
+    "clip_linear_probe_C": [
+      {
+        "C": 0.1,
+        "val_top1": 0.8344
+      },
+      {
+        "C": 0.3,
+        "val_top1": 0.8533
+      },
+      {
+        "C": 1,
+        "val_top1": 0.8767
+      },
+      {
+        "C": 3,
+        "val_top1": 0.8933
+      },
+      {
+        "C": 10,
+        "val_top1": 0.8956
+      },
+      {
+        "C": 30,
+        "val_top1": 0.8944
+      }
+    ],
+    "tip_adapter_grid": [
+      {
+        "alpha": 0.5,
+        "beta": 1,
+        "val_top1": 0.7833
+      },
+      {
+        "alpha": 1,
+        "beta": 1,
+        "val_top1": 0.8056
+      },
+      {
+        "alpha": 2,
+        "beta": 1,
+        "val_top1": 0.84
+      },
+      {
+        "alpha": 3,
+        "beta": 1,
+        "val_top1": 0.8489
+      },
+      {
+        "alpha": 5,
+        "beta": 1,
+        "val_top1": 0.8567
+      },
+      {
+        "alpha": 8,
+        "beta": 1,
+        "val_top1": 0.8533
+      },
+      {
+        "alpha": 12,
+        "beta": 1,
+        "val_top1": 0.8522
+      },
+      {
+        "alpha": 20,
+        "beta": 1,
+        "val_top1": 0.8444
+      },
+      {
+        "alpha": 0.5,
+        "beta": 2,
+        "val_top1": 0.8033
+      },
+      {
+        "alpha": 1,
+        "beta": 2,
+        "val_top1": 0.83
+      },
+      {
+        "alpha": 2,
+        "beta": 2,
+        "val_top1": 0.8533
+      },
+      {
+        "alpha": 3,
+        "beta": 2,
+        "val_top1": 0.8567
+      },
+      {
+        "alpha": 5,
+        "beta": 2,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 8,
+        "beta": 2,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 12,
+        "beta": 2,
+        "val_top1": 0.8478
+      },
+      {
+        "alpha": 20,
+        "beta": 2,
+        "val_top1": 0.8389
+      },
+      {
+        "alpha": 0.5,
+        "beta": 3.5,
+        "val_top1": 0.8056
+      },
+      {
+        "alpha": 1,
+        "beta": 3.5,
+        "val_top1": 0.8378
+      },
+      {
+        "alpha": 2,
+        "beta": 3.5,
+        "val_top1": 0.8567
+      },
+      {
+        "alpha": 3,
+        "beta": 3.5,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 5,
+        "beta": 3.5,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 8,
+        "beta": 3.5,
+        "val_top1": 0.8544
+      },
+      {
+        "alpha": 12,
+        "beta": 3.5,
+        "val_top1": 0.8467
+      },
+      {
+        "alpha": 20,
+        "beta": 3.5,
+        "val_top1": 0.8411
+      },
+      {
+        "alpha": 0.5,
+        "beta": 5.5,
+        "val_top1": 0.8056
+      },
+      {
+        "alpha": 1,
+        "beta": 5.5,
+        "val_top1": 0.8333
+      },
+      {
+        "alpha": 2,
+        "beta": 5.5,
+        "val_top1": 0.8578
+      },
+      {
+        "alpha": 3,
+        "beta": 5.5,
+        "val_top1": 0.86
+      },
+      {
+        "alpha": 5,
+        "beta": 5.5,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 8,
+        "beta": 5.5,
+        "val_top1": 0.8578
+      },
+      {
+        "alpha": 12,
+        "beta": 5.5,
+        "val_top1": 0.8556
+      },
+      {
+        "alpha": 20,
+        "beta": 5.5,
+        "val_top1": 0.8489
+      },
+      {
+        "alpha": 0.5,
+        "beta": 7.5,
+        "val_top1": 0.8011
+      },
+      {
+        "alpha": 1,
+        "beta": 7.5,
+        "val_top1": 0.8278
+      },
+      {
+        "alpha": 2,
+        "beta": 7.5,
+        "val_top1": 0.8544
+      },
+      {
+        "alpha": 3,
+        "beta": 7.5,
+        "val_top1": 0.86
+      },
+      {
+        "alpha": 5,
+        "beta": 7.5,
+        "val_top1": 0.86
+      },
+      {
+        "alpha": 8,
+        "beta": 7.5,
+        "val_top1": 0.8589
+      },
+      {
+        "alpha": 12,
+        "beta": 7.5,
+        "val_top1": 0.8578
+      },
+      {
+        "alpha": 20,
+        "beta": 7.5,
+        "val_top1": 0.8544
+      },
+      {
+        "alpha": 0.5,
+        "beta": 10,
+        "val_top1": 0.7811
+      },
+      {
+        "alpha": 1,
+        "beta": 10,
+        "val_top1": 0.82
+      },
+      {
+        "alpha": 2,
+        "beta": 10,
+        "val_top1": 0.8467
+      },
+      {
+        "alpha": 3,
+        "beta": 10,
+        "val_top1": 0.8567
+      },
+      {
+        "alpha": 5,
+        "beta": 10,
+        "val_top1": 0.8644
+      },
+      {
+        "alpha": 8,
+        "beta": 10,
+        "val_top1": 0.8633
+      },
+      {
+        "alpha": 12,
+        "beta": 10,
+        "val_top1": 0.86
+      },
+      {
+        "alpha": 20,
+        "beta": 10,
+        "val_top1": 0.8633
+      }
+    ]
+  },
+  "cnn_training": {
+    "cnn_scratch": {
+      "model": "scratch",
+      "classes": 45,
+      "seed": 42,
+      "threads": 4,
+      "torch": "2.15.0+cu132",
+      "started_at": "2026-11-26T17:14:22+00:00",
+      "train_size": 1800,
+      "input_size": 128,
+      "epochs": 40,
+      "best_epoch": 35,
+      "log": [
+        {
+          "epoch": 1,
+          "train_loss": 3.7443,
+          "val_top1": 0.0244,
+          "seconds": 39.9
+        },
+        {
+          "epoch": 2,
+          "train_loss": 3.5262,
+          "val_top1": 0.09,
+          "seconds": 39.5
+        },
+        {
+          "epoch": 3,
+          "train_loss": 3.5132,
+          "val_top1": 0.0444,
+          "seconds": 40.7
+        },
+        {
+          "epoch": 4,
+          "train_loss": 3.5544,
+          "val_top1": 0.0922,
+          "seconds": 40.5
+        },
+        {
+          "epoch": 5,
+          "train_loss": 3.5003,
+          "val_top1": 0.0667,
+          "seconds": 41.8
+        },
+        {
+          "epoch": 6,
+          "train_loss": 3.503,
+          "val_top1": 0.0511,
+          "seconds": 41.2
+        },
+        {
+          "epoch": 7,
+          "train_loss": 3.4582,
+          "val_top1": 0.12,
+          "seconds": 39.9
+        },
+        {
+          "epoch": 8,
+          "train_loss": 3.3939,
+          "val_top1": 0.1267,
+          "seconds": 40.7
+        },
+        {
+          "epoch": 9,
+          "train_loss": 3.3479,
+          "val_top1": 0.1167,
+          "seconds": 39.7
+        },
+        {
+          "epoch": 10,
+          "train_loss": 3.3427,
+          "val_top1": 0.1222,
+          "seconds": 41.6
+        },
+        {
+          "epoch": 11,
+          "train_loss": 3.2942,
+          "val_top1": 0.14,
+          "seconds": 41.0
+        },
+        {
+          "epoch": 12,
+          "train_loss": 3.2619,
+          "val_top1": 0.15,
+          "seconds": 41.9
+        },
+        {
+          "epoch": 13,
+          "train_loss": 3.276,
+          "val_top1": 0.1644,
+          "seconds": 42.3
+        },
+        {
+          "epoch": 14,
+          "train_loss": 3.2064,
+          "val_top1": 0.1867,
+          "seconds": 42.1
+        },
+        {
+          "epoch": 15,
+          "train_loss": 3.1327,
+          "val_top1": 0.1911,
+          "seconds": 40.3
+        },
+        {
+          "epoch": 16,
+          "train_loss": 3.091,
+          "val_top1": 0.1378,
+          "seconds": 39.1
+        },
+        {
+          "epoch": 17,
+          "train_loss": 3.0939,
+          "val_top1": 0.2089,
+          "seconds": 38.6
+        },
+        {
+          "epoch": 18,
+          "train_loss": 3.0282,
+          "val_top1": 0.1556,
+          "seconds": 39.5
+        },
+        {
+          "epoch": 19,
+          "train_loss": 2.9998,
+          "val_top1": 0.2111,
+          "seconds": 41.0
+        },
+        {
+          "epoch": 20,
+          "train_loss": 2.9975,
+          "val_top1": 0.2056,
+          "seconds": 41.6
+        },
+        {
+          "epoch": 21,
+          "train_loss": 2.928,
+          "val_top1": 0.2478,
+          "seconds": 40.5
+        },
+        {
+          "epoch": 22,
+          "train_loss": 2.8758,
+          "val_top1": 0.2433,
+          "seconds": 39.0
+        },
+        {
+          "epoch": 23,
+          "train_loss": 2.8421,
+          "val_top1": 0.2233,
+          "seconds": 46.7
+        },
+        {
+          "epoch": 24,
+          "train_loss": 2.7975,
+          "val_top1": 0.2456,
+          "seconds": 45.6
+        },
+        {
+          "epoch": 25,
+          "train_loss": 2.74,
+          "val_top1": 0.2833,
+          "seconds": 45.4
+        },
+        {
+          "epoch": 26,
+          "train_loss": 2.7192,
+          "val_top1": 0.2667,
+          "seconds": 45.0
+        },
+        {
+          "epoch": 27,
+          "train_loss": 2.6519,
+          "val_top1": 0.2756,
+          "seconds": 43.4
+        },
+        {
+          "epoch": 28,
+          "train_loss": 2.6374,
+          "val_top1": 0.2856,
+          "seconds": 42.8
+        },
+        {
+          "epoch": 29,
+          "train_loss": 2.6214,
+          "val_top1": 0.2822,
+          "seconds": 43.1
+        },
+        {
+          "epoch": 30,
+          "train_loss": 2.5922,
+          "val_top1": 0.2733,
+          "seconds": 41.8
+        },
+        {
+          "epoch": 31,
+          "train_loss": 2.5502,
+          "val_top1": 0.2956,
+          "seconds": 44.2
+        },
+        {
+          "epoch": 32,
+          "train_loss": 2.5118,
+          "val_top1": 0.2911,
+          "seconds": 44.7
+        },
+        {
+          "epoch": 33,
+          "train_loss": 2.4602,
+          "val_top1": 0.3156,
+          "seconds": 41.3
+        },
+        {
+          "epoch": 34,
+          "train_loss": 2.4208,
+          "val_top1": 0.3178,
+          "seconds": 38.6
+        },
+        {
+          "epoch": 35,
+          "train_loss": 2.4137,
+          "val_top1": 0.3322,
+          "seconds": 39.2
+        },
+        {
+          "epoch": 36,
+          "train_loss": 2.351,
+          "val_top1": 0.3311,
+          "seconds": 41.0
+        },
+        {
+          "epoch": 37,
+          "train_loss": 2.3687,
+          "val_top1": 0.3289,
+          "seconds": 40.0
+        },
+        {
+          "epoch": 38,
+          "train_loss": 2.3453,
+          "val_top1": 0.3278,
+          "seconds": 39.4
+        },
+        {
+          "epoch": 39,
+          "train_loss": 2.3548,
+          "val_top1": 0.3222,
+          "seconds": 38.6
+        },
+        {
+          "epoch": 40,
+          "train_loss": 2.3572,
+          "val_top1": 0.3289,
+          "seconds": 38.5
+        }
+      ],
+      "optimizer": "AdamW lr 3e-3 one-cycle, wd 5e-4, batch 64, label smoothing 0.1",
+      "params": 2356173,
+      "trainable_params": 2356173,
+      "pretrained": "none (random init)",
+      "train_seconds": 1670.3,
+      "latency_ms_torch_batch1": 6.39,
+      "val_top1": 0.3322,
+      "test_top1": 0.3495
+    },
+    "resnet50_frozen": {
+      "model": "resnet50_frozen",
+      "classes": 45,
+      "seed": 42,
+      "threads": 4,
+      "torch": "2.15.0+cu132",
+      "started_at": "2026-11-26T16:33:56+00:00",
+      "train_size": 1800,
+      "input_size": 224,
+      "C_search": [
+        {
+          "C": 0.001,
+          "val_top1": 0.6744
+        },
+        {
+          "C": 0.003,
+          "val_top1": 0.7
+        },
+        {
+          "C": 0.01,
+          "val_top1": 0.7011
+        },
+        {
+          "C": 0.03,
+          "val_top1": 0.7033
+        },
+        {
+          "C": 0.1,
+          "val_top1": 0.7122
+        },
+        {
+          "C": 0.3,
+          "val_top1": 0.6989
+        },
+        {
+          "C": 1.0,
+          "val_top1": 0.6989
+        }
+      ],
+      "C": 0.1,
+      "feature_dim": 2048,
+      "pretrained": "torchvision ResNet50_Weights.IMAGENET1K_V2 (ImageNet-1k, 1.28M labelled photos)",
+      "params": 23600237,
+      "trainable_params": 92205,
+      "train_seconds": 237.0,
+      "latency_ms_torch_batch1": 42.22,
+      "val_top1": 0.7122,
+      "test_top1": 0.7152
+    },
+    "resnet50_finetune": {
+      "model": "resnet50_finetune",
+      "classes": 45,
+      "seed": 42,
+      "threads": 4,
+      "torch": "2.15.0+cu132",
+      "started_at": "2026-11-26T16:50:32+00:00",
+      "train_size": 1800,
+      "input_size": 224,
+      "epochs": 10,
+      "best_epoch": 8,
+      "log": [
+        {
+          "epoch": 1,
+          "train_loss": 3.4895,
+          "val_top1": 0.4856,
+          "seconds": 123.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 1.786,
+          "val_top1": 0.7311,
+          "seconds": 125.1
+        },
+        {
+          "epoch": 3,
+          "train_loss": 1.1193,
+          "val_top1": 0.7567,
+          "seconds": 133.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.9361,
+          "val_top1": 0.7856,
+          "seconds": 129.4
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.855,
+          "val_top1": 0.7911,
+          "seconds": 130.7
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.8144,
+          "val_top1": 0.7922,
+          "seconds": 132.1
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.7932,
+          "val_top1": 0.7933,
+          "seconds": 128.6
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.7834,
+          "val_top1": 0.8122,
+          "seconds": 129.1
+        },
+        {
+          "epoch": 9,
+          "train_loss": 0.7715,
+          "val_top1": 0.7967,
+          "seconds": 129.5
+        },
+        {
+          "epoch": 10,
+          "train_loss": 0.7709,
+          "val_top1": 0.8,
+          "seconds": 135.2
+        }
+      ],
+      "optimizer": "AdamW one-cycle, lr 3e-4 (layer4) / 3e-3 (head), wd 1e-4, batch 32, label smoothing 0.1",
+      "pretrained": "torchvision ResNet50_Weights.IMAGENET1K_V2",
+      "trained_layers": "layer4 + fc",
+      "params": 23600237,
+      "trainable_params": 15056941,
+      "train_seconds": 1424.6,
+      "latency_ms_torch_batch1": 44.78,
+      "val_top1": 0.8122,
+      "test_top1": 0.8241
+    }
+  },
+  "clip_embedding_ms_median": {
+    "food101": 47.322284500069145,
+    "indianfoods": 46.072732000084216,
+    "commons": 46.99978000007832
+  }
+}

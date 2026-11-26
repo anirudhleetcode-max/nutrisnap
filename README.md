@@ -72,11 +72,11 @@ flowchart LR
 |---|---|---|
 | Input | Upload ≤ 8 MB. Magic bytes must say JPEG/PNG/WebP. The header is checked for ≤ 40 MP before decoding; minimum 32 px per side | `app/ml/preprocess.py` |
 | Preprocessing | EXIF rotate → RGB → shortest side 224 (bicubic) → centre crop → CLIP mean/std → NCHW, batch 1 | `preprocess.clip_tensor` |
-| Representation | Pretrained CLIP ViT-B/32 vision tower (8-bit ONNX) → 512-d L2-normalised embedding | `app/ml/clip_model.py` |
+| Representation | Pretrained CLIP ViT-B/32 vision tower (ONNX, int8 per-channel, quantised by `download_models`) → 512-d L2-normalised embedding | `app/ml/clip_model.py` |
 | Model | (a) Zero-shot: cosine to 188 label embeddings, each the average of 7 prompts, ×100, softmax. (b) Linear probe (logistic regression, 45 classes) mixed in *inside* its classes | `clip_model.py`, `probe.py`, `pipeline.hybrid` |
 | Post-processing | Per-user kNN over corrected photos (optional). Crop-based multi-item hint. Rule-based quality warnings | `personalize.py`, `pipeline.py` |
-| Confidence | Temperature scaling (T = 0.446, fitted on val) | `calibration.py` |
-| Decision | `not_food` if food score < 0.95; `uncertain` if confidence < 0.48; otherwise `confident` | `pipeline.FoodRecognizer.analyse` |
+| Confidence | Temperature scaling (T = 0.758, fitted on val) | `calibration.py` |
+| Decision | `not_food` if food score < 0.70; `uncertain` if confidence < 0.48; otherwise `confident` | `pipeline.FoodRecognizer.analyse` |
 | API | `POST /api/recognize` → candidates, `decision`, `confidence`, `calibrated`, `abstain_below`, `quality_warnings`, `photo_id` | `app/recognize.py` |
 | UI | Preselects only when confident. Shows the reason when not. Model page shows the model card | `frontend/src/pages/Snap.tsx`, `ModelInfo.tsx` |
 
@@ -110,7 +110,7 @@ backend/
     auth.py            register/login/me, failed-login rate limit
     config.py          settings (+ JWT placeholder guard)
     foods.py meals.py profile.py trends.py recognize.py   routers
-    ml/                preprocess · clip_model · probe · calibration · personalize · pipeline
+    ml/                preprocess · clip_model · probe · adapter (Tip-Adapter) · calibration · personalize · pipeline
     services/nutrition.py   portions, Mifflin–St Jeor, macro split
   artifacts/           recognizer.json, probe_v1.npz/.json   (small, committed)
   data/                foods.json, usda_mapping.json, usda_verification.json
@@ -118,10 +118,11 @@ backend/
   scripts/             download_models.py, seed.py, usda_verify.py
   tests/               50 pytest tests
 experiments/           run.py, bench_latency.py, configs/, results/<run>/, reports/
+  compare/             train_cnn.py, compare.py, onnx_bench.py, clip_explain.py, dataset_stats.py
 frontend/src/          pages/, components/, lib/ (+ *.test.tsx)
 e2e/                   test_e2e.py, run_e2e.sh
 data/README.md         dataset sources, licences, hashes
-docs/                  AUDIT.md, MODEL_CARD.md, screenshots/
+docs/                  COMPARISON.md, CLIP.md, DATASET.md, AUDIT.md, MODEL_CARD.md, DEPLOYMENT.md, screenshots/
 ```
 
 ## Installation
@@ -138,7 +139,7 @@ python -m venv .venv
 pip install -r requirements.txt          # add -r requirements-dev.txt for tests / experiments
 copy .env.example .env
 python -c "import secrets; print(secrets.token_urlsafe(48))"   # paste into JWT_SECRET in .env
-python -m scripts.download_models        # ~155 MB, one time
+python -m scripts.download_models        # one time: fp32 text tower + fp32 vision quantised to int8 (~600 MB download, 345 MB kept)
 python -m scripts.seed                   # foods + demo account (generated meals)
 
 cd ..\frontend
@@ -211,62 +212,109 @@ Splits: train 1,800 / val 900 / test 2,461 real photos. Food-101 test photos com
 
 ## Experiments
 
-See [experiments/README.md](experiments/README.md) for the run table and how to add a run. The full write-up is in [experiments/reports/2026-09-16_main.md](experiments/reports/2026-09-16_main.md).
+See [experiments/README.md](experiments/README.md) for the run table and how to add a run. The current app model is described in [experiments/reports/2026-11-26_main-int8vision.md](experiments/reports/2026-11-26_main-int8vision.md), the fp32 text-tower switch in [experiments/reports/2026-11-26_main.md](experiments/reports/2026-11-26_main.md), and the original run in [experiments/reports/2026-09-16_main.md](experiments/reports/2026-09-16_main.md).
 
 ## Results
 
-All numbers come from runs made on **2026-09-16** and are stored in `experiments/results/`. No synthetic data was used in any of them.
+The app model comes from run **`2026-11-26_main-int8vision`**. It uses the same data, splits and config as the original `2026-09-16_main`, with two model-file changes found in the [ONNX study](docs/COMPARISON.md): label embeddings from the **full-precision text tower** ([report](experiments/reports/2026-11-26_main.md)) and a **per-channel INT8 vision model quantised here**, 2.1× faster ([report](experiments/reports/2026-11-26_main-int8vision.md)). Everything was re-fitted on val. All numbers are stored in `experiments/results/`. No synthetic data was used.
 
-**Accuracy, test split** (Food-101 30 classes + Indian Food Images 15 classes, 2,461 photos; run `2026-09-16_main`)
+**Accuracy, test split** (Food-101 30 classes + Indian Food Images 15 classes, 2,461 photos)
 
-| Model | Classes | Top-1 | Top-5 | Indian top-1 |
-|---|---|---|---|---|
-| Majority class | – | 2.0% | 10.0% | 0.0% |
-| Zero-shot, single prompt | 188 | 52.3% | 69.0% | 23.3% |
-| Zero-shot, 7-prompt ensemble | 188 | 55.2% | 78.8% | 25.9% |
-| Zero-shot ensemble, restricted to the 45 labelled classes | 45 | 68.1% | 88.7% | 42.8% |
-| Linear probe on frozen CLIP embeddings | 45 | 92.5% | 99.2% | 94.0% |
-| **Hybrid (app model)** | 188 | **79.4%** | **97.3%** | **76.1%** |
+| Model | Classes | Top-1 | Top-5 | Indian top-1 | Top-1 in the original model files (`2026-09-16_main`) |
+|---|---|---|---|---|---|
+| Majority class | – | 2.0% | 10.0% | 0.0% | 2.0% |
+| Zero-shot, single prompt | 188 | 76.3% | 94.2% | 72.8% | 52.3% |
+| Zero-shot, 7-prompt ensemble | 188 | 78.6% | 94.6% | 76.6% | 55.2% |
+| Zero-shot ensemble, restricted to the 45 labelled classes | 45 | 87.5% | 98.4% | 87.5% | 68.1% |
+| Linear probe on frozen CLIP embeddings | 45 | 93.2% | 99.5% | 95.1% | 92.5% |
+| **Hybrid (app model)** | 188 | **79.1%** | **96.3%** | **77.0%** | 79.4% |
+
+The hybrid's test top-1 is about where it was, but zero-shot alone is 23 points better, so the 143 foods without training photos are now recognised far more often (below). Most remaining top-1 misses are near-synonyms in the 188-food list (club sandwich → sandwich, chicken curry → butter chicken) or look-alikes (kathi roll → shawarma), and the right dish is in the top 5 96.3% of the time.
 
 **Calibration and abstention** (same run)
 
 | | Value |
 |---|---|
-| Temperature (fitted on val) | 0.446 |
-| ECE test, before → after | 0.443 → 0.062 |
+| Temperature (fitted on val) | 0.758 (originally 0.446) |
+| ECE test, before → after | 0.155 → 0.044 (originally 0.443 → 0.062) |
 | Abstention threshold (val target: 85% accuracy) | 0.48 |
-| Test coverage / accuracy when answering | 84.0% / 85.1% |
-| Declined test photos: correct dish in top-5 | 90.1% |
+| Test coverage / accuracy when answering | 82.2% / 86.4% |
+| Declined test photos: correct dish in top-5 | 87.4% |
 
-![Reliability and coverage](experiments/results/2026-09-16_main/calibration.png)
+![Reliability and coverage](experiments/results/2026-11-26_main-int8vision/calibration.png)
 
 **Out-of-distribution: hand-picked Commons photos (79)**
 
-| Model | Top-1 | Top-5 |
-|---|---|---|
-| Single prompt | 36.7% | 51.9% |
-| Ensemble | 50.6% | 76.0% |
-| Hybrid | 63.3% | 83.5% |
+| Model | Top-1 | Top-5 | Top-1, original model files |
+|---|---|---|---|
+| Single prompt | 75.9% | 98.7% | 36.7% |
+| Ensemble | 79.7% | 98.7% | 50.6% |
+| **Hybrid (app)** | **79.7%** | **98.7%** | 63.3% |
+| Hybrid, the 23 photos of dishes the probe never saw | 69.6% | | 26.1% |
 
-**Not-food guard:** 88.9% of non-food test images flagged (16/18), 0.73% of food images wrongly flagged (18/2,461), threshold 0.95 chosen on 18 val images. The non-food sample is small.
+With only 79 photos, ±3 photos (±4 points) is noise. The fp32 vision model itself scores 82.3% zero-shot here ([details](experiments/reports/2026-11-26_main-int8vision.md)).
 
-**Simulated personalisation:** top-1 goes from 79.4% to 81.8% with ≤ 3 corrected photos per class, and to 83.9% with all 215.
+**Not-food guard:** 88.9% of non-food test images flagged (16/18), no food images wrongly flagged (0/2,461), ROC-AUC 0.992, threshold 0.70 chosen on 18 val images. The non-food sample is small.
 
-**Latency** (`2026-09-16_latency`, 2 CPU threads, shared machine): `/api/recognize` median 70.6 ms for the whole image; 352 ms with the 5 extra crops for the multi-item hint.
+**Simulated personalisation:** top-1 goes from 79.1% to 84.3% with ≤ 3 corrected photos per class, and to 86.2% with all 407.
+
+**Latency** (2 CPU threads, shared machine): recognition in-process takes **22 ms** for the whole image and **118 ms** with the 5 extra crops for the multi-item hint, down from 47 ms and 277 ms with the original vision model (measured back to back on 2026-11-26). The full `/api/recognize` round trip, including upload parsing and MongoDB, was 70.6 ms / 352 ms with the original model (`2026-09-16_latency`); it has not been re-measured.
 
 **Nutrition data** (`backend/data/usda_verification.json`): 95 of 188 foods verified against USDA FoodData Central (29 of 113 Indian dishes). Compared with those 95 records, the original hand-written estimates had a median kcal error of **11%**, and some were far off: pakora 320 vs 125 kcal/100 g, chicken biryani 180 vs 104, falafel 333 vs 514.
 
 **Not measured:** accuracy on real users' phone photos (*Dataset required before evaluation.*), and accuracy of the serving-size weights (*Not measured yet.*).
 
+## Model Comparison: CNN vs Transfer Learning vs CLIP
+
+Added on 2026-11-26. Full write-up: **[docs/COMPARISON.md](docs/COMPARISON.md)**. How CLIP works and why
+zero-shot is possible: **[docs/CLIP.md](docs/CLIP.md)**. Datasheet: **[docs/DATASET.md](docs/DATASET.md)**.
+
+Same 45 classes, same splits (test 2,461), same scoring rule:
+
+| Approach | Labelled food photos | Test top-1 | Indian top-1 | Unseen Commons photos (56) | New dishes (23, 188-way) |
+|---|---|---|---|---|---|
+| CNN from scratch (2.4 M params) | 1,800 | 34.9% | 54.9% | 25.0% | 0% (can't) |
+| ResNet-50 ImageNet, frozen + LR | 1,800 | 71.5% | 79.2% | 71.4% | 0% (can't) |
+| ResNet-50 ImageNet, fine-tuned | 1,800 | 82.4% | 92.1% | 80.4% | 0% (can't) |
+| CLIP zero-shot, INT8 text tower (shipped until 2026-11-26) | **0** | 67.9% | 42.0% | 80.4% | 21.7% |
+| CLIP zero-shot, **fp32 text tower** | **0** | 86.4% | 85.7% | 92.9% | **82.6%** |
+| CLIP + linear probe (app) | 1,800 | **92.3%** | **93.6%** | 89.3% | 0% (probe part) |
+| CLIP + Tip-Adapter (training-free), fp32 text | 1,800 | 90.4% | 91.8% | **94.6%** | – |
+
+![Few-shot curve](experiments/results/2026-11-26_compare/few_shot.png)
+
+Key findings:
+
+1. **The INT8 text tower costs ~19 points of zero-shot accuracy.** Its embeddings have 0.74 cosine to
+   fp32. Rebuilding the cached label matrix with the fp32 text tower lifts 188-way zero-shot test top-1
+   from 55.1% to 77.2%, and new-dish top-1 from 21.7% to 82.6%, at no cost per request (the matrix is
+   cached). This also corrects two earlier conclusions: the weak zero-shot results on Indian dishes,
+   and "raw CLIP is under-confident", were mostly quantisation effects. **Applied** in run
+   `2026-11-26_main` (see Results).
+2. **Zero-shot CLIP with no food photos beats a fine-tuned ImageNet ResNet-50** trained on all 1,800
+   (86.4% vs 82.4%), and is the only approach that can name dishes it has no photos of.
+3. **Adaptation still helps:** the probe adds 6 points. Tip-Adapter adds 4 with nothing trained, and is
+   the best choice with 1–8 photos per class (with 1 photo per class, a plain probe is *worse* than zero-shot).
+4. **Uncertainty:** after temperature scaling, every model has ECE ≤ 0.048. Max-probability, entropy and
+   margin rank right above wrong answers equally well (AURC within 0.01), which supports the app's
+   threshold on calibrated top-1 probability.
+5. **ONNX:** PyTorch → ONNX fp32 is lossless and 2× faster. Static INT8 gives another 3.3× (ResNet-50:
+   70.7 → 10.9 ms, 94 → 24 MB, −1.6 points). A per-channel INT8 CLIP vision model quantised here is
+   **2.2× faster** than Xenova's downloaded one (19.9 vs 43.8 ms) and closer to fp32 (cosine 0.973 vs 0.932).
+   **Applied** in run `2026-11-26_main-int8vision`: recognition takes 22 ms instead of 47 ms.
+   fp16 saves disk but not time on CPU. The vision encoder is 90% of a request's 50 ms.
+6. **Data leak found:** 49 test photos are byte-identical to train/val photos in the Indian source
+   dataset (kofta 24, vada pav 17, …). Removing them changes every model by under 0.5 points.
+
 ## Error Analysis
 
-`experiments/results/2026-09-16_main/errors.json` lists the top confusion pairs for the app model and for zero-shot, the 30 most confident mistakes (with dataset row ids), and per-class accuracy. What stands out:
+`experiments/results/2026-09-16_main/errors.json` (original model files; the current run's is `2026-11-26_main-int8vision/errors.json`) lists the top confusion pairs for the app model and for zero-shot, the 30 most confident mistakes (with dataset row ids), and per-class accuracy. What stands out:
 
 1. **Wrapped foods collapse onto "shawarma".** 44% of kathi rolls and 44% of breakfast burritos are predicted as shawarma, and 8 of the 10 most confident mistakes (confidence ≥ 0.97) are shawarma. Shawarma is not one of the probe's classes, so zero-shot keeps sending probability there, and the probe cannot push it back.
 2. **Flatbreads get confused with each other:** naan → aloo paratha (28%), and chole bhature → aloo paratha or aloo tikki.
 3. **Colour drives zero-shot mistakes:** jalebi → *orange* (35% zero-shot, 19% hybrid), kofta → paneer butter masala (31% zero-shot), pav bhaji → dal makhani (28% → 11%).
 4. **Some mistakes are label overlap, not model errors:** Caesar and Greek salad → "green salad" (28%, 18%).
-5. **Zero-shot vs probe on Indian dishes:** zero-shot was almost useless on kofta (1.5%), pakora (1.3%) and chole bhature (0%). The probe lifts these to 69–80%. With only 40 training photos per class, a supervised layer matters most for dishes CLIP rarely saw labelled.
+5. **Zero-shot vs probe on Indian dishes:** zero-shot was almost useless on kofta (1.5%), pakora (1.3%) and chole bhature (0%). The probe lifts these to 69–80%. *Update 2026-11-26:* most of this gap comes from the INT8 text tower. With fp32 text embeddings, zero-shot Indian top-1 is 85.7% instead of 42.0% ([docs/COMPARISON.md](docs/COMPARISON.md)).
 
 Fixes that follow from this are listed under Future Work: add a probe class for shawarma and wraps, and add more flatbread training data.
 
@@ -302,28 +350,28 @@ Captured by the e2e run from the running app (`docs/screenshots/`):
 | File | Shows |
 |---|---|
 | `snap-desktop.png` | Confident result, USDA-verified pizza, portion and macros |
-| `snap-uncertain-desktop.png` | A dosa photo the model is unsure about; no preselection |
+| `snap-uncertain-desktop.png` | A photo the model is unsure about; no preselection (captured with the 8-bit text tower; the e2e test now uses a butter-chicken photo, since the old dosa photo is now recognised) |
 | `diary-desktop.png`, `trends-desktop.png` | Demo account (generated data, banner visible) |
 | `model-desktop.png` | Model card page |
 | `snap-mobile.png`, `diary-mobile.png`, `trends-mobile.png` | 375 px layout with bottom tabs |
 
 ## Technical Deep Dive
 
-**Why CLIP?** No labelled Indian food dataset that is large and clearly licensed was available, and training a CNN on a 2-core CPU isn't realistic. CLIP gives a strong image representation plus zero-shot naming, so adding a food is one line of text. Quantised ONNX keeps the download at 155 MB and inference at about 65 ms on a laptop CPU, with no PyTorch on Windows.
+**Why CLIP?** No labelled Indian food dataset that is large and clearly licensed was available, and training a CNN on a 2-core CPU isn't realistic. CLIP gives a strong image representation plus zero-shot naming, so adding a food is one line of text. ONNX keeps the models at 345 MB on disk (int8 vision, full-precision text) and inference at about 22 ms on a 2-thread CPU, with no PyTorch on Windows.
 
 **Why this preprocessing?** It is exactly what CLIP was trained with (bicubic resize of the short side, centre crop, CLIP mean/std). Anything else shifts the embedding distribution. EXIF rotation matters because phone photos are often stored sideways. Batch size is 1 because dynamic quantisation computes activation ranges per batch, so a batch would change individual results.
 
-**Baselines.** A majority-class baseline (2%) shows the task isn't trivial. The single-prompt zero-shot model is the phase-1 baseline. Zero-shot restricted to the 45 labelled classes separates "the probe is better" from "the probe has fewer classes to choose from" (68.1% vs 92.5%, so the probe really is better).
+**Baselines.** A majority-class baseline (2%) shows the task isn't trivial. The single-prompt zero-shot model is the phase-1 baseline. Zero-shot restricted to the 45 labelled classes separates "the probe is better" from "the probe has fewer classes to choose from" (87.5% vs 93.2% in the current run, so the probe really is better).
 
 **Features.** Frozen 512-d CLIP image embeddings, with no hand-crafted features. The probe is a logistic regression on them. It is linear, fast, and trains in seconds on 1,800 examples. C was chosen from {0.1 … 30} on val.
 
-**Why the hybrid mixes only inside the probe's classes.** A plain average would push every class the probe never saw to near zero, so the app could never answer "idli" again. With the within-group mix, zero-shot still decides how likely the photo is to be one of the 45, and the probe decides which of them. On Commons photos from unseen classes, top-1 didn't drop (21.7% → 26.1%).
+**Why the hybrid mixes only inside the probe's classes.** A plain average would push every class the probe never saw to near zero, so the app could never answer "idli" again. With the within-group mix, zero-shot still decides how likely the photo is to be one of the 45, and the probe decides which of them. On Commons photos from classes the probe never saw, the hybrid keeps the zero-shot answer (69.6%, the same as zero-shot alone).
 
 **Inference.** Decode and validate → embed → zero-shot (a matrix multiply with a cached 188×512 matrix) → probe (a 45×512 matrix multiply) → temperature → optional kNN → decision. Only the vision tower runs per request. The text tower runs once per food-list change, and the result is cached by hash.
 
-**Confidence.** Raw CLIP softmax was under-confident here (mean 0.35 while 79% correct). Temperature scaling is a one-parameter fix: it doesn't change the ranking, is fitted on val, and cut ECE from 0.44 to 0.06. The abstention threshold comes from the val coverage curve (the lowest threshold that reaches 85% accuracy) and held on test (85.1%).
+**Confidence.** Raw CLIP softmax was under-confident here (mean 0.35 while 79% correct; the 2026-11-26 comparison traced most of this to the INT8 text embeddings: with fp32 text, raw zero-shot is already calibrated, ECE 0.015). Temperature scaling is a one-parameter fix: it doesn't change the ranking and is fitted on val. With the current model it cuts the hybrid's ECE from 0.155 to 0.044. The abstention threshold comes from the val coverage curve (the lowest threshold that reaches 85% accuracy) and held on test (86.4%).
 
-**Failure modes.** Wraps → shawarma, flatbread mix-ups, colour-driven gravy confusions, mixed plates (one label for a thali), unusual lighting (a dark-photo warning exists but doesn't change the prediction), and out-of-distribution photos (63% top-1 on Commons vs 79% on the test split). Personalised probabilities aren't calibrated; the API says so with `calibrated: false`.
+**Failure modes.** Wraps → shawarma, flatbread mix-ups, colour-driven gravy confusions, mixed plates (one label for a thali), unusual lighting (a dark-photo warning exists but doesn't change the prediction), near-synonym labels in the food list (chicken curry vs butter chicken), and out-of-distribution photos. Personalised probabilities aren't calibrated; the API says so with `calibrated: false`.
 
 **Metrics that matter for this product.** Top-5 accuracy, because the user can fix a wrong guess with one tap. Accuracy when answering, because a wrong preselected dish gets logged by people who don't look closely. Nutrition error, because a correct dish name with a 40% wrong calorie value is still a bad log; that is why the provenance badge exists.
 
@@ -336,8 +384,8 @@ Captured by the e2e run from the running app (`docs/screenshots/`):
 **Viva questions, short answers**
 
 - *Did you train CLIP?* No. I use OpenAI's pretrained weights (Xenova's ONNX export). I trained a logistic-regression probe on top of the frozen embeddings.
-- *Why is the probe's 92.5% not the headline?* It only chooses among 45 classes known to be present, and its test photos come from the same sources as its training photos. The app has to choose among 188 classes: 79.4%.
-- *What does temperature < 1 mean?* The raw probabilities were too flat; dividing the log-probabilities by 0.446 sharpens them without changing the ranking.
+- *Why is the probe's 92.5% not the headline?* It only chooses among 45 classes known to be present, and its test photos come from the same sources as its training photos. The app has to choose among 188 classes: 79.1%.
+- *What does temperature < 1 mean?* The raw probabilities were too flat; dividing the log-probabilities by 0.758 sharpens them without changing the ranking. (It was 0.446 with the 8-bit text tower, whose embeddings made the scores much flatter.)
 - *How is the threshold chosen without touching test?* From the val coverage–accuracy curve. Test is only reported.
 - *Why are only half the foods verified?* Only foods with a same-dish USDA record were mapped. Many Indian dishes (poha, rajma curry, dhokla…) have no queryable authoritative record, so they stay labelled as estimates.
 - *What is stored about my photos?* A 480 px thumbnail without EXIF (deleted after 24 h unless logged) and a 512-number embedding. Embeddings of corrected photos are kept for personalisation until you delete them.
@@ -376,6 +424,9 @@ non-image upload was rejected with **415**.
 - **Single-process rate limiter;** the JWT is stored in localStorage.
 
 ## Future Work
+
+- **Synonym accept sets:** extend `class_mapping.json` where the 188-food list has genuine near-synonyms (green salad / Greek salad, sandwich / club sandwich), after looking at the photos.
+- **Tip-Adapter for few-photo dishes:** use it for dishes with 1–15 photos, and the probe beyond that.
 
 - **Wider probe coverage:** add shawarma/wrap, paratha and roti classes, and extend the probe to more foods using Indian food datasets with clear licences.
 - **Nutrition data:** verify more Indian dishes against IFCT 2017 or INDB where machine-readable data is available, and weigh common household servings.

@@ -1,0 +1,35 @@
+{
+  "note": "188-way zero-shot (7-prompt ensemble, fp32 text tower) top-1 by vision model precision; (accuracy, correct, n)",
+  "results": {
+    "fp32_test": [
+      0.7944,
+      1955,
+      2461
+    ],
+    "fp32_commons": [
+      0.8228,
+      65,
+      79
+    ],
+    "int8_xenova_test": [
+      0.772,
+      1900,
+      2461
+    ],
+    "int8_xenova_commons": [
+      0.8481,
+      67,
+      79
+    ],
+    "int8_here_test": [
+      0.7863,
+      1935,
+      2461
+    ],
+    "int8_here_commons": [
+      0.7975,
+      63,
+      79
+    ]
+  }
+}

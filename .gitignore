@@ -26,3 +26,6 @@ backend/data/usda_cache/
 # downloaded / derived datasets (re-created by `python -m ml.datasets`)
 data/raw/
 data/processed/
+
+# large intermediate features from the comparison (re-created by train_cnn.py)
+experiments/results/*/cnn/*_features.npz

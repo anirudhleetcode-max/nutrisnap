@@ -46,7 +46,8 @@ def embed_rows(enc: ClipEncoder, rows: list[dict], name: str) -> tuple[np.ndarra
     h = hashlib.sha256()
     for r in rows:
         h.update(hashlib.sha256(r["image"]).digest())
-    h.update(str((enc.model_dir / "vision_model_quantized.onnx").stat().st_size).encode())
+    h.update(enc.vision_file.encode())
+    h.update(str((enc.model_dir / enc.vision_file).stat().st_size).encode())
     path = PROCESSED / f"emb_{name}_{h.hexdigest()[:12]}.npz"
     if path.exists():
         z = np.load(path)

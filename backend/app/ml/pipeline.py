@@ -72,6 +72,17 @@ class FoodRecognizer:
         cfg_path = self.artifacts_dir / "recognizer.json"
         self.card: dict = json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.exists() else {}
         self.cfg = {**DEFAULTS, **self.card.get("settings", {})}
+        fitted = self.cfg.get("text_tower")
+        if fitted and fitted != self.encoder.text_precision:
+            log.warning("recognizer.json was fitted with the %s text tower but %s is loaded: temperature and "
+                        "thresholds will be off. Run `python -m scripts.download_models`.",
+                        fitted, self.encoder.text_precision)
+        fitted_vision = self.cfg.get("vision_sha256")
+        if fitted_vision and fitted_vision != self.encoder.vision_sha256:
+            log.warning("recognizer.json was fitted with vision model %s but %s (%s) is loaded: temperature and "
+                        "thresholds may be off. Re-run `python -m scripts.download_models` (same onnxruntime "
+                        "version) or re-fit with experiments/run.py.", fitted_vision, self.encoder.vision_file,
+                        self.encoder.vision_sha256)
         self.probe: LinearProbe | None = None
         if self.cfg["mode"] == "hybrid" and self.cfg["probe_file"]:
             p = self.artifacts_dir / self.cfg["probe_file"]
@@ -137,7 +148,8 @@ class FoodRecognizer:
             "mode": "zero_shot + linear probe (hybrid)" if self.probe else "zero_shot",
             "backbone": {
                 "model": "CLIP ViT-B/32 (OpenAI, 2021), pretrained - not trained by this project",
-                "weights": "Xenova/clip-vit-base-patch32 ONNX export, 8-bit dynamic quantisation",
+                "weights": f"Xenova/clip-vit-base-patch32 ONNX export; vision {self.encoder.vision_file} "
+                           f"(int8 dynamic quantisation), text {self.encoder.text_precision}",
                 "source": "https://huggingface.co/Xenova/clip-vit-base-patch32",
                 "license": "MIT (OpenAI CLIP)",
                 "runtime": f"onnxruntime {ort.__version__} (CPU), python {platform.python_version()}",
@@ -157,7 +169,7 @@ class FoodRecognizer:
                 "Closed set of ~190 foods; anything else is forced onto the nearest one.",
                 "Classifies the whole photo; the multi-item hint is a crop heuristic, not detection.",
                 "Portion size is not estimated from the image.",
-                "Weak on visually similar Indian dishes (see error analysis).",
+                "Confuses visually similar Indian dishes (see error analysis).",
                 "Confidence is calibrated on public web photos; phone photos may differ.",
                 "Personalised results (after corrections) are not calibrated.",
             ],

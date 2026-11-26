@@ -1,8 +1,16 @@
-"""Pretrained CLIP ViT-B/32 (OpenAI, 2021) as quantized ONNX (Xenova/clip-vit-base-patch32 export,
-8-bit dynamic quantisation). Nothing here is trained by this project.
+"""Pretrained CLIP ViT-B/32 (OpenAI, 2021) as ONNX (Xenova/clip-vit-base-patch32 export). Nothing here
+is trained by this project.
 
-Only the vision tower runs per request. The text tower runs once per (food list, templates, model
-file) to build the zero-shot label matrix, which is cached as .npy.
+Only the vision tower runs per request. It is the fp32 export quantised by scripts.download_models with
+onnxruntime's dynamic quantisation (int8 weights, per-channel): 2.2x faster on CPU than the 8-bit
+export Xenova publishes, and closer to fp32 (embedding cosine 0.973 vs 0.932;
+experiments/results/2026-11-26_onnx). The Xenova file is kept as a fallback. The text tower runs once per
+(food list, templates, model file) to build the zero-shot label matrix, which is cached as .npy.
+
+The text tower is the full-precision (fp32) export when `text_model.onnx` is present. The 8-bit text
+export is only a fallback: its embeddings have 0.74 cosine similarity to fp32 and cost ~22 points of
+188-way zero-shot accuracy (experiments/results/2026-11-26_onnx/text_precision_zero_shot.json). Since
+the label matrix is cached, fp32 costs nothing per request.
 """
 from __future__ import annotations
 
@@ -25,7 +33,9 @@ log = logging.getLogger(__name__)
 LOGIT_SCALE = 100.0  # CLIP's learned logit scale (exp(4.6052))
 MAX_TOKENS = 77
 EOS = 49407
-MODEL_FILES = ("vision_model_quantized.onnx", "text_model_quantized.onnx", "tokenizer.json")
+VISION_FILES = ("vision_model_int8.onnx", "vision_model_quantized.onnx")  # preference: quantised here, then Xenova's
+TEXT_FILES = ("text_model.onnx", "text_model_quantized.onnx")             # preference: fp32, then int8
+MODEL_FILES = (VISION_FILES[0], TEXT_FILES[0], "tokenizer.json")          # what scripts.download_models provides
 
 # Baseline: the single prompt from the CLIP paper, with the plain food name.
 BASELINE_TEMPLATE = "a photo of {name}, a type of food."
@@ -76,9 +86,23 @@ def labels_from_foods(foods: list[dict]) -> list[Label]:
 class ClipEncoder:
     def __init__(self, model_dir: Path, labels: list[Label], cache_dir: Path, threads: int = 2):
         self.model_dir = Path(model_dir)
-        missing = [f for f in MODEL_FILES if not (self.model_dir / f).exists()]
+        text_file = next((f for f in TEXT_FILES if (self.model_dir / f).exists()), None)
+        vision_file = next((f for f in VISION_FILES if (self.model_dir / f).exists()), None)
+        missing = [] if vision_file else [" or ".join(VISION_FILES)]
+        missing += [] if (self.model_dir / "tokenizer.json").exists() else ["tokenizer.json"]
+        if text_file is None:
+            missing.append(" or ".join(TEXT_FILES))
         if missing:
             raise FileNotFoundError(f"missing model files in {self.model_dir}: {', '.join(missing)}")
+        self.vision_file = vision_file
+        if vision_file != VISION_FILES[0]:
+            log.warning("using %s (%s not found); recognition is ~2x slower. Run `python -m scripts.download_models`.",
+                        vision_file, VISION_FILES[0])
+        self.text_file = text_file
+        self.text_precision = "fp32" if text_file == TEXT_FILES[0] else "int8"
+        if self.text_precision == "int8":
+            log.warning("using the 8-bit text tower (%s not found); zero-shot accuracy will be lower. "
+                        "Run `python -m scripts.download_models`.", TEXT_FILES[0])
         self.labels = labels
         self.ids = [lab.id for lab in labels]
         self.cache_dir = Path(cache_dir)
@@ -86,7 +110,7 @@ class ClipEncoder:
         opts.intra_op_num_threads = threads
         opts.inter_op_num_threads = 1
         self._opts = opts
-        self.vision = ort.InferenceSession(str(self.model_dir / "vision_model_quantized.onnx"), opts,
+        self.vision = ort.InferenceSession(str(self.model_dir / vision_file), opts,
                                            providers=["CPUExecutionProvider"])
         self._text: ort.InferenceSession | None = None
         self.tokenizer = Tokenizer.from_file(str(self.model_dir / "tokenizer.json"))
@@ -94,11 +118,22 @@ class ClipEncoder:
         self.nonfood_matrix = self._cached("nonfood", NON_FOOD_PROMPTS, lambda: l2n(np.stack(
             [self.encode_text(p) for p in NON_FOOD_PROMPTS])))
 
+    @property
+    def vision_sha256(self) -> str:
+        """First 16 hex digits of the vision model file's SHA-256 (recorded with the fitted settings)."""
+        if not hasattr(self, "_vision_sha"):
+            h = hashlib.sha256()
+            with open(self.model_dir / self.vision_file, "rb") as f:
+                while chunk := f.read(1 << 20):
+                    h.update(chunk)
+            self._vision_sha = h.hexdigest()[:16]
+        return self._vision_sha
+
     # ---------- text side (runs once, cached) ----------
     @property
     def text(self) -> ort.InferenceSession:
         if self._text is None:
-            self._text = ort.InferenceSession(str(self.model_dir / "text_model_quantized.onnx"), self._opts,
+            self._text = ort.InferenceSession(str(self.model_dir / self.text_file), self._opts,
                                               providers=["CPUExecutionProvider"])
         return self._text
 
@@ -118,8 +153,8 @@ class ClipEncoder:
         return [t.format(name=lab.name.lower(), desc=lab.desc, cuisine=cuisine) for t in (templates or ENSEMBLE_TEMPLATES)]
 
     def _cached(self, kind: str, key_parts: list[str], build) -> np.ndarray:
-        onnx_size = (self.model_dir / "text_model_quantized.onnx").stat().st_size
-        h = hashlib.sha256(json.dumps([kind, key_parts, onnx_size]).encode()).hexdigest()[:16]
+        onnx_size = (self.model_dir / self.text_file).stat().st_size
+        h = hashlib.sha256(json.dumps([kind, key_parts, self.text_file, onnx_size]).encode()).hexdigest()[:16]
         path = self.cache_dir / f"{kind}_{h}.npy"
         if path.exists():
             return np.load(path)

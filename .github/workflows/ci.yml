@@ -30,7 +30,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: backend/models
-          key: clip-vit-b32-onnx-v1
+          key: clip-vit-b32-onnx-${{ hashFiles('backend/scripts/download_models.py') }}
       - run: python -m scripts.download_models
       - run: python -m pytest -q
 

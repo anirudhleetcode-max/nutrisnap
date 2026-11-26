@@ -126,3 +126,11 @@ def test_magic_bytes_and_quality_rules():
     assert "too_dark" in quality_warnings(dark)
     flat = Image.new("RGB", (300, 300), (128, 128, 128))
     assert "blurry" in quality_warnings(flat)
+
+
+def test_encoder_reports_missing_text_tower(tmp_path):
+    from app.ml.clip_model import ClipEncoder
+    (tmp_path / "vision_model_quantized.onnx").write_bytes(b"x")
+    (tmp_path / "tokenizer.json").write_bytes(b"x")
+    with pytest.raises(FileNotFoundError, match="text_model.onnx or text_model_quantized.onnx"):
+        ClipEncoder(tmp_path, [], tmp_path / "cache")

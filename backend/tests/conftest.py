@@ -11,7 +11,8 @@ from app.config import get_settings
 from app.main import app
 
 FIXTURES = Path(__file__).parent / "fixtures"
-MODELS_PRESENT = (get_settings().model_dir / "vision_model_quantized.onnx").exists()
+MODELS_PRESENT = any((get_settings().model_dir / f).exists()
+                     for f in ("vision_model_int8.onnx", "vision_model_quantized.onnx"))
 needs_model = pytest.mark.skipif(not MODELS_PRESENT, reason="run `python -m scripts.download_models` first")
 
 
