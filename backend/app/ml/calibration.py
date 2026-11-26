@@ -84,3 +84,28 @@ def pick_threshold(conf: np.ndarray, correct: np.ndarray, target_accuracy: float
         if m.sum() >= 20 and correct[m].mean() >= target_accuracy:
             return float(t)
     return 1.0
+
+
+# ---------------- uncertainty measures ----------------
+def entropy(probs: np.ndarray) -> np.ndarray:
+    """Predictive entropy in nats (0 = certain; log C = uniform)."""
+    p = np.clip(probs, 1e-12, 1.0)
+    return -(p * np.log(p)).sum(axis=-1)
+
+
+def margin(probs: np.ndarray) -> np.ndarray:
+    """Top-1 minus top-2 probability (small margin = two classes compete)."""
+    s = np.sort(probs, axis=-1)
+    return s[..., -1] - s[..., -2]
+
+
+def aurc(certainty: np.ndarray, correct: np.ndarray) -> float:
+    """Area under the risk-coverage curve (lower is better).
+
+    Sort predictions from most to least certain; at each coverage k/N the risk is the error rate of
+    the k most certain predictions. AURC averages that risk over all coverages, so it measures how
+    well a certainty score *ranks* right answers above wrong ones, independent of any threshold.
+    """
+    order = np.argsort(-np.asarray(certainty), kind="stable")
+    err = 1.0 - np.asarray(correct, dtype=float)[order]
+    return float(np.mean(np.cumsum(err) / np.arange(1, len(err) + 1)))

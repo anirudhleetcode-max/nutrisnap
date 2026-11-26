@@ -1,0 +1,317 @@
+{
+  "classes": 45,
+  "per_split": {
+    "train": {
+      "photos": 1800,
+      "classes": 45,
+      "min_per_class": 40,
+      "max_per_class": 40,
+      "imbalance_ratio": 1.0
+    },
+    "val": {
+      "photos": 900,
+      "classes": 45,
+      "min_per_class": 20,
+      "max_per_class": 20,
+      "imbalance_ratio": 1.0
+    },
+    "test": {
+      "photos": 2461,
+      "classes": 45,
+      "min_per_class": 34,
+      "max_per_class": 134,
+      "imbalance_ratio": 3.94
+    },
+    "unseen": {
+      "photos": 79,
+      "classes": 20,
+      "min_per_class": 3,
+      "max_per_class": 4,
+      "imbalance_ratio": 1.33
+    }
+  },
+  "per_class": {
+    "food101/breakfast_burrito": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/caesar_salad": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/chicken_curry": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/chocolate_cake": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/club_sandwich": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/donuts": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/dumplings": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/falafel": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/french_fries": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/fried_rice": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/greek_salad": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/grilled_salmon": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/hamburger": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/hot_dog": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/hummus": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/ice_cream": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/lasagna": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/macaroni_and_cheese": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/nachos": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/omelette": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/pancakes": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/pizza": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/ramen": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/samosa": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/spaghetti_bolognese": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/spring_rolls": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/steak": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/sushi": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/tacos": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "food101/waffles": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "indianfoods/biryani": {
+      "train": 40,
+      "val": 20,
+      "test": 46
+    },
+    "indianfoods/cholebhature": {
+      "train": 40,
+      "val": 20,
+      "test": 66
+    },
+    "indianfoods/dabeli": {
+      "train": 40,
+      "val": 20,
+      "test": 44
+    },
+    "indianfoods/dal": {
+      "train": 40,
+      "val": 20,
+      "test": 53
+    },
+    "indianfoods/dhokla": {
+      "train": 40,
+      "val": 20,
+      "test": 50
+    },
+    "indianfoods/dosa": {
+      "train": 40,
+      "val": 20,
+      "test": 34
+    },
+    "indianfoods/jalebi": {
+      "train": 40,
+      "val": 20,
+      "test": 62
+    },
+    "indianfoods/kathiroll": {
+      "train": 40,
+      "val": 20,
+      "test": 68
+    },
+    "indianfoods/kofta": {
+      "train": 40,
+      "val": 20,
+      "test": 134
+    },
+    "indianfoods/naan": {
+      "train": 40,
+      "val": 20,
+      "test": 71
+    },
+    "indianfoods/pakora": {
+      "train": 40,
+      "val": 20,
+      "test": 76
+    },
+    "indianfoods/paneer": {
+      "train": 40,
+      "val": 20,
+      "test": 52
+    },
+    "indianfoods/panipuri": {
+      "train": 40,
+      "val": 20,
+      "test": 36
+    },
+    "indianfoods/pavbhaji": {
+      "train": 40,
+      "val": 20,
+      "test": 61
+    },
+    "indianfoods/vadapav": {
+      "train": 40,
+      "val": 20,
+      "test": 108
+    }
+  },
+  "unseen_classes": {
+    "commons/dosa": 4,
+    "commons/idli": 4,
+    "commons/samosa": 4,
+    "commons/biryani": 4,
+    "commons/jalebi": 4,
+    "commons/gulab-jamun": 4,
+    "commons/pani-puri": 4,
+    "commons/pav-bhaji": 4,
+    "commons/vada-pav": 4,
+    "commons/dhokla": 4,
+    "commons/palak-paneer": 3,
+    "commons/butter-chicken": 4,
+    "commons/poha": 4,
+    "commons/pizza": 4,
+    "commons/burger": 4,
+    "commons/sushi": 4,
+    "commons/french-fries": 4,
+    "commons/ramen": 4,
+    "commons/momos": 4,
+    "commons/paneer-tikka": 4
+  },
+  "image_stats_by_dataset": {
+    "food101": {
+      "n": 3300,
+      "longest_side_median": 512,
+      "longest_side_min": 512,
+      "aspect_ratio_median": 1.0,
+      "share_not_square": 0.388,
+      "mean_brightness_0_255": 118.0,
+      "share_dark_below_60": 0.019
+    },
+    "indianfoods": {
+      "n": 1861,
+      "longest_side_median": 300,
+      "longest_side_min": 300,
+      "aspect_ratio_median": 1.0,
+      "share_not_square": 0.0,
+      "mean_brightness_0_255": 132.9,
+      "share_dark_below_60": 0.007
+    },
+    "commons": {
+      "n": 79,
+      "longest_side_median": 500,
+      "longest_side_min": 500,
+      "aspect_ratio_median": 1.333,
+      "share_not_square": 0.975,
+      "mean_brightness_0_255": 120.6,
+      "share_dark_below_60": 0.013
+    }
+  },
+  "near_duplicate_check": {
+    "method": "8x8 average-hash; identical hashes across splits are possible duplicates (or very similar plates)",
+    "train_test_shared_hashes": 24,
+    "train_val_shared_hashes": 8,
+    "train_unseen_shared_hashes": 1
+  }
+}
